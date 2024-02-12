@@ -1,0 +1,36 @@
+#menuTitle {
+  font-size: medium;
+  margin-right: 20px;
+}
+
+.mat-toolbar {
+  height: 60px;
+}
+
+.mat-sidenav {
+  background-color: #673AB7;
+  width: 160px;
+}
+
+.side-nav-items {
+  display: flexbox;
+  flex-direction: column;
+}
+
+.side-menu-item {
+  color: white !important;
+  margin-top: 20px;
+}
+
+.main-content {
+  margin: 20px;
+}
+
+.top-menu{
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-menu-right-item {
+  float: right;
+}
