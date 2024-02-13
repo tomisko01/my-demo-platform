@@ -1,15 +1,15 @@
 <mat-toolbar color="primary">
   <button mat-icon-button
           (click)="sidenav.toggle()"
-          id="menuIcon"
-          aria-label="Example icon-button with menu icon">
+          id="menuIcon">
     <mat-icon>menu</mat-icon>
   </button>
   <span id="menuTitle">My notes</span>
+  <span class="example-spacer"></span>
 
-  <button mat-icon-button>
-    github
-  </button>
+  <a mat-button href="https://github.com/tomisko01">
+    <mat-icon svgIcon="github_mark"></mat-icon>
+  </a>
 </mat-toolbar>
 
 <mat-sidenav-container>
