@@ -15,7 +15,11 @@ export class AppComponent {
   ) {
     this.matIconRegistry.addSvgIcon(
       'github_mark',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('assets/github-mark.svg')
+      this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/github-mark/github-mark.svg')
     );
+  }
+
+  openGithubPage() {
+    window.open("https://github.com/tomisko01");
   }
 }

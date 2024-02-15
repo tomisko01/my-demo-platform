@@ -7,10 +7,10 @@
   <span id="menuTitle">My notes</span>
   <span class="example-spacer"></span>
 
-  <a mat-button href="https://github.com/tomisko01">
-    <mat-icon class="icon-display"
-              svgIcon="github_mark"></mat-icon>
-  </a>
+  <button mat-icon-button
+          (click)="openGithubPage()">
+    <mat-icon svgIcon="github_mark"></mat-icon>
+  </button>
 </mat-toolbar>
 
 <mat-sidenav-container>
