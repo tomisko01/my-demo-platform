@@ -12,7 +12,10 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-import { HttpClientModule } from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
+import {MatTreeModule} from "@angular/material/tree";
+import {MatDividerModule} from '@angular/material/divider';
+
 
 
 const routes: Routes = [
@@ -36,9 +39,12 @@ const routes: Routes = [
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatTreeModule,
+    MatDividerModule,
     FormsModule,
     RouterModule.forRoot(routes),
     HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
