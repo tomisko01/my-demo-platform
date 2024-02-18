@@ -3,36 +3,8 @@ import {MatIconRegistry} from "@angular/material/icon";
 import {DomSanitizer} from "@angular/platform-browser";
 import {MatTreeNestedDataSource} from "@angular/material/tree";
 import {NestedTreeControl} from "@angular/cdk/tree";
-
-interface TopicNode {
-  name: string;
-  routerLink?: string,
-  children?: TopicNode[];
-}
-
-const TREE_DATA: TopicNode[] = [
-  {
-    name: 'Angular',
-    children: [
-      {
-        name: 'New project',
-        routerLink: '/first'
-      },
-      {
-        name: 'Interpolation syntax',
-        routerLink: '/second'
-      }
-    ]
-  },
-  {
-    name: 'More topics',
-    children: [
-      {
-        name: 'Under construction'
-      }
-    ]
-  }
-]
+import {TopicLinksConstants} from "./constants/topic-links-constants";
+import {TopicNode} from "./typings";
 
 @Component({
   selector: 'app-root',
@@ -45,9 +17,10 @@ export class AppComponent implements OnInit {
   nestedTreeControl = new NestedTreeControl<TopicNode>(node => node.children);
 
   constructor(private matIconRegistry: MatIconRegistry,
-              private domSanitizer: DomSanitizer
+              private domSanitizer: DomSanitizer,
+              private constants: TopicLinksConstants
   ) {
-    this.nestedDataSource.data = TREE_DATA;
+    this.nestedDataSource.data = constants.TREE_DATA;
 
     this.matIconRegistry.addSvgIcon(
       'github_mark',
