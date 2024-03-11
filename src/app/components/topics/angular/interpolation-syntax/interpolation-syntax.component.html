@@ -1,1 +1,41 @@
-<p>interpolation-syntax works!</p>
+<h1>How to use interpolation syntax
+  <button mat-icon-button
+          (click)="openGithubLink()"
+          aria-label="Open source code">
+    <mat-icon>open_in_new</mat-icon>
+  </button>
+</h1>
+<p>
+  In html add
+<pre class="code-snippet">
+<code ngNonBindable>
+  {{property or expression}}
+</code>
+</pre>
+
+<p>
+  In component add
+
+
+<pre class="code-snippet">
+<code ngNonBindable>
+  {{object.property}}
+</code>
+</pre>
+
+<p>Working example:
+<pre class="code-snippet">
+<code>
+  {{object.property}}
+</code>
+</pre>
+<mat-divider></mat-divider>
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+  <mat-tab label="Component">
+    <pre class="code-snippet">
+      <code>{{object | json}}
+      </code>
+    </pre>
+  </mat-tab>
+  <mat-tab label="Html">Content 2</mat-tab>
+</mat-tab-group>

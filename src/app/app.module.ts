@@ -12,12 +12,12 @@ import {MatButtonModule} from '@angular/material/button';
 import {HttpClientModule} from "@angular/common/http";
 import {MatTreeModule} from "@angular/material/tree";
 import {MatDividerModule} from '@angular/material/divider';
+import {MatTabsModule} from '@angular/material/tabs';
 import {HomeComponent} from "./components/home/home.component";
 import {NewProjectComponent} from "./components/topics/angular/new-project/new-project.component";
 import {
   InterpolationSyntaxComponent
 } from "./components/topics/angular/interpolation-syntax/interpolation-syntax.component";
-
 
 
 const routes: Routes = [
@@ -43,6 +43,7 @@ const routes: Routes = [
     MatButtonModule,
     MatTreeModule,
     MatDividerModule,
+    MatTabsModule,
     FormsModule,
     RouterModule.forRoot(routes),
     HttpClientModule
