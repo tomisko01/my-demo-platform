@@ -18,6 +18,7 @@ import {NewProjectComponent} from "./components/topics/angular/new-project/new-p
 import {
   InterpolationSyntaxComponent
 } from "./components/topics/angular/interpolation-syntax/interpolation-syntax.component";
+import {HighlightService} from "./service/HighlightService";
 
 
 const routes: Routes = [
@@ -47,9 +48,10 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes),
     HttpClientModule
-
   ],
-  providers: [],
+  providers: [
+    HighlightService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
