@@ -1,0 +1,51 @@
+<h1>How to use input property syntax
+  <button mat-icon-button
+          (click)="openGithubLink()"
+          aria-label="Open source code">
+    <mat-icon>open_in_new</mat-icon>
+  </button>
+</h1>
+
+<p>
+  <label>
+    Simple input without binding
+    <input type="text" class="demo" value="Test">
+  </label>
+</p>
+<mat-divider></mat-divider>
+<!-- WILL THROW ERROR
+<input class="demo" [value]="Test">
+-->
+
+<!-- Will set title value as value-->
+<p>
+  Input with value from component
+  <input class="demo" [value]="titleExample">
+  Resolved value
+<pre class="code-snippet">  <code>
+{{titleExample}}
+  </code>
+</pre>
+
+<mat-divider></mat-divider>
+
+<!-- Will set 'title' as value-->
+<p>
+  Input with static value using []
+  <input class="demo" [value]="'title'">
+</p>
+<mat-divider></mat-divider>
+
+
+<p>
+  Input with reload data
+  <input class="demo"
+         [value]="title"
+         (keyup)="reloadTitle(titleInput.value)"
+         #titleInput>
+  Resolved value:
+<pre class="code-snippet">  <code>
+{{title}}
+  </code>
+</pre>
+

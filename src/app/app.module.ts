@@ -19,12 +19,14 @@ import {
   InterpolationSyntaxComponent
 } from "./components/topics/angular/interpolation-syntax/interpolation-syntax.component";
 import {HighlightService} from "./service/HighlightService";
+import { InputPropertySyntaxComponent } from './components/topics/angular/input-property-syntax/input-property-syntax.component';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'angular/newProject', component: NewProjectComponent},
   {path: 'angular/interpolationSyntax', component: InterpolationSyntaxComponent},
+  {path: 'angular/inputPropertySyntax', component: InputPropertySyntaxComponent},
 ]
 
 
@@ -33,7 +35,8 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     NewProjectComponent,
-    InterpolationSyntaxComponent
+    InterpolationSyntaxComponent,
+    InputPropertySyntaxComponent
   ],
   imports: [
     BrowserModule,

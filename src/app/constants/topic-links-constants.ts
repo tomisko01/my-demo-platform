@@ -16,6 +16,10 @@ export class TopicLinksConstants {
         {
           name: 'Interpolation syntax',
           routerLink: '/angular/interpolationSyntax'
+        },
+        {
+          name: 'Input property syntax',
+          routerLink: '/angular/inputPropertySyntax'
         }
       ]
     },
@@ -23,7 +27,7 @@ export class TopicLinksConstants {
       name: 'More topics',
       children: [
         {
-          name: 'Under construction'
+          name: 'Under construction...'
         }
       ]
     }
