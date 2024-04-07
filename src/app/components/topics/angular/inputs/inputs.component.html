@@ -1,0 +1,25 @@
+<h1>How to use inputs
+  <button mat-icon-button
+          (click)="openGithubLink()"
+          aria-label="Open source code">
+    <mat-icon>open_in_new</mat-icon>
+  </button>
+</h1>
+
+<app-card [inputProperty]="propertyToPass"
+/>
+
+<mat-divider></mat-divider>
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+  <mat-tab label="Component">
+    <code class="language-ts"
+          [innerText]="sourceComponent">
+    </code>
+  </mat-tab>
+  <mat-tab label="HTML">
+    <code class="language-markup"
+          [innerText]="sourceHTML">
+    </code>
+
+  </mat-tab>
+</mat-tab-group>

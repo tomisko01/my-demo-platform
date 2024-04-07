@@ -20,6 +20,10 @@ export class TopicLinksConstants {
         {
           name: 'Input property syntax',
           routerLink: '/angular/inputPropertySyntax'
+        },
+        {
+          name: 'Input',
+          routerLink: '/angular/inputs'
         }
       ]
     },
