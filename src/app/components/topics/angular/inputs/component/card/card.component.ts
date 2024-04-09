@@ -9,4 +9,7 @@ export class CardComponent {
 
   @Input()
   inputProperty: string;
+
+  @Input({required: true})
+  requiredInput: string;
 }

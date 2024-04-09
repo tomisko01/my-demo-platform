@@ -7,19 +7,27 @@
 </h1>
 
 <app-card [inputProperty]="propertyToPass"
+          requiredInput="requiredInputToPass"
 />
 
 <mat-divider></mat-divider>
-<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+<mat-tab-group mat-stretch-tabs="false"
+               mat-align-tabs="start"
+               (selectedTabChange)="onTabChange()">
   <mat-tab label="Component">
-    <code class="language-ts"
-          [innerText]="sourceComponent">
-    </code>
+    <pre>
+      <code class="language-ts">
+        {{sourceComponent}}
+      </code>
+    </pre>
+
+
   </mat-tab>
   <mat-tab label="HTML">
-    <code class="language-markup"
-          [innerText]="sourceHTML">
-    </code>
-
+    <pre>
+      <code class="language-markup">
+        {{sourceHTML}}
+      </code>
+    </pre>
   </mat-tab>
 </mat-tab-group>
