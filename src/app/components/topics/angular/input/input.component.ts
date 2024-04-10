@@ -2,11 +2,11 @@ import {AfterViewChecked, Component} from '@angular/core';
 import {HighlightService} from "../../../../service/HighlightService";
 
 @Component({
-  selector: 'app-inputs',
-  templateUrl: './inputs.component.html',
-  styleUrls: ['./inputs.component.css']
+  selector: 'app-input',
+  templateUrl: './input.component.html',
+  styleUrls: ['./input.component.css']
 })
-export class InputsComponent implements AfterViewChecked {
+export class InputComponent implements AfterViewChecked {
   githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/interpolation-syntax/interpolation-syntax.component.ts"; //todo change when uploaded
   propertyToPass: string = "property to pass as an input";
 

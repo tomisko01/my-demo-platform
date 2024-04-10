@@ -23,7 +23,11 @@ export class TopicLinksConstants {
         },
         {
           name: 'Input',
-          routerLink: '/angular/inputs'
+          routerLink: '/angular/input'
+        },
+        {
+          name: 'Output',
+          routerLink: '/angular/output'
         }
       ]
     },

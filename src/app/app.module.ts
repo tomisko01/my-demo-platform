@@ -20,8 +20,9 @@ import {
 } from "./components/topics/angular/interpolation-syntax/interpolation-syntax.component";
 import {HighlightService} from "./service/HighlightService";
 import { InputPropertySyntaxComponent } from './components/topics/angular/input-property-syntax/input-property-syntax.component';
-import { InputsComponent } from './components/topics/angular/inputs/inputs.component';
-import { CardComponent } from './components/topics/angular/inputs/component/card/card.component';
+import { InputComponent } from './components/topics/angular/input/input.component';
+import { CardComponent } from './components/topics/angular/input/component/card/card.component';
+import {OutputComponent} from "./components/topics/angular/output/output.component";
 
 
 const routes: Routes = [
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path: 'angular/newProject', component: NewProjectComponent},
   {path: 'angular/interpolationSyntax', component: InterpolationSyntaxComponent},
   {path: 'angular/inputPropertySyntax', component: InputPropertySyntaxComponent},
-  {path: 'angular/inputs', component: InputsComponent},
+  {path: 'angular/input', component: InputComponent},
+  {path: 'angular/output', component: OutputComponent},
 ]
 
 
@@ -40,7 +42,7 @@ const routes: Routes = [
     NewProjectComponent,
     InterpolationSyntaxComponent,
     InputPropertySyntaxComponent,
-    InputsComponent,
+    InputComponent,
     CardComponent
   ],
   imports: [
