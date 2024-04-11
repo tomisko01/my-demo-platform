@@ -1,4 +1,6 @@
-<p>Inside child component</p>
+<p>Inside child component:</p>
 <button (click) = emitEvent()>
   Click to emit event to parent
 </button>
+<br>
+<input #inputElement (keyup)="emitInputEvent(inputElement.value)">

@@ -7,7 +7,10 @@
 </h1>
 <mat-divider></mat-divider>
 
-<output-child (childEvent)="handleChildEvent($event)"/>
+<output-child (childEvent)="handleChildEvent($event)"
+              (childInputEvent)="handleInputChildEvent($event)"/>
 
 <mat-divider></mat-divider>
 Value of object received by event from child component = {{valueFromChild}}
+<br>
+Value of object received by event from child input component = {{valueFromInputChild}}

@@ -10,10 +10,17 @@ export class OutputChildComponent {
   @Output()
   childEvent: EventEmitter<string> = new EventEmitter<string>();
 
+  @Output()
+  childInputEvent: EventEmitter<string> = new EventEmitter<string>();
+
   private property: string = "Value from OutputChildComponent";
   private counter: number = 0;
 
   emitEvent() {
     this.childEvent.emit(this.property + " x" + ++this.counter);
+  }
+
+  emitInputEvent(value: string) {
+    this.childInputEvent.emit(value);
   }
 }
