@@ -1,1 +1,13 @@
-<p>output works!</p>
+<h1>How to use outputs
+  <button mat-icon-button
+          (click)="openGithubLink()"
+          aria-label="Open source code">
+    <mat-icon>open_in_new</mat-icon>
+  </button>
+</h1>
+<mat-divider></mat-divider>
+
+<output-child (childEvent)="handleChildEvent($event)"/>
+
+<mat-divider></mat-divider>
+Value of object received by event from child component = {{valueFromChild}}

@@ -23,6 +23,7 @@ import { InputPropertySyntaxComponent } from './components/topics/angular/input-
 import { InputComponent } from './components/topics/angular/input/input.component';
 import { CardComponent } from './components/topics/angular/input/component/card/card.component';
 import {OutputComponent} from "./components/topics/angular/output/output.component";
+import {OutputChildComponent} from "./components/topics/angular/output/component/output-child/output-child.component";
 
 
 const routes: Routes = [
@@ -43,7 +44,9 @@ const routes: Routes = [
     InterpolationSyntaxComponent,
     InputPropertySyntaxComponent,
     InputComponent,
-    CardComponent
+    CardComponent,
+    OutputComponent,
+    OutputChildComponent
   ],
   imports: [
     BrowserModule,
