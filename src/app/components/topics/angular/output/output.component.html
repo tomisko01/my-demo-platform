@@ -14,3 +14,25 @@
 Value of object received by event from child component = {{valueFromChild}}
 <br>
 Value of object received by event from child input component = {{valueFromInputChild}}
+
+<mat-divider></mat-divider>
+<mat-tab-group mat-stretch-tabs="false"
+               mat-align-tabs="start"
+               (selectedTabChange)="onTabChange()">
+  <mat-tab label="Component">
+    <pre>
+      <code class="language-ts">
+        {{sourceComponent}}
+      </code>
+    </pre>
+
+
+  </mat-tab>
+  <mat-tab label="HTML">
+    <pre>
+      <code class="language-markup">
+        {{sourceHTML}}
+      </code>
+    </pre>
+  </mat-tab>
+</mat-tab-group>
