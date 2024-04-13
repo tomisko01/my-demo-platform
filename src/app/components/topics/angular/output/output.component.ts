@@ -10,7 +10,7 @@ export class OutputComponent implements AfterViewChecked {
 
   valueFromChild: string = "";
   valueFromInputChild: string = "";
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/interpolation-syntax/interpolation-syntax.component.ts"; //todo change when uploaded
+  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/output/output.component.ts";
 
   sourceComponent: string = `
   // PARENT COMPONENT

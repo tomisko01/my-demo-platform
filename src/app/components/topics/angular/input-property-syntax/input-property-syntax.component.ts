@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./input-property-syntax.component.css']
 })
 export class InputPropertySyntaxComponent {
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/interpolation-syntax/interpolation-syntax.component.ts"; //todo change when uploaded
+  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/input-property-syntax/input-property-syntax.component.ts";
 
   title: string = 'title';
   titleExample: string = "title example";
