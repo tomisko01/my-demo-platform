@@ -18,7 +18,7 @@ import {NewProjectComponent} from "./components/topics/angular/new-project/new-p
 import {
   InterpolationSyntaxComponent
 } from "./components/topics/angular/interpolation-syntax/interpolation-syntax.component";
-import {HighlightService} from "./service/HighlightService";
+import {HighlightService} from "@service/HighlightService";
 import { InputPropertySyntaxComponent } from './components/topics/angular/input-property-syntax/input-property-syntax.component';
 import { InputComponent } from './components/topics/angular/input/input.component';
 import { CardComponent } from './components/topics/angular/input/component/card/card.component';
