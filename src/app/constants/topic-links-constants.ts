@@ -28,6 +28,10 @@ export class TopicLinksConstants {
         {
           name: 'Output',
           routerLink: '/angular/output'
+        },
+        {
+          name: 'CF-@For',
+          routerLink: '/angular/cfFor'
         }
       ]
     },

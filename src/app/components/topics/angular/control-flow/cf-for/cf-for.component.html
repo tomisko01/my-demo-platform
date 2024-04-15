@@ -1,0 +1,50 @@
+<h1>How to use &#64;for
+  <button mat-icon-button
+          (click)="openGithubLink()"
+          aria-label="Open source code">
+    <mat-icon>open_in_new</mat-icon>
+  </button>
+</h1>
+
+<h4>Given list:</h4>
+<pre>
+      <code class="language-ts">
+{{objectList | json}}
+      </code>
+    </pre>
+
+<h3>Simple usage:</h3>
+<div>
+  @for(item of objectList; track item.id){
+  <app-cf-for-child
+    [id]="item.id"
+    [name]="item.name">
+  </app-cf-for-child>
+  <mat-divider></mat-divider>
+  }
+</div>
+<h4>Code:</h4>
+<pre>
+      <code class="language-ts">
+{{forCode}}
+      </code>
+    </pre>
+
+<h3>Empty usage:</h3>
+@for(item of emptyList; track item.id){
+  <app-cf-for-child
+    [id]="item.id"
+    [name]="item.name">
+  </app-cf-for-child>
+  <mat-divider></mat-divider>
+}
+@empty{
+<p>No elements found</p>
+}
+<h4>Code:</h4>
+<pre>
+      <code class="language-ts">
+{{emptyCode}}
+      </code>
+    </pre>
+
