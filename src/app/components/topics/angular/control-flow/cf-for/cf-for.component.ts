@@ -1,11 +1,12 @@
-import {Component} from '@angular/core';
+import {AfterViewChecked, Component} from '@angular/core';
+import {HighlightService} from "@service/HighlightService";
 
 @Component({
   selector: 'app-cf-for',
   templateUrl: './cf-for.component.html',
   styleUrl: './cf-for.component.css'
 })
-export class CfForComponent {
+export class CfForComponent implements AfterViewChecked {
   githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/control-flow/cf-for.component.ts";
 
   objectList: { id: string, name: string }[] = [{
@@ -19,7 +20,7 @@ export class CfForComponent {
 
   emptyList: any[];
 
-  forCode:string = `
+  forCode: string = `
   @for(item of objectList; track item.id){
   <app-cf-for-child
     [id]="item.id"
@@ -27,10 +28,23 @@ export class CfForComponent {
   </app-cf-for-child>
   }`;
 
-  emptyCode: string =`
+  emptyCode: string = `
 @empty{
 <p>No elements found</p>
-}`
+}`;
+
+  highlighted: boolean = false;
+
+  constructor(private highlightService: HighlightService
+  ) {
+  }
+
+  ngAfterViewChecked(): void {
+    if (!this.highlighted) {
+      this.highlightService.highlightAll();
+      this.highlighted = true;
+    }
+  }
 
   openGithubLink(): void {
     window.open(this.githubLink);

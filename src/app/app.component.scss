@@ -22,7 +22,8 @@
 }
 
 .main-content {
-  margin-left : 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .top-menu{
@@ -48,6 +49,7 @@
 
 .topic-tree .nested-node > .mat-tree-node {
   padding-left: 20px;
+  padding-right: 20px;
 }
 
 .topic-tree-invisible {
@@ -69,4 +71,7 @@
 
 .whole-page {
   position: fixed;
+  overflow: auto;
+  height: 80rem;
+  width: 95rem;
 }
