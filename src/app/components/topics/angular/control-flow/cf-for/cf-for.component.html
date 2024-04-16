@@ -1,4 +1,4 @@
-<h1>How to use &#64;for
+<h1>How to use &#64;for in v17
   <button mat-icon-button
           (click)="openGithubLink()"
           aria-label="Open source code">
@@ -48,3 +48,68 @@
       </code>
     </pre>
 
+<h3>Index usage:</h3>
+
+@for(item of objectList; track item.id; let index = $index){
+<app-cf-for-child
+[id]="item.id"
+[name]="item.name"
+[index]="index" >
+</app-cf-for-child>
+<mat-divider></mat-divider>
+}
+
+<h4>Code:</h4>
+<pre>
+      <code class="language-ts">
+{{indexCode}}
+      </code>
+    </pre>
+
+<h3>Count usage:</h3>
+
+@for(item of objectList; track item.id; let count = $count){
+<app-cf-for-child
+[id]="item.id"
+[name]="item.name">
+</app-cf-for-child>
+<p> Count value: {{count}}</p>
+<mat-divider></mat-divider>
+}
+
+<h4>Code:</h4>
+<pre>
+      <code class="language-ts">
+{{countCode}}
+      </code>
+    </pre>
+
+
+<h3>First,Last,Even,Odd usage:</h3>
+
+@for(item of objectList; track item.id; let first = $first; let last = $last;let even = $even;let odd = $odd){
+<app-cf-for-child
+[id]="item.id"
+[name]="item.name">
+</app-cf-for-child>
+<p> First value: {{first}}</p>
+<p> Last value: {{last}}</p>
+<p> Even value: {{even}}</p>
+<p> Odd value: {{odd}}</p>
+<mat-divider></mat-divider>
+}
+
+<h4>Code:</h4>
+<pre>
+      <code class="language-ts">
+{{firstCode}}
+      </code>
+    </pre>
+
+<h2 style="color: darkred">Upgrade *ngFor</h2>
+<h4>Code:</h4>
+<pre>
+      <code class="language-ts">
+{{upgradeCode}}
+      </code>
+    </pre>

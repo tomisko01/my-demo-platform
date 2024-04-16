@@ -12,4 +12,7 @@ export class CfForChildComponent {
 
   @Input()
   name: string;
+
+  @Input()
+  index: number;
 }
