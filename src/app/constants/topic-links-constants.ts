@@ -32,6 +32,10 @@ export class TopicLinksConstants {
         {
           name: 'CF-@For',
           routerLink: '/angular/cfFor'
+        },
+        {
+          name: 'CF-@If',
+          routerLink: '/angular/cfIf'
         }
       ]
     },

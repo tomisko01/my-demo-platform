@@ -26,6 +26,7 @@ import {OutputComponent} from "./components/topics/angular/output/output.compone
 import {OutputChildComponent} from "./components/topics/angular/output/component/output-child/output-child.component";
 import {CfForComponent} from "./components/topics/angular/control-flow/cf-for/cf-for.component";
 import { CfForChildComponent } from './components/topics/angular/control-flow/cf-for/component/cf-for-child/cf-for-child.component';
+import { CfIfComponent } from './components/topics/angular/control-flow/cf-if/cf-if.component';
 
 
 const routes: Routes = [
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path: 'angular/input', component: InputComponent},
   {path: 'angular/output', component: OutputComponent},
   {path: 'angular/cfFor', component: CfForComponent},
+  {path: 'angular/cfIf', component: CfIfComponent},
 ]
 
 
@@ -51,7 +53,8 @@ const routes: Routes = [
     OutputComponent,
     OutputChildComponent,
     CfForComponent,
-    CfForChildComponent
+    CfForChildComponent,
+    CfIfComponent
   ],
   imports: [
     BrowserModule,
