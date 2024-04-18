@@ -1,1 +1,50 @@
-<p>cf-if works!</p>
+<h1>How to use &#64;if in v17
+  <button mat-icon-button
+          (click)="openGithubLink()"
+          aria-label="Open source code">
+    <mat-icon>open_in_new</mat-icon>
+  </button>
+</h1>
+
+<h2>Object is present usage</h2>
+@if(objectToCheck){
+  <p>{{objectToCheck.id}}
+}
+
+<pre>
+      <code class="language-ts">
+{{ifCode}}
+      </code>
+    </pre>
+
+
+<h2>Object is missing usage</h2>
+@if(nullObjectToCheck){
+  <p>{{nullObjectToCheck.id}}
+}
+@else{
+<p>Object not found</p>
+}
+
+<pre>
+      <code class="language-ts">
+{{elseCode}}
+      </code>
+    </pre>
+
+<h2>Object is missing, else if usage</h2>
+@if(nullObjectToCheck){
+  <p>{{nullObjectToCheck.id}}
+}
+@else if(objectToCheck){
+  <p>Object found with id: {{objectToCheck.id}}</p>
+}
+@else{
+  <p>Object not found</p>
+}
+
+<pre>
+      <code class="language-ts">
+{{elseIfCode}}
+      </code>
+    </pre>
