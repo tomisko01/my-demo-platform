@@ -36,6 +36,10 @@ export class TopicLinksConstants {
         {
           name: 'CF-@If',
           routerLink: '/angular/cfIf'
+        },
+        {
+          name: 'Conditional styles',
+          routerLink: '/angular/conditionalStyles'
         }
       ]
     },

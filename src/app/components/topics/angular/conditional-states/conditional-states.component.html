@@ -1,0 +1,39 @@
+<h1>How to use conditional states
+  <button mat-icon-button
+          (click)="openGithubLink()"
+          aria-label="Open source code">
+    <mat-icon>open_in_new</mat-icon>
+  </button>
+</h1>
+
+<h3>Simple usage:</h3>
+<div [ngClass]="'beginner'">
+  Sample text with style
+</div>
+
+<h3>Usage with list of styles:</h3>
+<div [ngClass]="'beginner border-1px'">
+  Sample text with list of styles
+</div>
+<br>
+<div [ngClass]="['beginner','border-1px']">
+  Sample text with list of styles
+</div>
+
+<h3>Usage with configuration object:</h3>
+
+<div [ngClass]="{'beginner': true, 'border-1px': true}">
+  Sample text with configuration object of styles
+</div>
+
+<h3>Usage with method:</h3>
+
+<div [ngClass]="divClasses()">
+  Sample text with configuration object of styles from method
+</div>
+
+<h3>Conditional usage:</h3>
+
+<div [ngClass]="conditionalDivClasses()">
+  {{objectToShow.desc}}
+</div>
