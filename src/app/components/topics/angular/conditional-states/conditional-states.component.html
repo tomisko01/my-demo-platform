@@ -6,19 +6,42 @@
   </button>
 </h1>
 
+<h2>ngClass usage</h2>
 <h3>Simple usage:</h3>
 <div [ngClass]="'beginner'">
   Sample text with style
 </div>
 
+<h4>Code:</h4>
+<pre>
+      <code class="language-ts">
+{{ngClassSimpleCode}}
+      </code>
+    </pre>
+
 <h3>Usage with list of styles:</h3>
 <div [ngClass]="'beginner border-1px'">
   Sample text with list of styles
 </div>
-<br>
+
+<h4>Code:</h4>
+<pre>
+      <code class="language-ts">
+{{ngClassListCode}}
+      </code>
+    </pre>
+
+
 <div [ngClass]="['beginner','border-1px']">
   Sample text with list of styles
 </div>
+
+<h4>Code:</h4>
+<pre>
+      <code class="language-ts">
+{{ngClassList2Code}}
+      </code>
+    </pre>
 
 <h3>Usage with configuration object:</h3>
 
@@ -26,14 +49,73 @@
   Sample text with configuration object of styles
 </div>
 
+<h4>Code:</h4>
+<pre>
+      <code class="language-ts">
+{{ngClassObjectCode}}
+      </code>
+    </pre>
+
 <h3>Usage with method:</h3>
 
 <div [ngClass]="divClasses()">
   Sample text with configuration object of styles from method
 </div>
 
+<h4>Code:</h4>
+<pre>
+      <code class="language-ts">
+{{ngClassMethodCode}}
+      </code>
+    </pre>
+
 <h3>Conditional usage:</h3>
 
 <div [ngClass]="conditionalDivClasses()">
   {{objectToShow.desc}}
 </div>
+
+<h4>Code:</h4>
+<pre>
+      <code class="language-ts">
+{{ngClassConditionMethodCode}}
+      </code>
+    </pre>
+
+<h2>Style usage</h2>
+
+<div [style.text-decoration]="'underline'">
+  {{objectToShow.desc}}
+</div>
+
+<h4>Code:</h4>
+<pre>
+      <code class="language-ts">
+{{stylesCode}}
+      </code>
+    </pre>
+
+<h3>ngStyle usage</h3>
+<div [ngStyle]="{'text-decoration': 'underline'}">
+  {{objectToShow.desc}}
+</div>
+
+<h4>Code:</h4>
+<pre>
+      <code class="language-ts">
+{{ngStylesCode}}
+      </code>
+    </pre>
+
+
+<h3>ngStyle usage, styles from method</h3>
+<div [ngStyle]="getStyles()">
+  {{objectToShow.desc}}
+</div>
+
+<h4>Code:</h4>
+<pre>
+      <code class="language-ts">
+{{ngStylesMethodCode}}
+      </code>
+    </pre>
