@@ -28,6 +28,7 @@ import {CfForComponent} from "./components/topics/angular/control-flow/cf-for/cf
 import { CfForChildComponent } from './components/topics/angular/control-flow/cf-for/component/cf-for-child/cf-for-child.component';
 import { CfIfComponent } from './components/topics/angular/control-flow/cf-if/cf-if.component';
 import { ConditionalStatesComponent } from './components/topics/angular/conditional-states/conditional-states.component';
+import { CfSwitchComponent } from './components/topics/angular/control-flow/cf-switch/cf-switch.component';
 
 
 const routes: Routes = [
@@ -40,6 +41,7 @@ const routes: Routes = [
   {path: 'angular/cfFor', component: CfForComponent},
   {path: 'angular/cfIf', component: CfIfComponent},
   {path: 'angular/conditionalStyles', component: ConditionalStatesComponent},
+  {path: 'angular/cfSwitch', component: CfSwitchComponent},
 ]
 
 
@@ -57,7 +59,8 @@ const routes: Routes = [
     CfForComponent,
     CfForChildComponent,
     CfIfComponent,
-    ConditionalStatesComponent
+    ConditionalStatesComponent,
+    CfSwitchComponent
   ],
   imports: [
     BrowserModule,
