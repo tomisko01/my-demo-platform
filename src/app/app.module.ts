@@ -27,7 +27,7 @@ import {OutputChildComponent} from "./components/topics/angular/output/component
 import {CfForComponent} from "./components/topics/angular/control-flow/cf-for/cf-for.component";
 import { CfForChildComponent } from './components/topics/angular/control-flow/cf-for/component/cf-for-child/cf-for-child.component';
 import { CfIfComponent } from './components/topics/angular/control-flow/cf-if/cf-if.component';
-import { ConditionalStatesComponent } from './components/topics/angular/conditional-states/conditional-states.component';
+import { ConditionalStatesComponent } from './components/topics/angular/conditional-styles/conditional-styles.component';
 import { CfSwitchComponent } from './components/topics/angular/control-flow/cf-switch/cf-switch.component';
 
 

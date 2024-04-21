@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConditionalStatesComponent } from './conditional-states.component';
+import { ConditionalStylesComponent } from './conditional-styles.component';
 
 describe('ConditionalStatesComponent', () => {
-  let component: ConditionalStatesComponent;
-  let fixture: ComponentFixture<ConditionalStatesComponent>;
+  let component: ConditionalStylesComponent;
+  let fixture: ComponentFixture<ConditionalStylesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ConditionalStatesComponent]
+      declarations: [ConditionalStylesComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(ConditionalStatesComponent);
+
+    fixture = TestBed.createComponent(ConditionalStylesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

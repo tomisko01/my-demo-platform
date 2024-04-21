@@ -2,13 +2,13 @@ import {AfterViewChecked, Component} from '@angular/core';
 import {HighlightService} from "@service/HighlightService";
 
 @Component({
-  selector: 'app-conditional-states',
-  templateUrl: './conditional-states.component.html',
-  styleUrl: './conditional-states.component.css'
+  selector: 'app-conditional-styles',
+  templateUrl: './conditional-styles.component.html',
+  styleUrl: './conditional-styles.component.css'
 })
-export class ConditionalStatesComponent implements AfterViewChecked{
+export class ConditionalStylesComponent implements AfterViewChecked{
 
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/conditional-states/conditional-states.component.ts";
+  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/conditional-styles/conditional-styles.component.ts";
   private highlighted: Boolean = false;
 
   objectToShow: any = {
