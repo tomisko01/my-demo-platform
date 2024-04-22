@@ -44,6 +44,10 @@ export class TopicLinksConstants {
         {
           name: 'Conditional styles',
           routerLink: '/angular/conditionalStyles'
+        },
+        {
+          name: 'Container',
+          routerLink: '/angular/ngContainer'
         }
       ]
     },
