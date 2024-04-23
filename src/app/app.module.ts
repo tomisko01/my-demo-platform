@@ -30,6 +30,7 @@ import { CfIfComponent } from './components/topics/angular/control-flow/cf-if/cf
 import { ConditionalStylesComponent } from './components/topics/angular/conditional-styles/conditional-styles.component';
 import { CfSwitchComponent } from './components/topics/angular/control-flow/cf-switch/cf-switch.component';
 import { NgContainerComponent } from './components/topics/angular/ng-container/ng-container.component';
+import { PipeComponent } from './components/topics/angular/pipe/pipe.component';
 
 
 const routes: Routes = [
@@ -44,6 +45,7 @@ const routes: Routes = [
   {path: 'angular/conditionalStyles', component: ConditionalStylesComponent},
   {path: 'angular/cfSwitch', component: CfSwitchComponent},
   {path: 'angular/ngContainer', component: NgContainerComponent},
+  {path: 'angular/pipe', component: PipeComponent},
 ]
 
 
@@ -63,7 +65,8 @@ const routes: Routes = [
     CfIfComponent,
     ConditionalStylesComponent,
     CfSwitchComponent,
-    NgContainerComponent
+    NgContainerComponent,
+    PipeComponent
   ],
   imports: [
     BrowserModule,

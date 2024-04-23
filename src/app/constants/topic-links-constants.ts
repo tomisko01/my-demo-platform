@@ -48,6 +48,10 @@ export class TopicLinksConstants {
         {
           name: 'Container',
           routerLink: '/angular/ngContainer'
+        },
+        {
+          name: 'Pipes',
+          routerLink: '/angular/pipe'
         }
       ]
     },

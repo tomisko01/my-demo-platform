@@ -1,0 +1,64 @@
+<h1>How to use | pipes
+  <button mat-icon-button
+          (click)="openGithubLink()"
+          aria-label="Open source code">
+    <mat-icon>open_in_new</mat-icon>
+  </button>
+</h1>
+<h4>Template mechanism to transform data and display it in another form to the user</h4>
+<h3>Date pipes</h3>
+
+<h4>Result:</h4>
+<div>
+  startDate value = {{ startDate }}
+</div>
+<div>
+  startDate value with date pipe = {{ startDate | date }}
+</div>
+<div>
+  startDate value with date pipe formatted dd/MM/yy = {{ startDate | date: 'dd/MM/yy' }}
+</div>
+
+<h4>Code:</h4>
+<pre>
+  <code class="language-ts">
+    {{ datePipeCode }}
+  </code>
+</pre>
+
+<h3>String pipes</h3>
+
+<h4>Result:</h4>
+<div>
+  title value = {{ title }}
+</div>
+<div>
+  title value with lowercase = {{ title| lowercase }}
+</div>
+<div>
+  title value with uppercase = {{ title| uppercase }}
+</div>
+
+<h4>Code:</h4>
+<pre>
+  <code class="language-ts">
+    {{ stringPipeCode }}
+  </code>
+</pre>
+
+<h3>Number pipes</h3>
+
+<h4>Result:</h4>
+<div>
+  number value = {{ numberValue }}
+</div>
+<div>
+  number value with digits info pipe = {{ numberValue | number: '3.3-5' }}
+</div>
+
+<h4>Code:</h4>
+<pre>
+  <code class="language-ts">
+    {{ numberPipeCode }}
+  </code>
+</pre>
