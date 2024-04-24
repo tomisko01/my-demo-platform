@@ -14,7 +14,15 @@ export class PipeComponent implements AfterViewChecked {
   startDate: Date = new Date();
   title: string = 'Omenare Imperavi Emulari, Ameno';
   numberValue: number = 9.99;
-  numberValueAsString: string = '21.37';
+  rateValue: number = 0.67;
+  jsonValue: any = {
+    id: 'id01',
+    name: 'name01',
+    child: {
+      id: 'chId01',
+      name: 'childName01'
+    }
+  };
 
   datePipeCode: string = `
   //HTML
@@ -38,9 +46,33 @@ export class PipeComponent implements AfterViewChecked {
   //HTML
   number value = {{ numberValue }}
   number value with digits info pipe = {{ numberValue | number: '3.3-5' }}
+  number value as currency = {{numberValue | currency}}
+  number value as currency in EURO = {{numberValue | currency: 'EUR'}}
 
   //COMPONENT
   numberValue: number = 9.99;`;
+  percentPipeCode: string = `
+  //HTML
+  <div>rateValue =  {{ rateValue }}</div>
+  <div>rateValue as percent {{ rateValue | percent }}</div>
+
+  //COMPONENT
+  rateValue: number = 0.67;`;
+  jsonPipeCode: string = `
+  //HTML
+  jsonValue =  {{ jsonValue }}
+  jsonValue as json {{ jsonValue | json }}
+
+  //COMPONENT
+  jsonValue: any = {
+    id: 'id01',
+    name: 'name01',
+    child: {
+      id: 'chId01',
+      name: 'childName01'
+    }
+  };`;
+
 
   constructor(private highlightService: HighlightService
   ) {

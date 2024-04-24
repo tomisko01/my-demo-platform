@@ -53,12 +53,42 @@
   number value = {{ numberValue }}
 </div>
 <div>
-  number value with digits info pipe = {{ numberValue | number: '3.3-5' }}
+  number value with digits info = {{ numberValue | number: '3.3-5' }}
 </div>
+
+<div>number value as currency = {{ numberValue | currency }}</div>
+<div>number value as currency = {{ numberValue | currency: 'EUR' }}</div>
+
 
 <h4>Code:</h4>
 <pre>
   <code class="language-ts">
     {{ numberPipeCode }}
+  </code>
+</pre>
+
+<h3>Percent pipes</h3>
+
+<h4>Result:</h4>
+<div>rateValue =  {{ rateValue }}</div>
+<div>rateValue as percent {{ rateValue | percent }}</div>
+
+<h4>Code:</h4>
+<pre>
+  <code class="language-ts">
+    {{ percentPipeCode }}
+  </code>
+</pre>
+
+<h3>Json pipes</h3>
+
+<h4>Result:</h4>
+<div>jsonValue =  {{ jsonValue }}</div>
+<div>jsonValue as json {{ jsonValue | json }}</div>
+
+<h4>Code:</h4>
+<pre>
+  <code class="language-ts">
+    {{ jsonPipeCode }}
   </code>
 </pre>
