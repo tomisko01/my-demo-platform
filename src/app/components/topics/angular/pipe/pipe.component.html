@@ -92,3 +92,36 @@
     {{ jsonPipeCode }}
   </code>
 </pre>
+
+<h3>List pipes</h3>
+
+<h4>Result:</h4>
+<div>listValue =  {{ listValue | json }}</div>
+<div>listValue with slice {{ listValue | slice:0:2 | json }}</div>
+
+<h4>Code:</h4>
+<pre>
+  <code class="language-ts">
+    {{ listPipeCode }}
+  </code>
+</pre>
+
+<h3>KeyValue pipe</h3>
+
+<h4>Result:</h4>
+<!--@for (item of listValue | keyvalue; track $index) {
+  <p>key = {{ item.key }}</p>
+  @for (pair of item.value; track $index) {
+    <p>{{ pair.key }} : {{ pair.value }}</p>
+  }
+}-->
+
+@for (item of listValue[0] | keyvalue; track $index){
+  <p>key: {{item.key}}, value: {{item.value}}</p>
+}
+<h4>Code:</h4>
+<pre>
+  <code class="language-ts">
+    {{ keyValuePipeCode }}
+  </code>
+</pre>

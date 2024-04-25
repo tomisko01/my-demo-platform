@@ -24,6 +24,21 @@ export class PipeComponent implements AfterViewChecked {
     }
   };
 
+  listValue: {id: string, name: string, ameno: string}[] = [{
+    id: 'id-1',
+    name: 'name-1',
+    ameno: 'dorime'
+  }, {
+    id: 'id-2',
+    name: 'name-2',
+    ameno: 'lancire'
+  }, {
+    id: 'id-3',
+    name: 'name-3',
+    ameno: 'doge'
+  }];
+
+  iteratorList = this.listValue[Symbol.iterator]();
   datePipeCode: string = `
   //HTML
   startDate value = {{ startDate }}
@@ -58,6 +73,7 @@ export class PipeComponent implements AfterViewChecked {
 
   //COMPONENT
   rateValue: number = 0.67;`;
+
   jsonPipeCode: string = `
   //HTML
   jsonValue =  {{ jsonValue }}
@@ -72,6 +88,29 @@ export class PipeComponent implements AfterViewChecked {
       name: 'childName01'
     }
   };`;
+  listPipeCode: string = `
+  //HTML
+  <div>listValue =  {{ listValue | json }}</div>
+  <div>listValue with slice {{ jsonValue | slice:0:2 | json }}</div>
+
+  //COMPONENT
+  listValue: any[] = [{
+    id: 'id-1',
+    name: 'name-1',
+    ameno: 'dorime'
+  }, {
+    id: 'id-2',
+    name: 'name-2',
+    ameno: 'lancire'
+  }, {
+    id: 'id-3',
+    name: 'name-3',
+    ameno: 'doge'
+  }];`;
+  keyValuePipeCode: string =`
+  @for (item of listValue[0] | keyvalue; track $index){
+    <p>key: {{item.key}}, value: {{item.value}}</p>
+  }`;
 
 
   constructor(private highlightService: HighlightService
