@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { OutputChildComponent } from './output-child.component';
+import {OutputChildComponent} from './output-child.component';
 
 describe('OutputChildComponent', () => {
   let component: OutputChildComponent;
@@ -10,7 +10,7 @@ describe('OutputChildComponent', () => {
     await TestBed.configureTestingModule({
       imports: [OutputChildComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(OutputChildComponent);
     component = fixture.componentInstance;

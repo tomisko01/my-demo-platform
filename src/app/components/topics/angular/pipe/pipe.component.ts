@@ -24,7 +24,7 @@ export class PipeComponent implements AfterViewChecked {
     }
   };
 
-  listValue: {id: string, name: string, ameno: string}[] = [{
+  listValue: { id: string, name: string, ameno: string }[] = [{
     id: 'id-1',
     name: 'name-1',
     ameno: 'dorime'
@@ -72,7 +72,7 @@ export class PipeComponent implements AfterViewChecked {
   <div>rateValue as percent {{ rateValue | percent }}</div>
 
   //COMPONENT
-  rateValue: number = 0.67;`;
+  number = 0.67;`;
 
   jsonPipeCode: string = `
   //HTML
@@ -94,7 +94,7 @@ export class PipeComponent implements AfterViewChecked {
   <div>listValue with slice {{ jsonValue | slice:0:2 | json }}</div>
 
   //COMPONENT
-  listValue: any[] = [{
+  any[] = [{
     id: 'id-1',
     name: 'name-1',
     ameno: 'dorime'
@@ -107,7 +107,7 @@ export class PipeComponent implements AfterViewChecked {
     name: 'name-3',
     ameno: 'doge'
   }];`;
-  keyValuePipeCode: string =`
+  keyValuePipeCode: string = `
   @for (item of listValue[0] | keyvalue; track $index){
     <p>key: {{item.key}}, value: {{item.value}}</p>
   }`;

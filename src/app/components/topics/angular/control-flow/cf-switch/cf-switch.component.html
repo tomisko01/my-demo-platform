@@ -12,21 +12,21 @@
 <h4>Given object:</h4>
 <pre>
       <code class="language-ts">
-{{object1 | json}}
+{{ object1 | json }}
       </code>
     </pre>
 
 <h4>Result:</h4>
 
 <div>
-  @switch(object1.category){
-    @case("BEGINNER"){
+  @switch (object1.category) {
+    @case ("BEGINNER") {
       <div>BEGINNER</div>
     }
-    @case("INTERMEDIATE"){
+    @case ("INTERMEDIATE") {
       <div>INTERMEDIATE</div>
     }
-    @case("ADVANCED") {
+    @case ("ADVANCED") {
       <div>ADVANCED</div>
     }
   }
@@ -35,7 +35,7 @@
 <h4>Code:</h4>
 <pre>
       <code class="language-ts">
-{{switchCode}}
+{{ switchCode }}
       </code>
     </pre>
 
@@ -44,32 +44,32 @@
 <h4>Given list:</h4>
 <pre>
       <code class="language-ts">
-{{listToShow | json}}
+{{ listToShow | json }}
       </code>
     </pre>
 <h4>Result:</h4>
 
-@for(item of listToShow; track item.name){
-  <p> Object name: {{item.name}}
-  @switch(item.category){
-    @case("BEGINNER"){
-    <div>BEGINNER</div>
+@for (item of listToShow; track item.name) {
+  <p> Object name: {{ item.name }}
+    @switch (item.category) {
+      @case ("BEGINNER") {
+        <div>BEGINNER</div>
+      }
+      @case ("INTERMEDIATE") {
+        <div>INTERMEDIATE</div>
+      }
+      @case ("ADVANCED") {
+        <div>ADVANCED</div>
+      }
+      @default {
+        <div>UNKNOW</div>
+      }
     }
-    @case("INTERMEDIATE"){
-    <div>INTERMEDIATE</div>
     }
-    @case("ADVANCED") {
-    <div>ADVANCED</div>
-    }
-    @default {
-    <div>UNKNOW</div>
-    }
-  }
-}
 
 <h4>Code:</h4>
 <pre>
       <code class="language-ts">
-{{switchListCode}}
+{{ switchListCode }}
       </code>
     </pre>

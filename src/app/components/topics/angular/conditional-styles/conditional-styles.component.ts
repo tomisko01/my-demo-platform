@@ -6,7 +6,7 @@ import {HighlightService} from "@service/HighlightService";
   templateUrl: './conditional-styles.component.html',
   styleUrl: './conditional-styles.component.css'
 })
-export class ConditionalStylesComponent implements AfterViewChecked{
+export class ConditionalStylesComponent implements AfterViewChecked {
 
   githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/conditional-styles/conditional-styles.component.ts";
   private highlighted: Boolean = false;
@@ -16,13 +16,13 @@ export class ConditionalStylesComponent implements AfterViewChecked{
     type: 'BEGINNER'
   }
 
-  ngClassSimpleCode: string =`<div [ngClass]="'beginner'">
+  ngClassSimpleCode: string = `<div [ngClass]="'beginner'">
     Sample text with style
 </div>`;
-  ngClassListCode: string =`<div [ngClass]="'beginner border-1px'">
+  ngClassListCode: string = `<div [ngClass]="'beginner border-1px'">
   Sample text with list of styles
 </div>`;
-  ngClassList2Code: string =`<div [ngClass]="['beginner','border-1px']">
+  ngClassList2Code: string = `<div [ngClass]="['beginner','border-1px']">
   Sample text with list of styles
 </div>`;
   ngClassObjectCode: string = `<div [ngClass]="{'beginner': true, 'border-1px': true}">
@@ -52,7 +52,7 @@ conditionalDivClasses() {
 <div [style.text-decoration]="'underline'">
   {{objectToShow.desc}}
 </div>`;
-  ngStylesCode: string =`<div [ngStyle]="{'text-decoration': 'underline'}">
+  ngStylesCode: string = `<div [ngStyle]="{'text-decoration': 'underline'}">
   {{objectToShow.desc}}
 </div>`;
   ngStylesMethodCode: string = `

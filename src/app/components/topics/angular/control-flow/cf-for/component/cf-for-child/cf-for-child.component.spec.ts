@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CfForChildComponent } from './cf-for-child.component';
+import {CfForChildComponent} from './cf-for-child.component';
 
 describe('CfForChildComponent', () => {
   let component: CfForChildComponent;
@@ -10,8 +10,8 @@ describe('CfForChildComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [CfForChildComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(CfForChildComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

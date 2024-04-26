@@ -6,7 +6,7 @@ import {HighlightService} from "@service/HighlightService";
   templateUrl: './cf-if.component.html',
   styleUrl: './cf-if.component.css'
 })
-export class CfIfComponent implements AfterViewChecked{
+export class CfIfComponent implements AfterViewChecked {
   githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/control-flow/cf-if/cf-if.component.ts";
   highlighted: boolean = false
 
@@ -16,7 +16,7 @@ export class CfIfComponent implements AfterViewChecked{
     id: "id01"
   };
 
-  ifCode: string =`@if(objectToCheck){
+  ifCode: string = `@if(objectToCheck){
     <p>{{objectToCheck.id}}
 }`;
 

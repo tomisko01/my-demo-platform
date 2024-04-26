@@ -19,18 +19,22 @@ import {
   InterpolationSyntaxComponent
 } from "./components/topics/angular/interpolation-syntax/interpolation-syntax.component";
 import {HighlightService} from "@service/HighlightService";
-import { InputPropertySyntaxComponent } from './components/topics/angular/input-property-syntax/input-property-syntax.component';
-import { InputComponent } from './components/topics/angular/input/input.component';
-import { CardComponent } from './components/topics/angular/input/component/card/card.component';
+import {
+  InputPropertySyntaxComponent
+} from './components/topics/angular/input-property-syntax/input-property-syntax.component';
+import {InputComponent} from './components/topics/angular/input/input.component';
+import {CardComponent} from './components/topics/angular/input/component/card/card.component';
 import {OutputComponent} from "./components/topics/angular/output/output.component";
 import {OutputChildComponent} from "./components/topics/angular/output/component/output-child/output-child.component";
 import {CfForComponent} from "./components/topics/angular/control-flow/cf-for/cf-for.component";
-import { CfForChildComponent } from './components/topics/angular/control-flow/cf-for/component/cf-for-child/cf-for-child.component';
-import { CfIfComponent } from './components/topics/angular/control-flow/cf-if/cf-if.component';
-import { ConditionalStylesComponent } from './components/topics/angular/conditional-styles/conditional-styles.component';
-import { CfSwitchComponent } from './components/topics/angular/control-flow/cf-switch/cf-switch.component';
-import { NgContainerComponent } from './components/topics/angular/ng-container/ng-container.component';
-import { PipeComponent } from './components/topics/angular/pipe/pipe.component';
+import {
+  CfForChildComponent
+} from './components/topics/angular/control-flow/cf-for/component/cf-for-child/cf-for-child.component';
+import {CfIfComponent} from './components/topics/angular/control-flow/cf-if/cf-if.component';
+import {ConditionalStylesComponent} from './components/topics/angular/conditional-styles/conditional-styles.component';
+import {CfSwitchComponent} from './components/topics/angular/control-flow/cf-switch/cf-switch.component';
+import {NgContainerComponent} from './components/topics/angular/ng-container/ng-container.component';
+import {PipeComponent} from './components/topics/angular/pipe/pipe.component';
 
 
 const routes: Routes = [

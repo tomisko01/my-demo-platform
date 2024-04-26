@@ -14,7 +14,7 @@ export class NgContainerComponent implements AfterViewChecked {
       foo: "foo",
       bar: "bar"
     };
-  ngContainerCode: string =`<ng-container *ngIf="objectToCheck">
+  ngContainerCode: string = `<ng-container *ngIf="objectToCheck">
         <div> {{objectToCheck | json }}</div>
     </ng-container>`;
 

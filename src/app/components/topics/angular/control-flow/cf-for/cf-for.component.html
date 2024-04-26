@@ -9,100 +9,99 @@
 <h4>Given list:</h4>
 <pre>
       <code class="language-ts">
-{{objectList | json}}
+{{ objectList | json }}
       </code>
     </pre>
 
 <h3>Simple usage:</h3>
 <div>
-  @for(item of objectList; track item.id){
-  <app-cf-for-child
-    [id]="item.id"
-    [name]="item.name">
-  </app-cf-for-child>
-  <mat-divider></mat-divider>
+  @for (item of objectList; track item.id) {
+    <app-cf-for-child
+      [id]="item.id"
+      [name]="item.name">
+    </app-cf-for-child>
+    <mat-divider></mat-divider>
   }
 </div>
 <h4>Code:</h4>
 <pre>
       <code class="language-ts">
-{{forCode}}
+{{ forCode }}
       </code>
     </pre>
 
 <h3>Empty usage:</h3>
-@for(item of emptyList; track item.id){
+@for (item of emptyList; track item.id) {
   <app-cf-for-child
     [id]="item.id"
     [name]="item.name">
   </app-cf-for-child>
   <mat-divider></mat-divider>
-}
-@empty{
-<p>No elements found</p>
+} @empty {
+  <p>No elements found</p>
 }
 <h4>Code:</h4>
 <pre>
       <code class="language-ts">
-{{emptyCode}}
+{{ emptyCode }}
       </code>
     </pre>
 
 <h3>Index usage:</h3>
 
-@for(item of objectList; track item.id; let index = $index){
-<app-cf-for-child
-[id]="item.id"
-[name]="item.name"
-[index]="index" >
-</app-cf-for-child>
-<mat-divider></mat-divider>
+@for (item of objectList; track item.id; let index = $index) {
+  <app-cf-for-child
+    [id]="item.id"
+    [name]="item.name"
+    [index]="index">
+  </app-cf-for-child>
+  <mat-divider></mat-divider>
 }
 
 <h4>Code:</h4>
 <pre>
       <code class="language-ts">
-{{indexCode}}
+{{ indexCode }}
       </code>
     </pre>
 
 <h3>Count usage:</h3>
 
-@for(item of objectList; track item.id; let count = $count){
-<app-cf-for-child
-[id]="item.id"
-[name]="item.name">
-</app-cf-for-child>
-<p> Count value: {{count}}</p>
-<mat-divider></mat-divider>
+@for (item of objectList; track item.id; let count = $count) {
+  <app-cf-for-child
+    [id]="item.id"
+    [name]="item.name">
+  </app-cf-for-child>
+  <p> Count value: {{ count }}</p>
+  <mat-divider></mat-divider>
 }
 
 <h4>Code:</h4>
 <pre>
       <code class="language-ts">
-{{countCode}}
+{{ countCode }}
       </code>
     </pre>
 
 
 <h3>First,Last,Even,Odd usage:</h3>
 
-@for(item of objectList; track item.id; let first = $first; let last = $last;let even = $even;let odd = $odd){
-<app-cf-for-child
-[id]="item.id"
-[name]="item.name">
-</app-cf-for-child>
-<p> First value: {{first}}</p>
-<p> Last value: {{last}}</p>
-<p> Even value: {{even}}</p>
-<p> Odd value: {{odd}}</p>
-<mat-divider></mat-divider>
+@for (item of objectList; track item.id; let first = $first; let last = $last; let even = $even; let odd = $odd) {
+  <app-cf-for-child
+    [id]="item.id"
+    [name]="item.name">
+  </app-cf-for-child>
+  <p> First value: {{ first }}</p>
+  <p> Last value: {{ last }}</p>
+  <p> Even value: {{ even }}</p>
+  <p> Odd value: {{ odd }}</p>
+  <mat-divider></mat-divider>
 }
 
 <h4>Code:</h4>
 <pre>
       <code class="language-ts">
-{{firstCode}}
+{{ firstCode }}
       </code>
     </pre>
 
@@ -110,6 +109,6 @@
 <h4>Code:</h4>
 <pre>
       <code class="language-ts">
-{{upgradeCode}}
+{{ upgradeCode }}
       </code>
     </pre>

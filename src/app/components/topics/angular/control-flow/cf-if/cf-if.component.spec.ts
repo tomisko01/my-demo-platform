@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CfIfComponent } from './cf-if.component';
+import {CfIfComponent} from './cf-if.component';
 
 describe('CfIfComponent', () => {
   let component: CfIfComponent;
@@ -10,8 +10,8 @@ describe('CfIfComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [CfIfComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(CfIfComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

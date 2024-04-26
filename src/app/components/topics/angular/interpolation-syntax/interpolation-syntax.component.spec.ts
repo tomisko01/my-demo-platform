@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { InterpolationSyntaxComponent } from './interpolation-syntax.component';
+import {InterpolationSyntaxComponent} from './interpolation-syntax.component';
 
 describe('InterpolationSyntaxComponent', () => {
   let component: InterpolationSyntaxComponent;
@@ -8,9 +8,9 @@ describe('InterpolationSyntaxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InterpolationSyntaxComponent ]
+      declarations: [InterpolationSyntaxComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(InterpolationSyntaxComponent);
     component = fixture.componentInstance;

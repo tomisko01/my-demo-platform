@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ConditionalStylesComponent } from './conditional-styles.component';
+import {ConditionalStylesComponent} from './conditional-styles.component';
 
 describe('ConditionalStatesComponent', () => {
   let component: ConditionalStylesComponent;
@@ -10,7 +10,7 @@ describe('ConditionalStatesComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ConditionalStylesComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ConditionalStylesComponent);
     component = fixture.componentInstance;

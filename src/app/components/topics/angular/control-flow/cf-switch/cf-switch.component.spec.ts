@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CfSwitchComponent } from './cf-switch.component';
+import {CfSwitchComponent} from './cf-switch.component';
 
 describe('CfSwitchComponent', () => {
   let component: CfSwitchComponent;
@@ -10,8 +10,8 @@ describe('CfSwitchComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [CfSwitchComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(CfSwitchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

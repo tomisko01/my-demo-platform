@@ -7,44 +7,41 @@
 </h1>
 
 <h2>Object is present usage</h2>
-@if(objectToCheck){
-  <p>{{objectToCheck.id}}
-}
+@if (objectToCheck) {
+  <p>{{ objectToCheck.id }}
+    }
 
 <pre>
       <code class="language-ts">
-{{ifCode}}
+{{ ifCode }}
       </code>
     </pre>
 
 
 <h2>Object is missing usage</h2>
-@if(nullObjectToCheck){
-  <p>{{nullObjectToCheck.id}}
-}
-@else{
-<p>Object not found</p>
-}
-
-<pre>
-      <code class="language-ts">
-{{elseCode}}
-      </code>
-    </pre>
-
-<h2>Object is missing, else if usage</h2>
-@if(nullObjectToCheck){
-  <p>{{nullObjectToCheck.id}}
-}
-@else if(objectToCheck){
-  <p>Object found with id: {{objectToCheck.id}}</p>
-}
-@else{
+@if (nullObjectToCheck) {
+  <p>{{ nullObjectToCheck.id }}
+    } @else {
   <p>Object not found</p>
 }
 
 <pre>
       <code class="language-ts">
-{{elseIfCode}}
+{{ elseCode }}
+      </code>
+    </pre>
+
+<h2>Object is missing, else if usage</h2>
+@if (nullObjectToCheck) {
+  <p>{{ nullObjectToCheck.id }}
+    } @else if (objectToCheck) {
+  <p>Object found with id: {{ objectToCheck.id }}</p>
+} @else {
+  <p>Object not found</p>
+}
+
+<pre>
+      <code class="language-ts">
+{{ elseIfCode }}
       </code>
     </pre>
