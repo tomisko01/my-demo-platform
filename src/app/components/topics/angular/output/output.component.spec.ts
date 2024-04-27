@@ -1,5 +1,5 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
-
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {OutputComponent} from './output.component';
 
 describe('OutputComponent', () => {
@@ -8,7 +8,8 @@ describe('OutputComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [OutputComponent]
+      declarations: [OutputComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
       .compileComponents();
 

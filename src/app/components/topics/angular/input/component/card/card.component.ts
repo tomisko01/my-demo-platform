@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-
+//TODO RENAME IT
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',

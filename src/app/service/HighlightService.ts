@@ -13,7 +13,9 @@ import 'prismjs/components/prism-scss';
 declare var Prism: any;
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class HighlightService {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {

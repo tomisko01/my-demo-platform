@@ -1,5 +1,5 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
-
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {InterpolationSyntaxComponent} from './interpolation-syntax.component';
 
 describe('InterpolationSyntaxComponent', () => {
@@ -8,7 +8,8 @@ describe('InterpolationSyntaxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [InterpolationSyntaxComponent]
+      declarations: [InterpolationSyntaxComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
       .compileComponents();
 

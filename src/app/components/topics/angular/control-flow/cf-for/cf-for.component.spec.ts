@@ -1,5 +1,5 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
-
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {CfForComponent} from './cf-for.component';
 
 describe('CfForComponent', () => {
@@ -8,7 +8,8 @@ describe('CfForComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CfForComponent]
+      declarations: [CfForComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
       .compileComponents();
 

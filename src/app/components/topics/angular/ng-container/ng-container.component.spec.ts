@@ -1,5 +1,5 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
-
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {NgContainerComponent} from './ng-container.component';
 
 describe('NgContainerComponent', () => {
@@ -8,7 +8,8 @@ describe('NgContainerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NgContainerComponent]
+      declarations: [NgContainerComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
       .compileComponents();
 
