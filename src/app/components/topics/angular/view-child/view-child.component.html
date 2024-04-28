@@ -1,0 +1,72 @@
+<h1>How to use View Child
+  <button mat-icon-button
+          (click)="openGithubLink()"
+          aria-label="Open source code">
+    <mat-icon>open_in_new</mat-icon>
+  </button>
+</h1>
+
+<h4>Used to get reference to child components</h4>
+
+<h3>Get reference to child component</h3>
+<h4>We will receive reference to component</h4>
+
+<app-vc-child
+  [property]="propertyToPass">
+</app-vc-child>
+
+<div>
+  Child component received by &#64;ViewChild
+  <pre>{{ child | json }}</pre>
+</div>
+
+<mat-divider></mat-divider>
+<h4>If we have more child components, we will receive reference to first one</h4>
+
+<h3>Template reference</h3>
+<app-vc-child #childRef
+              [property]="propertyToPass">
+</app-vc-child>
+
+<app-vc-child #otherChildRef
+              [property]="propertyToOtherChildPass">
+</app-vc-child>
+
+<div>
+  Child component received by &#64;ViewChild with template reference
+  <pre>{{ childByTemplateRef | json }}</pre>
+  Child component received by &#64;ViewChild with template reference after view checked
+  <pre>{{ childByTemplateRefAfterViewChecked | json }}</pre>
+
+  Another child component
+  <pre>{{ otherChildByTemplateRef | json }}</pre>
+
+</div>
+<mat-divider></mat-divider>
+
+<h3>Element reference</h3>
+<h4>We will receive reference to DOM element</h4>
+<div #container>
+  <app-vc-child
+    [property]="propertyToPass">
+  </app-vc-child>
+</div>
+
+<div>
+  Child component received by &#64;ViewChild with element reference after view checked
+  <pre>{{ childElementRefAfterViewChecked | json }}</pre>
+  Here we receive a div element
+</div>
+<mat-divider></mat-divider>
+
+<h3>Get component as element reference</h3>
+<h4>We will receive reference to DOM element</h4>
+  <app-vc-child #childToShowAsElement
+    [property]="propertyToPass">
+  </app-vc-child>
+
+<div>
+  Child component received by &#64;ViewChild with element reference after view checked
+  <pre>{{ childComponentAsElementRefAfterViewChecked | json }}</pre>
+  Here we receive a child element as plain html element
+</div>

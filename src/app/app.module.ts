@@ -35,6 +35,8 @@ import {ConditionalStylesComponent} from './components/topics/angular/conditiona
 import {CfSwitchComponent} from './components/topics/angular/control-flow/cf-switch/cf-switch.component';
 import {NgContainerComponent} from './components/topics/angular/ng-container/ng-container.component';
 import {PipeComponent} from './components/topics/angular/pipe/pipe.component';
+import { ViewChildComponent } from './components/topics/angular/view-child/view-child.component';
+import { VcChildComponent } from './components/topics/angular/view-child/component/vc-child/vc-child.component';
 
 
 const routes: Routes = [
@@ -50,6 +52,7 @@ const routes: Routes = [
   {path: 'angular/cfSwitch', component: CfSwitchComponent},
   {path: 'angular/ngContainer', component: NgContainerComponent},
   {path: 'angular/pipe', component: PipeComponent},
+  {path: 'angular/viewChild', component: ViewChildComponent},
 ]
 
 
@@ -70,7 +73,9 @@ const routes: Routes = [
     ConditionalStylesComponent,
     CfSwitchComponent,
     NgContainerComponent,
-    PipeComponent
+    PipeComponent,
+    ViewChildComponent,
+    VcChildComponent
   ],
   imports: [
     BrowserModule,

@@ -52,6 +52,10 @@ export class TopicLinksConstants {
         {
           name: 'Pipes',
           routerLink: '/angular/pipe'
+        },
+        {
+          name: 'View Child',
+          routerLink: '/angular/viewChild'
         }
       ]
     },
