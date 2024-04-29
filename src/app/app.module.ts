@@ -23,7 +23,6 @@ import {
   InputPropertySyntaxComponent
 } from './components/topics/angular/input-property-syntax/input-property-syntax.component';
 import {InputComponent} from './components/topics/angular/input/input.component';
-import {CardComponent} from './components/topics/angular/input/component/card/card.component';
 import {OutputComponent} from "./components/topics/angular/output/output.component";
 import {OutputChildComponent} from "./components/topics/angular/output/component/output-child/output-child.component";
 import {CfForComponent} from "./components/topics/angular/control-flow/cf-for/cf-for.component";
@@ -37,6 +36,7 @@ import {NgContainerComponent} from './components/topics/angular/ng-container/ng-
 import {PipeComponent} from './components/topics/angular/pipe/pipe.component';
 import { ViewChildComponent } from './components/topics/angular/view-child/view-child.component';
 import { VcChildComponent } from './components/topics/angular/view-child/component/vc-child/vc-child.component';
+import {InputChildComponent} from "./components/topics/angular/input/component/input-child/input-child.component";
 
 
 const routes: Routes = [
@@ -64,7 +64,7 @@ const routes: Routes = [
     InterpolationSyntaxComponent,
     InputPropertySyntaxComponent,
     InputComponent,
-    CardComponent,
+    InputChildComponent,
     OutputComponent,
     OutputChildComponent,
     CfForComponent,
