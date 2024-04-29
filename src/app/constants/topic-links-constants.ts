@@ -30,16 +30,21 @@ export class TopicLinksConstants {
           routerLink: '/angular/output'
         },
         {
-          name: 'CF-@For',
-          routerLink: '/angular/cfFor'
-        },
-        {
-          name: 'CF-@If',
-          routerLink: '/angular/cfIf'
-        },
-        {
-          name: 'CF-@Switch',
-          routerLink: '/angular/cfSwitch'
+          name: 'Control flow',
+          children: [
+            {
+              name: 'CF-@For',
+              routerLink: '/angular/cfFor'
+            },
+            {
+              name: 'CF-@If',
+              routerLink: '/angular/cfIf'
+            },
+            {
+              name: 'CF-@Switch',
+              routerLink: '/angular/cfSwitch'
+            }
+          ]
         },
         {
           name: 'Conditional styles',
