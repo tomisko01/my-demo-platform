@@ -5,6 +5,7 @@
     "baseUrl": "./",
     "paths": {
       "@service/*": ["src/app/service/*"],
+      "@angularTopic/*" : ["src/app/components/topics/angular/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

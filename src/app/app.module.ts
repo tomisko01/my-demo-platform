@@ -14,29 +14,23 @@ import {MatTreeModule} from "@angular/material/tree";
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTabsModule} from '@angular/material/tabs';
 import {HomeComponent} from "./components/home/home.component";
-import {NewProjectComponent} from "./components/topics/angular/new-project/new-project.component";
-import {
-  InterpolationSyntaxComponent
-} from "./components/topics/angular/interpolation-syntax/interpolation-syntax.component";
+import {InterpolationSyntaxComponent} from "@angularTopic/interpolation-syntax/interpolation-syntax.component";
 import {HighlightService} from "@service/HighlightService";
-import {
-  InputPropertySyntaxComponent
-} from './components/topics/angular/input-property-syntax/input-property-syntax.component';
-import {InputComponent} from './components/topics/angular/input/input.component';
-import {OutputComponent} from "./components/topics/angular/output/output.component";
-import {OutputChildComponent} from "./components/topics/angular/output/component/output-child/output-child.component";
-import {CfForComponent} from "./components/topics/angular/control-flow/cf-for/cf-for.component";
-import {
-  CfForChildComponent
-} from './components/topics/angular/control-flow/cf-for/component/cf-for-child/cf-for-child.component';
-import {CfIfComponent} from './components/topics/angular/control-flow/cf-if/cf-if.component';
-import {ConditionalStylesComponent} from './components/topics/angular/conditional-styles/conditional-styles.component';
-import {CfSwitchComponent} from './components/topics/angular/control-flow/cf-switch/cf-switch.component';
-import {NgContainerComponent} from './components/topics/angular/ng-container/ng-container.component';
-import {PipeComponent} from './components/topics/angular/pipe/pipe.component';
-import { ViewChildComponent } from './components/topics/angular/view-child/view-child.component';
-import { VcChildComponent } from './components/topics/angular/view-child/component/vc-child/vc-child.component';
-import {InputChildComponent} from "./components/topics/angular/input/component/input-child/input-child.component";
+import {InputPropertySyntaxComponent} from '@angularTopic/input-property-syntax/input-property-syntax.component';
+import {InputComponent} from '@angularTopic/input/input.component';
+import {OutputComponent} from "@angularTopic/output/output.component";
+import {OutputChildComponent} from "@angularTopic/output/component/output-child/output-child.component";
+import {CfForComponent} from "@angularTopic/control-flow/cf-for/cf-for.component";
+import {CfForChildComponent} from '@angularTopic/control-flow/cf-for/component/cf-for-child/cf-for-child.component';
+import {CfIfComponent} from '@angularTopic/control-flow/cf-if/cf-if.component';
+import {ConditionalStylesComponent} from '@angularTopic/conditional-styles/conditional-styles.component';
+import {CfSwitchComponent} from '@angularTopic/control-flow/cf-switch/cf-switch.component';
+import {NgContainerComponent} from '@angularTopic/ng-container/ng-container.component';
+import {PipeComponent} from '@angularTopic/pipe/pipe.component';
+import {ViewChildComponent} from '@angularTopic/view-child/view-child.component';
+import {VcChildComponent} from '@angularTopic/view-child/component/vc-child/vc-child.component';
+import {InputChildComponent} from "@angularTopic/input/component/input-child/input-child.component";
+import {NewProjectComponent} from "@angularTopic/new-project/new-project.component";
 
 
 const routes: Routes = [
