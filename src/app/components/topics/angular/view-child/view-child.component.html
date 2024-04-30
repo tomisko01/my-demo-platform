@@ -17,7 +17,9 @@
 
 <div>
   Child component received by &#64;ViewChild
-  <pre>{{ child | json }}</pre>
+  <code>
+    <pre class="language-ts">{{ child | json }}</pre>
+  </code>
 </div>
 
 <mat-divider></mat-divider>
@@ -34,13 +36,14 @@
 
 <div>
   Child component received by &#64;ViewChild with template reference
-  <pre>{{ childByTemplateRef | json }}</pre>
-  Child component received by &#64;ViewChild with template reference after view checked
-  <pre>{{ childByTemplateRefAfterViewChecked | json }}</pre>
+  <code>
+    <pre class="language-ts">{{ childByTemplateRef | json }}</pre>
+  </code>
 
   Another child component
-  <pre>{{ otherChildByTemplateRef | json }}</pre>
-
+  <code>
+    <pre class="language-ts">{{ otherChildByTemplateRef | json }}</pre>
+  </code>
 </div>
 <mat-divider></mat-divider>
 
@@ -54,19 +57,23 @@
 
 <div>
   Child component received by &#64;ViewChild with element reference after view checked
-  <pre>{{ childElementRefAfterViewChecked | json }}</pre>
+  <code>
+    <pre class="language-ts">{{ childElementRef | json }}</pre>
+  </code>
   Here we receive a div element
 </div>
 <mat-divider></mat-divider>
 
 <h3>Get component as element reference</h3>
 <h4>We will receive reference to DOM element</h4>
-  <app-vc-child #childToShowAsElement
-    [property]="propertyToPass">
-  </app-vc-child>
+<app-vc-child #childToShowAsElement
+              [property]="propertyToPass">
+</app-vc-child>
 
 <div>
   Child component received by &#64;ViewChild with element reference after view checked
-  <pre>{{ childComponentAsElementRefAfterViewChecked | json }}</pre>
+  <code>
+    <pre class="language-ts">{{ childComponentAsElementRef | json }}</pre>
+  </code>
   Here we receive a child element as plain html element
 </div>

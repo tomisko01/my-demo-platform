@@ -1,13 +1,21 @@
-import {AfterViewChecked, Component, ElementRef, ViewChild} from '@angular/core';
+import {
+  AfterContentChecked,
+  AfterViewChecked,
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  ViewChild
+} from '@angular/core';
 import {HighlightService} from "@service/HighlightService";
 import {VcChildComponent} from "./component/vc-child/vc-child.component";
 
 @Component({
   selector: 'app-view-child',
   templateUrl: './view-child.component.html',
-  styleUrl: './view-child.component.css'
+  styleUrl: './view-child.component.css',
 })
-export class ViewChildComponent implements AfterViewChecked {
+export class ViewChildComponent implements  AfterContentChecked {
 
   githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/view-child/view-child.component.ts";
   private highlighted: Boolean = false;
@@ -24,10 +32,6 @@ export class ViewChildComponent implements AfterViewChecked {
     ameno: 'lancire'
   }
 
-  childByTemplateRefAfterViewChecked: any;
-  childElementRefAfterViewChecked: any;
-  childComponentAsElementRefAfterViewChecked: any;
-
   @ViewChild(VcChildComponent)
   child: VcChildComponent;
 
@@ -43,21 +47,21 @@ export class ViewChildComponent implements AfterViewChecked {
   @ViewChild('childToShowAsElement', {read: ElementRef})
   childComponentAsElementRef: ElementRef;
 
-  constructor(private highlightService: HighlightService
+  constructor(private highlightService: HighlightService,
+              private ref: ChangeDetectorRef
   ) {
-  }
-
-  ngAfterViewChecked(): void {
-    if (!this.highlighted) {
-      this.highlightService.highlightAll();
-      this.highlighted = true;
-    }
-    this.childByTemplateRefAfterViewChecked = this.childByTemplateRef;
-    this.childElementRefAfterViewChecked = this.childElementRef;
-    this.childComponentAsElementRefAfterViewChecked = this.childComponentAsElementRef;
   }
 
   openGithubLink(): void {
     window.open(this.githubLink);
+  }
+
+  ngAfterContentChecked(): void {
+    this.ref.detectChanges();
+
+    if (!this.highlighted) {
+      this.highlightService.highlightAll();
+      this.highlighted = true;
+    }
   }
 }
