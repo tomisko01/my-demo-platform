@@ -1,12 +1,4 @@
-import {
-  AfterContentChecked,
-  AfterViewChecked,
-  AfterViewInit,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  ViewChild
-} from '@angular/core';
+import {AfterContentChecked, ChangeDetectorRef, Component, ElementRef, ViewChild} from '@angular/core';
 import {HighlightService} from "@service/HighlightService";
 import {VcChildComponent} from "./component/vc-child/vc-child.component";
 
@@ -15,7 +7,7 @@ import {VcChildComponent} from "./component/vc-child/vc-child.component";
   templateUrl: './view-child.component.html',
   styleUrl: './view-child.component.css',
 })
-export class ViewChildComponent implements  AfterContentChecked {
+export class ViewChildComponent implements AfterContentChecked {
 
   githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/view-child/view-child.component.ts";
   private highlighted: Boolean = false;

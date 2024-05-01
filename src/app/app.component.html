@@ -19,6 +19,8 @@
                [fixedTopGap]="60"
                mode="side"
                opened>
+    <input (keyup)="search(searchInput.value)"
+           #searchInput>
     <div class="side-nav-items">
       <mat-tree
         class="topic-tree mat-elevation-z4"

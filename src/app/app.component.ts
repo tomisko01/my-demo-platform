@@ -5,6 +5,7 @@ import {MatTreeNestedDataSource} from "@angular/material/tree";
 import {NestedTreeControl} from "@angular/cdk/tree";
 import {TopicLinksConstants} from "./constants/topic-links-constants";
 import {TopicNode} from "./typings";
+import * as _ from "lodash";
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,7 @@ export class AppComponent implements OnInit {
               private domSanitizer: DomSanitizer,
               private constants: TopicLinksConstants
   ) {
-    this.nestedDataSource.data = constants.TREE_DATA;
+    this.nestedDataSource.data = _.cloneDeep(constants.TREE_DATA);
 
     this.matIconRegistry.addSvgIcon(
       'github_mark',
@@ -41,5 +42,15 @@ export class AppComponent implements OnInit {
 
   isLeafWithLink(index: number, node: TopicNode): boolean {
     return !node?.children && !!node.routerLink;
+  }
+
+  search(value: string) {
+    if(value) {
+      console.log(value);
+    }
+
+
+    this.nestedDataSource.data = _.cloneDeep(this.constants.TREE_DATA);
+
   }
 }
