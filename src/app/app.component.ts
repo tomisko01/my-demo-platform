@@ -45,12 +45,28 @@ export class AppComponent implements OnInit {
   }
 
   search(value: string) {
-    if(value) {
-      console.log(value);
+
+    if (value) {
+      let topics: TopicNode[] = _.cloneDeep(this.constants.TREE_DATA);
+      this.nestedDataSource.data = _.filter(topics, (x: TopicNode) => this.findNode(x, value));
+
+
+    } else {
+      this.nestedDataSource.data = _.cloneDeep(this.constants.TREE_DATA);
     }
+  }
 
+  findNode(node: TopicNode, searchText: string): boolean {
+    if (node.name.toLowerCase().includes(searchText.toLowerCase())) {
+      return true;
+    } else if (!_.isNil(node.children) && !_.isEmpty(node.children)) {
+      return this.findNodeFromChildren(node.children, searchText);
+    }
+    return false;
+  }
 
-    this.nestedDataSource.data = _.cloneDeep(this.constants.TREE_DATA);
-
+  private findNodeFromChildren(children: TopicNode[], searchText: string): boolean {
+    let topicNodes = _.filter(children, (childrenNode) => this.findNode(childrenNode, searchText));
+    return !_.isEmpty(topicNodes);
   }
 }
