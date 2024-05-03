@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
               private constants: TopicLinksConstants
   ) {
     this.nestedDataSource.data = _.cloneDeep(constants.TREE_DATA);
+    this.nestedTreeControl.dataNodes = _.cloneDeep(constants.TREE_DATA);
 
     this.matIconRegistry.addSvgIcon(
       'github_mark',
@@ -48,25 +49,38 @@ export class AppComponent implements OnInit {
 
     if (value) {
       let topics: TopicNode[] = _.cloneDeep(this.constants.TREE_DATA);
-      this.nestedDataSource.data = _.filter(topics, (x: TopicNode) => this.findNode(x, value));
+      let foundNodes = this.searchNodes(topics, value);
+      this.nestedDataSource.data = foundNodes;
+      this.nestedTreeControl.dataNodes = foundNodes;
 
+      this.nestedTreeControl.expandAll();
 
     } else {
       this.nestedDataSource.data = _.cloneDeep(this.constants.TREE_DATA);
     }
   }
 
+  private searchNodes(topics: TopicNode[], value: string) {
+    return _.filter(topics, (node: TopicNode) => this.findNode(node, value));
+  }
+
   findNode(node: TopicNode, searchText: string): boolean {
     if (node.name.toLowerCase().includes(searchText.toLowerCase())) {
       return true;
     } else if (!_.isNil(node.children) && !_.isEmpty(node.children)) {
-      return this.findNodeFromChildren(node.children, searchText);
+
+      let children = this.findNodeFromChildren(node.children, searchText);
+      if (!_.isNil(children) && !_.isEmpty(children)) {
+        node.children = children;
+        return true;
+      }
+      return false;
     }
     return false;
   }
 
-  private findNodeFromChildren(children: TopicNode[], searchText: string): boolean {
+  private findNodeFromChildren(children: TopicNode[], searchText: string): TopicNode[] {
     let topicNodes = _.filter(children, (childrenNode) => this.findNode(childrenNode, searchText));
-    return !_.isEmpty(topicNodes);
+    return topicNodes;
   }
 }
