@@ -1,0 +1,22 @@
+<h1>How to use &#64;ViewChildren
+  <button mat-icon-button
+          (click)="openGithubLink()"
+          aria-label="Open source code">
+    <mat-icon>open_in_new</mat-icon>
+  </button>
+</h1>
+
+<h4>Used to get reference to child components</h4>
+
+<h3>Get reference to child list components</h3>
+<h4>We will receive references to components</h4>
+
+<button (click)="onAddCourseClick()">
+  Add course
+</button>
+@for (id of objectList; track $index){
+<app-view-children-child
+ [id] = id
+>
+</app-view-children-child>
+}
