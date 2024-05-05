@@ -11,6 +11,7 @@ import {HighlightService} from "@service/HighlightService";
 import {
   ViewChildrenChildComponent
 } from "@angularTopic/view-children/component/view-children-child/view-children-child.component";
+import * as _ from "lodash";
 
 @Component({
   selector: 'app-view-children',
@@ -30,6 +31,32 @@ export class ViewChildrenComponent implements AfterViewChecked, AfterViewInit {
 
   objectList: string[] = ['id1', 'id2'];
 
+  objectListToAddNew: string[] = ['id3', 'id4'];
+
+  childList: any;
+
+  firstChild: any;
+
+  changes: any;
+
+  viewChildrenCode: string = `
+  @ViewChildren(ViewChildrenChildComponent)
+  children: QueryList<ViewChildrenChildComponent>;`;
+
+  getFirstChildCode: string = `
+  this.children.first`
+
+  subscribeToChangesCode: string = `
+  this.children.changes.subscribe(
+    child => {
+      this.changes = child.toArray();
+    }
+  )`;
+
+  viewChildrenAsElementRefCode: string = `
+  @ViewChildren(ViewChildrenChildComponent, {read: ElementRef})
+  childrenElementRef: QueryList<ElementRef>;`;
+
   constructor(private highlightService: HighlightService,
               private ref: ChangeDetectorRef
   ) {
@@ -46,25 +73,33 @@ export class ViewChildrenComponent implements AfterViewChecked, AfterViewInit {
       this.highlightService.highlightAll();
       this.highlighted = true;
     }
+
   }
 
   ngAfterViewInit(): void {
     console.log('ViewChildren as QueryList :');
     console.log(this.children);
+    this.childList = _.cloneDeep(this.children);
 
     console.log('First child of ViewChildren as QueryList:');
     console.log(this.children.first);
+    this.firstChild = _.cloneDeep(this.children.first);
 
     console.log('Subscribe on changes:');
     this.children.changes.subscribe(
-      child => console.log(child)
+      child => {
+        this.changes = child.toArray();
+      }
     )
+
+    this.highlightService.highlightAll();
+
 
     console.log('ViewChildren as ElementRef :');
     console.log(this.childrenElementRef);
   }
 
   onAddCourseClick() {
-    this.objectList.push('id3');
+    this.objectListToAddNew.push('id_NEW');
   }
 }

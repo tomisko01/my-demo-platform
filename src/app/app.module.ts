@@ -31,8 +31,11 @@ import {ViewChildComponent} from '@angularTopic/view-child/view-child.component'
 import {VcChildComponent} from '@angularTopic/view-child/component/vc-child/vc-child.component';
 import {InputChildComponent} from "@angularTopic/input/component/input-child/input-child.component";
 import {NewProjectComponent} from "@angularTopic/new-project/new-project.component";
-import { ViewChildrenComponent } from '@angularTopic/view-children/view-children.component';
-import { ViewChildrenChildComponent } from '@angularTopic/view-children/component/view-children-child/view-children-child.component';
+import {ViewChildrenComponent} from '@angularTopic/view-children/view-children.component';
+import {
+  ViewChildrenChildComponent
+} from '@angularTopic/view-children/component/view-children-child/view-children-child.component';
+import {MatTooltip} from "@angular/material/tooltip";
 
 
 const routes: Routes = [
@@ -88,7 +91,8 @@ const routes: Routes = [
     MatTabsModule,
     FormsModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    MatTooltip
   ],
   providers: [
     HighlightService

@@ -4,19 +4,94 @@
           aria-label="Open source code">
     <mat-icon>open_in_new</mat-icon>
   </button>
+  <mat-icon matTooltip="More examples in console.log"
+  >info</mat-icon>
 </h1>
 
 <h4>Used to get reference to child components</h4>
 
-<h3>Get reference to child list components</h3>
+<h3>Get reference to children components</h3>
 <h4>We will receive references to components</h4>
+
+@for (id of objectList; track $index) {
+  <app-view-children-child
+    [id]=id>
+  </app-view-children-child>
+}
+
+<h4>Code:</h4>
+<pre>
+  <code class="language-ts">
+    {{ viewChildrenCode }}
+  </code>
+</pre>
+
+<div>
+  Children components received by &#64;ViewChildren
+  <code>
+    <pre class="language-ts">{{ childList | json }}</pre>
+  </code>
+</div>
+
+<mat-divider></mat-divider>
+
+<h3>Get reference to first child component</h3>
+<h4>Code:</h4>
+<pre>
+  <code class="language-ts">
+    {{ getFirstChildCode }}
+  </code>
+</pre>
+
+<div>
+  First child component received by &#64;ViewChildren
+  <code>
+    <pre class="language-ts">{{ firstChild | json }}</pre>
+  </code>
+</div>
+
+<mat-divider></mat-divider>
+
+<h3>Get changes on children list</h3>
+
+@for (id of objectListToAddNew; track $index) {
+  <app-view-children-child
+    [id]=id>
+  </app-view-children-child>
+}
 
 <button (click)="onAddCourseClick()">
   Add course
 </button>
-@for (id of objectList; track $index){
-<app-view-children-child
- [id] = id
->
-</app-view-children-child>
+
+@if (changes) {
+  <div>
+    Changes received by subscribe to changes
+    <code>
+      <pre class="language-ts">{{ changes | json }}</pre>
+    </code>
+  </div>
 }
+
+<h4>Code:</h4>
+<pre>
+  <code class="language-ts">
+    {{ subscribeToChangesCode }}
+  </code>
+</pre>
+
+<mat-divider></mat-divider>
+
+<h3>Get reference to children components as elementRef</h3>
+<h4>Code:</h4>
+<pre>
+  <code class="language-ts">
+    {{ viewChildrenAsElementRefCode }}
+  </code>
+</pre>
+<div>
+  Children components received by &#64;ViewChildren as ElementRef
+  <code>
+    <pre class="language-ts">{{ childrenElementRef | json }}</pre>
+  </code>
+</div>
