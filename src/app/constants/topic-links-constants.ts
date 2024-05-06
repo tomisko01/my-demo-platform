@@ -65,6 +65,10 @@ export class TopicLinksConstants {
         {
           name: 'View Children',
           routerLink: '/angular/viewChildren'
+        },
+        {
+          name: 'Content Projection',
+          routerLink: '/angular/contentProjection'
         }
       ]
     },

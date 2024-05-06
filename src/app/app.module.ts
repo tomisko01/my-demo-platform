@@ -36,6 +36,9 @@ import {
   ViewChildrenChildComponent
 } from '@angularTopic/view-children/component/view-children-child/view-children-child.component';
 import {MatTooltip} from "@angular/material/tooltip";
+import { ContentProjectionComponent } from './components/topics/angular/content-projection/content-projection.component';
+import { ContentProjectionChildComponent } from './components/topics/angular/content-projection/component/content-projection-child/content-projection-child.component';
+import {NgOptimizedImage} from "@angular/common";
 
 
 const routes: Routes = [
@@ -53,6 +56,7 @@ const routes: Routes = [
   {path: 'angular/pipe', component: PipeComponent},
   {path: 'angular/viewChild', component: ViewChildComponent},
   {path: 'angular/viewChildren', component: ViewChildrenComponent},
+  {path: 'angular/contentProjection', component: ContentProjectionComponent},
 ]
 
 
@@ -77,7 +81,9 @@ const routes: Routes = [
     ViewChildComponent,
     VcChildComponent,
     ViewChildrenComponent,
-    ViewChildrenChildComponent
+    ViewChildrenChildComponent,
+    ContentProjectionComponent,
+    ContentProjectionChildComponent
   ],
   imports: [
     BrowserModule,
@@ -92,7 +98,8 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    MatTooltip
+    MatTooltip,
+    NgOptimizedImage
   ],
   providers: [
     HighlightService

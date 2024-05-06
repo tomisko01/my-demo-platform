@@ -1,0 +1,55 @@
+<h1>How to use Content projection
+  <button mat-icon-button
+          (click)="openGithubLink()"
+          aria-label="Open source code">
+    <mat-icon>open_in_new</mat-icon>
+  </button>
+</h1>
+
+<h3>Usage of content projection:</h3>
+<h4>If your component includes an ng-content element without a select attribute, that instance receives all projected components that do not match any of the other ng-content elements.</h4>
+
+<app-content-projection-child>
+  <p>Text to project in child</p>
+</app-content-projection-child>
+
+<h4>Code:</h4>
+<pre>
+  <code class="language-markup">
+    {{ projectionCode }}
+  </code>
+</pre>
+
+<mat-divider></mat-divider>
+
+<h3>Multiple element projection</h3>
+
+<app-content-projection-child>
+  <p>Text to project in child</p>
+</app-content-projection-child>
+<app-content-projection-child>
+  <p>Another text to project in child</p>
+</app-content-projection-child>
+
+<h4>Code:</h4>
+<pre>
+  <code class="language-markup">
+    {{ projectionMultipleCode }}
+  </code>
+</pre>
+
+<mat-divider></mat-divider>
+
+<h3>Project by element type or css class</h3>
+<app-content-projection-child>
+  <img ngSrc="assets/img/dark-souls-solaire-praise-the-sun-sticker.jpg" height="100" width="100">
+  <p class="class-to-project">Text with class to project in child</p>
+  <div>Div inside parent element</div>
+</app-content-projection-child>
+
+<h4>Code:</h4>
+<pre>
+  <code class="language-markup">
+    {{ projectionBySelectCode }}
+  </code>
+</pre>
