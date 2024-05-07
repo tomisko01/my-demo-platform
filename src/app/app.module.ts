@@ -36,9 +36,12 @@ import {
   ViewChildrenChildComponent
 } from '@angularTopic/view-children/component/view-children-child/view-children-child.component';
 import {MatTooltip} from "@angular/material/tooltip";
-import { ContentProjectionComponent } from './components/topics/angular/content-projection/content-projection.component';
-import { ContentProjectionChildComponent } from './components/topics/angular/content-projection/component/content-projection-child/content-projection-child.component';
+import { ContentProjectionComponent } from '@angularTopic/content-projection/content-projection.component';
+import { ContentProjectionChildComponent } from '@angularTopic/content-projection/component/content-projection-child/content-projection-child.component';
 import {NgOptimizedImage} from "@angular/common";
+import { ContentChildComponent } from '@angularTopic/content-child/content-child.component';
+import { ContentChildChildComponent } from '@angularTopic/content-child/component/content-child-child/content-child-child.component';
+import { ContentChildImageComponent } from './components/topics/angular/content-child/component/content-child-image/content-child-image.component';
 
 
 const routes: Routes = [
@@ -57,6 +60,7 @@ const routes: Routes = [
   {path: 'angular/viewChild', component: ViewChildComponent},
   {path: 'angular/viewChildren', component: ViewChildrenComponent},
   {path: 'angular/contentProjection', component: ContentProjectionComponent},
+  {path: 'angular/contentChild', component: ContentChildComponent},
 ]
 
 
@@ -83,7 +87,10 @@ const routes: Routes = [
     ViewChildrenComponent,
     ViewChildrenChildComponent,
     ContentProjectionComponent,
-    ContentProjectionChildComponent
+    ContentProjectionChildComponent,
+    ContentChildComponent,
+    ContentChildChildComponent,
+    ContentChildImageComponent
   ],
   imports: [
     BrowserModule,
