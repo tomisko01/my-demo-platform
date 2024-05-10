@@ -1,0 +1,38 @@
+<h1>How to use ng-template
+  <button mat-icon-button
+          (click)="openGithubLink()"
+          aria-label="Open source code">
+    <mat-icon>open_in_new</mat-icon>
+  </button>
+</h1>
+
+<h3>Template usage</h3>
+
+<ng-template #blankImage let-objectName="name">
+  <p> {{ objectName }} has no image yet.</p>
+  <img src="assets/img/dark-souls-solaire-praise-the-sun-sticker.jpg">
+</ng-template>
+
+<div *ngTemplateOutlet="blankImage; context:{name: 'contextName'}">
+
+</div>
+
+<h4>Code:</h4>
+<pre>
+  <code class="language-markup">
+    {{ ngTemplateCode }}
+  </code>
+</pre>
+
+<h3>Template usage with different context and ng-container</h3>
+
+<ng-container *ngTemplateOutlet="blankImage; context:{name: 'secondInstance'}">
+
+</ng-container>
+
+<h4>Code:</h4>
+<pre>
+  <code class="language-markup">
+    {{ ngTemplateContainerCode }}
+  </code>
+</pre>

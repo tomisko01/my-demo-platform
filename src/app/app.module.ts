@@ -42,6 +42,7 @@ import {NgOptimizedImage} from "@angular/common";
 import { ContentChildComponent } from '@angularTopic/content-child/content-child.component';
 import { ContentChildChildComponent } from '@angularTopic/content-child/component/content-child-child/content-child-child.component';
 import { ContentChildImageComponent } from './components/topics/angular/content-child/component/content-child-image/content-child-image.component';
+import { NgTemplateComponent } from './components/topics/angular/ng-template/ng-template.component';
 
 
 const routes: Routes = [
@@ -61,6 +62,7 @@ const routes: Routes = [
   {path: 'angular/viewChildren', component: ViewChildrenComponent},
   {path: 'angular/contentProjection', component: ContentProjectionComponent},
   {path: 'angular/contentChild', component: ContentChildComponent},
+  {path: 'angular/ngTemplate', component: NgTemplateComponent},
 ]
 
 
@@ -90,7 +92,8 @@ const routes: Routes = [
     ContentProjectionChildComponent,
     ContentChildComponent,
     ContentChildChildComponent,
-    ContentChildImageComponent
+    ContentChildImageComponent,
+    NgTemplateComponent
   ],
   imports: [
     BrowserModule,

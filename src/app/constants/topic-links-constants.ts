@@ -73,7 +73,11 @@ export class TopicLinksConstants {
         {
           name: 'Content Child',
           routerLink: '/angular/contentChild'
-        }
+        },
+        {
+          name: 'Ng-template',
+          routerLink: '/angular/ngTemplate'
+        },
       ]
     },
     {
