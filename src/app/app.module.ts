@@ -43,6 +43,7 @@ import { ContentChildComponent } from '@angularTopic/content-child/content-child
 import { ContentChildChildComponent } from '@angularTopic/content-child/component/content-child-child/content-child-child.component';
 import { ContentChildImageComponent } from './components/topics/angular/content-child/component/content-child-image/content-child-image.component';
 import { NgTemplateComponent } from './components/topics/angular/ng-template/ng-template.component';
+import { NgTemplateChildComponent } from './components/topics/angular/ng-template/component/ng-template-child/ng-template-child.component';
 
 
 const routes: Routes = [
@@ -93,7 +94,8 @@ const routes: Routes = [
     ContentChildComponent,
     ContentChildChildComponent,
     ContentChildImageComponent,
-    NgTemplateComponent
+    NgTemplateComponent,
+    NgTemplateChildComponent
   ],
   imports: [
     BrowserModule,

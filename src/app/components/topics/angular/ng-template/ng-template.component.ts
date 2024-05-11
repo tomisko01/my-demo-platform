@@ -18,10 +18,31 @@ export class NgTemplateComponent implements AfterViewChecked{
 
 <div *ngTemplateOutlet="blankImage; context:{name: 'contextName'}">
 </div>`;
+
   ngTemplateContainerCode: string = `
 <ng-container *ngTemplateOutlet="blankImage; context:{name: 'secondInstance'}">
 
 </ng-container>`;
+
+  templateAsInput: string = `
+  //HTML
+<ng-template #blankImage let-objectName="name">
+  <p> {{ objectName }} has no image yet.</p>
+  <img src="assets/img/dark-souls-solaire-praise-the-sun-sticker.jpg">
+</ng-template>
+
+<app-ng-template-child
+  [noImageTemplate]="blankImage">
+</app-ng-template-child>
+
+  //CHILD COMPONENT
+  @Input()
+  noImageTemplate: TemplateRef<any>;
+
+  //CHILD HTML
+<ng-container *ngTemplateOutlet="noImageTemplate; context: {name: 'Name from child'}">
+</ng-container>
+`;
 
   constructor(private highlightService: HighlightService
   ) {
