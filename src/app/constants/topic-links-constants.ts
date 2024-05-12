@@ -78,6 +78,13 @@ export class TopicLinksConstants {
           name: 'Ng-template',
           routerLink: '/angular/ngTemplate'
         },
+        {
+          name: 'Directive',
+          children: [{
+            name: 'HighlightedDirective',
+            routerLink: '/angular/highlightedDirective'
+          }]
+        }
       ]
     },
     {

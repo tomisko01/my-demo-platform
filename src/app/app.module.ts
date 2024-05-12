@@ -44,6 +44,8 @@ import { ContentChildChildComponent } from '@angularTopic/content-child/componen
 import { ContentChildImageComponent } from './components/topics/angular/content-child/component/content-child-image/content-child-image.component';
 import { NgTemplateComponent } from './components/topics/angular/ng-template/ng-template.component';
 import { NgTemplateChildComponent } from './components/topics/angular/ng-template/component/ng-template-child/ng-template-child.component';
+import { HighlightedCComponent } from './components/topics/angular/directive/component/highlighted-c/highlighted-c.component';
+import {HighlightedDirective} from "@angularTopic/directive/highlighted.directive";
 
 
 const routes: Routes = [
@@ -64,6 +66,7 @@ const routes: Routes = [
   {path: 'angular/contentProjection', component: ContentProjectionComponent},
   {path: 'angular/contentChild', component: ContentChildComponent},
   {path: 'angular/ngTemplate', component: NgTemplateComponent},
+  {path: 'angular/highlightedDirective', component: HighlightedCComponent},
 ]
 
 
@@ -95,7 +98,9 @@ const routes: Routes = [
     ContentChildChildComponent,
     ContentChildImageComponent,
     NgTemplateComponent,
-    NgTemplateChildComponent
+    NgTemplateChildComponent,
+    HighlightedCComponent,
+    HighlightedDirective
   ],
   imports: [
     BrowserModule,
