@@ -25,7 +25,8 @@
 
 <h4>Simple usage:</h4>
 
-<div appHighlighted>
+<div appHighlighted
+     (toggleHighlight)="onToggle($event)">
   Dori me <br/>
   Interimo, adapare <br/>
   Dori me <br/>
@@ -68,5 +69,12 @@
 <pre>
   <code class="language-ts">
     {{ directiveListenerCode }}
+  </code>
+</pre>
+
+<h3>Send an event from directive</h3>
+<pre>
+  <code class="language-ts">
+    {{ directiveSendEventCode }}
   </code>
 </pre>

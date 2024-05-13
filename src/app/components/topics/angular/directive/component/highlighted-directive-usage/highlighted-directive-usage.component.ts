@@ -62,6 +62,17 @@ export class HighlightedDirectiveUsageComponent implements AfterViewChecked {
     this.isHighlighted = false;
   }`;
 
+  directiveSendEventCode: string = `
+  //DIRECTIVE
+  @Output()
+  toggleHighlight: EventEmitter<boolean> = new EventEmitter();
+  ...
+  this.toggleHighlight.emit(this.isHighlighted);
+
+  //HTML
+  <div appHighlighted
+     (toggleHighlight)="onToggle($event)">`;
+
   constructor(private highlightService: HighlightService
   ) {
   }
@@ -75,5 +86,9 @@ export class HighlightedDirectiveUsageComponent implements AfterViewChecked {
       this.highlightService.highlightAll();
       this.highlighted = true;
     }
+  }
+
+  onToggle(isHighlighted: boolean): void {
+    console.log(isHighlighted);
   }
 }
