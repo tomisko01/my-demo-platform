@@ -36,16 +36,26 @@ import {
   ViewChildrenChildComponent
 } from '@angularTopic/view-children/component/view-children-child/view-children-child.component';
 import {MatTooltip} from "@angular/material/tooltip";
-import { ContentProjectionComponent } from '@angularTopic/content-projection/content-projection.component';
-import { ContentProjectionChildComponent } from '@angularTopic/content-projection/component/content-projection-child/content-projection-child.component';
+import {ContentProjectionComponent} from '@angularTopic/content-projection/content-projection.component';
+import {
+  ContentProjectionChildComponent
+} from '@angularTopic/content-projection/component/content-projection-child/content-projection-child.component';
 import {NgOptimizedImage} from "@angular/common";
-import { ContentChildComponent } from '@angularTopic/content-child/content-child.component';
-import { ContentChildChildComponent } from '@angularTopic/content-child/component/content-child-child/content-child-child.component';
-import { ContentChildImageComponent } from './components/topics/angular/content-child/component/content-child-image/content-child-image.component';
-import { NgTemplateComponent } from './components/topics/angular/ng-template/ng-template.component';
-import { NgTemplateChildComponent } from './components/topics/angular/ng-template/component/ng-template-child/ng-template-child.component';
-import { HighlightedCComponent } from './components/topics/angular/directive/component/highlighted-c/highlighted-c.component';
+import {ContentChildComponent} from '@angularTopic/content-child/content-child.component';
+import {
+  ContentChildChildComponent
+} from '@angularTopic/content-child/component/content-child-child/content-child-child.component';
+import {
+  ContentChildImageComponent
+} from '@angularTopic/content-child/component/content-child-image/content-child-image.component';
+import {NgTemplateComponent} from '@angularTopic/ng-template/ng-template.component';
+import {
+  NgTemplateChildComponent
+} from '@angularTopic/ng-template/component/ng-template-child/ng-template-child.component';
 import {HighlightedDirective} from "@angularTopic/directive/highlighted.directive";
+import {
+  HighlightedDirectiveUsageComponent
+} from "@angularTopic/directive/component/highlighted-directive-usage/highlighted-directive-usage.component";
 
 
 const routes: Routes = [
@@ -66,7 +76,7 @@ const routes: Routes = [
   {path: 'angular/contentProjection', component: ContentProjectionComponent},
   {path: 'angular/contentChild', component: ContentChildComponent},
   {path: 'angular/ngTemplate', component: NgTemplateComponent},
-  {path: 'angular/highlightedDirective', component: HighlightedCComponent},
+  {path: 'angular/highlightedDirective', component: HighlightedDirectiveUsageComponent},
 ]
 
 
@@ -99,7 +109,7 @@ const routes: Routes = [
     ContentChildImageComponent,
     NgTemplateComponent,
     NgTemplateChildComponent,
-    HighlightedCComponent,
+    HighlightedDirectiveUsageComponent,
     HighlightedDirective
   ],
   imports: [

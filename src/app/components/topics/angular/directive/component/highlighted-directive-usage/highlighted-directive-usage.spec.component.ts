@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HighlightedCComponent } from './highlighted-c.component';
+import { HighlightedDirectiveUsageComponent } from './highlighted-directive-usage.component';
 
 describe('HighlightedCComponent', () => {
-  let component: HighlightedCComponent;
-  let fixture: ComponentFixture<HighlightedCComponent>;
+  let component: HighlightedDirectiveUsageComponent;
+  let fixture: ComponentFixture<HighlightedDirectiveUsageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HighlightedCComponent]
+      declarations: [HighlightedDirectiveUsageComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(HighlightedCComponent);
+
+    fixture = TestBed.createComponent(HighlightedDirectiveUsageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

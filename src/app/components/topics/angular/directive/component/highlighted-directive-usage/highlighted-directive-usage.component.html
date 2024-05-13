@@ -1,0 +1,72 @@
+<h1>How to create and use a directive
+  <button mat-icon-button
+          (click)="openGithubLink()"
+          aria-label="Open source code">
+    <mat-icon>open_in_new</mat-icon>
+  </button>
+  <mat-icon matTooltip="More examples in console.log">info</mat-icon>
+</h1>
+
+<h3>Create directive</h3>
+
+<h4>Execute in terminal:</h4>
+<pre>
+  <code class="language-ts">
+    {{ directiveCreationCode }}
+  </code>
+</pre>
+
+<h4>add directive selector to element</h4>
+<pre>
+  <code class="language-ts">
+    {{ directiveUsageCode }}
+  </code>
+</pre>
+
+<h4>Simple usage:</h4>
+
+<div appHighlighted>
+  Dori me <br/>
+  Interimo, adapare <br/>
+  Dori me <br/>
+  Ameno, Ameno <br/>
+  Latire <br/>
+  Latiremo <br/>
+  Dori me <br/>
+  Ameno <br/>
+</div>
+
+<h3>Add css classes to element</h3>
+<pre>
+  <code class="language-ts">
+    {{ directiveClassNameCode }}
+  </code>
+</pre>
+
+<h3>Enable css class on element</h3>
+<pre>
+  <code class="language-ts">
+    {{ directiveClassEnableCode }}
+  </code>
+</pre>
+
+<h3>Change styles on element</h3>
+<pre>
+  <code class="language-ts">
+    {{ directiveStyleCode }}
+  </code>
+</pre>
+
+<h3>Set attribute on element</h3>
+<pre>
+  <code class="language-ts">
+    {{ directiveAttributeCode }}
+  </code>
+</pre>
+
+<h3>React on event</h3>
+<pre>
+  <code class="language-ts">
+    {{ directiveListenerCode }}
+  </code>
+</pre>
