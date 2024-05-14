@@ -25,7 +25,7 @@
 
 <h4>Simple usage:</h4>
 
-<div appHighlighted
+<div appHighlighted #highlighter="hl"
      (toggleHighlight)="onToggle($event)">
   Dori me <br/>
   Interimo, adapare <br/>
@@ -35,6 +35,9 @@
   Latiremo <br/>
   Dori me <br/>
   Ameno <br/>
+  <div (dblclick)="highlighter.toggle()">
+    <b> Double click me! </b>
+  </div>
 </div>
 
 <h3>Add css classes to element</h3>
@@ -78,3 +81,29 @@
     {{ directiveSendEventCode }}
   </code>
 </pre>
+
+<h3>Use a method from a directive</h3>
+<pre>
+  <code class="language-ts">
+    {{ directiveApiCode }}
+  </code>
+</pre>
+
+<h3>Get directive instance</h3>
+<pre>
+  <code class="language-ts">
+    {{ directiveInstanceCode }}
+  </code>
+</pre>
+
+<h3>Get directive instance from child component</h3>
+
+<app-highlighted-directive-child appHighlighted>
+</app-highlighted-directive-child>
+
+<pre>
+  <code class="language-markup">
+    {{ directiveInstanceChildCode }}
+  </code>
+</pre>
+

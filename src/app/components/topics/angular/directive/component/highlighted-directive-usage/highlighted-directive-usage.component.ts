@@ -1,15 +1,25 @@
-import {AfterViewChecked, Component} from '@angular/core';
+import {AfterViewChecked, AfterViewInit, Component, ViewChild} from '@angular/core';
 import {HighlightService} from "@service/HighlightService";
+import {HighlightedDirective} from "@angularTopic/directive/highlighted.directive";
+import {
+  HighlightedDirectiveChildComponent
+} from "@angularTopic/directive/component/highlighted-directive-child/highlighted-directive-child.component";
 
 @Component({
   selector: 'app-highlighted-usage',
   templateUrl: './highlighted-directive-usage.component.html',
   styleUrl: './highlighted-directive-usage.component.css'
 })
-export class HighlightedDirectiveUsageComponent implements AfterViewChecked {
+export class HighlightedDirectiveUsageComponent implements AfterViewChecked, AfterViewInit {
 
   githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/content-projection/content-projection.component.ts";
   private highlighted: Boolean = false;
+
+  @ViewChild(HighlightedDirective)
+  highlightedDir: HighlightedDirective;
+
+  @ViewChild(HighlightedDirectiveChildComponent, {read: HighlightedDirective})
+  highlightedChildComponent: HighlightedDirective;
 
   directiveCreationCode: string = `ng g directive components/topics/angular/directive/highlighted`;
   directiveUsageCode: string = `
@@ -73,6 +83,41 @@ export class HighlightedDirectiveUsageComponent implements AfterViewChecked {
   <div appHighlighted
      (toggleHighlight)="onToggle($event)">`;
 
+  directiveApiCode: string = `
+  //DIRECTIVE
+  @Directive({
+    selector: '[appHighlighted]',
+    exportAs: 'hl'
+  })
+  ...
+  toggle(){
+    this.isHighlighted = !this.isHighlighted;
+    this.toggleHighlight.emit(this.isHighlighted);
+  }
+
+  //HTML
+  <div appHighlighted #highlighter="hl"
+     (toggleHighlight)="onToggle($event)">
+    ...
+    <div (dblclick)="highlighter.toggle()">
+        <b> Double click me! </b>
+    </div>
+  </div>`;
+
+  directiveInstanceCode: string = `
+  @ViewChild(HighlightedDirective)
+  highlightedDir: HighlightedDirective;`;
+
+
+  directiveInstanceChildCode: string = `
+  //HTML
+  <app-highlighted-directive-child appHighlighted>
+  </app-highlighted-directive-child>
+
+  //COMPONENT
+  @ViewChild(HighlightedDirectiveChildComponent, {read: HighlightedDirective})
+  highlightedChildComponent: HighlightedDirective;`;
+
   constructor(private highlightService: HighlightService
   ) {
   }
@@ -89,6 +134,13 @@ export class HighlightedDirectiveUsageComponent implements AfterViewChecked {
   }
 
   onToggle(isHighlighted: boolean): void {
+    console.log('react on event from directive:')
     console.log(isHighlighted);
+  }
+
+  ngAfterViewInit(): void {
+    console.log('instances of directives gathered by @ViewChild');
+    console.log(this.highlightedDir);
+    console.log(this.highlightedChildComponent);
   }
 }

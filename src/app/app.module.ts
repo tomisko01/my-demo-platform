@@ -56,6 +56,7 @@ import {HighlightedDirective} from "@angularTopic/directive/highlighted.directiv
 import {
   HighlightedDirectiveUsageComponent
 } from "@angularTopic/directive/component/highlighted-directive-usage/highlighted-directive-usage.component";
+import { HighlightedDirectiveChildComponent } from './components/topics/angular/directive/component/highlighted-directive-child/highlighted-directive-child.component';
 
 
 const routes: Routes = [
@@ -110,7 +111,8 @@ const routes: Routes = [
     NgTemplateComponent,
     NgTemplateChildComponent,
     HighlightedDirectiveUsageComponent,
-    HighlightedDirective
+    HighlightedDirective,
+    HighlightedDirectiveChildComponent
   ],
   imports: [
     BrowserModule,

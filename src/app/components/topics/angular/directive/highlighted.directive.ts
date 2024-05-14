@@ -2,6 +2,7 @@ import {Directive, EventEmitter, HostBinding, HostListener, Output} from '@angul
 
 @Directive({
   selector: '[appHighlighted]',
+  exportAs: 'hl'
 })
 export class HighlightedDirective {
 
@@ -36,6 +37,7 @@ export class HighlightedDirective {
 
   @HostListener('mouseover', ['$event'])
   mouseOver($event: MouseEvent) {
+    console.log('mouseover event triggered:');
     console.log($event);
     this.isHighlighted = true;
     this.toggleHighlight.emit(this.isHighlighted);
@@ -44,6 +46,11 @@ export class HighlightedDirective {
   @HostListener('mouseleave')
   mouseLeave() {
     this.isHighlighted = false;
+    this.toggleHighlight.emit(this.isHighlighted);
+  }
+
+  toggle() {
+    this.isHighlighted = !this.isHighlighted;
     this.toggleHighlight.emit(this.isHighlighted);
   }
 }
