@@ -81,8 +81,11 @@ export class TopicLinksConstants {
         {
           name: 'Directive',
           children: [{
-            name: 'HighlightedDirective',
+            name: 'Highlighted Directive',
             routerLink: '/angular/highlightedDirective'
+          }, {
+            name: 'Structural Directive',
+            routerLink: 'angular/structuralDirective'
           }]
         }
       ]

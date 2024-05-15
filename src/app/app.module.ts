@@ -56,7 +56,9 @@ import {HighlightedDirective} from "@angularTopic/directive/highlighted.directiv
 import {
   HighlightedDirectiveUsageComponent
 } from "@angularTopic/directive/component/highlighted-directive-usage/highlighted-directive-usage.component";
-import { HighlightedDirectiveChildComponent } from './components/topics/angular/directive/component/highlighted-directive-child/highlighted-directive-child.component';
+import { HighlightedDirectiveChildComponent } from '@angularTopic/directive/component/highlighted-directive-child/highlighted-directive-child.component';
+import {NgxUnlessDirective} from "@angularTopic/directive/ngx-unless.directive";
+import { UnlessDirectiveUsageComponent } from './components/topics/angular/directive/component/ngx-unless/unless-directive-usage/unless-directive-usage.component';
 
 
 const routes: Routes = [
@@ -78,6 +80,7 @@ const routes: Routes = [
   {path: 'angular/contentChild', component: ContentChildComponent},
   {path: 'angular/ngTemplate', component: NgTemplateComponent},
   {path: 'angular/highlightedDirective', component: HighlightedDirectiveUsageComponent},
+  {path: 'angular/structuralDirective', component: UnlessDirectiveUsageComponent},
 ]
 
 
@@ -112,7 +115,9 @@ const routes: Routes = [
     NgTemplateChildComponent,
     HighlightedDirectiveUsageComponent,
     HighlightedDirective,
-    HighlightedDirectiveChildComponent
+    HighlightedDirectiveChildComponent,
+    NgxUnlessDirective,
+    UnlessDirectiveUsageComponent
   ],
   imports: [
     BrowserModule,
