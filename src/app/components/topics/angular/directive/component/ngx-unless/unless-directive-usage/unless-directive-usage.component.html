@@ -1,1 +1,59 @@
-<p>unless-directive-usage works!</p>
+<h1>How to create and use a structural directive
+  <button mat-icon-button
+          (click)="openGithubLink()"
+          aria-label="Open source code">
+    <mat-icon>open_in_new</mat-icon>
+  </button>
+  <mat-icon matTooltip="More examples in console.log">info</mat-icon>
+</h1>
+
+<h3>* notation:</h3>
+
+<div *ngIf="condition">
+  Ameno dorime
+</div>
+
+<ng-template [ngIf]="condition">
+  <div>
+    Ameno dorime from template
+  </div>
+</ng-template>
+
+<h4>* means that whole element will be wrapped up by ng-template and condition will be an attribute [ngIf] for it</h4>
+
+<pre>
+  <code class="language-markup">
+    {{ directiveTemplateCode }}
+  </code>
+</pre>
+
+<h3>Directive in action:</h3>
+<pre>
+  <code class="language-ts">
+    {{ directiveCode }}
+  </code>
+</pre>
+
+<h4>As ng-template:</h4>
+<ng-template [appNgxUnless]="!condition">
+  <div>
+    Ameno dorime from ng-template with attribute
+  </div>
+</ng-template>
+
+<pre>
+  <code class="language-markup">
+    {{ directiveUsageTemplateCode }}
+  </code>
+</pre>
+
+<h4>As a structural directive:</h4>
+<div *appNgxUnless="!condition">
+  Ameno dorime from div with directive
+</div>
+
+<pre>
+  <code class="language-markup">
+    {{ directiveUsageCode }}
+  </code>
+</pre>
