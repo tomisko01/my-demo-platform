@@ -87,6 +87,13 @@ export class TopicLinksConstants {
             name: 'Structural Directive',
             routerLink: 'angular/structuralDirective'
           }]
+        },
+        {
+          name: 'Styles',
+          children: [{
+            name: 'Host',
+            routerLink: 'angular/stylesHost'
+          }]
         }
       ]
     },
