@@ -1,3 +1,15 @@
 :host {
   background-color: #46a35e;
 }
+
+:host ::ng-deep .deepClass {
+  background-color: #616161;
+}
+
+::ng-deep .aliceblue-theme {
+  color: aliceblue;
+}
+
+:host-context(.indian-red-border){
+  border: solid 1px indianred;
+}

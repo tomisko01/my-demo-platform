@@ -6,6 +6,60 @@
   </button>
 </h1>
 
+<h3>:host usage</h3>
+<h4>apply styles to the component element</h4>
 <app-host-children>
-
 </app-host-children>
+
+<pre>
+  <code class="language-css">
+    {{ hostCode }}
+  </code>
+</pre>
+
+<h3>::ng-deep usage</h3>
+<h4>apply styles to the projected elements</h4>
+<app-host-children>
+  <div class="deepClass">
+    Some text for content projection
+  </div>
+  <div>
+    Div without class
+  </div>
+</app-host-children>
+
+<pre>
+  <code class="language-css">
+    {{ ngDeepCode }}
+  </code>
+</pre>
+
+<h3>theming</h3>
+
+<div class="aliceblue-theme">
+  <app-host-children>
+  </app-host-children>
+</div>
+
+<pre>
+  <code class="language-markup">
+    {{ themingCode }}
+  </code>
+</pre>
+
+
+<h3>:host-context</h3>
+
+<div class="indian-red-border">
+  Some text before child component
+  <br/>
+  <app-host-children>
+
+  </app-host-children>
+</div>
+
+<pre>
+  <code class="language-markup">
+    {{ hostContextCode }}
+  </code>
+</pre>
