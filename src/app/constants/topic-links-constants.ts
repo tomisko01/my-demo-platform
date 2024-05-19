@@ -93,6 +93,9 @@ export class TopicLinksConstants {
           children: [{
             name: 'Host',
             routerLink: 'angular/stylesHost'
+          },{
+            name: 'Encapsulation',
+            routerLink: 'angular/stylesEncapsulation'
           }]
         }
       ]

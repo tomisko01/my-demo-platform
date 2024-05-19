@@ -61,6 +61,8 @@ import {NgxUnlessDirective} from "@angularTopic/directive/ngx-unless.directive";
 import { UnlessDirectiveUsageComponent } from '@angularTopic/directive/component/ngx-unless/unless-directive-usage/unless-directive-usage.component';
 import { HostComponent } from '@angularTopic/styles/host/host.component';
 import { HostChildrenComponent } from './components/topics/angular/styles/host/component/host-children/host-children.component';
+import { ViewEncapsulationComponent } from './components/topics/angular/styles/view-encapsulation/view-encapsulation.component';
+import { ViewEncapsulationChildComponent } from './components/topics/angular/styles/view-encapsulation/component/view-encapsulation-child/view-encapsulation-child.component';
 
 
 const routes: Routes = [
@@ -84,6 +86,7 @@ const routes: Routes = [
   {path: 'angular/highlightedDirective', component: HighlightedDirectiveUsageComponent},
   {path: 'angular/structuralDirective', component: UnlessDirectiveUsageComponent},
   {path: 'angular/stylesHost', component: HostComponent},
+  {path: 'angular/stylesEncapsulation', component: ViewEncapsulationComponent},
 ]
 
 
@@ -122,7 +125,9 @@ const routes: Routes = [
     NgxUnlessDirective,
     UnlessDirectiveUsageComponent,
     HostComponent,
-    HostChildrenComponent
+    HostChildrenComponent,
+    ViewEncapsulationComponent,
+    ViewEncapsulationChildComponent
   ],
   imports: [
     BrowserModule,

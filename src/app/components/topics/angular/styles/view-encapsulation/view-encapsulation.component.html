@@ -1,0 +1,31 @@
+<h1>Types of view encapsulation
+  <button mat-icon-button
+          (click)="openGithubLink()"
+          aria-label="Open source code">
+    <mat-icon>open_in_new</mat-icon>
+  </button>
+</h1>
+
+<h3>Default encapsulation: Emulated</h3>
+<h4>This is the one used till now, supports everything mentioned in styles/host component</h4>
+
+<pre>
+  <code class="language-css">
+    {{ emulatedConde }}
+  </code>
+</pre>
+
+<h3>ViewEncapsulation.None</h3>
+<h4>:host and :host-context doesn't apply </h4>
+<mat-divider></mat-divider>
+
+<h3>ViewEncapsulation.Native</h3>
+<h4>Already deprecated</h4>
+<mat-divider></mat-divider>
+
+<h3>ViewEncapsulation.ShadowDom</h3>
+<h4>Similar to emulated, but browser API is used.<br/>
+New html document is created #shadow-root</h4>
+<app-view-encapsulation-child>
+
+</app-view-encapsulation-child>
