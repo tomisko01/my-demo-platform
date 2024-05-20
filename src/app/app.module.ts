@@ -63,6 +63,7 @@ import { HostComponent } from '@angularTopic/styles/host/host.component';
 import { HostChildrenComponent } from './components/topics/angular/styles/host/component/host-children/host-children.component';
 import { ViewEncapsulationComponent } from './components/topics/angular/styles/view-encapsulation/view-encapsulation.component';
 import { ViewEncapsulationChildComponent } from './components/topics/angular/styles/view-encapsulation/component/view-encapsulation-child/view-encapsulation-child.component';
+import { GetCallComponent } from './components/topics/angular/services/get-call/get-call.component';
 
 
 const routes: Routes = [
@@ -87,6 +88,7 @@ const routes: Routes = [
   {path: 'angular/structuralDirective', component: UnlessDirectiveUsageComponent},
   {path: 'angular/stylesHost', component: HostComponent},
   {path: 'angular/stylesEncapsulation', component: ViewEncapsulationComponent},
+  {path: 'angular/services/getCall', component: GetCallComponent},
 ]
 
 
@@ -127,7 +129,8 @@ const routes: Routes = [
     HostComponent,
     HostChildrenComponent,
     ViewEncapsulationComponent,
-    ViewEncapsulationChildComponent
+    ViewEncapsulationChildComponent,
+    GetCallComponent
   ],
   imports: [
     BrowserModule,
