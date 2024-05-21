@@ -1,6 +1,7 @@
 import {AfterViewChecked, Component, OnInit} from '@angular/core';
 import {HighlightService} from "@service/HighlightService";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
+import {map, Observable} from "rxjs";
 
 @Component({
   selector: 'app-get-call',
@@ -15,6 +16,8 @@ export class GetCallComponent implements OnInit, AfterViewChecked {
   private eldenApi: string = 'https://eldenring.fanapis.com/api/items'
 
   list: any[];
+
+  itemList$: Observable<any>
 
   constructor(private highlightService: HighlightService,
               private http: HttpClient,
@@ -33,14 +36,33 @@ export class GetCallComponent implements OnInit, AfterViewChecked {
   }
 
   ngOnInit(): void {
+    this.plainGet();
+    this.asyncGet();
+  }
+
+  private plainGet(): void {
+    const params = new HttpParams()
+      .set('limit', 6);
+
     this.http.get(this.wolneLekturyAPI)
       .subscribe(
-        (response) => {console.log(response)}
+        (response) => {
+          console.log(response)
+        }
       );
 
-    this.http.get(this.eldenApi)
+    this.http.get(this.eldenApi, {params})
       .subscribe(
-        (response) => {console.log(response)}
-      )
+        (response) => {
+          console.log(response)
+        }
+      );
+  }
+
+  private asyncGet() {
+    const params = new HttpParams()
+      .set('limit', 6);
+
+    this.itemList$ = this.http.get<any[]>(this.eldenApi, {params: params});
   }
 }

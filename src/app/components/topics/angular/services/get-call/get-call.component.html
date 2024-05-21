@@ -5,3 +5,11 @@
     <mat-icon>open_in_new</mat-icon>
   </button>
 </h1>
+
+
+<h3>Async pipe</h3>
+@if (itemList$ | async; as items) {
+  @for (item of items.data ; track item.id) {
+    <p>id: {{ item.id }}</p>
+  }
+}
