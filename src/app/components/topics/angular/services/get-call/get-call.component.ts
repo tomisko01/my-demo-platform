@@ -2,6 +2,8 @@ import {AfterViewChecked, Component, OnInit} from '@angular/core';
 import {HighlightService} from "@service/HighlightService";
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {map, Observable} from "rxjs";
+import {elden} from "../../../../../typings";
+
 
 @Component({
   selector: 'app-get-call',
@@ -17,7 +19,8 @@ export class GetCallComponent implements OnInit, AfterViewChecked {
 
   list: any[];
 
-  itemList$: Observable<any>
+  itemList$: Observable<elden.Response>;
+  itemList: any[];
 
   constructor(private highlightService: HighlightService,
               private http: HttpClient,
@@ -36,7 +39,7 @@ export class GetCallComponent implements OnInit, AfterViewChecked {
   }
 
   ngOnInit(): void {
-    this.plainGet();
+    //this.plainGet();
     this.asyncGet();
   }
 
@@ -63,6 +66,10 @@ export class GetCallComponent implements OnInit, AfterViewChecked {
     const params = new HttpParams()
       .set('limit', 6);
 
-    this.itemList$ = this.http.get<any[]>(this.eldenApi, {params: params});
+    //this.itemList$ = this.http.get<elden.Response>(this.eldenApi, {params: params});
+
+    this.http.get<elden.Response>(this.eldenApi, {params: params})
+      .pipe(map(response => response.data))
+      .subscribe(eldenItems => this.itemList = eldenItems);
   }
 }
