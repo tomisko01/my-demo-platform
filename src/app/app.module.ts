@@ -56,14 +56,21 @@ import {HighlightedDirective} from "@angularTopic/directive/highlighted.directiv
 import {
   HighlightedDirectiveUsageComponent
 } from "@angularTopic/directive/component/highlighted-directive-usage/highlighted-directive-usage.component";
-import { HighlightedDirectiveChildComponent } from '@angularTopic/directive/component/highlighted-directive-child/highlighted-directive-child.component';
+import {
+  HighlightedDirectiveChildComponent
+} from '@angularTopic/directive/component/highlighted-directive-child/highlighted-directive-child.component';
 import {NgxUnlessDirective} from "@angularTopic/directive/ngx-unless.directive";
-import { UnlessDirectiveUsageComponent } from '@angularTopic/directive/component/ngx-unless/unless-directive-usage/unless-directive-usage.component';
-import { HostComponent } from '@angularTopic/styles/host/host.component';
-import { HostChildrenComponent } from './components/topics/angular/styles/host/component/host-children/host-children.component';
-import { ViewEncapsulationComponent } from './components/topics/angular/styles/view-encapsulation/view-encapsulation.component';
-import { ViewEncapsulationChildComponent } from './components/topics/angular/styles/view-encapsulation/component/view-encapsulation-child/view-encapsulation-child.component';
-import { GetCallComponent } from './components/topics/angular/services/get-call/get-call.component';
+import {
+  UnlessDirectiveUsageComponent
+} from '@angularTopic/directive/component/ngx-unless/unless-directive-usage/unless-directive-usage.component';
+import {HostComponent} from '@angularTopic/styles/host/host.component';
+import {HostChildrenComponent} from '@angularTopic/styles/host/component/host-children/host-children.component';
+import {ViewEncapsulationComponent} from '@angularTopic/styles/view-encapsulation/view-encapsulation.component';
+import {
+  ViewEncapsulationChildComponent
+} from '@angularTopic/styles/view-encapsulation/component/view-encapsulation-child/view-encapsulation-child.component';
+import {GetCallComponent} from '@angularTopic/services/get-call/get-call.component';
+import {OwnProviderComponent} from '@angularTopic/services/dependencyInjection/own-provider/own-provider.component';
 
 
 const routes: Routes = [
@@ -89,6 +96,7 @@ const routes: Routes = [
   {path: 'angular/stylesHost', component: HostComponent},
   {path: 'angular/stylesEncapsulation', component: ViewEncapsulationComponent},
   {path: 'angular/services/getCall', component: GetCallComponent},
+  {path: 'angular/services/ownProvider', component: OwnProviderComponent},
 ]
 
 
@@ -130,7 +138,8 @@ const routes: Routes = [
     HostChildrenComponent,
     ViewEncapsulationComponent,
     ViewEncapsulationChildComponent,
-    GetCallComponent
+    GetCallComponent,
+    OwnProviderComponent
   ],
   imports: [
     BrowserModule,

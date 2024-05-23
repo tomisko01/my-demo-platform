@@ -103,7 +103,14 @@ export class TopicLinksConstants {
           children:[{
             name: 'Get call',
             routerLink: 'angular/services/getCall'
-          }]
+          },
+            {
+              name: 'Dependency injection',
+              children: [{
+                name: 'Own provider',
+                routerLink: 'angular/services/ownProvider'
+              }]
+            }]
         }
       ]
     },
