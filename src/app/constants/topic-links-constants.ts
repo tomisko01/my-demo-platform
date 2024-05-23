@@ -109,6 +109,9 @@ export class TopicLinksConstants {
               children: [{
                 name: 'Own provider',
                 routerLink: 'angular/services/ownProvider'
+              },{
+                name: 'Own provider simplified',
+                routerLink: 'angular/services/ownProviderSimplified'
               }]
             }]
         }

@@ -71,6 +71,7 @@ import {
 } from '@angularTopic/styles/view-encapsulation/component/view-encapsulation-child/view-encapsulation-child.component';
 import {GetCallComponent} from '@angularTopic/services/get-call/get-call.component';
 import {OwnProviderComponent} from '@angularTopic/services/dependencyInjection/own-provider/own-provider.component';
+import { OwnProviderSimplifiedComponent } from '@angularTopic/services/dependencyInjection/own-provider-simplified/own-provider-simplified.component';
 
 
 const routes: Routes = [
@@ -97,6 +98,7 @@ const routes: Routes = [
   {path: 'angular/stylesEncapsulation', component: ViewEncapsulationComponent},
   {path: 'angular/services/getCall', component: GetCallComponent},
   {path: 'angular/services/ownProvider', component: OwnProviderComponent},
+  {path: 'angular/services/ownProviderSimplified', component: OwnProviderSimplifiedComponent},
 ]
 
 
@@ -139,7 +141,8 @@ const routes: Routes = [
     ViewEncapsulationComponent,
     ViewEncapsulationChildComponent,
     GetCallComponent,
-    OwnProviderComponent
+    OwnProviderComponent,
+    OwnProviderSimplifiedComponent
   ],
   imports: [
     BrowserModule,
