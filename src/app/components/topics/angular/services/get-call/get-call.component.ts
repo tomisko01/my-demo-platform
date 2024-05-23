@@ -1,8 +1,8 @@
 import {AfterViewChecked, Component, OnInit} from '@angular/core';
 import {HighlightService} from "@service/HighlightService";
-import {HttpClient, HttpParams} from "@angular/common/http";
-import {map, Observable} from "rxjs";
+import {Observable} from "rxjs";
 import {elden} from "../../../../../typings";
+import {EldenItemsService} from "@angularTopic/services/get-call/service/elden-items.service";
 
 
 @Component({
@@ -15,15 +15,14 @@ export class GetCallComponent implements OnInit, AfterViewChecked {
   githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/services/get-call/get-call.component.ts";
   private highlighted: Boolean = false;
   private wolneLekturyAPI: string = 'https://wolnelektury.pl/api/kinds/';
-  private eldenApi: string = 'https://eldenring.fanapis.com/api/items'
 
   list: any[];
 
   itemList$: Observable<elden.Response>;
-  itemList: any[];
+  itemList: elden.Item[];
 
   constructor(private highlightService: HighlightService,
-              private http: HttpClient,
+              private eldenInvoker: EldenItemsService,
   ) {
   }
 
@@ -39,37 +38,11 @@ export class GetCallComponent implements OnInit, AfterViewChecked {
   }
 
   ngOnInit(): void {
-    //this.plainGet();
     this.asyncGet();
   }
 
-  private plainGet(): void {
-    const params = new HttpParams()
-      .set('limit', 6);
-
-    this.http.get(this.wolneLekturyAPI)
-      .subscribe(
-        (response) => {
-          console.log(response)
-        }
-      );
-
-    this.http.get(this.eldenApi, {params})
-      .subscribe(
-        (response) => {
-          console.log(response)
-        }
-      );
-  }
-
   private asyncGet() {
-    const params = new HttpParams()
-      .set('limit', 6);
-
-    //this.itemList$ = this.http.get<elden.Response>(this.eldenApi, {params: params});
-
-    this.http.get<elden.Response>(this.eldenApi, {params: params})
-      .pipe(map(response => response.data))
+    this.eldenInvoker.loadItems()
       .subscribe(eldenItems => this.itemList = eldenItems);
   }
 }
