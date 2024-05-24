@@ -80,6 +80,7 @@ import {
 import {
   HiChildComponent
 } from "@angularTopic/services/dependencyInjection/hierarchical-injection/component/hi-child/hi-child.component";
+import { TreeShakeableProviderComponent } from './components/topics/angular/services/dependencyInjection/tree-shakeable-provider/tree-shakeable-provider.component';
 
 
 const routes: Routes = [
@@ -108,6 +109,7 @@ const routes: Routes = [
   {path: 'angular/services/ownProvider', component: OwnProviderComponent},
   {path: 'angular/services/ownProviderSimplified', component: OwnProviderSimplifiedComponent},
   {path: 'angular/services/hierarchicalInjection', component: HierarchicalInjectionComponent},
+  {path: 'angular/services/treeShakeableProvider', component: TreeShakeableProviderComponent},
 ]
 
 
@@ -153,7 +155,8 @@ const routes: Routes = [
     OwnProviderComponent,
     OwnProviderSimplifiedComponent,
     HierarchicalInjectionComponent,
-    HiChildComponent
+    HiChildComponent,
+    TreeShakeableProviderComponent
   ],
   imports: [
     BrowserModule,

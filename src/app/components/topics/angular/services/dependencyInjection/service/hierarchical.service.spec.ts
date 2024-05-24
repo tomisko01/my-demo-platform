@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MySecondService } from './my-second.service';
+import { HierarchicalService } from './hierarchical.service';
 
 describe('MySecondServiceService', () => {
-  let service: MySecondService;
+  let service: HierarchicalService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MySecondService);
+    service = TestBed.inject(HierarchicalService);
   });
 
   it('should be created', () => {

@@ -115,6 +115,9 @@ export class TopicLinksConstants {
               }, {
                 name: 'Hierarchical Injection',
                 routerLink: 'angular/services/hierarchicalInjection'
+              }, {
+                name: 'Tree shakeable provider',
+                routerLink: 'angular/services/treeShakeableProvider'
               }]
             }]
         }

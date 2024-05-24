@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {MyService} from "@angularTopic/services/dependencyInjection/service/my.service";
-import {MySecondService} from "@angularTopic/services/dependencyInjection/service/my-second.service";
+import {HierarchicalService} from "@angularTopic/services/dependencyInjection/service/hierarchical.service";
 
 @Component({
   selector: 'app-hi-child',
@@ -11,7 +11,7 @@ import {MySecondService} from "@angularTopic/services/dependencyInjection/servic
 export class HiChildComponent {
 
   constructor(private myService: MyService,
-              private mySecondService: MySecondService) {
+              private mySecondService: HierarchicalService) {
   }
 
 }
