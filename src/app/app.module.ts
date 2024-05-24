@@ -71,7 +71,15 @@ import {
 } from '@angularTopic/styles/view-encapsulation/component/view-encapsulation-child/view-encapsulation-child.component';
 import {GetCallComponent} from '@angularTopic/services/get-call/get-call.component';
 import {OwnProviderComponent} from '@angularTopic/services/dependencyInjection/own-provider/own-provider.component';
-import { OwnProviderSimplifiedComponent } from '@angularTopic/services/dependencyInjection/own-provider-simplified/own-provider-simplified.component';
+import {
+  OwnProviderSimplifiedComponent
+} from '@angularTopic/services/dependencyInjection/own-provider-simplified/own-provider-simplified.component';
+import {
+  HierarchicalInjectionComponent
+} from "@angularTopic/services/dependencyInjection/hierarchical-injection/hierarchical-injection.component";
+import {
+  HiChildComponent
+} from "@angularTopic/services/dependencyInjection/hierarchical-injection/component/hi-child/hi-child.component";
 
 
 const routes: Routes = [
@@ -99,6 +107,7 @@ const routes: Routes = [
   {path: 'angular/services/getCall', component: GetCallComponent},
   {path: 'angular/services/ownProvider', component: OwnProviderComponent},
   {path: 'angular/services/ownProviderSimplified', component: OwnProviderSimplifiedComponent},
+  {path: 'angular/services/hierarchicalInjection', component: HierarchicalInjectionComponent},
 ]
 
 
@@ -142,7 +151,9 @@ const routes: Routes = [
     ViewEncapsulationChildComponent,
     GetCallComponent,
     OwnProviderComponent,
-    OwnProviderSimplifiedComponent
+    OwnProviderSimplifiedComponent,
+    HierarchicalInjectionComponent,
+    HiChildComponent
   ],
   imports: [
     BrowserModule,

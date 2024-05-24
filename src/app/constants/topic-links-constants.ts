@@ -93,14 +93,14 @@ export class TopicLinksConstants {
           children: [{
             name: 'Host',
             routerLink: 'angular/stylesHost'
-          },{
+          }, {
             name: 'Encapsulation',
             routerLink: 'angular/stylesEncapsulation'
           }]
         },
         {
           name: 'Services',
-          children:[{
+          children: [{
             name: 'Get call',
             routerLink: 'angular/services/getCall'
           },
@@ -109,9 +109,12 @@ export class TopicLinksConstants {
               children: [{
                 name: 'Own provider',
                 routerLink: 'angular/services/ownProvider'
-              },{
+              }, {
                 name: 'Own provider simplified',
                 routerLink: 'angular/services/ownProviderSimplified'
+              }, {
+                name: 'Hierarchical Injection',
+                routerLink: 'angular/services/hierarchicalInjection'
               }]
             }]
         }
