@@ -82,6 +82,8 @@ import {
 } from "@angularTopic/services/dependencyInjection/hierarchical-injection/component/hi-child/hi-child.component";
 import { TreeShakeableProviderComponent } from './components/topics/angular/services/dependencyInjection/tree-shakeable-provider/tree-shakeable-provider.component';
 import { InjectionTokenComponent } from './components/topics/angular/services/dependencyInjection/injection-token/injection-token.component';
+import { InjectionDecoratorsComponent } from './components/topics/angular/services/dependencyInjection/injection-decorators/injection-decorators.component';
+import { InjDecChildComponent } from './components/topics/angular/services/dependencyInjection/injection-decorators/child/inj-dec-child/inj-dec-child.component';
 
 
 const routes: Routes = [
@@ -112,6 +114,7 @@ const routes: Routes = [
   {path: 'angular/services/hierarchicalInjection', component: HierarchicalInjectionComponent},
   {path: 'angular/services/treeShakeableProvider', component: TreeShakeableProviderComponent},
   {path: 'angular/services/injectionToken', component: InjectionTokenComponent},
+  {path: 'angular/services/injectionDecorator', component: InjectionDecoratorsComponent},
 ]
 
 
@@ -159,7 +162,9 @@ const routes: Routes = [
     HierarchicalInjectionComponent,
     HiChildComponent,
     TreeShakeableProviderComponent,
-    InjectionTokenComponent
+    InjectionTokenComponent,
+    InjectionDecoratorsComponent,
+    InjDecChildComponent
   ],
   imports: [
     BrowserModule,

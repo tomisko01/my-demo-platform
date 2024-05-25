@@ -121,6 +121,9 @@ export class TopicLinksConstants {
               }, {
                 name: 'Injection tokens',
                 routerLink: 'angular/services/injectionToken'
+              }, {
+                name: 'Injection decorators',
+                routerLink: 'angular/services/injectionDecorator'
               }]
             }]
         }
