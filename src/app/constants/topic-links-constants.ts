@@ -118,6 +118,9 @@ export class TopicLinksConstants {
               }, {
                 name: 'Tree shakeable provider',
                 routerLink: 'angular/services/treeShakeableProvider'
+              }, {
+                name: 'Injection tokens',
+                routerLink: 'angular/services/injectionToken'
               }]
             }]
         }
