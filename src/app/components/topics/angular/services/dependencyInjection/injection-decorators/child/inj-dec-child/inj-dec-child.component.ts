@@ -4,6 +4,9 @@ import {HierarchicalService} from "@angularTopic/services/dependencyInjection/se
 import {
   InjectionDecoratorsComponent
 } from "@angularTopic/services/dependencyInjection/injection-decorators/injection-decorators.component";
+import {
+  HostDecoratorUsageService
+} from "@angularTopic/services/dependencyInjection/service/decorator/host/host-decorator-usage.service";
 
 @Component({
   selector: 'app-inj-dec-child',
@@ -12,14 +15,15 @@ import {
   providers: [
     MyService, //with @Self dependency will be local to the component - every component will gets own service instance
     HierarchicalService,
-    InjectionDecoratorsComponent
+    InjectionDecoratorsComponent,
+    HostDecoratorUsageService
   ]
 })
 export class InjDecChildComponent {
 
   constructor(@Self() myService: MyService,   //@Self() disables hierarchical search for dependencies
               @SkipSelf() hierarchyService: HierarchicalService, //@SkipSelf() will omit own providers and force to use one from parent
-              //@SkipSelf() injectionDecoratorService: InjectionDecoratorService will throw error because parent component doesn't provide it, even if this component provides it
+              //@SkipSelf() injectionDecoratorService: InjectionDecoratorService will throw error because parent component doesn't provide it, even if this component provides it,
   ) {
   }
 }

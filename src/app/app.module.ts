@@ -80,10 +80,19 @@ import {
 import {
   HiChildComponent
 } from "@angularTopic/services/dependencyInjection/hierarchical-injection/component/hi-child/hi-child.component";
-import { TreeShakeableProviderComponent } from './components/topics/angular/services/dependencyInjection/tree-shakeable-provider/tree-shakeable-provider.component';
-import { InjectionTokenComponent } from './components/topics/angular/services/dependencyInjection/injection-token/injection-token.component';
-import { InjectionDecoratorsComponent } from './components/topics/angular/services/dependencyInjection/injection-decorators/injection-decorators.component';
-import { InjDecChildComponent } from './components/topics/angular/services/dependencyInjection/injection-decorators/child/inj-dec-child/inj-dec-child.component';
+import {
+  TreeShakeableProviderComponent
+} from '@angularTopic/services/dependencyInjection/tree-shakeable-provider/tree-shakeable-provider.component';
+import {
+  InjectionTokenComponent
+} from '@angularTopic/services/dependencyInjection/injection-token/injection-token.component';
+import {
+  InjectionDecoratorsComponent
+} from '@angularTopic/services/dependencyInjection/injection-decorators/injection-decorators.component';
+import {
+  InjDecChildComponent
+} from '@angularTopic/services/dependencyInjection/injection-decorators/child/inj-dec-child/inj-dec-child.component';
+import {HostInjectDirective} from "@angularTopic/services/dependencyInjection/directive/host-inject.directive";
 
 
 const routes: Routes = [
@@ -152,6 +161,7 @@ const routes: Routes = [
     HighlightedDirectiveChildComponent,
     NgxUnlessDirective,
     UnlessDirectiveUsageComponent,
+    HostInjectDirective,
     HostComponent,
     HostChildrenComponent,
     ViewEncapsulationComponent,
