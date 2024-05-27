@@ -1,0 +1,18 @@
+<h3> On Push mechanism in action:</h3>
+
+<div>
+<app-on-push-child
+  [inputObject]="objectToEdit">
+
+</app-on-push-child>
+
+  <mat-divider></mat-divider>
+  <p>Edit description (not working): <input #descInput [value]="objectToEdit.description"
+                              (keyup)="onDescChanged(descInput.value)">
+  </p>
+  <button (click)="pushChangesToChild()">
+    Make description go Interimo! (working)
+  </button>
+</div>
+
+<h4>Change is detected because one of the inputs for child component changed</h4>

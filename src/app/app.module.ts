@@ -94,6 +94,8 @@ import {
 } from '@angularTopic/services/dependencyInjection/injection-decorators/child/inj-dec-child/inj-dec-child.component';
 import {HostInjectDirective} from "@angularTopic/services/dependencyInjection/directive/host-inject.directive";
 import { DefaultComponent } from '@angularTopic/services/changeDetection/default/default.component';
+import { OnPushComponent } from '@angularTopic/services/changeDetection/on-push/on-push.component';
+import { OnPushChildComponent } from '@angularTopic/services/changeDetection/on-push/child/on-push-child.component';
 
 
 const routes: Routes = [
@@ -126,6 +128,7 @@ const routes: Routes = [
   {path: 'angular/services/injectionToken', component: InjectionTokenComponent},
   {path: 'angular/services/injectionDecorator', component: InjectionDecoratorsComponent},
   {path: 'angular/changeDetection/defaultChangeDetection', component: DefaultComponent},
+  {path: 'angular/changeDetection/onPushChangeDetection', component: OnPushComponent},
 ]
 
 
@@ -177,7 +180,9 @@ const routes: Routes = [
     InjectionTokenComponent,
     InjectionDecoratorsComponent,
     InjDecChildComponent,
-    DefaultComponent
+    DefaultComponent,
+    OnPushComponent,
+    OnPushChildComponent
   ],
   imports: [
     BrowserModule,

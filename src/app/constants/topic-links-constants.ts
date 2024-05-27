@@ -132,6 +132,9 @@ export class TopicLinksConstants {
           children: [{
             name: 'Default detection',
             routerLink: 'angular/changeDetection/defaultChangeDetection'
+          },{
+            name: 'On Push detection',
+            routerLink: 'angular/changeDetection/onPushChangeDetection'
           }]
         }
       ]
