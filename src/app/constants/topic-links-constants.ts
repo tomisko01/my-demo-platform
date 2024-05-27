@@ -126,6 +126,13 @@ export class TopicLinksConstants {
                 routerLink: 'angular/services/injectionDecorator'
               }]
             }]
+        },
+        {
+          name: 'Change detection',
+          children: [{
+            name: 'Default detection',
+            routerLink: 'angular/changeDetection/defaultChangeDetection'
+          }]
         }
       ]
     },

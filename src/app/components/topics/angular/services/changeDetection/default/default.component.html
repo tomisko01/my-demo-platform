@@ -1,0 +1,15 @@
+<h3> Default mechanism in action:</h3>
+
+<div>
+  <p>Id: {{ objectToEdit.id }}</p>
+  <p>Name: {{ objectToEdit.name }}</p>
+  <p>Description: {{ objectToEdit.description }}</p>
+  <p>Edit description: <input #descInput [value]="objectToEdit.description"
+                           (keyup)="onDescChanged(descInput.value)">
+  </p>
+</div>
+
+<h4>Angular mechanism will go through all inputs declared with [] and decide if something was changed from last time
+and refresh only elements connected to that value </h4>
+If anything happens in the browser for example: a native DOM click event, timeout, etc. Angular will check all expressions if something changed,
+which could lead to performance issues for bigger apps.

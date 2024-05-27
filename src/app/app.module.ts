@@ -93,6 +93,7 @@ import {
   InjDecChildComponent
 } from '@angularTopic/services/dependencyInjection/injection-decorators/child/inj-dec-child/inj-dec-child.component';
 import {HostInjectDirective} from "@angularTopic/services/dependencyInjection/directive/host-inject.directive";
+import { DefaultComponent } from '@angularTopic/services/changeDetection/default/default.component';
 
 
 const routes: Routes = [
@@ -124,6 +125,7 @@ const routes: Routes = [
   {path: 'angular/services/treeShakeableProvider', component: TreeShakeableProviderComponent},
   {path: 'angular/services/injectionToken', component: InjectionTokenComponent},
   {path: 'angular/services/injectionDecorator', component: InjectionDecoratorsComponent},
+  {path: 'angular/changeDetection/defaultChangeDetection', component: DefaultComponent},
 ]
 
 
@@ -174,7 +176,8 @@ const routes: Routes = [
     TreeShakeableProviderComponent,
     InjectionTokenComponent,
     InjectionDecoratorsComponent,
-    InjDecChildComponent
+    InjDecChildComponent,
+    DefaultComponent
   ],
   imports: [
     BrowserModule,
