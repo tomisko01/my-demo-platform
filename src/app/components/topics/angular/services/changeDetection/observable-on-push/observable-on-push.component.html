@@ -1,0 +1,22 @@
+<h3>Usage with async pipe</h3>
+
+@for (item of eldenItems$| async; track item.id) {
+  <app-observable-on-push-child
+    [childItem]="item">
+  </app-observable-on-push-child>
+}
+
+
+<h3>Usage with subscribe to observable</h3>
+
+@for (item of eldenItems; track item.id) {
+  <app-observable-on-push-child
+    [childItem]="item">
+  </app-observable-on-push-child>
+}
+
+<h3> Old for notation</h3>
+<app-observable-on-push-child *ngFor="let eldenItem of eldenItems"
+  [childItem]="eldenItem">
+
+</app-observable-on-push-child>

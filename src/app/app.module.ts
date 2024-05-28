@@ -96,6 +96,8 @@ import {HostInjectDirective} from "@angularTopic/services/dependencyInjection/di
 import { DefaultComponent } from '@angularTopic/services/changeDetection/default/default.component';
 import { OnPushComponent } from '@angularTopic/services/changeDetection/on-push/on-push.component';
 import { OnPushChildComponent } from '@angularTopic/services/changeDetection/on-push/child/on-push-child.component';
+import { ObservableOnPushComponent } from './components/topics/angular/services/changeDetection/observable-on-push/observable-on-push.component';
+import { ObservableOnPushChildComponent } from './components/topics/angular/services/changeDetection/observable-on-push/child/observable-on-push-child/observable-on-push-child.component';
 
 
 const routes: Routes = [
@@ -129,6 +131,7 @@ const routes: Routes = [
   {path: 'angular/services/injectionDecorator', component: InjectionDecoratorsComponent},
   {path: 'angular/changeDetection/defaultChangeDetection', component: DefaultComponent},
   {path: 'angular/changeDetection/onPushChangeDetection', component: OnPushComponent},
+  {path: 'angular/changeDetection/observableOnPushChangeDetection', component: ObservableOnPushComponent},
 ]
 
 
@@ -182,7 +185,9 @@ const routes: Routes = [
     InjDecChildComponent,
     DefaultComponent,
     OnPushComponent,
-    OnPushChildComponent
+    OnPushChildComponent,
+    ObservableOnPushComponent,
+    ObservableOnPushChildComponent
   ],
   imports: [
     BrowserModule,
