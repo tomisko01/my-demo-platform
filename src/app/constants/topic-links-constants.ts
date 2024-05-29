@@ -138,6 +138,9 @@ export class TopicLinksConstants {
           },{
             name: 'Observable On Push detection',
             routerLink: 'angular/changeDetection/observableOnPushChangeDetection'
+          },{
+            name: 'Attribute decorator',
+            routerLink: 'angular/changeDetection/attributeDecorator'
           }]
         }
       ]

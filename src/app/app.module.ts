@@ -96,8 +96,12 @@ import {HostInjectDirective} from "@angularTopic/services/dependencyInjection/di
 import { DefaultComponent } from '@angularTopic/services/changeDetection/default/default.component';
 import { OnPushComponent } from '@angularTopic/services/changeDetection/on-push/on-push.component';
 import { OnPushChildComponent } from '@angularTopic/services/changeDetection/on-push/child/on-push-child.component';
-import { ObservableOnPushComponent } from './components/topics/angular/services/changeDetection/observable-on-push/observable-on-push.component';
-import { ObservableOnPushChildComponent } from './components/topics/angular/services/changeDetection/observable-on-push/child/observable-on-push-child/observable-on-push-child.component';
+import { ObservableOnPushComponent } from '@angularTopic/services/changeDetection/observable-on-push/observable-on-push.component';
+import { ObservableOnPushChildComponent } from '@angularTopic/services/changeDetection/observable-on-push/child/observable-on-push-child/observable-on-push-child.component';
+import { AttributeDecoratorComponent } from '@angularTopic/services/changeDetection/attribute-decorator/attribute-decorator.component';
+import {
+  AttributeDecoratorChildComponent
+} from "@angularTopic/services/changeDetection/attribute-decorator/attribute-decorator-child/attribute-decorator-child.component";
 
 
 const routes: Routes = [
@@ -132,6 +136,7 @@ const routes: Routes = [
   {path: 'angular/changeDetection/defaultChangeDetection', component: DefaultComponent},
   {path: 'angular/changeDetection/onPushChangeDetection', component: OnPushComponent},
   {path: 'angular/changeDetection/observableOnPushChangeDetection', component: ObservableOnPushComponent},
+  {path: 'angular/changeDetection/attributeDecorator', component: AttributeDecoratorComponent},
 ]
 
 
@@ -187,7 +192,9 @@ const routes: Routes = [
     OnPushComponent,
     OnPushChildComponent,
     ObservableOnPushComponent,
-    ObservableOnPushChildComponent
+    ObservableOnPushChildComponent,
+    AttributeDecoratorComponent,
+    AttributeDecoratorChildComponent
   ],
   imports: [
     BrowserModule,
