@@ -6,6 +6,7 @@ import {NestedTreeControl} from "@angular/cdk/tree";
 import {TopicLinksConstants} from "./constants/topic-links-constants";
 import {TopicNode} from "./typings";
 import * as _ from "lodash";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -17,9 +18,13 @@ export class AppComponent implements OnInit {
   nestedDataSource = new MatTreeNestedDataSource<TopicNode>();
   nestedTreeControl = new NestedTreeControl<TopicNode>(node => node.children);
 
+  selectedTopic: TopicNode;
+
   constructor(private matIconRegistry: MatIconRegistry,
               private domSanitizer: DomSanitizer,
-              private constants: TopicLinksConstants
+              private constants: TopicLinksConstants,
+              private router: Router,
+              private route: ActivatedRoute,
   ) {
     this.nestedDataSource.data = _.cloneDeep(constants.TREE_DATA);
     this.nestedTreeControl.dataNodes = _.cloneDeep(constants.TREE_DATA);
@@ -31,6 +36,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.router.events.subscribe((event: any) => {console.log(event)});
   }
 
   openGithubPage() {

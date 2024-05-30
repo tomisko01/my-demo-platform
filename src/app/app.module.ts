@@ -102,6 +102,7 @@ import { AttributeDecoratorComponent } from '@angularTopic/services/changeDetect
 import {
   AttributeDecoratorChildComponent
 } from "@angularTopic/services/changeDetection/attribute-decorator/attribute-decorator-child/attribute-decorator-child.component";
+import { TopicHeaderComponent } from './components/topic-header/topic-header.component';
 
 
 const routes: Routes = [
@@ -194,7 +195,8 @@ const routes: Routes = [
     ObservableOnPushComponent,
     ObservableOnPushChildComponent,
     AttributeDecoratorComponent,
-    AttributeDecoratorChildComponent
+    AttributeDecoratorChildComponent,
+    TopicHeaderComponent
   ],
   imports: [
     BrowserModule,

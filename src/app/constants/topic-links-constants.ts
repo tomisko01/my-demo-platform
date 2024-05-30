@@ -132,15 +132,16 @@ export class TopicLinksConstants {
           children: [{
             name: 'Default detection',
             routerLink: 'angular/changeDetection/defaultChangeDetection'
-          },{
+          }, {
             name: 'On Push detection',
             routerLink: 'angular/changeDetection/onPushChangeDetection'
-          },{
+          }, {
             name: 'Observable On Push detection',
             routerLink: 'angular/changeDetection/observableOnPushChangeDetection'
-          },{
+          }, {
             name: 'Attribute decorator',
-            routerLink: 'angular/changeDetection/attributeDecorator'
+            routerLink: 'angular/changeDetection/attributeDecorator',
+            githubLink: 'ameno',
           }]
         }
       ]
