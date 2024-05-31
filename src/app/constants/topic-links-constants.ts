@@ -85,45 +85,45 @@ export class TopicLinksConstants {
             routerLink: '/angular/highlightedDirective'
           }, {
             name: 'Structural Directive',
-            routerLink: 'angular/structuralDirective'
+            routerLink: '/angular/structuralDirective'
           }]
         },
         {
           name: 'Styles',
           children: [{
             name: 'Host',
-            routerLink: 'angular/stylesHost'
+            routerLink: '/angular/stylesHost'
           }, {
             name: 'Encapsulation',
-            routerLink: 'angular/stylesEncapsulation'
+            routerLink: '/angular/stylesEncapsulation'
           }]
         },
         {
           name: 'Services',
           children: [{
             name: 'Get call',
-            routerLink: 'angular/services/getCall'
+            routerLink: '/angular/services/getCall'
           },
             {
               name: 'Dependency injection',
               children: [{
                 name: 'Own provider',
-                routerLink: 'angular/services/ownProvider'
+                routerLink: '/angular/services/ownProvider'
               }, {
                 name: 'Own provider simplified',
-                routerLink: 'angular/services/ownProviderSimplified'
+                routerLink: '/angular/services/ownProviderSimplified'
               }, {
                 name: 'Hierarchical Injection',
-                routerLink: 'angular/services/hierarchicalInjection'
+                routerLink: '/angular/services/hierarchicalInjection'
               }, {
                 name: 'Tree shakeable provider',
-                routerLink: 'angular/services/treeShakeableProvider'
+                routerLink: '/angular/services/treeShakeableProvider'
               }, {
                 name: 'Injection tokens',
-                routerLink: 'angular/services/injectionToken'
+                routerLink: '/angular/services/injectionToken'
               }, {
                 name: 'Injection decorators',
-                routerLink: 'angular/services/injectionDecorator'
+                routerLink: '/angular/services/injectionDecorator'
               }]
             }]
         },
@@ -131,16 +131,16 @@ export class TopicLinksConstants {
           name: 'Change detection',
           children: [{
             name: 'Default detection',
-            routerLink: 'angular/changeDetection/defaultChangeDetection'
+            routerLink: '/angular/changeDetection/defaultChangeDetection'
           }, {
             name: 'On Push detection',
-            routerLink: 'angular/changeDetection/onPushChangeDetection'
+            routerLink: '/angular/changeDetection/onPushChangeDetection'
           }, {
             name: 'Observable On Push detection',
-            routerLink: 'angular/changeDetection/observableOnPushChangeDetection'
+            routerLink: '/angular/changeDetection/observableOnPushChangeDetection'
           }, {
             name: 'Attribute decorator',
-            routerLink: 'angular/changeDetection/attributeDecorator',
+            routerLink: '/angular/changeDetection/attributeDecorator',
             githubLink: 'ameno',
           }]
         }

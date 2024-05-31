@@ -6,7 +6,9 @@ import {NestedTreeControl} from "@angular/cdk/tree";
 import {TopicLinksConstants} from "./constants/topic-links-constants";
 import {TopicNode} from "./typings";
 import * as _ from "lodash";
-import {ActivatedRoute, Router} from "@angular/router";
+import {NavigationEnd, Router, RouterEvent} from "@angular/router";
+import {filter, map} from "rxjs";
+import {TopicService} from "@service/topic/topic.service";
 
 @Component({
   selector: 'app-root',
@@ -24,7 +26,7 @@ export class AppComponent implements OnInit {
               private domSanitizer: DomSanitizer,
               private constants: TopicLinksConstants,
               private router: Router,
-              private route: ActivatedRoute,
+              private topicService: TopicService,
   ) {
     this.nestedDataSource.data = _.cloneDeep(constants.TREE_DATA);
     this.nestedTreeControl.dataNodes = _.cloneDeep(constants.TREE_DATA);
@@ -36,7 +38,13 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.router.events.subscribe((event: any) => {console.log(event)});
+
+    this.router.events.pipe(
+      filter((event): event is NavigationEnd => event instanceof NavigationEnd),
+      map((navigationEndEvent: NavigationEnd) => navigationEndEvent.url )
+    ).subscribe(event => {
+      this.selectedTopic = this.topicService.getByURL(event);
+    });
   }
 
   openGithubPage() {
