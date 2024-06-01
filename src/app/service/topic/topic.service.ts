@@ -13,7 +13,7 @@ export class TopicService {
 
   getByURL(url: string): TopicNode {
 
-    let topics: TopicNode[] = _.cloneDeep(this.topics.TREE_DATA);
+    let topics: TopicNode[] = _.cloneDeep(this.topics.allTopics);
 
     return this.searchByUrl(url, topics);
   }
@@ -25,11 +25,12 @@ export class TopicService {
       return topic;
     }
 
-    return this.searchByUrl(url,
-      _(topics)
-        .filter(topic => !_.isEmpty(topic.children))
-        .flatMap('children')
-        .value());
+    let childrenTopics = _(topics)
+      .filter(topic => !_.isEmpty(topic.children))
+      .flatMap('children')
+      .value();
+
+    return this.searchByUrl(url,childrenTopics);
   }
 
 }

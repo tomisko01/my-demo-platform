@@ -3,6 +3,8 @@ export interface TopicNode {
   routerLink?: string,
   githubLink?: string;
   children?: TopicNode[];
+  title?: string;
+  usesConsole?: boolean;
 }
 
 declare namespace elden {

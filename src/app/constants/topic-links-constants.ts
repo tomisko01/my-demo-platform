@@ -131,7 +131,9 @@ export class TopicLinksConstants {
           name: 'Change detection',
           children: [{
             name: 'Default detection',
-            routerLink: '/angular/changeDetection/defaultChangeDetection'
+            routerLink: '/angular/changeDetection/defaultChangeDetection',
+            title: 'Default change detection mechanism',
+            githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/services/changeDetection/default/default.component.ts'
           }, {
             name: 'On Push detection',
             routerLink: '/angular/changeDetection/onPushChangeDetection'
@@ -154,5 +156,12 @@ export class TopicLinksConstants {
         }
       ]
     }
-  ]
+  ];
+
+  public home: TopicNode = {
+    name: 'Home',
+    routerLink: '/'
+  }
+
+  public allTopics: TopicNode[] = [...this.TREE_DATA, this.home];
 }

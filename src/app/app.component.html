@@ -75,11 +75,13 @@
       </div>
     </div>
   </mat-sidenav>
-  <mat-sidenav-content >
+  <mat-sidenav-content>
     <div class="main-content whole-page">
-      <app-topic-header>
-
-      </app-topic-header>
+      @if (selectedTopic) {
+        <app-topic-header
+          [topic]="selectedTopic">
+        </app-topic-header>
+      }
       <router-outlet>
 
       </router-outlet>
