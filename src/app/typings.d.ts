@@ -1,6 +1,7 @@
 export interface TopicNode {
   name: string;
   routerLink?: string,
+  githubLinkNeeded?: boolean;
   githubLink?: string;
   children?: TopicNode[];
   title?: string;

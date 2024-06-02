@@ -11,7 +11,8 @@ export class TopicLinksConstants {
       children: [
         {
           name: 'New project',
-          routerLink: '/angular/newProject'
+          routerLink: '/angular/newProject',
+          githubLinkNeeded: false
         },
         {
           name: 'Interpolation syntax',
@@ -136,14 +137,19 @@ export class TopicLinksConstants {
             githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/services/changeDetection/default/default.component.ts'
           }, {
             name: 'On Push detection',
-            routerLink: '/angular/changeDetection/onPushChangeDetection'
+            routerLink: '/angular/changeDetection/onPushChangeDetection',
+            title: 'On push detection',
+            githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/services/changeDetection/on-push/on-push.component.ts'
           }, {
             name: 'Observable On Push detection',
-            routerLink: '/angular/changeDetection/observableOnPushChangeDetection'
+            routerLink: '/angular/changeDetection/observableOnPushChangeDetection',
+            title: 'Use observable with on push',
+            githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/services/changeDetection/observable-on-push/observable-on-push.component.ts'
           }, {
             name: 'Attribute decorator',
             routerLink: '/angular/changeDetection/attributeDecorator',
-            githubLink: 'ameno',
+            title: 'Attribute decorator (one-way binding)',
+            githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/services/changeDetection/attribute-decorator/attribute-decorator.component.ts',
           }]
         }
       ]
@@ -160,7 +166,8 @@ export class TopicLinksConstants {
 
   public home: TopicNode = {
     name: 'Home',
-    routerLink: '/'
+    routerLink: '/',
+    githubLinkNeeded: false
   }
 
   public allTopics: TopicNode[] = [...this.TREE_DATA, this.home];

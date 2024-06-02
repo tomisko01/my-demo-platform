@@ -1,14 +1,13 @@
 <h1>{{ topic.title }}
-  @if (topic.githubLink) {
+  @if (topic.githubLinkNeeded) {
 
     <button mat-icon-button
             (click)="openGithubLink()"
             aria-label="Open source code">
       <mat-icon>open_in_new</mat-icon>
     </button>
-  } @else {
-    add githubLink!
   }
+
   @if (topic.usesConsole) {
     <mat-icon matTooltip="More examples in console.log">info</mat-icon>
   }
