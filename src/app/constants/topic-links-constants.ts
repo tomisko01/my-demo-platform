@@ -109,16 +109,26 @@ export class TopicLinksConstants {
               name: 'Dependency injection',
               children: [{
                 name: 'Own provider',
-                routerLink: '/angular/services/ownProvider'
+                routerLink: '/angular/services/ownProvider',
+                title: 'How to write own service provider',
+                githubLinkNeeded: true,
+                githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/services/dependencyInjection/own-provider/own-provider.component.ts'
               }, {
                 name: 'Own provider simplified',
-                routerLink: '/angular/services/ownProviderSimplified'
+                routerLink: '/angular/services/ownProviderSimplified',
+                title: 'How to simplify own service provider',
+                githubLinkNeeded: true,
+                githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/services/dependencyInjection/own-provider-simplified/own-provider-simplified.component.ts'
               }, {
                 name: 'Hierarchical Injection',
-                routerLink: '/angular/services/hierarchicalInjection'
+                routerLink: '/angular/services/hierarchicalInjection',
+                title: 'How dependencies are provided to children components',
+                githubLinkNeeded: true,
+                githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/services/dependencyInjection/hierarchical-injection/hierarchical-injection.component.ts',
               }, {
                 name: 'Tree shakeable provider',
-                routerLink: '/angular/services/treeShakeableProvider'
+                routerLink: '/angular/services/treeShakeableProvider',
+                title: ',,,'
               }, {
                 name: 'Injection tokens',
                 routerLink: '/angular/services/injectionToken'
