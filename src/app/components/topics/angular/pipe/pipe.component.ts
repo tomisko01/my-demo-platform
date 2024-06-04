@@ -8,7 +8,6 @@ import {HighlightService} from "@service/HighlightService";
 })
 export class PipeComponent implements AfterViewChecked {
 
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/pipe/pipe.component.spec.ts";
   private highlighted: Boolean = false;
 
   startDate: Date = new Date();
@@ -123,9 +122,4 @@ export class PipeComponent implements AfterViewChecked {
       this.highlighted = true;
     }
   }
-
-  openGithubLink(): void {
-    window.open(this.githubLink);
-  }
-
 }

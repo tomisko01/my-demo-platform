@@ -8,7 +8,6 @@ import {HighlightService} from "@service/HighlightService";
 })
 export class ConditionalStylesComponent implements AfterViewChecked {
 
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/conditional-styles/conditional-styles.component.ts";
   private highlighted: Boolean = false;
 
   objectToShow: any = {
@@ -75,10 +74,6 @@ getStyles() {
       this.highlightService.highlightAll();
       this.highlighted = true;
     }
-  }
-
-  openGithubLink(): void {
-    window.open(this.githubLink);
   }
 
   divClasses() {

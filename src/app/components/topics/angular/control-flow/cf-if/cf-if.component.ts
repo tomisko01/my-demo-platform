@@ -7,7 +7,6 @@ import {HighlightService} from "@service/HighlightService";
   styleUrl: './cf-if.component.css'
 })
 export class CfIfComponent implements AfterViewChecked {
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/control-flow/cf-if/cf-if.component.ts";
   highlighted: boolean = false
 
   nullObjectToCheck: any = null;
@@ -46,9 +45,5 @@ export class CfIfComponent implements AfterViewChecked {
       this.highlightService.highlightAll();
       this.highlighted = true;
     }
-  }
-
-  openGithubLink(): void {
-    window.open(this.githubLink);
   }
 }

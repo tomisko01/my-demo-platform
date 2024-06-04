@@ -16,7 +16,6 @@ type objectToShow = { name: string, category: Category };
   styleUrl: './cf-switch.component.css'
 })
 export class CfSwitchComponent implements AfterViewChecked {
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/control-flow/cf-switch/cf-switch.component.ts";
 
   highlighted: boolean = false;
 
@@ -76,9 +75,4 @@ export class CfSwitchComponent implements AfterViewChecked {
       this.highlighted = true;
     }
   }
-
-  openGithubLink(): void {
-    window.open(this.githubLink);
-  }
-
 }

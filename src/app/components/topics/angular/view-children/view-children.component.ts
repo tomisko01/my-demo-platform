@@ -20,7 +20,6 @@ import * as _ from "lodash";
 })
 export class ViewChildrenComponent implements AfterViewChecked, AfterViewInit {
 
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/view-children/view-children.component.ts";
   private highlighted: Boolean = false;
 
   @ViewChildren(ViewChildrenChildComponent)
@@ -60,10 +59,6 @@ export class ViewChildrenComponent implements AfterViewChecked, AfterViewInit {
   constructor(private highlightService: HighlightService,
               private ref: ChangeDetectorRef
   ) {
-  }
-
-  openGithubLink(): void {
-    window.open(this.githubLink);
   }
 
   ngAfterViewChecked(): void {

@@ -8,9 +8,7 @@ import {HighlightService} from "@service/HighlightService";
 })
 export class ContentProjectionComponent implements AfterViewChecked {
 
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/content-projection/content-projection.component.ts";
   private highlighted: Boolean = false;
-
 
   object: any = {
     'id': 'id1',
@@ -54,10 +52,6 @@ export class ContentProjectionComponent implements AfterViewChecked {
 
   constructor(private highlightService: HighlightService
   ) {
-  }
-
-  openGithubLink(): void {
-    window.open(this.githubLink);
   }
 
   ngAfterViewChecked(): void {

@@ -7,7 +7,6 @@ import {HighlightService} from "@service/HighlightService";
   styleUrl: './view-encapsulation.component.css'})
 export class ViewEncapsulationComponent implements AfterViewChecked {
 
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/styles/view-encapsulation/view-encapsulation.component.ts";
   private highlighted: Boolean = false;
 
   emulatedConde: string = `
@@ -19,10 +18,6 @@ export class ViewEncapsulationComponent implements AfterViewChecked {
 
   constructor(private highlightService: HighlightService
   ) {
-  }
-
-  openGithubLink(): void {
-    window.open(this.githubLink);
   }
 
   ngAfterViewChecked(): void {

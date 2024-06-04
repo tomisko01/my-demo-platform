@@ -13,8 +13,6 @@ export class InterpolationSyntaxComponent implements AfterViewChecked {
     property: 'test'
   }
 
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/interpolation-syntax/interpolation-syntax.component.ts";
-
   sourceComponent: string = `
   object: {
     property: 'test'
@@ -28,10 +26,6 @@ export class InterpolationSyntaxComponent implements AfterViewChecked {
   constructor(
     private highlightService: HighlightService
   ) {
-  }
-
-  openGithubLink(): void {
-    window.open(this.githubLink);
   }
 
   ngAfterViewChecked(): void {

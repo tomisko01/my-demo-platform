@@ -8,8 +8,8 @@ import {HighlightService} from "@service/HighlightService";
 })
 export class NgTemplateComponent implements AfterViewChecked{
 
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/ng-template/ng-template.component.ts";
   private highlighted: Boolean = false;
+
   ngTemplateCode: string = `
 <ng-template #blankImage let-objectName="name">
   <p> {{ objectName }} has no image yet.</p>
@@ -53,9 +53,5 @@ export class NgTemplateComponent implements AfterViewChecked{
       this.highlightService.highlightAll();
       this.highlighted = true;
     }
-  }
-
-  openGithubLink(): void {
-    window.open(this.githubLink);
   }
 }

@@ -7,7 +7,6 @@ import {HighlightService} from "@service/HighlightService";
   styleUrl: './cf-for.component.css'
 })
 export class CfForComponent implements AfterViewChecked {
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/control-flow/cf-for/cf-for.component.ts";
 
   objectList: { id: string, name: string }[] = [{
     id: '0001',
@@ -50,9 +49,4 @@ export class CfForComponent implements AfterViewChecked {
       this.highlighted = true;
     }
   }
-
-  openGithubLink(): void {
-    window.open(this.githubLink);
-  }
-
 }

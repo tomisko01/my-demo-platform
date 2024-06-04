@@ -12,7 +12,6 @@ import {
 })
 export class HighlightedDirectiveUsageComponent implements AfterViewChecked, AfterViewInit {
 
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/content-projection/content-projection.component.ts";
   private highlighted: Boolean = false;
 
   @ViewChild(HighlightedDirective)
@@ -120,10 +119,6 @@ export class HighlightedDirectiveUsageComponent implements AfterViewChecked, Aft
 
   constructor(private highlightService: HighlightService
   ) {
-  }
-
-  openGithubLink(): void {
-    window.open(this.githubLink);
   }
 
   ngAfterViewChecked(): void {

@@ -7,7 +7,7 @@ import {HighlightService} from "@service/HighlightService";
   styleUrl: './ng-container.component.css'
 })
 export class NgContainerComponent implements AfterViewChecked {
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/ng-container/ng-container.component.ts";
+
   private highlighted: Boolean = false;
   objectToCheck: any =
     {
@@ -27,9 +27,5 @@ export class NgContainerComponent implements AfterViewChecked {
       this.highlightService.highlightAll();
       this.highlighted = true;
     }
-  }
-
-  openGithubLink(): void {
-    window.open(this.githubLink);
   }
 }

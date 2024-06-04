@@ -10,7 +10,6 @@ export class OutputComponent implements AfterViewChecked {
 
   valueFromChild: string = "";
   valueFromInputChild: string = "";
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/output/output.component.ts";
 
   sourceComponent: string = `
   // PARENT COMPONENT
@@ -52,10 +51,6 @@ export class OutputComponent implements AfterViewChecked {
 
   handleInputChildEvent($event: string) {
     this.valueFromInputChild = $event;
-  }
-
-  openGithubLink() {
-    window.open(this.githubLink);
   }
 
   ngAfterViewChecked(): void {

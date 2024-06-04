@@ -9,7 +9,6 @@ import {VcChildComponent} from "./component/vc-child/vc-child.component";
 })
 export class ViewChildComponent implements AfterContentChecked {
 
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/view-child/view-child.component.ts";
   private highlighted: Boolean = false;
 
   propertyToPass: any = {
@@ -42,10 +41,6 @@ export class ViewChildComponent implements AfterContentChecked {
   constructor(private highlightService: HighlightService,
               private ref: ChangeDetectorRef
   ) {
-  }
-
-  openGithubLink(): void {
-    window.open(this.githubLink);
   }
 
   ngAfterContentChecked(): void {

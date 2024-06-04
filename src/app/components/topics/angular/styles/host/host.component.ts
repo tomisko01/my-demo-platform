@@ -8,7 +8,6 @@ import {HighlightService} from "@service/HighlightService";
 })
 export class HostComponent implements AfterViewChecked {
 
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/styles/host/host.component.ts";
   private highlighted: Boolean = false;
 
   hostCode: string = `
@@ -47,10 +46,6 @@ export class HostComponent implements AfterViewChecked {
 
   constructor(private highlightService: HighlightService
   ) {
-  }
-
-  openGithubLink(): void {
-    window.open(this.githubLink);
   }
 
   ngAfterViewChecked(): void {

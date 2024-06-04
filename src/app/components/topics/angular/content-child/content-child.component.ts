@@ -8,7 +8,6 @@ import {HighlightService} from "@service/HighlightService";
 })
 export class ContentChildComponent implements AfterViewChecked {
 
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/content-child/content-child.component.ts";
   private highlighted: Boolean = false;
   darkSoulsImageUrl: string = 'assets/img/dark-souls-solaire-praise-the-sun-sticker.jpg';
   contentChildCode: string =`
@@ -41,10 +40,6 @@ content: ContentChildImageComponent;`;
 
   constructor(private highlightService: HighlightService
   ) {
-  }
-
-  openGithubLink(): void {
-    window.open(this.githubLink);
   }
 
   ngAfterViewChecked(): void {

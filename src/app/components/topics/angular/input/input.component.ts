@@ -7,7 +7,6 @@ import {HighlightService} from "@service/HighlightService";
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements AfterViewChecked {
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/input/input.component.ts";
   propertyToPass: string = "property to pass as an input";
 
   sourceComponent: string = `
@@ -24,10 +23,6 @@ export class InputComponent implements AfterViewChecked {
 
   constructor(private highlightService: HighlightService
   ) {
-  }
-
-  openGithubLink(): void {
-    window.open(this.githubLink);
   }
 
   ngAfterViewChecked(): void {

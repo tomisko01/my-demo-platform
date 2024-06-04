@@ -8,7 +8,6 @@ import {HighlightService} from "@service/HighlightService";
 })
 export class UnlessDirectiveUsageComponent implements AfterViewChecked {
 
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/directive/component/ngx-unless/unless-directive-usage.component.ts";
   private highlighted: Boolean = false;
   condition: boolean = true;
   directiveTemplateCode: string = `
@@ -63,10 +62,6 @@ export class NgxUnlessDirective {
 
   constructor(private highlightService: HighlightService
   ) {
-  }
-
-  openGithubLink(): void {
-    window.open(this.githubLink);
   }
 
   ngAfterViewChecked(): void {

@@ -12,7 +12,6 @@ import {EldenItemsService} from "@angularTopic/services/get-call/service/elden-i
 })
 export class GetCallComponent implements OnInit, AfterViewChecked {
 
-  githubLink: string = "https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/services/get-call/get-call.component.ts";
   private highlighted: Boolean = false;
   private wolneLekturyAPI: string = 'https://wolnelektury.pl/api/kinds/';
 
@@ -24,10 +23,6 @@ export class GetCallComponent implements OnInit, AfterViewChecked {
   constructor(private highlightService: HighlightService,
               private eldenInvoker: EldenItemsService,
   ) {
-  }
-
-  openGithubLink(): void {
-    window.open(this.githubLink);
   }
 
   ngAfterViewChecked(): void {
