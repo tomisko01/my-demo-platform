@@ -103,6 +103,7 @@ import {
   AttributeDecoratorChildComponent
 } from "@angularTopic/services/changeDetection/attribute-decorator/attribute-decorator-child/attribute-decorator-child.component";
 import { TopicHeaderComponent } from './components/topic-header/topic-header.component';
+import { CustomChangeDetectionComponent } from './components/topics/angular/services/changeDetection/custom-change-detection/custom-change-detection.component';
 
 
 const routes: Routes = [
@@ -138,6 +139,7 @@ const routes: Routes = [
   {path: 'angular/changeDetection/onPushChangeDetection', component: OnPushComponent},
   {path: 'angular/changeDetection/observableOnPushChangeDetection', component: ObservableOnPushComponent},
   {path: 'angular/changeDetection/attributeDecorator', component: AttributeDecoratorComponent},
+  {path: 'angular/changeDetection/customChangeDetection', component: CustomChangeDetectionComponent},
 ]
 
 
@@ -196,7 +198,8 @@ const routes: Routes = [
     ObservableOnPushChildComponent,
     AttributeDecoratorComponent,
     AttributeDecoratorChildComponent,
-    TopicHeaderComponent
+    TopicHeaderComponent,
+    CustomChangeDetectionComponent
   ],
   imports: [
     BrowserModule,

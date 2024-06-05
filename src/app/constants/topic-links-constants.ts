@@ -237,6 +237,13 @@ export class TopicLinksConstants {
             title: 'Attribute decorator (one-way binding)',
             githubLinkNeeded: true,
             githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/services/changeDetection/attribute-decorator/attribute-decorator.component.ts',
+          }, {
+            name: 'Custom change detection',
+            routerLink: '/angular/changeDetection/customChangeDetection',
+            title: 'How to write own change detection mechanism',
+            githubLinkNeeded: true,
+            githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/services/changeDetection/custom-change-detection/custom-change-detection.component.ts',
+            usesConsole: true,
           }]
         }
       ]
