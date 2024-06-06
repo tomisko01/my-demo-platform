@@ -255,6 +255,13 @@ export class TopicLinksConstants {
             githubLinkNeeded: true,
             githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/lifecycle/on-init-hook/on-init-hook.component.ts',
             usesConsole: true
+          }, {
+            name: 'onDestroy',
+            routerLink: '/angular/lifecycle/onDestroy',
+            title: 'When onDestroy is called',
+            githubLinkNeeded: true,
+            githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/lifecycle/on-destroy-hook/on-destroy-hook.component.ts',
+            usesConsole: true
           }]
         }
       ]

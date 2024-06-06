@@ -1,0 +1,12 @@
+<p>on-destroy-hook works!</p>
+
+@if (objectToPass.id) {
+  <app-on-destroy-hook-child
+    [object]=objectToPass>
+  </app-on-destroy-hook-child>
+}
+
+
+<button (click)="destroyChild()">
+  Destroy child component
+</button>

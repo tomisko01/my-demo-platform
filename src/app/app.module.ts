@@ -106,6 +106,8 @@ import { TopicHeaderComponent } from './components/topic-header/topic-header.com
 import { CustomChangeDetectionComponent } from './components/topics/angular/services/changeDetection/custom-change-detection/custom-change-detection.component';
 import { OnInitHookComponent } from './components/topics/angular/lifecycle/on-init-hook/on-init-hook.component';
 import { OnInitHookChildComponent } from './components/topics/angular/lifecycle/on-init-hook/child/on-init-hook-child/on-init-hook-child.component';
+import { OnDestroyHookComponent } from './components/topics/angular/lifecycle/on-destroy-hook/on-destroy-hook.component';
+import { OnDestroyHookChildComponent } from './components/topics/angular/lifecycle/on-destroy-hook/child/on-destroy-hook-child/on-destroy-hook-child.component';
 
 
 const routes: Routes = [
@@ -143,6 +145,7 @@ const routes: Routes = [
   {path: 'angular/changeDetection/attributeDecorator', component: AttributeDecoratorComponent},
   {path: 'angular/changeDetection/customChangeDetection', component: CustomChangeDetectionComponent},
   {path: 'angular/lifecycle/onInit', component: OnInitHookComponent},
+  {path: 'angular/lifecycle/onDestroy', component: OnDestroyHookComponent},
 ]
 
 
@@ -204,7 +207,9 @@ const routes: Routes = [
     TopicHeaderComponent,
     CustomChangeDetectionComponent,
     OnInitHookComponent,
-    OnInitHookChildComponent
+    OnInitHookChildComponent,
+    OnDestroyHookComponent,
+    OnDestroyHookChildComponent
   ],
   imports: [
     BrowserModule,
