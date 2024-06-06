@@ -104,6 +104,8 @@ import {
 } from "@angularTopic/services/changeDetection/attribute-decorator/attribute-decorator-child/attribute-decorator-child.component";
 import { TopicHeaderComponent } from './components/topic-header/topic-header.component';
 import { CustomChangeDetectionComponent } from './components/topics/angular/services/changeDetection/custom-change-detection/custom-change-detection.component';
+import { OnInitHookComponent } from './components/topics/angular/lifecycle/on-init-hook/on-init-hook.component';
+import { OnInitHookChildComponent } from './components/topics/angular/lifecycle/on-init-hook/child/on-init-hook-child/on-init-hook-child.component';
 
 
 const routes: Routes = [
@@ -140,6 +142,7 @@ const routes: Routes = [
   {path: 'angular/changeDetection/observableOnPushChangeDetection', component: ObservableOnPushComponent},
   {path: 'angular/changeDetection/attributeDecorator', component: AttributeDecoratorComponent},
   {path: 'angular/changeDetection/customChangeDetection', component: CustomChangeDetectionComponent},
+  {path: 'angular/lifecycle/onInit', component: OnInitHookComponent},
 ]
 
 
@@ -199,7 +202,9 @@ const routes: Routes = [
     AttributeDecoratorComponent,
     AttributeDecoratorChildComponent,
     TopicHeaderComponent,
-    CustomChangeDetectionComponent
+    CustomChangeDetectionComponent,
+    OnInitHookComponent,
+    OnInitHookChildComponent
   ],
   imports: [
     BrowserModule,

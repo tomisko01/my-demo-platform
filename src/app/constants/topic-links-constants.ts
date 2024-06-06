@@ -245,6 +245,17 @@ export class TopicLinksConstants {
             githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/services/changeDetection/custom-change-detection/custom-change-detection.component.ts',
             usesConsole: true,
           }]
+        },
+        {
+          name: 'Lifecycle',
+          children: [{
+            name: 'onInit',
+            routerLink: '/angular/lifecycle/onInit',
+            title: 'When onInit is called',
+            githubLinkNeeded: true,
+            githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/lifecycle/on-init-hook/on-init-hook.component.ts',
+            usesConsole: true
+          }]
         }
       ]
     },
