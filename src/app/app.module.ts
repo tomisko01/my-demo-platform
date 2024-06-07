@@ -108,6 +108,8 @@ import { OnInitHookComponent } from './components/topics/angular/lifecycle/on-in
 import { OnInitHookChildComponent } from './components/topics/angular/lifecycle/on-init-hook/child/on-init-hook-child/on-init-hook-child.component';
 import { OnDestroyHookComponent } from './components/topics/angular/lifecycle/on-destroy-hook/on-destroy-hook.component';
 import { OnDestroyHookChildComponent } from './components/topics/angular/lifecycle/on-destroy-hook/child/on-destroy-hook-child/on-destroy-hook-child.component';
+import { OnChangesHookComponent } from './components/topics/angular/lifecycle/on-changes-hook/on-changes-hook.component';
+import { OnChangesHookChildComponent } from './components/topics/angular/lifecycle/on-changes-hook/child/on-changes-hook-child/on-changes-hook-child.component';
 
 
 const routes: Routes = [
@@ -146,6 +148,7 @@ const routes: Routes = [
   {path: 'angular/changeDetection/customChangeDetection', component: CustomChangeDetectionComponent},
   {path: 'angular/lifecycle/onInit', component: OnInitHookComponent},
   {path: 'angular/lifecycle/onDestroy', component: OnDestroyHookComponent},
+  {path: 'angular/lifecycle/onChanges', component: OnChangesHookComponent},
 ]
 
 
@@ -209,7 +212,9 @@ const routes: Routes = [
     OnInitHookComponent,
     OnInitHookChildComponent,
     OnDestroyHookComponent,
-    OnDestroyHookChildComponent
+    OnDestroyHookChildComponent,
+    OnChangesHookComponent,
+    OnChangesHookChildComponent
   ],
   imports: [
     BrowserModule,

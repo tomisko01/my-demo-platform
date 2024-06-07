@@ -262,6 +262,13 @@ export class TopicLinksConstants {
             githubLinkNeeded: true,
             githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/lifecycle/on-destroy-hook/on-destroy-hook.component.ts',
             usesConsole: true
+          }, {
+            name: 'onChanges',
+            routerLink: '/angular/lifecycle/onChanges',
+            title: 'When onChanges is called',
+            githubLinkNeeded: true,
+            githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/lifecycle/on-changes-hook/on-changes-hook.component.ts',
+            usesConsole: true
           }]
         }
       ]
