@@ -1,0 +1,29 @@
+<p>after-content-checked-hook works!</p>
+
+<app-after-content-checked-hook-child
+  [inputProperty]="prop"
+  [inputObject] = "objectToBothChild">
+
+  <img [src]="imgPath">
+
+  <app-after-content-checked-hook-child-content
+    [inputProperty]="childContentInput"
+    [inputObjectProperty] = "objectToBothChild.name">
+
+  </app-after-content-checked-hook-child-content>
+</app-after-content-checked-hook-child>
+
+<mat-divider></mat-divider>
+<button (click)="changeImgPath()">
+  Change image
+</button>
+
+<mat-divider></mat-divider>
+<button (click)="changeProp()">
+  Change input value to child
+</button>
+
+<mat-divider></mat-divider>
+<button (click)="changeChildContentProp()">
+  Change child content input value
+</button>

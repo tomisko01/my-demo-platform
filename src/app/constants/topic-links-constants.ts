@@ -269,6 +269,13 @@ export class TopicLinksConstants {
             githubLinkNeeded: true,
             githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/lifecycle/on-changes-hook/on-changes-hook.component.ts',
             usesConsole: true
+          }, {
+            name: 'afterContentChecked',
+            routerLink: '/angular/lifecycle/afterContentChecked',
+            title: 'When afterContentChecked is called',
+            githubLinkNeeded: true,
+            githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/lifecycle/after-content-checked-hook/after-content-checked-hook.component.ts',
+            usesConsole: true
           }]
         }
       ]

@@ -110,6 +110,9 @@ import { OnDestroyHookComponent } from './components/topics/angular/lifecycle/on
 import { OnDestroyHookChildComponent } from './components/topics/angular/lifecycle/on-destroy-hook/child/on-destroy-hook-child/on-destroy-hook-child.component';
 import { OnChangesHookComponent } from './components/topics/angular/lifecycle/on-changes-hook/on-changes-hook.component';
 import { OnChangesHookChildComponent } from './components/topics/angular/lifecycle/on-changes-hook/child/on-changes-hook-child/on-changes-hook-child.component';
+import { AfterContentCheckedHookComponent } from './components/topics/angular/lifecycle/after-content-checked-hook/after-content-checked-hook.component';
+import { AfterContentCheckedHookChildComponent } from './components/topics/angular/lifecycle/after-content-checked-hook/child/after-content-checked-hook-child/after-content-checked-hook-child.component';
+import { AfterContentCheckedHookChildContentComponent } from './components/topics/angular/lifecycle/after-content-checked-hook/child/after-content-checked-hook-child-content/after-content-checked-hook-child-content.component';
 
 
 const routes: Routes = [
@@ -149,6 +152,7 @@ const routes: Routes = [
   {path: 'angular/lifecycle/onInit', component: OnInitHookComponent},
   {path: 'angular/lifecycle/onDestroy', component: OnDestroyHookComponent},
   {path: 'angular/lifecycle/onChanges', component: OnChangesHookComponent},
+  {path: 'angular/lifecycle/afterContentChecked', component: AfterContentCheckedHookComponent},
 ]
 
 
@@ -214,7 +218,10 @@ const routes: Routes = [
     OnDestroyHookComponent,
     OnDestroyHookChildComponent,
     OnChangesHookComponent,
-    OnChangesHookChildComponent
+    OnChangesHookChildComponent,
+    AfterContentCheckedHookComponent,
+    AfterContentCheckedHookChildComponent,
+    AfterContentCheckedHookChildContentComponent
   ],
   imports: [
     BrowserModule,
