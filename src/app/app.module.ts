@@ -113,6 +113,7 @@ import { OnChangesHookChildComponent } from './components/topics/angular/lifecyc
 import { AfterContentCheckedHookComponent } from './components/topics/angular/lifecycle/after-content-checked-hook/after-content-checked-hook.component';
 import { AfterContentCheckedHookChildComponent } from './components/topics/angular/lifecycle/after-content-checked-hook/child/after-content-checked-hook-child/after-content-checked-hook-child.component';
 import { AfterContentCheckedHookChildContentComponent } from './components/topics/angular/lifecycle/after-content-checked-hook/child/after-content-checked-hook-child-content/after-content-checked-hook-child-content.component';
+import { AfterViewCheckedHookComponent } from './components/topics/angular/lifecycle/after-view-checked-hook/after-view-checked-hook.component';
 
 
 const routes: Routes = [
@@ -153,6 +154,7 @@ const routes: Routes = [
   {path: 'angular/lifecycle/onDestroy', component: OnDestroyHookComponent},
   {path: 'angular/lifecycle/onChanges', component: OnChangesHookComponent},
   {path: 'angular/lifecycle/afterContentChecked', component: AfterContentCheckedHookComponent},
+  {path: 'angular/lifecycle/afterViewChecked', component: AfterViewCheckedHookComponent},
 ]
 
 
@@ -221,7 +223,8 @@ const routes: Routes = [
     OnChangesHookChildComponent,
     AfterContentCheckedHookComponent,
     AfterContentCheckedHookChildComponent,
-    AfterContentCheckedHookChildContentComponent
+    AfterContentCheckedHookChildContentComponent,
+    AfterViewCheckedHookComponent
   ],
   imports: [
     BrowserModule,
