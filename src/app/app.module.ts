@@ -5,14 +5,7 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from "@angular/forms";
 import {RouterModule, Routes} from '@angular/router';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
 import {HttpClientModule} from "@angular/common/http";
-import {MatTreeModule} from "@angular/material/tree";
-import {MatDividerModule} from '@angular/material/divider';
-import {MatTabsModule} from '@angular/material/tabs';
 import {HomeComponent} from "./components/home/home.component";
 import {InterpolationSyntaxComponent} from "@angularTopic/interpolation-syntax/interpolation-syntax.component";
 import {HighlightService} from "@service/HighlightService";
@@ -35,7 +28,6 @@ import {ViewChildrenComponent} from '@angularTopic/view-children/view-children.c
 import {
   ViewChildrenChildComponent
 } from '@angularTopic/view-children/component/view-children-child/view-children-child.component';
-import {MatTooltip} from "@angular/material/tooltip";
 import {ContentProjectionComponent} from '@angularTopic/content-projection/content-projection.component';
 import {
   ContentProjectionChildComponent
@@ -93,27 +85,50 @@ import {
   InjDecChildComponent
 } from '@angularTopic/services/dependencyInjection/injection-decorators/child/inj-dec-child/inj-dec-child.component';
 import {HostInjectDirective} from "@angularTopic/services/dependencyInjection/directive/host-inject.directive";
-import { DefaultComponent } from '@angularTopic/services/changeDetection/default/default.component';
-import { OnPushComponent } from '@angularTopic/services/changeDetection/on-push/on-push.component';
-import { OnPushChildComponent } from '@angularTopic/services/changeDetection/on-push/child/on-push-child.component';
-import { ObservableOnPushComponent } from '@angularTopic/services/changeDetection/observable-on-push/observable-on-push.component';
-import { ObservableOnPushChildComponent } from '@angularTopic/services/changeDetection/observable-on-push/child/observable-on-push-child/observable-on-push-child.component';
-import { AttributeDecoratorComponent } from '@angularTopic/services/changeDetection/attribute-decorator/attribute-decorator.component';
+import {DefaultComponent} from '@angularTopic/services/changeDetection/default/default.component';
+import {OnPushComponent} from '@angularTopic/services/changeDetection/on-push/on-push.component';
+import {OnPushChildComponent} from '@angularTopic/services/changeDetection/on-push/child/on-push-child.component';
+import {
+  ObservableOnPushComponent
+} from '@angularTopic/services/changeDetection/observable-on-push/observable-on-push.component';
+import {
+  ObservableOnPushChildComponent
+} from '@angularTopic/services/changeDetection/observable-on-push/child/observable-on-push-child/observable-on-push-child.component';
+import {
+  AttributeDecoratorComponent
+} from '@angularTopic/services/changeDetection/attribute-decorator/attribute-decorator.component';
 import {
   AttributeDecoratorChildComponent
 } from "@angularTopic/services/changeDetection/attribute-decorator/attribute-decorator-child/attribute-decorator-child.component";
-import { TopicHeaderComponent } from './components/topic-header/topic-header.component';
-import { CustomChangeDetectionComponent } from './components/topics/angular/services/changeDetection/custom-change-detection/custom-change-detection.component';
-import { OnInitHookComponent } from './components/topics/angular/lifecycle/on-init-hook/on-init-hook.component';
-import { OnInitHookChildComponent } from './components/topics/angular/lifecycle/on-init-hook/child/on-init-hook-child/on-init-hook-child.component';
-import { OnDestroyHookComponent } from './components/topics/angular/lifecycle/on-destroy-hook/on-destroy-hook.component';
-import { OnDestroyHookChildComponent } from './components/topics/angular/lifecycle/on-destroy-hook/child/on-destroy-hook-child/on-destroy-hook-child.component';
-import { OnChangesHookComponent } from './components/topics/angular/lifecycle/on-changes-hook/on-changes-hook.component';
-import { OnChangesHookChildComponent } from './components/topics/angular/lifecycle/on-changes-hook/child/on-changes-hook-child/on-changes-hook-child.component';
-import { AfterContentCheckedHookComponent } from './components/topics/angular/lifecycle/after-content-checked-hook/after-content-checked-hook.component';
-import { AfterContentCheckedHookChildComponent } from './components/topics/angular/lifecycle/after-content-checked-hook/child/after-content-checked-hook-child/after-content-checked-hook-child.component';
-import { AfterContentCheckedHookChildContentComponent } from './components/topics/angular/lifecycle/after-content-checked-hook/child/after-content-checked-hook-child-content/after-content-checked-hook-child-content.component';
-import { AfterViewCheckedHookComponent } from './components/topics/angular/lifecycle/after-view-checked-hook/after-view-checked-hook.component';
+import {TopicHeaderComponent} from './components/topic-header/topic-header.component';
+import {
+  CustomChangeDetectionComponent
+} from '@angularTopic/services/changeDetection/custom-change-detection/custom-change-detection.component';
+import {OnInitHookComponent} from '@angularTopic/lifecycle/on-init-hook/on-init-hook.component';
+import {
+  OnInitHookChildComponent
+} from '@angularTopic/lifecycle/on-init-hook/child/on-init-hook-child/on-init-hook-child.component';
+import {OnDestroyHookComponent} from '@angularTopic/lifecycle/on-destroy-hook/on-destroy-hook.component';
+import {
+  OnDestroyHookChildComponent
+} from '@angularTopic/lifecycle/on-destroy-hook/child/on-destroy-hook-child/on-destroy-hook-child.component';
+import {OnChangesHookComponent} from '@angularTopic/lifecycle/on-changes-hook/on-changes-hook.component';
+import {
+  OnChangesHookChildComponent
+} from '@angularTopic/lifecycle/on-changes-hook/child/on-changes-hook-child/on-changes-hook-child.component';
+import {
+  AfterContentCheckedHookComponent
+} from '@angularTopic/lifecycle/after-content-checked-hook/after-content-checked-hook.component';
+import {
+  AfterContentCheckedHookChildComponent
+} from '@angularTopic/lifecycle/after-content-checked-hook/child/after-content-checked-hook-child/after-content-checked-hook-child.component';
+import {
+  AfterContentCheckedHookChildContentComponent
+} from '@angularTopic/lifecycle/after-content-checked-hook/child/after-content-checked-hook-child-content/after-content-checked-hook-child-content.component';
+import {
+  AfterViewCheckedHookComponent
+} from '@angularTopic/lifecycle/after-view-checked-hook/after-view-checked-hook.component';
+import {MatCommonModule} from "./mat-common/mat-common.module";
 
 
 const routes: Routes = [
@@ -229,18 +244,11 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatTreeModule,
-    MatDividerModule,
-    MatTabsModule,
     FormsModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    MatTooltip,
-    NgOptimizedImage
+    NgOptimizedImage,
+    MatCommonModule
   ],
   providers: [
     HighlightService

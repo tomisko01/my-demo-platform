@@ -6,7 +6,7 @@ import {NestedTreeControl} from "@angular/cdk/tree";
 import {TopicLinksConstants} from "./constants/topic-links-constants";
 import {TopicNode} from "./typings";
 import * as _ from "lodash";
-import {NavigationEnd, Router, RouterEvent} from "@angular/router";
+import {NavigationEnd, Router} from "@angular/router";
 import {filter, map} from "rxjs";
 import {TopicService} from "@service/topic/topic.service";
 
@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
 
     this.router.events.pipe(
       filter((event): event is NavigationEnd => event instanceof NavigationEnd),
-      map((navigationEndEvent: NavigationEnd) => navigationEndEvent.url )
+      map((navigationEndEvent: NavigationEnd) => navigationEndEvent.url)
     ).subscribe(event => {
       this.selectedTopic = this.topicService.getByURL(event);
     });
