@@ -36,4 +36,4 @@ import {MatTooltip} from "@angular/material/tooltip";
     MatTooltip
   ]
 })
-export class MatCommonModule { }
+export class MyMatCommonModule { }

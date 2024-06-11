@@ -94,7 +94,6 @@ export class AppComponent implements OnInit {
   }
 
   private findNodeFromChildren(children: TopicNode[], searchText: string): TopicNode[] {
-    let topicNodes = _.filter(children, (childrenNode) => this.findNode(childrenNode, searchText));
-    return topicNodes;
+    return _.filter(children, (childrenNode) => this.findNode(childrenNode, searchText));
   }
 }
