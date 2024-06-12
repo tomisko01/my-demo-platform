@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {
   AfterContentCheckedHookComponent
 } from "@angularTopic/lifecycle/after-content-checked-hook/after-content-checked-hook.component";
-import {MyMatCommonModule} from "../../../mat-common/my-mat-common.module";
+import {MyMatCommonModule} from "../../../../mat-common/my-mat-common.module";
 import {
   AfterContentCheckedHookChildComponent
 } from "@angularTopic/lifecycle/after-content-checked-hook/child/after-content-checked-hook-child/after-content-checked-hook-child.component";

@@ -23,7 +23,8 @@ import {
 import {
   InjDecChildComponent
 } from "@angularTopic/services/dependencyInjection/injection-decorators/child/inj-dec-child/inj-dec-child.component";
-import {MyMatCommonModule} from "../../../mat-common/my-mat-common.module";
+import {MyMatCommonModule} from "../../../../mat-common/my-mat-common.module";
+import {HostInjectDirective} from "@angularTopic/services/dependencyInjection/directive/host-inject.directive";
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {MyMatCommonModule} from "../../../mat-common/my-mat-common.module";
     TreeShakeableProviderComponent,
     InjectionTokenComponent,
     InjectionDecoratorsComponent,
-    InjDecChildComponent
+    InjDecChildComponent,
+    HostInjectDirective
   ],
   imports: [
     CommonModule,

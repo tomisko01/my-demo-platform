@@ -61,36 +61,7 @@ import {ViewEncapsulationComponent} from '@angularTopic/styles/view-encapsulatio
 import {
   ViewEncapsulationChildComponent
 } from '@angularTopic/styles/view-encapsulation/component/view-encapsulation-child/view-encapsulation-child.component';
-import {GetCallComponent} from '@angularTopic/services/get-call/get-call.component';
-import {OwnProviderComponent} from '@angularTopic/services/dependencyInjection/own-provider/own-provider.component';
-import {
-  OwnProviderSimplifiedComponent
-} from '@angularTopic/services/dependencyInjection/own-provider-simplified/own-provider-simplified.component';
-import {
-  HierarchicalInjectionComponent
-} from "@angularTopic/services/dependencyInjection/hierarchical-injection/hierarchical-injection.component";
-import {
-  TreeShakeableProviderComponent
-} from '@angularTopic/services/dependencyInjection/tree-shakeable-provider/tree-shakeable-provider.component';
-import {
-  InjectionTokenComponent
-} from '@angularTopic/services/dependencyInjection/injection-token/injection-token.component';
-import {
-  InjectionDecoratorsComponent
-} from '@angularTopic/services/dependencyInjection/injection-decorators/injection-decorators.component';
-import {HostInjectDirective} from "@angularTopic/services/dependencyInjection/directive/host-inject.directive";
-import {DefaultComponent} from '@angularTopic/services/changeDetection/default/default.component';
-import {OnPushComponent} from '@angularTopic/services/changeDetection/on-push/on-push.component';
-import {
-  ObservableOnPushComponent
-} from '@angularTopic/services/changeDetection/observable-on-push/observable-on-push.component';
-import {
-  AttributeDecoratorComponent
-} from '@angularTopic/services/changeDetection/attribute-decorator/attribute-decorator.component';
 import {TopicHeaderComponent} from './components/topic-header/topic-header.component';
-import {
-  CustomChangeDetectionComponent
-} from '@angularTopic/services/changeDetection/custom-change-detection/custom-change-detection.component';
 import {OnInitHookComponent} from '@angularTopic/lifecycle/on-init-hook/on-init-hook.component';
 import {OnDestroyHookComponent} from '@angularTopic/lifecycle/on-destroy-hook/on-destroy-hook.component';
 import {OnChangesHookComponent} from '@angularTopic/lifecycle/on-changes-hook/on-changes-hook.component';
@@ -101,9 +72,10 @@ import {
   AfterViewCheckedHookComponent
 } from '@angularTopic/lifecycle/after-view-checked-hook/after-view-checked-hook.component';
 import {MyMatCommonModule} from "./mat-common/my-mat-common.module";
-import {LifeCycleHooksModule} from "./modules/topics/life-cycle-hooks/life-cycle-hooks.module";
-import {ChangeDetectionModule} from "./modules/topics/change-detection/change-detection.module";
-import {InjectionModule} from "./modules/topics/injection/injection.module";
+import {LifeCycleHooksModule} from "./modules/topics/angular/life-cycle-hooks/life-cycle-hooks.module";
+import {ChangeDetectionModule} from "./modules/topics/angular/change-detection/change-detection.module";
+import {InjectionModule} from "./modules/topics/angular/injection/injection.module";
+import * as angularTopic from './modules/topics/angular/topic.angular';
 
 
 const routes: Routes = [
@@ -128,18 +100,18 @@ const routes: Routes = [
   {path: 'angular/structuralDirective', component: UnlessDirectiveUsageComponent},
   {path: 'angular/stylesHost', component: HostComponent},
   {path: 'angular/stylesEncapsulation', component: ViewEncapsulationComponent},
-  {path: 'angular/services/getCall', component: GetCallComponent},
-  {path: 'angular/services/ownProvider', component: OwnProviderComponent},
-  {path: 'angular/services/ownProviderSimplified', component: OwnProviderSimplifiedComponent},
-  {path: 'angular/services/hierarchicalInjection', component: HierarchicalInjectionComponent},
-  {path: 'angular/services/treeShakeableProvider', component: TreeShakeableProviderComponent},
-  {path: 'angular/services/injectionToken', component: InjectionTokenComponent},
-  {path: 'angular/services/injectionDecorator', component: InjectionDecoratorsComponent},
-  {path: 'angular/changeDetection/defaultChangeDetection', component: DefaultComponent},
-  {path: 'angular/changeDetection/onPushChangeDetection', component: OnPushComponent},
-  {path: 'angular/changeDetection/observableOnPushChangeDetection', component: ObservableOnPushComponent},
-  {path: 'angular/changeDetection/attributeDecorator', component: AttributeDecoratorComponent},
-  {path: 'angular/changeDetection/customChangeDetection', component: CustomChangeDetectionComponent},
+  {path: 'angular/services/getCall', component: angularTopic.GetCallComponent},
+  {path: 'angular/services/ownProvider', component: angularTopic.OwnProviderComponent},
+  {path: 'angular/services/ownProviderSimplified', component: angularTopic.OwnProviderSimplifiedComponent},
+  {path: 'angular/services/hierarchicalInjection', component: angularTopic.HierarchicalInjectionComponent},
+  {path: 'angular/services/treeShakeableProvider', component: angularTopic.TreeShakeableProviderComponent},
+  {path: 'angular/services/injectionToken', component: angularTopic.InjectionTokenComponent},
+  {path: 'angular/services/injectionDecorator', component: angularTopic.InjectionDecoratorsComponent},
+  {path: 'angular/changeDetection/defaultChangeDetection', component: angularTopic.DefaultComponent},
+  {path: 'angular/changeDetection/onPushChangeDetection', component: angularTopic.OnPushComponent},
+  {path: 'angular/changeDetection/observableOnPushChangeDetection', component: angularTopic.ObservableOnPushComponent},
+  {path: 'angular/changeDetection/attributeDecorator', component: angularTopic.AttributeDecoratorComponent},
+  {path: 'angular/changeDetection/customChangeDetection', component: angularTopic.CustomChangeDetectionComponent},
   {path: 'angular/lifecycle/onInit', component: OnInitHookComponent},
   {path: 'angular/lifecycle/onDestroy', component: OnDestroyHookComponent},
   {path: 'angular/lifecycle/onChanges', component: OnChangesHookComponent},
@@ -182,7 +154,6 @@ const routes: Routes = [
     HighlightedDirectiveChildComponent,
     NgxUnlessDirective,
     UnlessDirectiveUsageComponent,
-    HostInjectDirective,
     HostComponent,
     HostChildrenComponent,
     ViewEncapsulationComponent,
