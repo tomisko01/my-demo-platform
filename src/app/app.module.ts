@@ -76,6 +76,8 @@ import {LifeCycleHooksModule} from "./modules/topics/angular/life-cycle-hooks/li
 import {ChangeDetectionModule} from "./modules/topics/angular/change-detection/change-detection.module";
 import {InjectionModule} from "./modules/topics/angular/injection/injection.module";
 import * as angularTopic from './modules/topics/angular/topic.angular';
+import {EldenHomeComponent} from "./elden/components/elden-home/elden-home.component";
+import {EldenListComponent} from "./elden/components/elden-list/elden-list.component";
 
 
 const routes: Routes = [
@@ -117,6 +119,17 @@ const routes: Routes = [
   {path: 'angular/lifecycle/onChanges', component: OnChangesHookComponent},
   {path: 'angular/lifecycle/afterContentChecked', component: AfterContentCheckedHookComponent},
   {path: 'angular/lifecycle/afterViewChecked', component: AfterViewCheckedHookComponent},
+  {
+    path: 'elden',
+    component: EldenHomeComponent,
+    title: 'Elden - home',
+    children: [{
+      path: 'list',
+      component: EldenListComponent,
+      title: 'Elden - list',
+      pathMatch: 'full'
+    }]
+  }
 ]
 
 
