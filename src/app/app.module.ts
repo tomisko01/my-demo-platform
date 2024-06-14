@@ -62,17 +62,8 @@ import {
   ViewEncapsulationChildComponent
 } from '@angularTopic/styles/view-encapsulation/component/view-encapsulation-child/view-encapsulation-child.component';
 import {TopicHeaderComponent} from './components/topic-header/topic-header.component';
-import {OnInitHookComponent} from '@angularTopic/lifecycle/on-init-hook/on-init-hook.component';
-import {OnDestroyHookComponent} from '@angularTopic/lifecycle/on-destroy-hook/on-destroy-hook.component';
-import {OnChangesHookComponent} from '@angularTopic/lifecycle/on-changes-hook/on-changes-hook.component';
-import {
-  AfterContentCheckedHookComponent
-} from '@angularTopic/lifecycle/after-content-checked-hook/after-content-checked-hook.component';
-import {
-  AfterViewCheckedHookComponent
-} from '@angularTopic/lifecycle/after-view-checked-hook/after-view-checked-hook.component';
 import {MyMatCommonModule} from "./mat-common/my-mat-common.module";
-import {LifeCycleHooksModule} from "./modules/topics/angular/life-cycle-hooks/life-cycle-hooks.module";
+import {LifecycleHooksModule} from "./modules/topics/angular/lifecycle-hooks/lifecycle-hooks.module";
 import {ChangeDetectionModule} from "./modules/topics/angular/change-detection/change-detection.module";
 import {InjectionModule} from "./modules/topics/angular/injection/injection.module";
 import * as angularTopic from './modules/topics/angular/topic.angular';
@@ -114,11 +105,12 @@ const routes: Routes = [
   {path: 'angular/changeDetection/observableOnPushChangeDetection', component: angularTopic.ObservableOnPushComponent},
   {path: 'angular/changeDetection/attributeDecorator', component: angularTopic.AttributeDecoratorComponent},
   {path: 'angular/changeDetection/customChangeDetection', component: angularTopic.CustomChangeDetectionComponent},
-  {path: 'angular/lifecycle/onInit', component: OnInitHookComponent},
-  {path: 'angular/lifecycle/onDestroy', component: OnDestroyHookComponent},
-  {path: 'angular/lifecycle/onChanges', component: OnChangesHookComponent},
-  {path: 'angular/lifecycle/afterContentChecked', component: AfterContentCheckedHookComponent},
-  {path: 'angular/lifecycle/afterViewChecked', component: AfterViewCheckedHookComponent},
+  {path: 'angular/lifecycle/onInit', component: angularTopic.OnInitHookComponent},
+  {path: 'angular/lifecycle/onDestroy', component: angularTopic.OnDestroyHookComponent},
+  {path: 'angular/lifecycle/onChanges', component: angularTopic.OnChangesHookComponent},
+  {path: 'angular/lifecycle/afterContentChecked', component: angularTopic.AfterContentCheckedHookComponent},
+  {path: 'angular/lifecycle/afterViewChecked', component: angularTopic.AfterViewCheckedHookComponent},
+  {path: 'angular/lifecycle/lifecycleOverview', component: angularTopic.LifecycleOverviewComponent},
   {
     path: 'elden',
     component: EldenHomeComponent,
@@ -181,13 +173,14 @@ const routes: Routes = [
     HttpClientModule,
     NgOptimizedImage,
     MyMatCommonModule,
-    LifeCycleHooksModule,
+    LifecycleHooksModule,
     ChangeDetectionModule,
     InjectionModule
   ],
   providers: [
     HighlightService
   ],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

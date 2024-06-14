@@ -1,0 +1,29 @@
+<p>lifecycle-overview works!</p>
+
+<img
+  src="https://i0.wp.com/blog.knoldus.com/wp-content/uploads/2019/03/lifecycleHook.jpg?w=810&is-pending-load=1#038;ssl=1">
+
+<p>simpleText: {{ simpleText }}
+<p>simpleStringToPass: {{ simpleStringToPass }}
+<p>simpleObjectToPass: {{ simpleObjectToPass | json }}
+<p>propertyOnChildContent: {{ propertyOnChildContent }}
+
+<div>
+  <button (click) = 'changeSimpleText()'>Change simpleText</button>
+  <button (click) = 'changeSimpleStringToPass()'>Change simpleStringToPass</button>
+  <button (click) = 'changeSimpleObjectToPass()'>Change simpleObjectToPass reference</button>
+  <button (click) = 'mutateSimpleObjectToPass()'>Mutate simpleObjectToPass</button>
+  <button (click) = 'changePropertyOnChildContent()'>Change propertyOnChildContent</button>
+</div>
+<br>
+<mat-divider></mat-divider>
+
+
+<app-lifecycle-overview-child
+  [simpleString]='simpleStringToPass'
+  [simpleObject]='simpleObjectToPass'
+  (triggerEvent)='handleChildEvent()'>
+
+  <div>content to pass {{ propertyOnChildContent }}</div>
+
+</app-lifecycle-overview-child>

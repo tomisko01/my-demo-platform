@@ -25,6 +25,10 @@ import {
 import {
   AfterViewCheckedHookComponent
 } from "@angularTopic/lifecycle/after-view-checked-hook/after-view-checked-hook.component";
+import {LifecycleOverviewComponent} from "@angularTopic/lifecycle/lifecycle-overview/lifecycle-overview.component";
+import {
+  LifecycleOverviewChildComponent
+} from "@angularTopic/lifecycle/lifecycle-overview/lifecycle-overview-child/lifecycle-overview-child.component";
 
 
 @NgModule({
@@ -38,7 +42,9 @@ import {
     OnDestroyHookChildComponent,
     OnChangesHookComponent,
     OnChangesHookChildComponent,
-    AfterViewCheckedHookComponent
+    AfterViewCheckedHookComponent,
+    LifecycleOverviewComponent,
+    LifecycleOverviewChildComponent,
   ],
   imports: [
     CommonModule,
@@ -47,5 +53,5 @@ import {
   exports: [
   ],
 })
-export class LifeCycleHooksModule {
+export class LifecycleHooksModule {
 }
