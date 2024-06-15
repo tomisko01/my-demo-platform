@@ -1,12 +1,17 @@
 import {
   AfterContentChecked,
   AfterContentInit,
-  AfterViewChecked, AfterViewInit,
+  AfterViewChecked,
+  AfterViewInit,
   Component,
-  DoCheck, EventEmitter, Input,
+  DoCheck,
+  EventEmitter,
+  Input,
   OnChanges,
   OnDestroy,
-  OnInit, Output, SimpleChanges
+  OnInit,
+  Output,
+  SimpleChanges
 } from '@angular/core';
 
 @Component({
@@ -28,60 +33,52 @@ export class LifecycleOverviewChildComponent implements OnInit,
   @Output() triggerEvent = new EventEmitter<void>();
 
   constructor() {
-    console.log('Child - constructor')
-    this.logComponentData()
+    this.logComponentData('constructor')
   }
 
   ngAfterContentChecked(): void {
-    console.log('Child - ngAfterContentChecked')
-    this.logComponentData()
+    this.logComponentData('ngAfterContentChecked')
   }
 
   ngAfterContentInit(): void {
-    console.log('Child - ngAfterContentInit')
-    this.logComponentData()
+    this.logComponentData('ngAfterContentInit')
   }
 
   ngAfterViewChecked(): void {
-    console.log('Child - ngAfterViewChecked')
-    this.logComponentData()
+    this.logComponentData('ngAfterViewChecked')
   }
 
   ngAfterViewInit(): void {
-    console.log('Child - ngAfterViewInit')
-    this.logComponentData()
+    console.log('Child - ')
+    this.logComponentData('ngAfterViewInit')
   }
 
   ngDoCheck(): void {
-    console.log('Child - ngDoCheck')
-    this.logComponentData()
+    this.logComponentData('ngDoCheck')
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('Child - ngOnChanges', changes)
-    this.logComponentData()
+    this.logComponentData('ngOnChanges')
   }
 
   ngOnDestroy(): void {
-    console.log('Child - ngOnDestroy')
-    this.logComponentData()
+    this.logComponentData('ngOnDestroy')
   }
 
   ngOnInit(): void {
-    console.log('Child - ngOnInit')
-    this.logComponentData()
+    this.logComponentData('ngOnInit')
   }
 
   handleClick(): void {
-    console.log('Child - handleClick')
-    this.logComponentData()
+    this.logComponentData('handleClick')
     this.triggerEvent.emit()
   }
 
-  logComponentData(){
-    console.log('Child - LogComponentData')
-    console.log('Child - simpleString ', this.simpleString)
-    console.log('Child - simpleObject', this.simpleObject)
+  logComponentData(methodName: string) {
+    console.log('Child - ' + methodName, {
+        'this.simpleString': this.simpleString,
+        'this.simpleObject': this.simpleObject,
+      })
   }
-
 }

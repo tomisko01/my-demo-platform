@@ -34,91 +34,88 @@ export class LifecycleOverviewComponent implements OnInit,
   };
   propertyOnChildContent: string = 'initial propertyOnChildContent';
   counter: number = 0;
+  showChild: boolean = false;
 
   constructor() {
-    console.log('Parent - constructor');
-    this.logComponentData()
+    this.logComponentData('constructor')
   }
 
   ngAfterContentChecked(): void {
-    console.log('Parent - ngAfterContentChecked')
-    this.logComponentData()
+    this.logComponentData('ngAfterContentChecked')
   }
 
   ngAfterContentInit(): void {
-    console.log('Parent - ngAfterContentInit')
-    this.logComponentData()
+    this.logComponentData('ngAfterContentInit')
   }
 
   ngAfterViewChecked(): void {
-    console.log('Parent - ngAfterViewChecked')
-    this.logComponentData()
+    this.logComponentData('ngAfterViewChecked')
   }
 
   ngAfterViewInit(): void {
-    console.log('Parent - ngAfterViewInit')
-    this.logComponentData()
+    this.logComponentData('ngAfterViewInit')
   }
 
   ngDoCheck(): void {
-    console.log('Parent - ngDoCheck')
-    this.logComponentData()
+    this.logComponentData('ngDoCheck')
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('Parent - ngOnChanges', changes)
-    this.logComponentData()
+    this.logComponentData('ngOnChanges')
   }
 
   ngOnDestroy(): void {
-    console.log('Parent - ngOnDestroy')
-    this.logComponentData()
+    this.logComponentData('ngOnDestroy')
   }
 
   ngOnInit(): void {
-    console.log('Parent - ngOnInit')
-    this.logComponentData()
+    this.logComponentData('ngOnInit')
   }
 
   handleChildEvent() {
-    console.log('Parent - handleChildEvent');
-    this.logComponentData()
+    this.logComponentData('handleChildEvent')
   }
 
-  logComponentData() {
-    console.log('%cParent - LogComponentData start', 'background: gray')
-    console.log('Parent - simpleText', this.simpleText,)
-    console.log('Parent - simpleStringToPass', this.simpleStringToPass)
-    console.log('Parent - simpleObjectToPass', this.simpleObjectToPass)
-    console.log('Parent - propertyOnChildContent', this.propertyOnChildContent)
-    console.log('Parent - counter', this.counter)
-    console.log('%cParent - LogComponentData end', 'background: gray')
-    console.log({'this.simpleText': this.simpleText, 'this.simpleStringToPass': this.simpleStringToPass})
-
+  logComponentData(methodName: string) {
+    console.log('Parent - ' + methodName,
+      {
+        'this.simpleText': this.simpleText,
+        'this.simpleStringToPass': this.simpleStringToPass,
+        'simpleObjectToPass': this.simpleObjectToPass,
+        'propertyOnChildContent': this.propertyOnChildContent,
+        'counter': this.counter,
+        'showChild': this.showChild,
+      })
   }
 
   changeSimpleText() {
     this.simpleText = this.simpleText + '_' + this.counter++
-    this.logComponentData()
+    this.logComponentData('changeSimpleText')
   }
 
   changeSimpleStringToPass() {
     this.simpleStringToPass = this.simpleStringToPass + '_' + this.counter++
-    this.logComponentData()
+    this.logComponentData('changeSimpleStringToPass')
   }
 
   changeSimpleObjectToPass() {
     this.simpleObjectToPass.ameno = this.simpleObjectToPass.ameno + '_' + this.counter++
-    this.logComponentData()
+    this.logComponentData('changeSimpleObjectToPass')
   }
 
   mutateSimpleObjectToPass() {
     this.simpleObjectToPass = {...this.simpleObjectToPass, ameno: 'mutated dorime' + '_' + this.counter++}
-    this.logComponentData()
+    this.logComponentData('mutateSimpleObjectToPass')
   }
 
   changePropertyOnChildContent() {
     this.propertyOnChildContent = this.propertyOnChildContent + '_' + this.counter++
-    this.logComponentData()
+    this.logComponentData('changePropertyOnChildContent')
+  }
+
+  changeChildStatus() {
+    this.showChild = !this.showChild
+    this.logComponentData('changeChildStatus')
   }
 }

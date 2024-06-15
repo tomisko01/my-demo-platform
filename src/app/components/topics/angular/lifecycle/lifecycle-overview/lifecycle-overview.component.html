@@ -7,23 +7,27 @@
 <p>simpleStringToPass: {{ simpleStringToPass }}
 <p>simpleObjectToPass: {{ simpleObjectToPass | json }}
 <p>propertyOnChildContent: {{ propertyOnChildContent }}
+<p>showChild: {{ showChild }}
 
 <div>
-  <button (click) = 'changeSimpleText()'>Change simpleText</button>
-  <button (click) = 'changeSimpleStringToPass()'>Change simpleStringToPass</button>
-  <button (click) = 'changeSimpleObjectToPass()'>Change simpleObjectToPass reference</button>
-  <button (click) = 'mutateSimpleObjectToPass()'>Mutate simpleObjectToPass</button>
-  <button (click) = 'changePropertyOnChildContent()'>Change propertyOnChildContent</button>
+  <button (click)='changeSimpleText()'>Change simpleText</button>
+  <button (click)='changeSimpleStringToPass()'>Change simpleStringToPass</button>
+  <button (click)='changeSimpleObjectToPass()'>Change simpleObjectToPass reference</button>
+  <button (click)='mutateSimpleObjectToPass()'>Mutate simpleObjectToPass</button>
+  <button (click)='changePropertyOnChildContent()'>Change propertyOnChildContent</button>
+  <br>
+  <button (click)='changeChildStatus()'>Change child status</button>
 </div>
 <br>
 <mat-divider></mat-divider>
 
+@if (showChild) {
+  <app-lifecycle-overview-child
+    [simpleString]='simpleStringToPass'
+    [simpleObject]='simpleObjectToPass'
+    (triggerEvent)='handleChildEvent()'>
 
-<app-lifecycle-overview-child
-  [simpleString]='simpleStringToPass'
-  [simpleObject]='simpleObjectToPass'
-  (triggerEvent)='handleChildEvent()'>
+    <div>content to pass {{ propertyOnChildContent }}</div>
 
-  <div>content to pass {{ propertyOnChildContent }}</div>
-
-</app-lifecycle-overview-child>
+  </app-lifecycle-overview-child>
+}
