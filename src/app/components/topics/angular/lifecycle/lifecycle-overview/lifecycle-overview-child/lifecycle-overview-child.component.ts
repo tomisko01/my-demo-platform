@@ -14,6 +14,7 @@ import {
   SimpleChanges
 } from '@angular/core';
 
+//TODO describe hooks - what to do in them
 @Component({
   selector: 'app-lifecycle-overview-child',
   templateUrl: './lifecycle-overview-child.component.html',
