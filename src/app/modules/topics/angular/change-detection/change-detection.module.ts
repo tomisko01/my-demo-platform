@@ -18,7 +18,7 @@ import {
 import {
   CustomChangeDetectionComponent
 } from "@angularTopic/services/changeDetection/custom-change-detection/custom-change-detection.component";
-import {MyMatCommonModule} from "../../../../mat-common/my-mat-common.module";
+import {MyMatCommonModule} from "../../../mat-common/my-mat-common.module";
 
 
 @NgModule({

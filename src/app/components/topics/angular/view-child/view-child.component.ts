@@ -1,5 +1,5 @@
 import {AfterContentChecked, ChangeDetectorRef, Component, ElementRef, ViewChild} from '@angular/core';
-import {HighlightService} from "@service/HighlightService";
+import {HighlightService} from "@service/common/highlight.service";
 import {VcChildComponent} from "./component/vc-child/vc-child.component";
 
 @Component({

@@ -1,5 +1,5 @@
 import {AfterViewChecked, Component} from '@angular/core';
-import {HighlightService} from "@service/HighlightService";
+import {HighlightService} from "@service/common/highlight.service";
 
 @Component({
   selector: 'app-ng-template',

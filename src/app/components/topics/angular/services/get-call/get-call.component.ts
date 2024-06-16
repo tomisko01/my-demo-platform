@@ -1,5 +1,5 @@
 import {AfterViewChecked, Component, OnInit} from '@angular/core';
-import {HighlightService} from "@service/HighlightService";
+import {HighlightService} from "@service/common/highlight.service";
 import {Observable} from "rxjs";
 import {elden} from "../../../../../typings";
 import {EldenItemsService} from "@angularTopic/services/get-call/service/elden-items.service";

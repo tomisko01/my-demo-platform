@@ -1,5 +1,5 @@
 import {AfterViewChecked, AfterViewInit, Component, ViewChild} from '@angular/core';
-import {HighlightService} from "@service/HighlightService";
+import {HighlightService} from "@service/common/highlight.service";
 import {HighlightedDirective} from "@angularTopic/directive/highlighted.directive";
 import {
   HighlightedDirectiveChildComponent

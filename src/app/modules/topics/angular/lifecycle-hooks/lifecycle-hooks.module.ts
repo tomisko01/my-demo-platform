@@ -3,7 +3,6 @@ import {CommonModule} from '@angular/common';
 import {
   AfterContentCheckedHookComponent
 } from "@angularTopic/lifecycle/after-content-checked-hook/after-content-checked-hook.component";
-import {MyMatCommonModule} from "../../../../mat-common/my-mat-common.module";
 import {
   AfterContentCheckedHookChildComponent
 } from "@angularTopic/lifecycle/after-content-checked-hook/child/after-content-checked-hook-child/after-content-checked-hook-child.component";
@@ -29,6 +28,7 @@ import {LifecycleOverviewComponent} from "@angularTopic/lifecycle/lifecycle-over
 import {
   LifecycleOverviewChildComponent
 } from "@angularTopic/lifecycle/lifecycle-overview/lifecycle-overview-child/lifecycle-overview-child.component";
+import {MyMatCommonModule} from "../../../mat-common/my-mat-common.module";
 
 
 @NgModule({

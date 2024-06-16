@@ -7,7 +7,7 @@ import {
   QueryList,
   ViewChildren
 } from '@angular/core';
-import {HighlightService} from "@service/HighlightService";
+import {HighlightService} from "@service/common/highlight.service";
 import {
   ViewChildrenChildComponent
 } from "@angularTopic/view-children/component/view-children-child/view-children-child.component";
