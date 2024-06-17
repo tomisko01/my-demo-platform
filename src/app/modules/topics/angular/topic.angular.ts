@@ -27,3 +27,4 @@ export {
 } from '@angularTopic/directive/component/ngx-unless/unless-directive-usage/unless-directive-usage.component';
 export {HostComponent} from '@angularTopic/styles/host/host.component';
 export {ViewEncapsulationComponent} from '@angularTopic/styles/view-encapsulation/view-encapsulation.component';
+export {OwnPipeComponent}  from '@angularTopic/pipe/own-pipe/component/own-pipe/own-pipe.component';

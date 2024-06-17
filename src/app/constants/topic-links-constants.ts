@@ -85,10 +85,21 @@ export class TopicLinksConstants {
         },
         {
           name: 'Pipes',
-          routerLink: '/angular/pipe',
-          title: 'How to use | pipes ',
-          githubLinkNeeded: true,
-          githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/pipe/pipe.component.ts'
+          children: [
+            {
+              name: 'Build-in pipes',
+              routerLink: '/angular/pipe',
+              title: 'How to use | pipes ',
+              githubLinkNeeded: true,
+              githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/pipe/pipe.component.ts'
+            }, {
+              name: 'Own pipe',
+              routerLink: '/angular/pipe/ownPipe',
+              title: 'How to write pipe',
+              githubLinkNeeded: true,
+              githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/own-pipe/component/own-pipe/own-pipe.component.ts'
+            }
+          ]
         },
         {
           name: 'View Child',

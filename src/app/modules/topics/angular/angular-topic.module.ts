@@ -57,7 +57,8 @@ import {TopicHeaderComponent} from "../../../components/topic-header/topic-heade
 import {LifecycleHooksModule} from "./lifecycle-hooks/lifecycle-hooks.module";
 import {ChangeDetectionModule} from "./change-detection/change-detection.module";
 import {InjectionModule} from "./injection/injection.module";
-
+import {OwnPipeComponent} from "@angularTopic/pipe/own-pipe/component/own-pipe/own-pipe.component";
+import {OwnPipePipe} from "@angularTopic/pipe/own-pipe.pipe";
 
 @NgModule({
   declarations: [
@@ -96,6 +97,8 @@ import {InjectionModule} from "./injection/injection.module";
     ViewEncapsulationComponent,
     ViewEncapsulationChildComponent,
     TopicHeaderComponent,
+    OwnPipeComponent,
+    OwnPipePipe,
   ],
   exports: [
     TopicHeaderComponent

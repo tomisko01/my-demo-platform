@@ -44,6 +44,7 @@ export const routes: Routes = [
   {path: 'angular/lifecycle/afterContentChecked', component: angularTopic.AfterContentCheckedHookComponent},
   {path: 'angular/lifecycle/afterViewChecked', component: angularTopic.AfterViewCheckedHookComponent},
   {path: 'angular/lifecycle/lifecycleOverview', component: angularTopic.LifecycleOverviewComponent},
+  {path: 'angular/pipe/ownPipe', component: angularTopic.OwnPipeComponent},
   {
     path: 'elden',
     component: EldenHomeComponent,
