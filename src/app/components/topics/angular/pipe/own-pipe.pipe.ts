@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class OwnPipePipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(valueList: any[], input: string): any {
+    return valueList.filter(item => item.category === input);
   }
 
 }

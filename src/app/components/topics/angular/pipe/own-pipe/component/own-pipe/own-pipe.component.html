@@ -1,1 +1,5 @@
 <p>own-pipe works!</p>
+
+<div *ngFor="let item of (objectList | ownPipe: 'new')">
+  {{item | json}}
+</div>
