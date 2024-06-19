@@ -58,7 +58,8 @@ import {LifecycleHooksModule} from "./lifecycle-hooks/lifecycle-hooks.module";
 import {ChangeDetectionModule} from "./change-detection/change-detection.module";
 import {InjectionModule} from "./injection/injection.module";
 import {OwnPipeComponent} from "@angularTopic/pipe/own-pipe/component/own-pipe/own-pipe.component";
-import {OwnPipePipe} from "@angularTopic/pipe/own-pipe.pipe";
+import {OwnPipePipe} from "@angularTopic/pipe/own-pipe/pipe-impl/own-pipe.pipe";
+import {OwnImpurePipePipe} from "@angularTopic/pipe/own-pipe/pipe-impl/own-impure-pipe.pipe";
 
 @NgModule({
   declarations: [
@@ -109,6 +110,7 @@ import {OwnPipePipe} from "@angularTopic/pipe/own-pipe.pipe";
     LifecycleHooksModule,
     ChangeDetectionModule,
     InjectionModule,
+    OwnImpurePipePipe,
   ]
 })
 export class AngularTopicModule {

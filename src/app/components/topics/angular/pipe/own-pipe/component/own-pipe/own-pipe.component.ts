@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import * as _ from "lodash";
 
 @Component({
   selector: 'app-own-pipe',
@@ -17,9 +18,19 @@ export class OwnPipeComponent {
     },
     {
       id: 'id02',
-      name: 'id02 with new category',
+      name: 'id02 with old category',
       category: 'old'
+    },
+    {
+      id: 'id03',
+      name: 'id03 with new category',
+      category: 'new'
     }
   ];
 
+  copyObjectList = _.cloneDeep(this.objectList);
+
+  changeCopyObjectList() {
+    this.copyObjectList[0].category = 'other';
+  }
 }

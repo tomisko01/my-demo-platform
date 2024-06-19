@@ -1,5 +1,27 @@
 <p>own-pipe works!</p>
 
+<h2>Show only objects with <b>new</b> category</h2>
 <div *ngFor="let item of (objectList | ownPipe: 'new')">
-  {{item | json}}
+
+  <pre>{{ item | json }}</pre>
 </div>
+
+<mat-divider></mat-divider>
+<h3>Pure pipes</h3>
+
+<div *ngFor="let item of (copyObjectList | ownPipe: 'new')">
+  <pre>{{ item | json }}</pre>
+</div>
+
+<button mat-stroked-button (click)="changeCopyObjectList()">Change first object category to different category</button>
+<h4>Even after change category to 'other' - ownPipe not filter it!</h4>
+<mat-divider></mat-divider>
+
+<h3>Impure pipe</h3>
+
+<div *ngFor="let item of (copyObjectList | ownImpurePipe: 'new')">
+  <pre>{{ item | json }}</pre>
+</div>
+
+<button mat-stroked-button (click)="changeCopyObjectList()">Change first object category to different category</button>
+<h4>ownImpurePipe will check the change and update list </h4>
