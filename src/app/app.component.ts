@@ -9,6 +9,7 @@ import * as _ from "lodash";
 import {NavigationEnd, Router} from "@angular/router";
 import {filter, map} from "rxjs";
 import {TopicService} from "@service/topic/topic.service";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-root',
@@ -27,7 +28,11 @@ export class AppComponent implements OnInit {
               private constants: TopicLinksConstants,
               private router: Router,
               private topicService: TopicService,
+              private translator: TranslateService,
   ) {
+
+    translator.setDefaultLang('en')
+    translator.use('en')
     this.nestedDataSource.data = _.cloneDeep(constants.TREE_DATA);
     this.nestedTreeControl.dataNodes = _.cloneDeep(constants.TREE_DATA);
 

@@ -61,6 +61,7 @@ import {OwnPipeComponent} from "@angularTopic/pipe/own-pipe/component/own-pipe/o
 import {OwnPipePipe} from "@angularTopic/pipe/own-pipe/pipe-impl/own-pipe.pipe";
 import {OwnImpurePipePipe} from "@angularTopic/pipe/own-pipe/pipe-impl/own-impure-pipe.pipe";
 import {I18nComponent} from "@angularTopic/pipe/i18n/i18n.component";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   declarations: [
@@ -113,6 +114,7 @@ import {I18nComponent} from "@angularTopic/pipe/i18n/i18n.component";
     ChangeDetectionModule,
     InjectionModule,
     OwnImpurePipePipe,
+    TranslateModule,
   ]
 })
 export class AngularTopicModule {

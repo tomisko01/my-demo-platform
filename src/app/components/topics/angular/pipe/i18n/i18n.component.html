@@ -1,1 +1,13 @@
-<p>i18n works!</p>
+Run in project terminal
+<pre>
+  npm install &commat;ngx-translate/core --save
+  npm install &commat;ngx-translate/http-loader --save
+</pre>
+
+<p>translation in action:
+<p> Greetings: {{ 'topicComponent.greeting' | translate }}
+<p> Description: {{ 'topicComponent.description' | translate }}
+<p> The wisdom of the blacksmith: {{ 'topicComponent.smithWisdom' | translate }}
+
+  <mat-divider></mat-divider>
+  <button (click)="changeLanguage()">{{'topicComponent.button' | translate}}</button>
