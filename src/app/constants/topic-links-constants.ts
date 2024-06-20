@@ -97,7 +97,13 @@ export class TopicLinksConstants {
               routerLink: '/angular/pipe/ownPipe',
               title: 'How to write pipe',
               githubLinkNeeded: true,
-              githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/own-pipe/component/own-pipe/own-pipe.component.ts'
+              githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/pipe/own-pipe/component/own-pipe/own-pipe.component.ts'
+            }, {
+              name: 'i18n pipe',
+              routerLink: 'angular/pipe/i18nPipe',
+              title: 'How to use internalization',
+              githubLinkNeeded: true,
+              githubLink: 'https://github.com/tomisko01/my-demo-platform/blob/main/src/app/components/topics/angular/pipe/i18n/i18n.component.ts'
             }
           ]
         },

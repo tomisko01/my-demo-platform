@@ -60,6 +60,7 @@ import {InjectionModule} from "./injection/injection.module";
 import {OwnPipeComponent} from "@angularTopic/pipe/own-pipe/component/own-pipe/own-pipe.component";
 import {OwnPipePipe} from "@angularTopic/pipe/own-pipe/pipe-impl/own-pipe.pipe";
 import {OwnImpurePipePipe} from "@angularTopic/pipe/own-pipe/pipe-impl/own-impure-pipe.pipe";
+import {I18nComponent} from "@angularTopic/pipe/i18n/i18n.component";
 
 @NgModule({
   declarations: [
@@ -100,6 +101,7 @@ import {OwnImpurePipePipe} from "@angularTopic/pipe/own-pipe/pipe-impl/own-impur
     TopicHeaderComponent,
     OwnPipeComponent,
     OwnPipePipe,
+    I18nComponent,
   ],
   exports: [
     TopicHeaderComponent
