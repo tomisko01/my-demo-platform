@@ -46,6 +46,7 @@ export const routes: Routes = [
   {path: 'angular/lifecycle/lifecycleOverview', component: angularTopic.LifecycleOverviewComponent},
   {path: 'angular/pipe/ownPipe', component: angularTopic.OwnPipeComponent},
   {path: 'angular/pipe/i18nPipe', component: angularTopic.I18nComponent},
+  {path: 'angular/elements', component: angularTopic.ElementsComponent},
   {
     path: 'elden',
     component: EldenHomeComponent,

@@ -1,6 +1,9 @@
 import {Component} from '@angular/core';
 import * as _ from "lodash";
 
+type objectCategory    =  'new' | 'old' | 'other';
+
+
 @Component({
   selector: 'app-own-pipe',
   templateUrl: './own-pipe.component.html',
@@ -8,9 +11,11 @@ import * as _ from "lodash";
 })
 export class OwnPipeComponent {
 
-  // type objectCategory    =  'new' | 'old';
-
-  objectList = [
+  objectList: {
+    category: objectCategory;
+    id: string;
+    name: string
+  }[] = [
     {
       id: 'id01',
       name: 'id01 with new category',

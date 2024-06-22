@@ -31,3 +31,4 @@ export {OwnPipeComponent} from '@angularTopic/pipe/own-pipe/component/own-pipe/o
 export {
   I18nComponent
 } from '@angularTopic/pipe/i18n/i18n.component'
+export {ElementsComponent} from '@angularTopic/elements/elements.component'
