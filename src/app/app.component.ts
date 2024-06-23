@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Injector, OnInit} from '@angular/core';
 import {MatIconRegistry} from "@angular/material/icon";
 import {DomSanitizer} from "@angular/platform-browser";
 import {MatTreeNestedDataSource} from "@angular/material/tree";
@@ -10,6 +10,8 @@ import {NavigationEnd, Router} from "@angular/router";
 import {filter, map} from "rxjs";
 import {TopicService} from "@service/topic/topic.service";
 import {TranslateService} from "@ngx-translate/core";
+import {createCustomElement} from "@angular/elements";
+import {ElementsChildComponent} from "@angularTopic/elements/child/elements-child/elements-child.component";
 
 @Component({
   selector: 'app-root',
@@ -29,17 +31,19 @@ export class AppComponent implements OnInit {
               private router: Router,
               private topicService: TopicService,
               private translator: TranslateService,
+              private injector: Injector
   ) {
 
     translator.setDefaultLang('en')
     translator.use('en')
-    this.nestedDataSource.data = _.cloneDeep(constants.TREE_DATA);
-    this.nestedTreeControl.dataNodes = _.cloneDeep(constants.TREE_DATA);
+
+    this.nestedDataSource.data = _.cloneDeep(constants.TREE_DATA)
+    this.nestedTreeControl.dataNodes = _.cloneDeep(constants.TREE_DATA)
 
     this.matIconRegistry.addSvgIcon(
       'github_mark',
       this.domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/github-mark/github-mark.svg')
-    );
+    )
   }
 
   ngOnInit(): void {
@@ -49,7 +53,10 @@ export class AppComponent implements OnInit {
       map((navigationEndEvent: NavigationEnd) => navigationEndEvent.url)
     ).subscribe(event => {
       this.selectedTopic = this.topicService.getByURL(event);
-    });
+    })
+
+    const htmlElement = createCustomElement(ElementsChildComponent, {injector: this.injector})
+    customElements.define('app-elements-child',htmlElement)
   }
 
   openGithubPage() {

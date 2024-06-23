@@ -62,6 +62,8 @@ import {OwnPipePipe} from "@angularTopic/pipe/own-pipe/pipe-impl/own-pipe.pipe";
 import {OwnImpurePipePipe} from "@angularTopic/pipe/own-pipe/pipe-impl/own-impure-pipe.pipe";
 import {I18nComponent} from "@angularTopic/pipe/i18n/i18n.component";
 import {TranslateModule} from "@ngx-translate/core";
+import {ElementsChildComponent} from "@angularTopic/elements/child/elements-child/elements-child.component";
+import {ElementsComponent} from "@angularTopic/elements/elements.component";
 
 @NgModule({
   declarations: [
@@ -103,9 +105,11 @@ import {TranslateModule} from "@ngx-translate/core";
     OwnPipeComponent,
     OwnPipePipe,
     I18nComponent,
+    ElementsComponent,
+    ElementsChildComponent,
   ],
   exports: [
-    TopicHeaderComponent
+    TopicHeaderComponent,
   ],
   imports: [
     CommonModule,
