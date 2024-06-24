@@ -55,6 +55,7 @@ export class AppComponent implements OnInit {
       this.selectedTopic = this.topicService.getByURL(event);
     })
 
+    //TODO tutorial not enough, need to check it by myself
     const htmlElement = createCustomElement(ElementsChildComponent, {injector: this.injector})
     customElements.define('app-elements-child',htmlElement)
   }
