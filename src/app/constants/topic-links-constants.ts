@@ -319,7 +319,13 @@ export class TopicLinksConstants {
           title: 'Angular Elements in depth',
           githubLinkNeeded: true,
           githubLink: this.angularTopicInRepo + 'elements/elements.component.ts',
-        }
+        }, {
+          name: 'Standalone',
+          routerLink: '/angular/standalone',
+          title: 'Standalone components without module',
+          githubLinkNeeded: true,
+          githubLink: this.angularTopicInRepo + 'standalone/standalone.component.ts',
+        },
       ]
     },
     {
