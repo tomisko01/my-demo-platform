@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {TopicNode} from "../../typings";
 import {TopicLinksConstants} from "../../constants/topic-links-constants";
-import * as _ from "lodash";
+// import * as _ from 'lodash-es'; TODO fix it
+import * as _ from 'lodash';
 
 @Injectable({
   providedIn: 'root'

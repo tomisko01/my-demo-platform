@@ -5,7 +5,7 @@ import {MatTreeNestedDataSource} from "@angular/material/tree";
 import {NestedTreeControl} from "@angular/cdk/tree";
 import {TopicLinksConstants} from "./constants/topic-links-constants";
 import {TopicNode} from "./typings";
-import * as _ from "lodash";
+import * as _ from 'lodash-es';
 import {NavigationEnd, Router} from "@angular/router";
 import {filter, map} from "rxjs";
 import {TopicService} from "@service/topic/topic.service";
