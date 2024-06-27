@@ -325,6 +325,12 @@ export class TopicLinksConstants {
           title: 'Standalone components without module',
           githubLinkNeeded: true,
           githubLink: this.angularTopicInRepo + 'standalone/standalone.component.ts',
+        }, {
+          name: 'Defer',
+          routerLink: '/angular/defer',
+          title: '@defer usage',
+          githubLinkNeeded: true,
+          githubLink: this.angularTopicInRepo + 'defer/defer.component.ts',
         },
       ]
     },

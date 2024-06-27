@@ -4,6 +4,7 @@ import * as angularTopic from "../modules/topics/angular/topic.angular";
 import {EldenHomeComponent} from "../elden/components/elden-home/elden-home.component";
 import {EldenListComponent} from "../elden/components/elden-list/elden-list.component";
 import {StandaloneComponent} from "@angularTopic/standalone/standalone.component";
+import {DeferComponent} from "@angularTopic/defer/defer.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -49,6 +50,7 @@ export const routes: Routes = [
   {path: 'angular/pipe/i18nPipe', component: angularTopic.I18nComponent},
   {path: 'angular/elements', component: angularTopic.ElementsComponent},
   {path: 'angular/standalone', component: StandaloneComponent},
+  {path: 'angular/defer', component: DeferComponent},
   {
     path: 'elden',
     component: EldenHomeComponent,
