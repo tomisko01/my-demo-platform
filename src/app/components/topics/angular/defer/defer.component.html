@@ -1,1 +1,13 @@
 <p>defer works!</p>
+
+<h3>Elements inside &commat;defer will be visible in network tab as an additional bundle</h3>
+Angular will deliver app-defer-child component in new javascript bundle
+
+<h3>Default implementation</h3>
+Defer block will be loaded when browser goes idle state
+
+@defer {
+  <app-defer-child>
+  </app-defer-child>
+}
+
