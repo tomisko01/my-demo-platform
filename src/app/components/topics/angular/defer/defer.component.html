@@ -9,8 +9,11 @@ Defer block will be loaded when browser goes idle state
 @defer {
   <app-defer-child>
   </app-defer-child>
-} @placeholder(minimum 3s) {
-  <h4>This is the placeholder which will be shown until defer part is loading</h4>
-  <div>Placeholder stuff will be inside in main bundle</div>
+} @placeholder (minimum 3s) {
+  <h4>This is the placeholder, which will be shown until defer is not loading</h4>
+  <div>Placeholder stuff will be inside main bundle</div>
+} @loading (minimum 3s) {
+  <h4>This is the loading block, when defer is triggered to load</h4>
 }
+
 
