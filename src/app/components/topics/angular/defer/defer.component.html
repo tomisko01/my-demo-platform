@@ -11,15 +11,26 @@ docs:
 
 <h3>Defer in action:</h3>
 @defer {
-  <app-defer-child>
-  </app-defer-child>
+    <app-defer-child>
+    </app-defer-child>
 } @placeholder (minimum 3s) {
-  <h4>This is the placeholder, which will be shown until defer is not loading</h4>
-  <div>Placeholder stuff will be inside main bundle</div>
+    <h4>This is the placeholder, which will be shown until defer is not loading</h4>
+    <div>Placeholder stuff will be inside main bundle</div>
 } @loading (minimum 3s) {
-  <h4>This is the loading block, when defer is triggered to load</h4>
+    <h4>This is the loading block, when defer is triggered to load</h4>
 }
 
 <h3>Default implementation on defer is &commat;defer (on idle; prefetch on idle)</h3>
 
+<p></p>
+<mat-divider></mat-divider>
 
+<h3>Timer trigger</h3>
+@defer (on timer(10s); prefetch on timer(5s)) {
+    <app-defer-timer></app-defer-timer>
+} @placeholder () {
+    <div>
+        <p>Prefetch will be triggered after 5s, so bundle with app-defer-timer component will be called
+        <p>and after 10s defer will be triggered
+    </div>
+}
