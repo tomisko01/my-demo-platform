@@ -11,11 +11,15 @@ docs:
 
 <h3>Defer in action:</h3>
 @defer {
-  <app-defer-child>
-  </app-defer-child>
+  <div class="child-element">
+    <app-defer-child>
+    </app-defer-child>
+  </div>
 } @placeholder (minimum 3s) {
-  <h4>This is the placeholder, which will be shown until defer is not loading</h4>
-  <div>Placeholder stuff will be inside main bundle</div>
+  <div class=child-element>
+    <h4>This is the placeholder, which will be shown until defer is not loading</h4>
+    <div>Placeholder stuff will be inside main bundle</div>
+  </div>
 } @loading (minimum 3s) {
   <h4>This is the loading block, when defer is triggered to load</h4>
 }
@@ -26,14 +30,42 @@ docs:
 <mat-divider></mat-divider>
 
 <h3>Timer trigger</h3>
+
 @defer (on timer(10s); prefetch on timer(5s)) {
-  <app-defer-timer></app-defer-timer>
+  <div class="child-element">
+    <app-defer-timer></app-defer-timer>
+  </div>
 } @placeholder () {
-  <div>
+  <div class="child-element">
     <p>Prefetch will be triggered after 5s, so bundle with app-defer-timer component will be called
     <p>and after 10s defer will be triggered
-    <p>To see <mark>error</mark> usage, switch to offline in network tab before prefetch will be triggered
+    <p>To see
+      <mark>error</mark>
+      usage, switch to offline in network tab before prefetch will be triggered
   </div>
 } @error {
   <p>Place for nice error message, not like this one</p>
+}
+
+<div class="big-grey-box"> This is a big bordered box only to present (on viewport) trigger below</div>
+
+<mat-divider></mat-divider>
+
+<h3>On Viewport trigger</h3>
+
+<p>Triggered when placeholder is visible for the user...</p>
+
+@defer (on viewport; prefetch on viewport) {
+  <div class="child-element">
+    <app-defer-viewport>
+    </app-defer-viewport>
+  </div>
+} @placeholder () {
+  <p>Required placeholder for viewport trigger</p>
+}
+
+<p #viewPortTrigger>...OR when we use element as parameter for viewport</p>
+
+@defer (on viewport(viewPortTrigger)) {
+  <p>This line is shown because you scrolled to #viewPortTrigger</p>
 }

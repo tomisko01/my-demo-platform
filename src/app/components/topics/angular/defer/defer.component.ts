@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {DeferChildComponent} from "@angularTopic/defer/child/defer-child/defer-child.component";
 import {MatDivider} from "@angular/material/divider";
 import {DeferTimerComponent} from "@angularTopic/defer/child/defer-timer/defer-timer.component";
+import {DeferViewportComponent} from "@angularTopic/defer/child/defer-viewport/defer-viewport.component";
 
 @Component({
   selector: 'app-defer',
@@ -9,7 +10,8 @@ import {DeferTimerComponent} from "@angularTopic/defer/child/defer-timer/defer-t
   imports: [
     DeferChildComponent,
     MatDivider,
-    DeferTimerComponent
+    DeferTimerComponent,
+    DeferViewportComponent
   ],
   templateUrl: './defer.component.html',
   styleUrl: './defer.component.css'
