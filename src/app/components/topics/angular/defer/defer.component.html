@@ -69,3 +69,27 @@ docs:
 @defer (on viewport(viewPortTrigger)) {
   <p>This line is shown because you scrolled to #viewPortTrigger</p>
 }
+
+<mat-divider></mat-divider>
+
+<h3>On Interaction trigger</h3>
+
+@defer (on interaction; prefetch on idle) {
+  <div class="child-element">
+    <p>Defer on interaction</p>
+  </div>
+} @placeholder () {
+  <p>Click on this placeholder to trigger interaction</p>
+}
+
+<h4>Trigger on template reference</h4>
+<div class="demoTriggers">
+  <input placeholder="Type to trigger prefetch" #triggerPrefetch>
+  <button mat-stroked-button #triggerDisplay>Trigger display</button>
+</div>
+
+@defer (on interaction(triggerDisplay); prefetch on interaction(triggerPrefetch)) {
+  <div class="child-element">
+    <p>Defer triggered by different element, outside of placeholder</p>
+  </div>
+}

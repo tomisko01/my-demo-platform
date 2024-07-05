@@ -3,6 +3,7 @@ import {DeferChildComponent} from "@angularTopic/defer/child/defer-child/defer-c
 import {MatDivider} from "@angular/material/divider";
 import {DeferTimerComponent} from "@angularTopic/defer/child/defer-timer/defer-timer.component";
 import {DeferViewportComponent} from "@angularTopic/defer/child/defer-viewport/defer-viewport.component";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-defer',
@@ -11,7 +12,8 @@ import {DeferViewportComponent} from "@angularTopic/defer/child/defer-viewport/d
     DeferChildComponent,
     MatDivider,
     DeferTimerComponent,
-    DeferViewportComponent
+    DeferViewportComponent,
+    MatButton
   ],
   templateUrl: './defer.component.html',
   styleUrl: './defer.component.css'
