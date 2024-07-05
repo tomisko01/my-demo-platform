@@ -93,3 +93,17 @@ docs:
     <p>Defer triggered by different element, outside of placeholder</p>
   </div>
 }
+
+<mat-divider></mat-divider>
+
+<h3>On hover trigger</h3>
+
+@defer(on hover; prefetch on idle) {
+  <div class="child-element">
+    <p>Defer on hover</p>
+  </div>
+} @placeholder () {
+  <p>Hover over this text to trigger defer</p>
+}
+
+<h4>Similar to previous ones, we can pass template reference &commat;defer(on hover(templateRef))</h4>
