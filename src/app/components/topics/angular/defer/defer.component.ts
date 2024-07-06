@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {DeferChildComponent} from "@angularTopic/defer/child/defer-child/defer-child.component";
 import {MatDivider} from "@angular/material/divider";
 import {DeferTimerComponent} from "@angularTopic/defer/child/defer-timer/defer-timer.component";
@@ -20,4 +20,15 @@ import {MatButton} from "@angular/material/button";
 })
 export class DeferComponent {
 
+  triggerOwnPrefetch: boolean = false;
+
+  triggerOwnDisplay: boolean = false;
+
+  onTriggerPrefetch() {
+    this.triggerOwnPrefetch = true
+  }
+
+  onTriggerDisplay() {
+    this.triggerOwnDisplay = true;
+  }
 }
