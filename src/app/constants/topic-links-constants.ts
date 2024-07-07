@@ -331,6 +331,12 @@ export class TopicLinksConstants {
           title: '@defer usage',
           githubLinkNeeded: true,
           githubLink: this.angularTopicInRepo + 'defer/defer.component.ts',
+        }, {
+          name: 'Signal',
+          routerLink: '/angular/signal',
+          title: 'Signal',
+          githubLinkNeeded: true,
+          githubLink: this.angularTopicInRepo + 'signal/signal.component.ts',
         },
       ]
     },

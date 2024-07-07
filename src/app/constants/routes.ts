@@ -5,6 +5,7 @@ import {EldenHomeComponent} from "../elden/components/elden-home/elden-home.comp
 import {EldenListComponent} from "../elden/components/elden-list/elden-list.component";
 import {StandaloneComponent} from "@angularTopic/standalone/standalone.component";
 import {DeferComponent} from "@angularTopic/defer/defer.component";
+import {SignalComponent} from "@angularTopic/signal/signal.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -51,6 +52,7 @@ export const routes: Routes = [
   {path: 'angular/elements', component: angularTopic.ElementsComponent},
   {path: 'angular/standalone', component: StandaloneComponent},
   {path: 'angular/defer', component: DeferComponent},
+  {path: 'angular/signal', component: SignalComponent},
   {
     path: 'elden',
     component: EldenHomeComponent,
