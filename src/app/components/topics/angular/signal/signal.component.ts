@@ -11,7 +11,11 @@ export class SignalComponent {
 
   counter = signal(0)
 
+  counterAsReadonly = this.counter.asReadonly()
+
   increment() {
-    this.counter.set(this.counter() + 1)
+    // this.counter.set(this.counter() + 1)
+
+    this.counter.update(currentValue => ++currentValue)
   }
 }
