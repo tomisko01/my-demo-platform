@@ -8,3 +8,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .dir-highlighted {
   border: 5px #9575cd double;
 }
+
+.topic-child-element {
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  margin: 0.5rem;
+  border-left: solid 3px indianred;
+}
+
+.topic-button{
+  margin: 0.5rem;
+}
