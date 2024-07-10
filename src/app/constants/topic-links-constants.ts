@@ -352,6 +352,7 @@ export class TopicLinksConstants {
               title: 'Signal - effect', //todo better title
               githubLinkNeeded: true,
               githubLink: this.angularTopicInRepo + 'signal/effect/effect.component.ts',
+              usesConsole: true
             }
           ],
         },
