@@ -1,25 +1,23 @@
-<p>signal works!</p>
-
 <div>Counter value: {{ counter() }}</div>
-<div>CounterAsReadonly value: {{ counterAsReadonly() }}</div>
 <div>Derived counter value: {{ derivedCounter() }}</div>
 <br>
 <div>Multiplier value : {{ multiplier }}</div>
 <div>Derived counter value with multiplier condition: {{ derivedCounterWithCondition() }}</div>
 <div>Fixed Derived counter value with multiplier condition: {{ fixedDerivedCounterWithCondition() }}</div>
-<br>
-<div>Item name: {{ item().name }}</div>
-<br>
+
 <mat-divider></mat-divider>
-<br>
+
 <button class="topic-button"
         (click)="increment()">Increment counter
 </button>
+
 <div class="topic-child-element">Counter value and Derived counter value will be always calculated together
 </div>
+
 <button class="topic-button"
         (click)="incrementMultiplier()">Increment multiplier
 </button>
+
 <div class="topic-child-element">
   <p>Derived counter value with multiplier condition will react on counter changes only when previous compute checked counter()
   <p>On init compute multiplier value equals 0, so counter() was called, and every update on counter() will trigger changes on derived counter with multiplier
@@ -31,3 +29,5 @@
 <div class="topic-child-element">
   <p>Move counter() from conditional code and call it always</p>
 </div>
+
+

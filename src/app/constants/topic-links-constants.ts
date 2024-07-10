@@ -333,10 +333,27 @@ export class TopicLinksConstants {
           githubLink: this.angularTopicInRepo + 'defer/defer.component.ts',
         }, {
           name: 'Signal',
-          routerLink: '/angular/signal',
-          title: 'Signal',
-          githubLinkNeeded: true,
-          githubLink: this.angularTopicInRepo + 'signal/signal.component.ts',
+          children: [{
+            name: 'Signal',
+            routerLink: '/angular/signal/basic',
+            title: 'How to use signals',
+            githubLinkNeeded: true,
+            githubLink: this.angularTopicInRepo + 'signal/basic/signal.component.ts',
+          }, {
+            name: 'Computed',
+            routerLink: '/angular/signal/computed',
+            title: 'Depend on other signals',
+            githubLinkNeeded: true,
+            githubLink: this.angularTopicInRepo + 'signal/computed/computed.component.ts',
+          },
+            {
+              name: 'Effect',
+              routerLink: '/angular/signal/effect',
+              title: 'Signal - effect', //todo better title
+              githubLinkNeeded: true,
+              githubLink: this.angularTopicInRepo + 'signal/effect/effect.component.ts',
+            }
+          ],
         },
       ]
     },

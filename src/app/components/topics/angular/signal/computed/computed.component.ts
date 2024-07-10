@@ -2,24 +2,22 @@ import {Component, computed, signal} from '@angular/core';
 import {MatDivider} from "@angular/material/divider";
 
 @Component({
-  selector: 'app-signal',
+  selector: 'app-computed',
   standalone: true,
   imports: [
     MatDivider
   ],
-  templateUrl: './signal.component.html',
-  styleUrl: './signal.component.css'
+  templateUrl: './computed.component.html',
+  styleUrl: './computed.component.css'
 })
-export class SignalComponent {
+export class ComputedComponent {
 
   counter = signal(0)
 
-  counterAsReadonly = this.counter.asReadonly()
-
   // Will always be updated after counter() update
   derivedCounter = computed(() => {
-      const counter = this.counter()
-      return 10 * counter
+    const counter = this.counter()
+    return 10 * counter
   })
 
   // Will be updated only when previous compute called counter()
@@ -42,22 +40,7 @@ export class SignalComponent {
 
   multiplier = 0
 
-  item = signal({
-    id: 1,
-    name: 'Ameno'
-  })
-
   increment() {
-    // this.counter.set(this.counter() + 1)
-
-    // DO NOT USE IT IN THAT WAY:
-    // LOSING EVERY BENEFIT FROM SIGNALS
-    // WORKING ONLY FOR DEFAULT CHANGE DETECTION
-    this.item().name = 'Dorime'
-
-    // UPDATE VALUE WITH SET() OR UPDATE() FUNCTIONS
-    this.item.update(data => ({...data, name: 'DORIME'}))
-
     this.counter.update(currentValue => ++currentValue)
   }
 
