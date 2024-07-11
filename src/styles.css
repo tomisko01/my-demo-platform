@@ -12,6 +12,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .topic-child-element {
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
+  padding-left: 0.3rem;
   margin: 0.5rem;
   border-left: solid 3px indianred;
 }

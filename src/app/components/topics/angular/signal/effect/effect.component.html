@@ -3,12 +3,23 @@
 <br>
 <mat-divider></mat-divider>
 <br>
-<button class="topic-button"
+<button mat-stroked-button
+        class="topic-button"
         (click)="increment()">Increment counter
 </button>
 
 <h3>Effect is used for side effects of updating dependant signals</h3>
-<div class = "topic-child-element">
+<div class="topic-child-element">
   <p>React on changes and do something else, like save to backend or log something
   <p>Don't update signals in effect - it's disabled by default and will trigger error
+</div>
+
+<h3>Effect with manual cleanUp</h3>
+
+<button mat-stroked-button
+        (click)="onCleanup()"> Trigger manual clean up
+</button>
+<div class="topic-child-element">
+  <p>When this button is clicked destroy() is performed on effect with cleanUp implementation
+  <p>Next incrementation will not trigger this effect
 </div>
