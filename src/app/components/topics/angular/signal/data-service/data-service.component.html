@@ -1,0 +1,6 @@
+<div>Counter value from service: {{ signalDataService.counter() }}</div>
+<div>ComponentSignal value (depends on counter() from service): {{ componentSignal() }}</div>
+<br>
+<button class="topic-button"
+        (click)="increment()">Increment counter by call to service
+</button>

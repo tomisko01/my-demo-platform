@@ -345,15 +345,20 @@ export class TopicLinksConstants {
             title: 'Depend on other signals',
             githubLinkNeeded: true,
             githubLink: this.angularTopicInRepo + 'signal/computed/computed.component.ts',
+          }, {
+            name: 'Effect',
+            routerLink: '/angular/signal/effect',
+            title: 'Signal - side effect of signals update',
+            githubLinkNeeded: true,
+            githubLink: this.angularTopicInRepo + 'signal/effect/effect.component.ts',
+            usesConsole: true
+          }, {
+            name: 'Data service',
+            routerLink: '/angular/signal/dataService',
+            title: 'Share signal between components',
+            githubLinkNeeded: true,
+            githubLink: this.angularTopicInRepo + 'signal/data-service/data-service.component.ts',
           },
-            {
-              name: 'Effect',
-              routerLink: '/angular/signal/effect',
-              title: 'Signal - effect', //todo better title
-              githubLinkNeeded: true,
-              githubLink: this.angularTopicInRepo + 'signal/effect/effect.component.ts',
-              usesConsole: true
-            }
           ],
         },
       ]
