@@ -1,0 +1,11 @@
+<div>Item to send value:
+  <pre>{{ itemToSend | json }}</pre>
+</div>
+
+<button mat-stroked-button
+        (click)="incrementCounter()"> Send new item
+</button>
+<mat-divider></mat-divider>
+<app-input-signal-child
+  [item]="itemToSend">
+</app-input-signal-child>

@@ -358,6 +358,12 @@ export class TopicLinksConstants {
             title: 'Share signal between components',
             githubLinkNeeded: true,
             githubLink: this.angularTopicInRepo + 'signal/data-service/data-service.component.ts',
+          },{
+            name: 'Input signal',
+            routerLink: '/angular/signal/inputSignal',
+            title: 'Use signals as input to component',
+            githubLinkNeeded: true,
+            githubLink: this.angularTopicInRepo + 'signal/input-signal/input-signal.component.ts',
           },
           ],
         },

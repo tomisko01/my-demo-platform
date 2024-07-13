@@ -9,6 +9,7 @@ import {SignalComponent} from "@angularTopic/signal/basic/signal.component";
 import {ComputedComponent} from "@angularTopic/signal/computed/computed.component";
 import {EffectComponent} from "@angularTopic/signal/effect/effect.component";
 import {DataServiceComponent} from "@angularTopic/signal/data-service/data-service.component";
+import {InputSignalComponent} from "@angularTopic/signal/input-signal/input-signal.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -59,6 +60,7 @@ export const routes: Routes = [
   {path: 'angular/signal/computed', component: ComputedComponent},
   {path: 'angular/signal/effect', component: EffectComponent},
   {path: 'angular/signal/dataService', component: DataServiceComponent},
+  {path: 'angular/signal/inputSignal', component: InputSignalComponent},
   {
     path: 'elden',
     component: EldenHomeComponent,
