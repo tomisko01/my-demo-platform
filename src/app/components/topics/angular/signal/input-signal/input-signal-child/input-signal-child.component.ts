@@ -1,7 +1,6 @@
-import {Component, computed, input} from '@angular/core';
+import {Component, computed, effect, input} from '@angular/core';
 import {elden} from "../../../../../../typings";
 import {JsonPipe} from "@angular/common";
-import {SignalComponent} from "@angularTopic/signal/basic/signal.component";
 
 @Component({
   selector: 'app-input-signal-child',
@@ -22,4 +21,9 @@ export class InputSignalChildComponent {
     return item?.name.toUpperCase()
   })
 
+  constructor() {
+    effect(()=> {
+      console.log(`New item value: `, this.item())
+    })
+  }
 }

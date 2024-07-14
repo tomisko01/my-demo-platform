@@ -25,6 +25,8 @@ export class InputSignalComponent {
 
   itemToSend = items[this.counter]
 
+  protected readonly items = items;
+
   incrementCounter() {
     if (this.counter === items.length - 1) {
       this.counter = 0

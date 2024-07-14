@@ -364,6 +364,7 @@ export class TopicLinksConstants {
             title: 'Use signals as input to component',
             githubLinkNeeded: true,
             githubLink: this.angularTopicInRepo + 'signal/input-signal/input-signal.component.ts',
+            usesConsole: true
           },
           ],
         },

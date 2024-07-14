@@ -9,3 +9,16 @@
 <app-input-signal-child
   [item]="itemToSend">
 </app-input-signal-child>
+<br>
+<mat-divider></mat-divider>
+<br>
+<h3>How to avoid onChanges lifecycle hook with signals</h3>
+<h4>Use effect() with input signal instead of onChanges:</h4>
+@for (item of items; track item.id) {
+  <div class = "topic-child-element">
+
+  <app-input-signal-child
+    [item]="item">
+  </app-input-signal-child>
+  </div>
+}
