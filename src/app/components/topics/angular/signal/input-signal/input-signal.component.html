@@ -7,7 +7,9 @@
 </button>
 <mat-divider></mat-divider>
 <app-input-signal-child
-  [item]="itemToSend">
+  [requiredInput]="itemToSend.id"
+  [item]="itemToSend"
+  [dorime]="'Value for aliased input'">
 </app-input-signal-child>
 <br>
 <mat-divider></mat-divider>
@@ -15,10 +17,11 @@
 <h3>How to avoid onChanges lifecycle hook with signals</h3>
 <h4>Use effect() with input signal instead of onChanges:</h4>
 @for (item of items; track item.id) {
-  <div class = "topic-child-element">
+  <div class="topic-child-element">
 
-  <app-input-signal-child
-    [item]="item">
-  </app-input-signal-child>
+    <app-input-signal-child
+      [requiredInput]="item.id"
+      [item]="item">
+    </app-input-signal-child>
   </div>
 }
