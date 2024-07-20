@@ -8,6 +8,7 @@ export class TopicLinksConstants {
 
   repoLink: string = 'https://github.com/tomisko01/my-demo-platform/blob/main/'
   angularTopicInRepo: string = this.repoLink + 'src/app/components/topics/angular/'
+  javascriptTopicInRepo: string = this.repoLink + 'src/app/components/topics/javascript/'
 
   ANGULAR_NODE: TopicNode = {
     name: 'Angular',
@@ -390,7 +391,11 @@ export class TopicLinksConstants {
     children: [
       {
         name: 'Getter & Setter',
-        routerLink: '/javascript/getter-setter'
+        routerLink: '/javascript/getter-setter',
+        title: 'How to access computed objects and secure changing values',
+        githubLinkNeeded: true,
+        githubLink: this.javascriptTopicInRepo + 'getter-setter/getter-setter.component.ts',
+        usesConsole: true
       }
     ]
   }
