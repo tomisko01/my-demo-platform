@@ -365,6 +365,13 @@ export class TopicLinksConstants {
           githubLinkNeeded: true,
           githubLink: this.angularTopicInRepo + 'signal/input-signal/input-signal.component.ts',
           usesConsole: true
+        },{
+          name: 'Signal with CRUD',
+          routerLink: '/angular/signal/signalCRUD',
+          title: 'Use signals for CRUD application',
+          githubLinkNeeded: true,
+          githubLink: this.angularTopicInRepo + 'signal/signal-crud/signal-crud.component.ts',
+          usesConsole: true
         },
         ],
       },

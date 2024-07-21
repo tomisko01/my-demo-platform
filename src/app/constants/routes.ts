@@ -11,6 +11,7 @@ import {EffectComponent} from "@angularTopic/signal/effect/effect.component";
 import {DataServiceComponent} from "@angularTopic/signal/data-service/data-service.component";
 import {InputSignalComponent} from "@angularTopic/signal/input-signal/input-signal.component";
 import {GetterSetterComponent} from "../components/topics/javascript/getter-setter/getter-setter.component";
+import {SignalCRUDComponent} from "@angularTopic/signal/signal-crud/signal-crud.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -62,6 +63,7 @@ export const routes: Routes = [
   {path: 'angular/signal/effect', component: EffectComponent},
   {path: 'angular/signal/dataService', component: DataServiceComponent},
   {path: 'angular/signal/inputSignal', component: InputSignalComponent},
+  {path: 'angular/signal/signalCRUD', component: SignalCRUDComponent},
   {
     path: 'javascript',
     children: [{
