@@ -7,7 +7,7 @@ import {environment} from "../../../../../../../environments/environment";
 })
 export class EldenItemFetchService {
 
-  env = environment;
+  env = environment
 
   async loadAllItems(): Promise<elden.Item[]> {
 
@@ -15,6 +15,6 @@ export class EldenItemFetchService {
 
     const payload = await response.json()
 
-    return payload.items;
+    return payload.items
   }
 }
