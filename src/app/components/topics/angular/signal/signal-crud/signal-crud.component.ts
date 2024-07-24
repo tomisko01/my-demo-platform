@@ -2,11 +2,17 @@ import {afterNextRender, Component, computed, effect, inject, OnInit, signal} fr
 import {elden} from "../../../../../typings";
 import {EldenItemHttpClientService} from "@angularTopic/signal/signal-crud/service/elden-item-http-client.service";
 import {EldenItemFetchService} from "@angularTopic/signal/signal-crud/service/elden-item-fetch.service";
+import {MatTab, MatTabGroup} from "@angular/material/tabs";
+import {ItemListComponent} from "@angularTopic/signal/signal-crud/component/item-list/item-list.component";
 
 @Component({
   selector: 'app-signal-crud',
   standalone: true,
-  imports: [],
+  imports: [
+    MatTabGroup,
+    MatTab,
+    ItemListComponent
+  ],
   templateUrl: './signal-crud.component.html',
   styleUrl: './signal-crud.component.css'
 })
@@ -37,7 +43,7 @@ export class SignalCRUDComponent implements OnInit {
       console.log(`reusableItems: `, this.reusableItems())
       console.log(`consumableItems: `, this.consumableItems())
     })
-    
+
     this.loadItems()
       .then(() => console.log(`All items loaded: `, this.#items()))
 
