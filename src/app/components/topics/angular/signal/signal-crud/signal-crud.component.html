@@ -1,16 +1,17 @@
 <p>signal-crud works!</p>
+<div class="compact-tabs">
+  <mat-tab-group>
+    <mat-tab label="reusable">
+      <app-item-list
+        [items]="reusableItems()">
 
-<mat-tab-group>
-  <mat-tab label="reusable">
-    <app-item-list
-      [items]="reusableItems()">
+      </app-item-list>
+    </mat-tab>
 
-    </app-item-list>
-  </mat-tab>
-
-  <mat-tab label="consumable">
-    <app-item-list
-      [items]="consumableItems()">
-    </app-item-list>
-  </mat-tab>
-</mat-tab-group>
+    <mat-tab label="consumable">
+      <app-item-list
+        [items]="consumableItems()">
+      </app-item-list>
+    </mat-tab>
+  </mat-tab-group>
+</div>

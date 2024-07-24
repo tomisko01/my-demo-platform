@@ -1,10 +1,13 @@
 import {Component, input} from '@angular/core';
 import {elden} from "../../../../../../../typings";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-item-list',
   standalone: true,
-  imports: [],
+  imports: [
+    MatButton
+  ],
   templateUrl: './item-list.component.html',
   styleUrl: './item-list.component.css'
 })
@@ -14,5 +17,7 @@ export class ItemListComponent {
 
   // signal input  with initial value []
   // items = input<elden.Item[]>([])
+
+  //todo style for buttons1111111111111111
 
 }
