@@ -69,7 +69,7 @@ export class SignalCRUDComponent implements OnInit {
     try {
       // const itemsFromService = await this.eldenItemServiceWithFetch.loadAllItems()
       const itemsFromService = await this.eldenItemService.loadAllItems()
-      this.#items.set(itemsFromService)
+      this.#items.set(itemsFromService.sort((a, b) => a.name.localeCompare(b.name)))
     } catch (error) {
       console.error(error)
     }

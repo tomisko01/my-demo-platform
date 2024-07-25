@@ -5,7 +5,7 @@
         {{ item.name }}
       </span>
     </div>
-    <div class ="item-header">
+    <div class="item-header">
       <img class="item-image"
            [src]="item.image">
     </div>
@@ -13,12 +13,20 @@
       <p>{{ item.description }}</p>
     </div>
 
-    <div>
-      <button mat-stroked-button>
+    <div class="item-actions">
+      <button class="btn"
+              mat-stroked-button>
         View item
       </button>
-      <button mat-stroked-button>
+      <button class="btn"
+              mat-stroked-button>
         Edit item
+      </button>
+      <button
+        class="delete"
+        mat-mini-fab
+        aria-label="Delete this item">
+        <mat-icon>delete</mat-icon>
       </button>
     </div>
   </div>

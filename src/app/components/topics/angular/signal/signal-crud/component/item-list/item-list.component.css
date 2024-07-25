@@ -25,3 +25,31 @@
   padding: 1rem;
   color: #fff;
 }
+
+.item-actions {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+
+  .btn {
+    background: #1f172d;
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid #2086fc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-inline: 0.2rem;
+  }
+
+  .delete {
+    max-height: 30px;
+    border-radius: 15px;
+    margin-left: 5px;
+    margin-top: 3px;
+    border: 1px solid #2086fc;
+    background: #1f172d;
+    cursor: pointer;
+    color: #fff;
+  }
+
+}
