@@ -1,0 +1,36 @@
+<!--<div [formGroup]="form">-->
+
+<!--  <h3>{{ data.name }}</h3>-->
+
+  <div>
+    <label>Item title:</label>
+    <input placeholder="Enter item name"
+           formControlName="name">
+  </div>
+
+  <div>
+    <label>Item description:</label>
+    <textarea placeholder="Enter item description"
+              formControlName="description">
+    </textarea>
+  </div>
+
+  <div>
+    <label>Course category:</label>
+    <select>
+      <option value="Reusable">Reusable</option>
+      <option value="Consumable">Consumable</option>
+      <option value="Misc">Misc</option>
+    </select>
+  </div>
+
+  <div>
+    <button class="btn">
+      Save
+    </button>
+
+    <button class="btn">
+      Cancel
+    </button>
+  </div>
+<!--</div>-->
