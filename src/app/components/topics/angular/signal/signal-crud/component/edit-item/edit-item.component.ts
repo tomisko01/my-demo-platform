@@ -32,7 +32,7 @@ export class EditItemComponent {
 
 export async function openEditItemDialog(dialog: MatDialog, data: EditItemDialogData) {
   const config = new MatDialogConfig()
-  config.disableClose = true
+  config.disableClose = false
   config.autoFocus = true
   config.width = '400px'
   config.data = data
