@@ -32,6 +32,8 @@ export class ItemListComponent {
       title: `Edit Item`,
       item
     })
+
+    console.log(`Item edited: `, updatedItem)
   }
 
 }

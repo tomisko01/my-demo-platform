@@ -15,19 +15,30 @@ import {firstValueFrom} from "rxjs";
 })
 export class EditItemComponent {
 
-  // dialogRef = inject(MatDialogRef);
-  //
-  // data: EditItemDialogData = inject(MAT_DIALOG_DATA);
-  //
-  // fb = inject(FormBuilder);
-  //
-  // form = this.fb.group({
-  //   name: [''],
-  //   description: [''],
-  //   image: ['']
-  // });
+  dialogRef = inject(MatDialogRef)
+
+  data: EditItemDialogData = inject(MAT_DIALOG_DATA)
+
+  fb = inject(FormBuilder)
+
+  form = this.fb.group({
+    name: [''],
+    description: [''],
+    type: ['']
+  })
 
 
+  onClose() {
+    this.dialogRef.close()
+  }
+
+  constructor() {
+    this.form.patchValue({
+      name: this.data?.item?.name,
+      description: this.data?.item?.description,
+      type: this.data?.item?.type,
+    })
+  }
 }
 
 export async function openEditItemDialog(dialog: MatDialog, data: EditItemDialogData) {

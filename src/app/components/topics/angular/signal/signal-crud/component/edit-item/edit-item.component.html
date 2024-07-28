@@ -1,8 +1,11 @@
 <!--<div [formGroup]="form">-->
 
 <!--  <h3>{{ data.name }}</h3>-->
-<div class="edit-item-form">
-  <h3></h3>
+<div class="edit-item-form"
+     [formGroup]="form">
+
+  <h3>{{ data.title }}</h3>
+
   <div class="form-control">
     <label>Item name:</label>
     <input placeholder="Enter item name"
@@ -18,7 +21,7 @@
 
   <div class="form-control">
     <label>Course category:</label>
-    <select>
+    <select formControlName="type">
       <option value="Reusable">Reusable</option>
       <option value="Consumable">Consumable</option>
       <option value="Misc">Misc</option>
@@ -30,7 +33,8 @@
       Save
     </button>
 
-    <button class="btn">
+    <button class="btn"
+            (click)="onClose()">
       Cancel
     </button>
   </div>
