@@ -32,4 +32,11 @@ export class EldenItemHttpClientService {
 
     return response.items
   }
+
+  async saveItem(itemId: string, changes: Partial<elden.Item>) {
+    const item$ =
+      this.http.put<elden.Item>(`${this.env.apiRoot}/items/${itemId}`,
+        changes)
+    return firstValueFrom(item$);
+  }
 }

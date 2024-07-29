@@ -11,7 +11,7 @@ export function getAllItems(req: Request, res: Response) {
 
     console.log(`Returning GET /api/items`);
 
-    res.status(200).json({items:Object.values(ITEMS)});
+    res.status(200).json({items: Object.values(ITEMS)});
 
   }, 1000);
 
@@ -22,7 +22,7 @@ export function getItemById(req: Request, res: Response) {
   setTimeout(() => {
     const itemId = req.params["id"];
 
-    const items:any = Object.values(ITEMS);
+    const items: any = Object.values(ITEMS);
 
     const item = items.find((item: elden.Item) => item.id == itemId);
 
