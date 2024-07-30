@@ -25,6 +25,6 @@ export function saveItem(req: Request, res: Response) {
 
     res.status(200).json(itemHelperService.getItemById(id))
 
-  }, 1500);
+  }, 500);
 
 }

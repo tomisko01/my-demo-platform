@@ -3,11 +3,14 @@ import {saveItem} from "./save-item.route";
 
 const express = require('express')
 const cors = require('cors');
+const bodyParser = require('body-parser');
 
 const app = express()
 const port = 9000
 
-app.use(cors({origin: true}));
+app.use(cors({origin: true}))
+
+app.use(bodyParser.json())
 
 app.get('/', (req: any, res: { send: (arg0: string) => void }) => {
   res.send('Hello World!')
@@ -17,9 +20,8 @@ app.route('/api/items').get(getAllItems)
 
 app.route('/api/items/:id').get(getItemById)
 
-app.route('/api/items/:id').put(saveItem);
-
+app.route('/api/items/:id').put(saveItem)
 
 const httpServer = app.listen(port, () => {
   console.log("HTTP REST API Server running at http://localhost:" + httpServer.address()["port"]);
-});
+})
