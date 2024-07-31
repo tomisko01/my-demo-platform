@@ -2,6 +2,7 @@
   <mat-tab-group>
     <mat-tab label="reusable">
       <app-item-list
+        (itemUpdated)="onItemUpdated($event)"
         [items]="reusableItems()">
 
       </app-item-list>
@@ -9,6 +10,7 @@
 
     <mat-tab label="consumable">
       <app-item-list
+        (itemUpdated)="onItemUpdated($event)"
         [items]="consumableItems()">
       </app-item-list>
     </mat-tab>

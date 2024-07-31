@@ -1,4 +1,4 @@
-import {Component, inject, input} from '@angular/core';
+import {Component, inject, input, output} from '@angular/core';
 import {elden} from "../../../../../../../typings";
 import {MatButton, MatFabButton, MatIconButton, MatMiniFabButton} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
@@ -20,11 +20,14 @@ import {MatDialog} from "@angular/material/dialog";
 })
 export class ItemListComponent {
 
+  dialog = inject(MatDialog)
+
   items = input.required<elden.Item[]>()
   // signal input  with initial value []
+
   // items = input<elden.Item[]>([])
 
-  dialog = inject(MatDialog)
+  itemUpdated = output<elden.Item>()
 
   async onEditItem(item: elden.Item) {
     const updatedItem = await openEditItemDialog(this.dialog,{
@@ -34,6 +37,8 @@ export class ItemListComponent {
     })
 
     console.log(`Item edited: `, updatedItem)
+
+    this.itemUpdated.emit(updatedItem)
   }
 
 }

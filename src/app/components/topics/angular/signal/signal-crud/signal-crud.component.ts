@@ -74,4 +74,14 @@ export class SignalCRUDComponent implements OnInit {
       console.error(error)
     }
   }
+
+  onItemUpdated(updatedItem: elden.Item) {
+    const items = this.#items()
+
+    const newItems = items.map(item => (
+      item.id === updatedItem.id ? updatedItem : item
+    ))
+
+    this.#items.set(newItems)
+  }
 }
