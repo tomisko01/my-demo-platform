@@ -29,8 +29,10 @@ export class ItemListComponent {
 
   itemUpdated = output<elden.Item>()
 
+  itemDeleted = output<string>()
+
   async onEditItem(item: elden.Item) {
-    const updatedItem = await openEditItemDialog(this.dialog,{
+    const updatedItem = await openEditItemDialog(this.dialog, {
       mode: "update",
       title: `Edit Item`,
       item
@@ -41,4 +43,7 @@ export class ItemListComponent {
     this.itemUpdated.emit(updatedItem)
   }
 
+  onDeleteItem(item: elden.Item) {
+    this.itemDeleted.emit(item.id)
+  }
 }

@@ -3,6 +3,7 @@
     <mat-tab label="reusable">
       <app-item-list
         (itemUpdated)="onItemUpdated($event)"
+        (itemDeleted)="onItemDeleted($event)"
         [items]="reusableItems()">
 
       </app-item-list>
@@ -11,6 +12,7 @@
     <mat-tab label="consumable">
       <app-item-list
         (itemUpdated)="onItemUpdated($event)"
+        (itemDeleted)="onItemDeleted($event)"
         [items]="consumableItems()">
       </app-item-list>
     </mat-tab>

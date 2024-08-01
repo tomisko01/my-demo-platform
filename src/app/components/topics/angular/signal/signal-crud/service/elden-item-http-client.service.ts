@@ -39,4 +39,11 @@ export class EldenItemHttpClientService {
         changes)
     return firstValueFrom(item$);
   }
+
+  async deleteItem(itemId: string) {
+    const delete$ =
+      this.http.delete(`${this.env.apiRoot}/items/${itemId}`);
+    return firstValueFrom(delete$);
+
+  }
 }

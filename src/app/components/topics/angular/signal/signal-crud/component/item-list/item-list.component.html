@@ -19,14 +19,15 @@
         View item
       </button>
       <button class="btn"
-              (click) = onEditItem(item)
+              (click)=onEditItem(item)
               mat-stroked-button>
         Edit item
       </button>
       <button
         class="delete"
         mat-mini-fab
-        aria-label="Delete this item">
+        aria-label="Delete this item"
+        (click)="onDeleteItem(item)">
         <mat-icon>delete</mat-icon>
       </button>
     </div>

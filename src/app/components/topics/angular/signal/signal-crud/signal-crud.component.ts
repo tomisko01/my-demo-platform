@@ -84,4 +84,17 @@ export class SignalCRUDComponent implements OnInit {
 
     this.#items.set(newItems)
   }
+
+  async onItemDeleted(itemId: string) {
+    try {
+      await this.eldenItemService.deleteItem(itemId)
+
+      const items = this.#items()
+      const newItems = items.filter(item => item.id !== itemId)
+      this.#items.set(newItems)
+    } catch (err) {
+      console.error(err)
+      alert(`Error deleting item: ${itemId}`)
+    }
+  }
 }
