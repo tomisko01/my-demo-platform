@@ -46,4 +46,11 @@ export class EldenItemHttpClientService {
     return firstValueFrom(delete$);
 
   }
+
+  async createItem(itemToSave: Partial<elden.Item>) {
+    const item$ =
+      this.http.post<elden.Item>(`${this.env.apiRoot}/items`,
+        itemToSave)
+    return firstValueFrom(item$);
+  }
 }

@@ -1,6 +1,7 @@
 import {getAllItems, getItemById} from "./get-items.route";
 import {saveItem} from "./save-item.route";
 import {deleteItem} from "./delete-item.route";
+import {createItem} from "./create-item.route";
 
 const express = require('express')
 const cors = require('cors');
@@ -18,6 +19,8 @@ app.get('/', (req: any, res: { send: (arg0: string) => void }) => {
 })
 
 app.route('/api/items').get(getAllItems)
+
+app.route('/api/items').post(createItem)
 
 app.route('/api/items/:id').get(getItemById)
 

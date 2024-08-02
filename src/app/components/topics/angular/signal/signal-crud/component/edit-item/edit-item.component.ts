@@ -48,8 +48,20 @@ export class EditItemComponent {
   async onSave() {
     const itemProps = this.form.value as Partial<elden.Item>
 
-    if (this.data?.mode === "update") {
+    if (this.data?.mode === 'update') {
       await this.saveItem(this.data?.item!.id, itemProps)
+    } else if (this.data?.mode === 'create') {
+      await this.createItem(itemProps)
+    }
+  }
+
+  async createItem(itemToSave: Partial<elden.Item>) {
+    try {
+      const newItem = await this.eldenItemService.createItem(itemToSave)
+      this.dialogRef.close(newItem)
+    } catch (err) {
+      console.error(err)
+      alert(`Failed to create the item.`)
     }
   }
 

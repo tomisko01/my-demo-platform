@@ -4,6 +4,9 @@ import {EldenItemHttpClientService} from "@angularTopic/signal/signal-crud/servi
 import {EldenItemFetchService} from "@angularTopic/signal/signal-crud/service/elden-item-fetch.service";
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
 import {ItemListComponent} from "@angularTopic/signal/signal-crud/component/item-list/item-list.component";
+import {MatButton, MatMiniFabButton} from "@angular/material/button";
+import {openEditItemDialog} from "@angularTopic/signal/signal-crud/component/edit-item/edit-item.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-signal-crud',
@@ -11,7 +14,9 @@ import {ItemListComponent} from "@angularTopic/signal/signal-crud/component/item
   imports: [
     MatTabGroup,
     MatTab,
-    ItemListComponent
+    ItemListComponent,
+    MatMiniFabButton,
+    MatButton
   ],
   templateUrl: './signal-crud.component.html',
   styleUrl: './signal-crud.component.css'
@@ -20,6 +25,8 @@ export class SignalCRUDComponent implements OnInit {
 
   // # makes items private, not usable on view
   #items = signal<elden.Item[]>([])
+
+  dialog = inject(MatDialog)
 
   reusableItems = computed(() => {
     const items = this.#items()
@@ -96,5 +103,21 @@ export class SignalCRUDComponent implements OnInit {
       console.error(err)
       alert(`Error deleting item: ${itemId}`)
     }
+  }
+
+  async onAddItem() {
+    const newItem = await openEditItemDialog(this.dialog,
+      {
+        mode: 'create',
+        title: `Create new Item`,
+      })
+
+    // create a copy of an array
+    const newItems = [
+      ...this.#items(),
+      newItem
+    ]
+
+    this.#items.set(newItems)
   }
 }
