@@ -6,6 +6,7 @@
 
   <mat-tab-group>
     <mat-tab label="reusable">
+      <app-loading/>
       <app-item-list
         (itemUpdated)="onItemUpdated($event)"
         (itemDeleted)="onItemDeleted($event)"

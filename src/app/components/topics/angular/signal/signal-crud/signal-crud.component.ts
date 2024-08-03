@@ -7,6 +7,8 @@ import {ItemListComponent} from "@angularTopic/signal/signal-crud/component/item
 import {MatButton, MatMiniFabButton} from "@angular/material/button";
 import {openEditItemDialog} from "@angularTopic/signal/signal-crud/component/edit-item/edit-item.component";
 import {MatDialog} from "@angular/material/dialog";
+import {LoadingComponent} from "@angularTopic/signal/signal-crud/loading/loading.component";
+import {LoadingService} from "@angularTopic/signal/signal-crud/loading/loading.service";
 
 @Component({
   selector: 'app-signal-crud',
@@ -16,7 +18,8 @@ import {MatDialog} from "@angular/material/dialog";
     MatTab,
     ItemListComponent,
     MatMiniFabButton,
-    MatButton
+    MatButton,
+    LoadingComponent
   ],
   templateUrl: './signal-crud.component.html',
   styleUrl: './signal-crud.component.css'
@@ -43,6 +46,8 @@ export class SignalCRUDComponent implements OnInit {
   eldenItemService = inject(EldenItemHttpClientService)
 
   eldenItemServiceWithFetch = inject(EldenItemFetchService)
+
+  loadingService = inject(LoadingService)
 
   constructor() {
 
@@ -74,11 +79,15 @@ export class SignalCRUDComponent implements OnInit {
     //   .catch(err => console.error(err));
 
     try {
+      this.loadingService.loadingOn()
+
       // const itemsFromService = await this.eldenItemServiceWithFetch.loadAllItems()
       const itemsFromService = await this.eldenItemService.loadAllItems()
       this.#items.set(itemsFromService.sort((a, b) => a.name.localeCompare(b.name)))
     } catch (error) {
       console.error(error)
+    } finally {
+      this.loadingService.loadingOff()
     }
   }
 
