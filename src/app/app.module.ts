@@ -5,7 +5,12 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from "@angular/forms";
 import {RouterModule} from '@angular/router';
-import {HttpClientModule} from "@angular/common/http";
+import {
+  HttpClientModule,
+  provideHttpClient,
+  withFetch,
+  withInterceptors
+} from "@angular/common/http";
 import {HomeComponent} from "./components/home/home.component";
 import {HighlightService} from "@service/common/highlight.service";
 import {NgOptimizedImage} from "@angular/common";
@@ -16,6 +21,7 @@ import {routes} from "./constants/routes";
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient} from '@angular/common/http';
+import {loadingInterceptor} from "@angularTopic/signal/signal-crud/loading/loading.interceptor";
 
 @NgModule({
   declarations: [
@@ -40,7 +46,8 @@ import {HttpClient} from '@angular/common/http';
     }),
   ],
   providers: [
-    HighlightService
+    HighlightService,
+    provideHttpClient(withInterceptors([loadingInterceptor]), withFetch())
   ],
   exports: [],
   bootstrap: [AppComponent]

@@ -79,16 +79,17 @@ export class SignalCRUDComponent implements OnInit {
     //   .catch(err => console.error(err));
 
     try {
-      this.loadingService.loadingOn()
+      // moved to interceptor
+      // this.loadingService.loadingOn()
 
       // const itemsFromService = await this.eldenItemServiceWithFetch.loadAllItems()
       const itemsFromService = await this.eldenItemService.loadAllItems()
       this.#items.set(itemsFromService.sort((a, b) => a.name.localeCompare(b.name)))
     } catch (error) {
       console.error(error)
-    } finally {
-      this.loadingService.loadingOff()
-    }
+    } //finally {
+      // this.loadingService.loadingOff()
+      // }
   }
 
   onItemUpdated(updatedItem: elden.Item) {
