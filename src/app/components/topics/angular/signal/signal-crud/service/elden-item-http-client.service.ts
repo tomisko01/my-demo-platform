@@ -1,8 +1,9 @@
 import {inject, Injectable} from '@angular/core';
 import {elden} from "../../../../../../typings";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpContext} from "@angular/common/http";
 import {environment} from "../../../../../../../environments/environment";
 import {firstValueFrom} from "rxjs";
+import {SkipLoadingToken} from "@angularTopic/signal/signal-crud/loading/skip-loading.token";
 
 
 export type GetItemsResponse = {
@@ -28,6 +29,12 @@ export class EldenItemHttpClientService {
     // and we will get promise of empty array
     const items$ = this.http.get<GetItemsResponse>(`${this.env.apiRoot}/items`)
 
+
+    // to skip interceptor logic, we need to pass context:
+    //    const items$ = this.http.get<GetItemsResponse>(`${this.env.apiRoot}/items`,
+    //       {
+    //         context: new HttpContext().set(SkipLoadingToken, true)
+    //       })
     const response = await firstValueFrom(items$)
 
     return response.items
