@@ -87,7 +87,8 @@ export class SignalCRUDComponent implements OnInit {
       this.#items.set(itemsFromService.sort((a, b) => a.name.localeCompare(b.name)))
     } catch (error) {
       console.error(error)
-    } //finally {
+    }
+    //finally {
       // this.loadingService.loadingOff()
       // }
   }
