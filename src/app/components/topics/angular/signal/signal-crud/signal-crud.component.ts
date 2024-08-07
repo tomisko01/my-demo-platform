@@ -9,6 +9,8 @@ import {openEditItemDialog} from "@angularTopic/signal/signal-crud/component/edi
 import {MatDialog} from "@angular/material/dialog";
 import {LoadingComponent} from "@angularTopic/signal/signal-crud/loading/loading.component";
 import {LoadingService} from "@angularTopic/signal/signal-crud/loading/loading.service";
+import {MessagesComponent} from "@angularTopic/signal/signal-crud/messages/messages.component";
+import {MessagesService} from "@angularTopic/signal/signal-crud/messages/messages.service";
 
 @Component({
   selector: 'app-signal-crud',
@@ -19,7 +21,8 @@ import {LoadingService} from "@angularTopic/signal/signal-crud/loading/loading.s
     ItemListComponent,
     MatMiniFabButton,
     MatButton,
-    LoadingComponent
+    LoadingComponent,
+    MessagesComponent
   ],
   templateUrl: './signal-crud.component.html',
   styleUrl: './signal-crud.component.css'
@@ -28,8 +31,6 @@ export class SignalCRUDComponent implements OnInit {
 
   // # makes items private, not usable on view
   #items = signal<elden.Item[]>([])
-
-  dialog = inject(MatDialog)
 
   reusableItems = computed(() => {
     const items = this.#items()
@@ -43,11 +44,15 @@ export class SignalCRUDComponent implements OnInit {
     return items.filter(item => item.type === 'Consumable')
   })
 
+  dialog = inject(MatDialog)
+
   eldenItemService = inject(EldenItemHttpClientService)
 
   eldenItemServiceWithFetch = inject(EldenItemFetchService)
 
   loadingService = inject(LoadingService)
+
+  messageService = inject(MessagesService)
 
   constructor() {
 
@@ -86,6 +91,8 @@ export class SignalCRUDComponent implements OnInit {
       const itemsFromService = await this.eldenItemService.loadAllItems()
       this.#items.set(itemsFromService.sort((a, b) => a.name.localeCompare(b.name)))
     } catch (error) {
+      this.messageService.showMessage(`Error loading items`, "error")
+
       console.error(error)
     }
     //finally {

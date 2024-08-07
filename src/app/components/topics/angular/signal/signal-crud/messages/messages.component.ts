@@ -1,7 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {MessagesService} from "@angularTopic/signal/signal-crud/messages/messages.service";
 import {MatIcon} from "@angular/material/icon";
-import {MatMiniFabButton} from "@angular/material/button";
+import {MatIconButton, MatMiniFabButton} from "@angular/material/button";
 import {NgClass} from "@angular/common";
 
 @Component({
@@ -10,7 +10,8 @@ import {NgClass} from "@angular/common";
   imports: [
     MatIcon,
     MatMiniFabButton,
-    NgClass
+    NgClass,
+    MatIconButton
   ],
   templateUrl: './messages.component.html',
   styleUrl: './messages.component.css'

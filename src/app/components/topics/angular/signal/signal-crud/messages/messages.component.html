@@ -3,14 +3,17 @@
     <div class="message"
          [ngClass]="message()?.severity">
       {{ message()?.text }}
+
+      <button
+        class="close"
+        mat-icon-button
+        aria-label="Close message"
+        (click)="onClose()">
+        <mat-icon>close</mat-icon>
+      </button>
+
     </div>
 
-    <button
-      class="close"
-      mat-mini-fab
-      aria-label="Close message"
-      (click)="onClose()">
-      <mat-icon>close</mat-icon>
-    </button>
+
   </div>
 }
