@@ -372,6 +372,13 @@ export class TopicLinksConstants {
           githubLinkNeeded: true,
           githubLink: this.angularTopicInRepo + 'signal/signal-crud/signal-crud.component.ts',
           usesConsole: true
+        },{
+          name: 'Authenticate with signals',
+          routerLink: '/angular/signal/signalAuth',
+          title: 'Use signals for Login',
+          githubLinkNeeded: true,
+          githubLink: this.angularTopicInRepo + 'signal/signal-login/signal-login.component.ts',
+          usesConsole: true
         },
         ],
       },
