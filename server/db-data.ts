@@ -146,9 +146,9 @@ export const ITEMS: elden.Item [] = [{
 export const USERS = {
   1: {
     id: 1,
-    email: 'admin@admin.xd',
+    email: 'admin',
     password: 'admin',
-    pictureUrl: 'https://lh3.googleusercontent.com/-1pUNnTB3vaA/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rdn4uEc0ti8YE4Uuw6_Kz04tVe2Mg.CMID/s32-c/photo.jpg'
+    pictureUrl: 'https://raw.githubusercontent.com/tomisko01/my-demo-platform/389ffc45de73bd0c94e34300834c2b8d5df7d924/src/assets/icons/user/anime_away_face_no_nobody_icon.svg'
   }
 }
 

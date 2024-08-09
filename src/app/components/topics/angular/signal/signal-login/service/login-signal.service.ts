@@ -24,12 +24,16 @@ export class LoginSignalService {
   }
 
   async login(email: string, password: string): Promise<User> {
-   const login$ = this.http.post<User>(`${environment.apiRoot}/login`, {email, password})
+    const login$ = this.http.post<User>(`${environment.apiRoot}/login`, {email, password})
 
     const user = await firstValueFrom(login$)
 
     this.#userSignal.set(user)
 
     return user
+  }
+
+  logout() {
+    this.#userSignal.set(null)
   }
 }

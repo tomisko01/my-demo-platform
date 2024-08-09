@@ -1,3 +1,19 @@
 <app-messages></app-messages>
 
-<app-login></app-login>
+@if (!isLoggedIn()) {
+  <app-login></app-login>
+} @else {
+
+
+  <div>
+    <span>Welcome user: {{ loginService.user()?.email }}</span>
+
+    <button
+      class="on-top-right"
+      mat-icon-button (click)="onLogout()">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </div>
+
+
+}

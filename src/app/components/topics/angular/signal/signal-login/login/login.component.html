@@ -12,7 +12,8 @@
 
     <div class="form-control">
       <label>Password:</label>
-      <input type="password"
+      <input (keydown.enter)="onLogin()"
+             type="password"
              placeholder="Enter your password"
              formControlName="password">
     </div>
@@ -22,7 +23,8 @@
   <div class="form-actions">
     <button class="btn" routerLink="/home">Home</button>
 
-    <button class="btn" (click)="onLogin()">
+    <button class="btn"
+            (click)="onLogin()">
       Login
     </button>
 
