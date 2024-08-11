@@ -379,6 +379,13 @@ export class TopicLinksConstants {
           githubLinkNeeded: true,
           githubLink: this.angularTopicInRepo + 'signal/signal-login/signal-login.component.ts',
           usesConsole: true
+        },{
+          name: 'Guarded by Authenticate component',
+          routerLink: '/angular/signal/signalGuardedByAuth',
+          title: 'Guard component by login service',
+          githubLinkNeeded: true,
+          githubLink: this.angularTopicInRepo + 'signal/signal-login/guarded-by-login/guarded-by-login.component.ts',
+          usesConsole: true
         },
         ],
       },
