@@ -1,0 +1,11 @@
+<div class="form-control">
+  <label>{{ label() }}</label>
+
+  <select #type
+          [value]="typeValue()"
+          (change)="onTypeChange(type.value)">
+    <option value="Reusable">Reusable</option>
+    <option value="Consumable">Consumable</option>
+    <option value="Misc">Misc</option>
+  </select>
+</div>
