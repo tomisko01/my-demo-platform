@@ -19,18 +19,14 @@
     </textarea>
   </div>
 
-  <div class="form-control">
-    <label>Course category:</label>
-    <select formControlName="type">
-      <option value="Reusable">Reusable</option>
-      <option value="Consumable">Consumable</option>
-      <option value="Misc">Misc</option>
-    </select>
-  </div>
+  <app-item-type-combobox
+    label="Item type"
+    [(typeValue)]="type">
+  </app-item-type-combobox>
 
   <div class="form-actions">
     <button class="btn"
-    (click)="onSave()">
+            (click)="onSave()">
       Save
     </button>
 

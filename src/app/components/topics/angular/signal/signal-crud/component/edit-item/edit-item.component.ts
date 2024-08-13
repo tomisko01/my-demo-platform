@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, effect, inject, signal} from '@angular/core';
 import {FormBuilder, ReactiveFormsModule} from "@angular/forms";
 import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig, MatDialogRef} from "@angular/material/dialog";
 import {EditItemDialogData} from "@angularTopic/signal/signal-crud/component/edit-item/edit-item-dialog.data.model";
@@ -6,12 +6,16 @@ import {firstValueFrom} from "rxjs";
 import {elden} from "../../../../../../../typings";
 import {EldenItemHttpClientService} from "@angularTopic/signal/signal-crud/service/elden-item-http-client.service";
 import {update} from "lodash-es";
+import {
+  ItemTypeComboboxComponent
+} from "@angularTopic/signal/signal-crud/component/item-type-combobox/item-type-combobox.component";
 
 @Component({
   selector: 'app-edit-item',
   standalone: true,
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ItemTypeComboboxComponent
   ],
   templateUrl: './edit-item.component.html',
   styleUrl: './edit-item.component.css'
@@ -29,9 +33,9 @@ export class EditItemComponent {
   form = this.fb.group({
     name: [''],
     description: [''],
-    type: ['']
   })
 
+  type = signal<string>("Reusable")
 
   onClose() {
     this.dialogRef.close()
@@ -41,12 +45,16 @@ export class EditItemComponent {
     this.form.patchValue({
       name: this.data?.item?.name,
       description: this.data?.item?.description,
-      type: this.data?.item?.type,
     })
+    this.type.set(this.data?.item!.type)
+    effect(() => {
+      console.log(`Item type bi-directional binding: ${this.type()}`)
+    });
   }
 
   async onSave() {
     const itemProps = this.form.value as Partial<elden.Item>
+    itemProps.type = this.type()
 
     if (this.data?.mode === 'update') {
       await this.saveItem(this.data?.item!.id, itemProps)
