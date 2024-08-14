@@ -38,6 +38,9 @@ export class ItemListComponent {
       item
     })
 
+    if(!updatedItem) {
+      return;
+    }
     console.log(`Item edited: `, updatedItem)
 
     this.itemUpdated.emit(updatedItem)

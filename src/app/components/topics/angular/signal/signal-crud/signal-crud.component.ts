@@ -130,6 +130,10 @@ export class SignalCRUDComponent implements OnInit {
         title: `Create new Item`,
       })
 
+    if(!newItem){
+      return
+    }
+
     // create a copy of an array
     const newItems = [
       ...this.#items(),

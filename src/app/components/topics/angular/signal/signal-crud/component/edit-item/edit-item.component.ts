@@ -46,7 +46,7 @@ export class EditItemComponent {
       name: this.data?.item?.name,
       description: this.data?.item?.description,
     })
-    this.type.set(this.data?.item!.type)
+    this.type.set(this.data?.item?.type ?? 'Reusable')
     effect(() => {
       console.log(`Item type bi-directional binding: ${this.type()}`)
     });
