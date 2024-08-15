@@ -4,6 +4,7 @@ import {MatButton, MatFabButton, MatIconButton, MatMiniFabButton} from "@angular
 import {MatIcon} from "@angular/material/icon";
 import {openEditItemDialog} from "@angularTopic/signal/signal-crud/component/edit-item/edit-item.component";
 import {MatDialog} from "@angular/material/dialog";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-item-list',
@@ -13,7 +14,8 @@ import {MatDialog} from "@angular/material/dialog";
     MatFabButton,
     MatIcon,
     MatIconButton,
-    MatMiniFabButton
+    MatMiniFabButton,
+    RouterLink
   ],
   templateUrl: './item-list.component.html',
   styleUrl: './item-list.component.css'

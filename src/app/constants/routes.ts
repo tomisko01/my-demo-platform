@@ -15,6 +15,7 @@ import {SignalCRUDComponent} from "@angularTopic/signal/signal-crud/signal-crud.
 import {SignalLoginComponent} from "@angularTopic/signal/signal-login/signal-login.component";
 import {GuardedByLoginComponent} from "@angularTopic/signal/signal-login/guarded-by-login/guarded-by-login.component";
 import {isUserAuthenticated} from "@angularTopic/signal/signal-login/guard/signal-login.guard";
+import {EldenItemComponent} from "@angularTopic/signal/signal-crud/component/elden-item/elden-item.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -67,6 +68,7 @@ export const routes: Routes = [
   {path: 'angular/signal/dataService', component: DataServiceComponent},
   {path: 'angular/signal/inputSignal', component: InputSignalComponent},
   {path: 'angular/signal/signalCRUD', component: SignalCRUDComponent},
+  {'path': 'angular/signal/signalCRUD/item/:itemId', component: EldenItemComponent},
   {path: 'angular/signal/signalAuth', component: SignalLoginComponent},
   {path: 'angular/signal/signalGuardedByAuth', component: GuardedByLoginComponent, canActivate: [isUserAuthenticated]},
   {

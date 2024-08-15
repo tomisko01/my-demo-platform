@@ -14,16 +14,18 @@ export class TopicService {
 
   getByURL(url: string): TopicNode {
 
-    let topics: TopicNode[] = _.cloneDeep(this.topics.allTopics);
+    let topics: TopicNode[] = _.cloneDeep(this.topics.allTopics)
 
-    return this.searchByUrl(url, topics);
+    return this.searchByUrl(url, topics)
   }
 
   private searchByUrl(url: string, topics: TopicNode[]): TopicNode {
-    let topic = _.find(topics, {routerLink: url});
+    let topic = topics.filter(topic => topic.routerLink)
+      .find(topic => topic.routerLink === url ||
+        (topic.routerLink && this.matchPath(url, topic.routerLink)))
 
     if (topic) {
-      return topic;
+      return topic
     }
 
     let childrenTopics = _(topics)
@@ -31,7 +33,14 @@ export class TopicService {
       .flatMap('children')
       .value();
 
-    return this.searchByUrl(url,childrenTopics);
+    if (_.isNil(childrenTopics)) {
+      throw new Error(`Topic cannot not found`)
+    }
+
+    return this.searchByUrl(url, childrenTopics)
   }
 
+  private matchPath(url: string, routerLink: string): boolean {
+    return url.split('/').length === routerLink.split('/').length && url.includes(routerLink);
+  }
 }

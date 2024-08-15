@@ -421,6 +421,14 @@ export class TopicLinksConstants {
     ]
   }
 
+  HIDDEN_FROM_LIST_NODES: TopicNode[] = [
+    {
+      name: 'Elden Item View',
+      routerLink: '/angular/signal/signalCRUD/item/',
+      title: 'View page for elden item'
+    }
+  ]
+
   public TREE_DATA = [this.ANGULAR_NODE, this.JAVASCRIPT_NODE, this.OTHER_NODE]
-  public allTopics: TopicNode[] = [...this.TREE_DATA, this.HOME_NODE];
+  public allTopics: TopicNode[] = [...this.TREE_DATA, this.HOME_NODE, ...this.HIDDEN_FROM_LIST_NODES];
 }
