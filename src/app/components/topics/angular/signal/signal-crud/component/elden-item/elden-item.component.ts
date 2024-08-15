@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, signal} from '@angular/core';
+import {elden} from "../../../../../../../typings";
 
 @Component({
   selector: 'app-elden-item',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './elden-item.component.css'
 })
 export class EldenItemComponent {
+
+  item = signal<elden.Item | null>(null)
+
+  locations = signal<elden.Location[]>([])
 
 }
