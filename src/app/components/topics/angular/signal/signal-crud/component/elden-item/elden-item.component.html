@@ -3,12 +3,22 @@
 <div class="item-container">
 
   <div class="item-header">
-
+    <h1>{{ item()?.name }}</h1>
+    <img class="item-image" [src]="item()?.image">
   </div>
 
   <div class="table-container">
     <table class="results-table">
-
+      @for (location of locations(); track location.id){
+        <tr>
+          <td>
+            {{location.name}}
+          </td>
+          <td>
+            {{location.description}}
+          </td>
+        </tr>
+      }
     </table>
   </div>
 
