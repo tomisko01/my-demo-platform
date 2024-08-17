@@ -1,9 +1,8 @@
 import {inject, Injectable} from '@angular/core';
 import {elden} from "../../../../../../typings";
-import {HttpClient, HttpContext} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../../../../../environments/environment";
 import {firstValueFrom} from "rxjs";
-import {SkipLoadingToken} from "@angularTopic/signal/signal-crud/loading/skip-loading.token";
 
 
 export type GetItemsResponse = {
@@ -44,13 +43,13 @@ export class EldenItemHttpClientService {
     const item$ =
       this.http.put<elden.Item>(`${this.env.apiRoot}/items/${itemId}`,
         changes)
-    return firstValueFrom(item$);
+    return firstValueFrom(item$)
   }
 
   async deleteItem(itemId: string) {
     const delete$ =
       this.http.delete(`${this.env.apiRoot}/items/${itemId}`);
-    return firstValueFrom(delete$);
+    return firstValueFrom(delete$)
 
   }
 
@@ -58,6 +57,13 @@ export class EldenItemHttpClientService {
     const item$ =
       this.http.post<elden.Item>(`${this.env.apiRoot}/items`,
         itemToSave)
-    return firstValueFrom(item$);
+    return firstValueFrom(item$)
   }
+
+  async getItemById(itemId: string): Promise<elden.Item> {
+    const item$ = this.http.get<elden.Item>(`${this.env.apiRoot}/items/${itemId}`)
+
+    return firstValueFrom(item$)
+  }
+
 }
