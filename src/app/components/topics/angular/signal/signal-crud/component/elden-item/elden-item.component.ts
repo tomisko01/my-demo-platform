@@ -18,6 +18,7 @@ export class EldenItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.item.set(this.route.snapshot.data['item'])
+    this.locations.set(this.route.snapshot.data['locations'])
   }
 
 }

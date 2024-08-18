@@ -17,6 +17,7 @@ import {GuardedByLoginComponent} from "@angularTopic/signal/signal-login/guarded
 import {isUserAuthenticated} from "@angularTopic/signal/signal-login/guard/signal-login.guard";
 import {EldenItemComponent} from "@angularTopic/signal/signal-crud/component/elden-item/elden-item.component";
 import {itemResolver} from "@angularTopic/signal/signal-crud/resolver/item.resolver";
+import {itemLocationsResolver} from "@angularTopic/signal/signal-crud/resolver/item-locations.resolver";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -73,7 +74,10 @@ export const routes: Routes = [
     'path': 'angular/signal/signalCRUD/item/:itemId',
     component: EldenItemComponent,
     canActivate: [isUserAuthenticated],
-    resolve: {item: itemResolver}
+    resolve: {
+      item: itemResolver,
+      locations: itemLocationsResolver
+    }
   },
   {path: 'angular/signal/signalAuth', component: SignalLoginComponent},
   {path: 'angular/signal/signalGuardedByAuth', component: GuardedByLoginComponent, canActivate: [isUserAuthenticated]},
