@@ -386,6 +386,13 @@ export class TopicLinksConstants {
           githubLinkNeeded: true,
           githubLink: this.angularTopicInRepo + 'signal/signal-login/guarded-by-login/guarded-by-login.component.ts',
           usesConsole: true
+        },{
+          name: 'Master Detail UI',
+          routerLink: '/angular/signal/signalMasterDetail',
+          title: 'Master detail with signals',
+          githubLinkNeeded: true,
+          githubLink: this.angularTopicInRepo + 'signal/signal-master-detail/signal-master-detail.component.ts',
+          usesConsole: true
         },
         ],
       },

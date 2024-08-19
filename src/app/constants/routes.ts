@@ -18,6 +18,7 @@ import {isUserAuthenticated} from "@angularTopic/signal/signal-login/guard/signa
 import {EldenItemComponent} from "@angularTopic/signal/signal-crud/component/elden-item/elden-item.component";
 import {itemResolver} from "@angularTopic/signal/signal-crud/resolver/item.resolver";
 import {itemLocationsResolver} from "@angularTopic/signal/signal-crud/resolver/item-locations.resolver";
+import {SignalMasterDetailComponent} from "@angularTopic/signal/signal-master-detail/signal-master-detail.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -88,6 +89,7 @@ export const routes: Routes = [
       component: GetterSetterComponent
     }]
   },
+  {path: 'angular/signal/signalMasterDetail', component: SignalMasterDetailComponent},
   {
     path: 'elden',
     component: EldenHomeComponent,

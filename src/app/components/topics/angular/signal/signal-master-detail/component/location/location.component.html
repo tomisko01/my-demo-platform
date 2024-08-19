@@ -1,0 +1,35 @@
+<div class="locations">
+
+  @if (mode() == 'master') {
+
+    <div class="header">
+      <h1>Search locations</h1>
+
+      <div class="form-control search-controls">
+        <input #search
+               placeholder="Search for a location"
+               (keyup.enter)="onSearch()">
+        <button mat-button
+                (click)="onSearch()">
+          Search
+        </button>
+      </div>
+    </div>
+
+    @if(locations().length > 0) {
+      <div class="table-container">
+        <table class="results-table">
+          @for(location of locations(); track location.id){
+            <tr>
+              <td>{{location.name}}</td>
+              <td>{{location.description}}</td>
+            </tr>
+          }
+        </table>
+      </div>
+    }
+
+  } @else {
+
+  }
+</div>
