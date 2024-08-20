@@ -16,13 +16,13 @@
       </div>
     </div>
 
-    @if(locations().length > 0) {
+    @if (locations().length > 0) {
       <div class="table-container">
         <table class="results-table">
-          @for(location of locations(); track location.id){
+          @for (location of locations(); track location.id) {
             <tr>
-              <td>{{location.name}}</td>
-              <td>{{location.description}}</td>
+              <td>{{ location.name }}</td>
+              <td>{{ location.description }}</td>
             </tr>
           }
         </table>
@@ -32,4 +32,10 @@
   } @else {
 
   }
+</div>
+
+<div>
+  <app-messages
+    matTooltip="Tooltip for messages">
+  </app-messages>
 </div>
