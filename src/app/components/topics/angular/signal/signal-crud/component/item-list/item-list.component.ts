@@ -1,4 +1,4 @@
-import {Component, inject, input, output} from '@angular/core';
+import {Component, effect, ElementRef, inject, input, output, viewChildren} from '@angular/core';
 import {elden} from "../../../../../../../typings";
 import {MatButton, MatFabButton, MatIconButton, MatMiniFabButton} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
@@ -32,6 +32,14 @@ export class ItemListComponent {
   itemUpdated = output<elden.Item>()
 
   itemDeleted = output<string>()
+
+  itemCards = viewChildren<ElementRef>("itemCard")
+
+  constructor() {
+    effect(() => {
+      console.log(`itemCards: `,this.itemCards())
+    });
+  }
 
   async onEditItem(item: elden.Item) {
     const updatedItem = await openEditItemDialog(this.dialog, {
