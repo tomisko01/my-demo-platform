@@ -1,5 +1,5 @@
 <div class="form-control">
-  <label>{{ label() }}</label>
+  <ng-content select=".item-title"></ng-content>
 
   <select #type
           [value]="typeValue()"

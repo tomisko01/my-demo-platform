@@ -1,4 +1,4 @@
-import {Component, input, model} from '@angular/core';
+import {Component, contentChild, effect, ElementRef, input, model} from '@angular/core';
 
 @Component({
   selector: 'app-item-type-combobox',
@@ -13,8 +13,13 @@ export class ItemTypeComboboxComponent {
 
   typeValue = model.required<string>()
 
-  constructor() {
+  title = contentChild<ElementRef>('itemTitle')
+  // contentChildren for list of elements
 
+  constructor() {
+    effect(() => {
+      console.log(`title as contentChild: `, this.title())
+    });
   }
 
   onTypeChange(value: string) {
