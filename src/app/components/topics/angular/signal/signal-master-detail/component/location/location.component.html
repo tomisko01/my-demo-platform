@@ -20,7 +20,7 @@
       <div class="table-container">
         <table class="results-table">
           @for (location of locations(); track location.id) {
-            <tr>
+            <tr (click)="onLocationSelected(location)">
               <td>{{ location.name }}</td>
               <td>{{ location.description }}</td>
             </tr>
@@ -30,7 +30,9 @@
     }
 
   } @else {
-
+    <app-location-detail
+      [location]="selectedLocation()"
+      (cancel)="onCancel()"/>
   }
 </div>
 

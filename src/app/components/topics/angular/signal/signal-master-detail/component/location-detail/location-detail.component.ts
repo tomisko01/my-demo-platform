@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, input, output} from '@angular/core';
+import {elden} from "../../../../../../../typings";
 
 @Component({
   selector: 'app-location-detail',
@@ -9,4 +10,16 @@ import { Component } from '@angular/core';
 })
 export class LocationDetailComponent {
 
+  location = input.required<elden.Location | null>()
+
+  locationUpdated = output<elden.Location>()
+  cancel = output()
+
+  onSave(value: string) {
+
+  }
+
+  onCancel() {
+    this.cancel.emit()
+  }
 }

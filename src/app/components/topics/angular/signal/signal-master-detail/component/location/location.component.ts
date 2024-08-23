@@ -4,6 +4,9 @@ import {EldenLocationService} from "@angularTopic/signal/signal-crud/service/eld
 import {MatButton} from "@angular/material/button";
 import {MessagesComponent} from "@angularTopic/signal/signal-crud/messages/messages.component";
 import {MatTooltip} from "@angular/material/tooltip";
+import {
+  LocationDetailComponent
+} from "@angularTopic/signal/signal-master-detail/component/location-detail/location-detail.component";
 
 @Component({
   selector: 'app-location',
@@ -11,7 +14,8 @@ import {MatTooltip} from "@angular/material/tooltip";
   imports: [
     MatButton,
     MessagesComponent,
-    MatTooltip
+    MatTooltip,
+    LocationDetailComponent
   ],
   templateUrl: './location.component.html',
   styleUrl: './location.component.css'
@@ -39,10 +43,24 @@ export class LocationComponent implements OnInit {
     console.log(`matTooltipDirective on messagesComponent as signal viewChild: `, this.matTooltipDirective())
   }
 
-  onSearch() {
+  async onSearch() {
 
     const query = this.searchInput()?.nativeElement.value
 
     console.log(`search query: `, query)
+
+    const results = await this.locationService.loadLocations({query})
+
+    this.locations.set(results)
+  }
+
+  onLocationSelected(location: elden.Location) {
+    this.mode.set('detail')
+    this.selectedLocation.set(location)
+
+  }
+
+  onCancel() {
+    this.mode.set('master')
   }
 }
