@@ -4,6 +4,7 @@ import {deleteItem} from "./delete-item.route";
 import {createItem} from "./create-item.route";
 import {loginUser} from "./login.route";
 import {searchLocations} from "./search-locations.route";
+import {saveLocation} from "./save-location.route";
 
 const express = require('express')
 const cors = require('cors');
@@ -33,6 +34,8 @@ app.route('/api/items/:id').delete(deleteItem)
 app.route('/api/login').post(loginUser)
 
 app.route('/api/search-locations').get(searchLocations)
+
+app.route('/api/locations/:id').put(saveLocation)
 
 const httpServer = app.listen(port, () => {
   console.log("HTTP REST API Server running at http://localhost:" + httpServer.address()["port"]);

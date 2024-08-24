@@ -19,7 +19,7 @@ export function saveItem(req: Request, res: Response) {
 
   ITEMS[index] = newItem
 
-  console.log("new course version", newItem)
+  console.log("new item version", newItem)
 
   setTimeout(() => {
 

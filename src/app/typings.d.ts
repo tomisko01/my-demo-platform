@@ -30,7 +30,9 @@ declare namespace elden {
     id: string;
     name: string;
     image: string;
+    region: string;
     description: string;
+    itemId?: string;
   }
 
 }

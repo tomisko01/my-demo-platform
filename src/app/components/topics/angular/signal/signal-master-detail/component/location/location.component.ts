@@ -7,6 +7,7 @@ import {MatTooltip} from "@angular/material/tooltip";
 import {
   LocationDetailComponent
 } from "@angularTopic/signal/signal-master-detail/component/location-detail/location-detail.component";
+import {update} from "lodash-es";
 
 @Component({
   selector: 'app-location',
@@ -62,5 +63,10 @@ export class LocationComponent implements OnInit {
 
   onCancel() {
     this.mode.set('master')
+  }
+
+  onLocationUpdated(updatedLocation: elden.Location) {
+    this.locations.update(locations =>
+      locations.map(location => location.id === updatedLocation.id ? updatedLocation : location))
   }
 }

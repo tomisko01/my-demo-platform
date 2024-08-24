@@ -32,7 +32,8 @@
   } @else {
     <app-location-detail
       [location]="selectedLocation()"
-      (cancel)="onCancel()"/>
+      (cancel)="onCancel()"
+      (locationUpdated)="onLocationUpdated($event)"/>
   }
 </div>
 

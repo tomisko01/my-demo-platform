@@ -18,6 +18,9 @@ export class EldenLocationService {
 
   http = inject(HttpClient)
 
+  constructor() {
+  }
+
   async loadLocations(config: {
     itemId?: string,
     query?: string
@@ -41,6 +44,9 @@ export class EldenLocationService {
     return response.locations
   }
 
-  constructor() {
+  async saveLocation(locationId: string, changes: Partial<elden.Location>): Promise<elden.Location> {
+    const saveLocation$ =this.http.put<elden.Location>(`${this.env.apiRoot}/locations/${locationId}`, changes)
+
+    return firstValueFrom(saveLocation$)
   }
 }

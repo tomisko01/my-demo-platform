@@ -142,8 +142,8 @@ export const ITEMS: elden.Item [] = [{
   effect: "Reinforce armaments up to +24."
 }]
 
-export const LOCATIONS = {
-  '17f69c5a795l0i2m72bjeqbh713r3o': {
+export const LOCATIONS: elden.Location[] = [
+  {
     id: "17f69c5a795l0i2m72bjeqbh713r3o",
     name: "Bridge Of Sacrifice",
     image: "https://eldenring.fanapis.com/images/locations/17f69c5a795l0i2m72bjeqbh713r3o.png",
@@ -151,7 +151,7 @@ export const LOCATIONS = {
     description: "A busy bridge swarming with iron-clad foes. Be prepared to engage in an array of melee, ranged and artillery attacks or attempt to push past them",
     itemId: "17f697244e5l0i1z1detjfd6slms6p"
   },
-  '17f69869a3bl0i2m72p0sbjub568ch': {
+  {
     id: "17f69869a3bl0i2m72p0sbjub568ch",
     name: "Church Of Elleh",
     image: "https://eldenring.fanapis.com/images/locations/17f69869a3bl0i2m72p0sbjub568ch.png",
@@ -159,7 +159,7 @@ export const LOCATIONS = {
     description: "Church of Elleh is a ruined building that hides a Site of Grace. The rooftop has caved in and offers no protection from the elements, and weeds are overtaking the walls, but this doesn't stop merchants from seeking what little shelter is on offer",
     itemId: "17f697244e5l0i1z1detjfd6slms6p"
   },
-  '17f69886115l0i2m7307w4njyfhwt5': {
+  {
     id: "17f69886115l0i2m7307w4njyfhwt5",
     name: "Deathtouched Catacombs",
     image: "https://eldenring.fanapis.com/images/locations/17f69886115l0i2m7307w4njyfhwt5.png",
@@ -167,7 +167,7 @@ export const LOCATIONS = {
     description: "Catacombs filled with the stench of death, Skeletons dwell in the shadows",
     itemId: "17f69e47912l0i1z0lip3kamll88h",
   },
-  '17f697ae5eel0i2m74j1houvhsid9m': {
+  {
     id: "17f697ae5eel0i2m74j1houvhsid9m",
     name: "Church Of Dragon Communion",
     image: "https://eldenring.fanapis.com/images/locations/17f697ae5eel0i2m74j1houvhsid9m.png",
@@ -175,7 +175,7 @@ export const LOCATIONS = {
     description: "The dilapidated remains of the Church of Dragon Communion showcase the ruin that came to the land. But could a flame still linger at its altar??",
     itemId: "17f69e47912l0i1z0lip3kamll88h"
   },
-  '17f697edfb9l0i2m79bx2q2xwbbjtl': {
+  {
     id: "17f697edfb9l0i2m79bx2q2xwbbjtl",
     name: "Coastal Cave",
     image: "https://eldenring.fanapis.com/images/locations/17f697edfb9l0i2m79bx2q2xwbbjtl.png",
@@ -183,7 +183,7 @@ export const LOCATIONS = {
     description: "Coastal Cave is a dark opening on the side of a cliff. Its mossy depths are overrun by hostile humanoid creatures, but those who brave it may find passage to new lands",
     itemId: "17f69cb5ad0l0i1z0lpxlgghg1a5nd"
   },
-  '17f6986ad2el0i2m7q7y6gl2myxkh8': {
+  {
     id: "17f6986ad2el0i2m7q7y6gl2myxkh8",
     name: "Dragon-burnt Ruins",
     image: "https://eldenring.fanapis.com/images/locations/17f6986ad2el0i2m7q7y6gl2myxkh8.png",
@@ -191,7 +191,7 @@ export const LOCATIONS = {
     description: "Dragon-Burnt Ruins are what remains of the housing area among Agheel Lake, long lost to the deadly attacks of the fierce Agheel Dragon",
     itemId: "17f69cb5ad0l0i1z0lpxlgghg1a5nd"
   },
-  '17f69d3927cl0i2m7rak61iym4ek': {
+  {
     id: "17f69d3927cl0i2m7rak61iym4ek",
     name: "Forlorn Hound Evergaol",
     image: "https://eldenring.fanapis.com/images/locations/17f69d3927cl0i2m7rak61iym4ek.png",
@@ -199,7 +199,7 @@ export const LOCATIONS = {
     description: "The southern Evergaol of Limgrave, before the entrance to Weeping Peninsula",
     itemId: "17f69cb5ad0l0i1z0lpxlgghg1a5nd"
   },
-  '17f699ae4a0l0i2m7xeop7sxh8y65e': {
+  {
     id: "17f699ae4a0l0i2m7xeop7sxh8y65e",
     name: "Fringefolk Hero's Grave",
     image: "https://eldenring.fanapis.com/images/locations/17f699ae4a0l0i2m7xeop7sxh8y65e.png",
@@ -207,7 +207,7 @@ export const LOCATIONS = {
     description: "Fingefolk Hero's Grave is a dark and secluded location within the Cave of Knowledge. The confused and aimless dwell within",
     itemId: "17f69cb5ad0l0i1z0lpxlgghg1a5nd"
   },
-  '17f6981bb8al0i2m7z49o4mk7lid3': {
+  {
     id: "17f6981bb8al0i2m7z49o4mk7lid3",
     name: "Fort Haight",
     image: "https://eldenring.fanapis.com/images/locations/17f6981bb8al0i2m7z49o4mk7lid3.png",
@@ -215,7 +215,7 @@ export const LOCATIONS = {
     description: "The overrun fort of Kenneth Haith, the alleged next ruler of Limgrave",
     itemId: "17f69cb5ad0l0i1z0lpxlgghg1a5nd"
   },
-  '17f699007d5l0i2m80jyrpycbrgzml': {
+  {
     id: "17f699007d5l0i2m80jyrpycbrgzml",
     name: "Divine Tower Of Limgrave",
     image: "https://eldenring.fanapis.com/images/locations/17f699007d5l0i2m80jyrpycbrgzml.png",
@@ -223,7 +223,7 @@ export const LOCATIONS = {
     description: "Closed with a giant set of doors. It looks like you need some pieces to interact with the tower.",
     itemId: "17f69cb5ad0l0i1z0lpxlgghg1a5nd"
   },
-  '17f6961933bl0i2m880lere7qq0dqn': {
+  {
     id: "17f6961933bl0i2m880lere7qq0dqn",
     name: "Gatefront Ruins",
     image: "https://eldenring.fanapis.com/images/locations/17f6961933bl0i2m880lere7qq0dqn.png",
@@ -231,7 +231,7 @@ export const LOCATIONS = {
     description: "Gatefront Ruins is what remains of the now destroyed barracks near the fortification. Despite its poor state, it is a heavily guarded location by those loyal to Stormveil",
     itemId: "17f69bc7c03l0i1z0m2oonn1paf7l9"
   },
-  '17f698e05eel0i2m8lxtk1iuo5pp3': {
+  {
     id: "17f698e05eel0i2m8lxtk1iuo5pp3",
     name: "Limgrave Tunnels",
     image: "https://eldenring.fanapis.com/images/locations/17f698e05eel0i2m8lxtk1iuo5pp3.png",
@@ -239,7 +239,7 @@ export const LOCATIONS = {
     description: "Limgrave Tunnels are a mine harvested for Glimstone. Its zealous miners don't dare venture into its hidden chambers, for fear of the hoarder Troll within ",
     itemId: "17f69bc7c03l0i1z0m2oonn1paf7l9"
   },
-  '17f69bc29c9l0i2m8mjnl6ac43o3sa': {
+  {
     id: "17f69bc29c9l0i2m8mjnl6ac43o3sa",
     name: "Groveside Cave",
     image: "https://eldenring.fanapis.com/images/locations/17f69bc29c9l0i2m8mjnl6ac43o3sa.png",
@@ -247,7 +247,7 @@ export const LOCATIONS = {
     description: "Groveside Cave is a small refuge for wildlife in Limgrave. Its proximity to water and ease of access make it a sought-after shelter against bad weather, but those who venture in don't seem to return",
     itemId: "17f69bc7c03l0i1z0m2oonn1paf7l9"
   },
-  '17f69c40d99l0i2m8n9bf756iumzy9': {
+  {
     id: "17f69c40d99l0i2m8n9bf756iumzy9",
     name: "Minor Erdtree (mistwood)",
     image: "https://eldenring.fanapis.com/images/locations/17f69c40d99l0i2m8n9bf756iumzy9.png",
@@ -255,7 +255,7 @@ export const LOCATIONS = {
     description: "Easily distiguished from the rest of the trees in Mistwood Forest.",
     itemId: "17f69bc7c03l0i1z0m2oonn1paf7l9"
   },
-  '17f699b601fl0i2m8statevuowxrrb': {
+  {
     id: "17f699b601fl0i2m8statevuowxrrb",
     name: "Highroad Cave",
     image: "https://eldenring.fanapis.com/images/locations/17f699b601fl0i2m8statevuowxrrb.png",
@@ -263,7 +263,7 @@ export const LOCATIONS = {
     description: "A cave that houses a tomb, deep within. It is situated at the northmost part of Limgrave. It has been inhabited by a pack of Wolves, Land Octopuses, and Giant Bats",
     itemId: "17f69bc7c03l0i1z0m2oonn1paf7l9"
   },
-  '17f69d83e6bl0i2m8v6af0i4h94ltb': {
+  {
     id: "17f69d83e6bl0i2m8v6af0i4h94ltb",
     name: "Mistwood",
     image: "https://eldenring.fanapis.com/images/locations/17f69d83e6bl0i2m8v6af0i4h94ltb.png",
@@ -271,7 +271,7 @@ export const LOCATIONS = {
     description: "Mistwood is a Location in Elden Ring. The Mistwood region is located in the Eastern part of Limgrave. Tiered terrain, small beaches, and luscious forests occupied by Lesser Runebears are the defining features of this region.",
     itemId: "17f69bc7c03l0i1z0m2oonn1paf7l9"
   },
-  '17f69a3ca6bl0i2m99b111ivu2aamcc': {
+  {
     id: "17f69a3ca6bl0i2m99b111ivu2aamcc",
     name: "Mistwood Ruins",
     image: "https://eldenring.fanapis.com/images/locations/17f69a3ca6bl0i2m99b111ivu2aamcc.png",
@@ -279,7 +279,7 @@ export const LOCATIONS = {
     description: "Concealed by the thriving growth of vegetation, these ruins are kept out of sight by the veil of nature itself. But there's more to it than what you see",
     itemId: "17f69bc7c03l0i1z0m2oonn1paf7l9"
   },
-  '17f69dedf7al0i2m9b4pz1v8jipl5': {
+  {
     id: "17f69dedf7al0i2m9b4pz1v8jipl5",
     name: "Murkwater Catacombs",
     image: "https://eldenring.fanapis.com/images/locations/17f69dedf7al0i2m9b4pz1v8jipl5.png",
@@ -287,7 +287,7 @@ export const LOCATIONS = {
     description: "An underground cemetery that is located at the north-east side of Agheel Lake in Limgrave. Once a place for peaceful rest for fallen heroes, it is now infested by goblins.",
     itemId: "17f69bc7c03l0i1z0m2oonn1paf7l9"
   },
-  '17f69e79661l0i2m9c3uzzwon60ru': {
+  {
     id: "17f69e79661l0i2m9c3uzzwon60ru",
     name: "Murkwater Cave",
     image: "https://eldenring.fanapis.com/images/locations/17f69e79661l0i2m9c3uzzwon60ru.png",
@@ -295,7 +295,7 @@ export const LOCATIONS = {
     description: "A dark cave halfway through the Murkwater River ",
     itemId: "17f69bc7c03l0i1z0m2oonn1paf7l9"
   },
-  '17f69f08b12l0i2m9h4uay98lftdb': {
+  {
     id: "17f69f08b12l0i2m9h4uay98lftdb",
     name: "Siofra River Well",
     image: "https://eldenring.fanapis.com/images/locations/17f69f08b12l0i2m9h4uay98lftdb.png",
@@ -303,7 +303,7 @@ export const LOCATIONS = {
     description: "A mystical underground region filled with its own set of skies and stars. Beware, it is teeming with creatures big and small alike",
     itemId: "17f69bc7c03l0i1z0m2oonn1paf7l9"
   }
-}
+]
 
 export const USERS = {
   1: {
