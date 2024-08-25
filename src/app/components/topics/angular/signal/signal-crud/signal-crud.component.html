@@ -3,6 +3,14 @@
           mat-stroked-button
           (click)="onAddItem()">Add item
   </button>
+  <button class="btn"
+          mat-stroked-button
+          (click)="signalToObservable()">items to observable (with error)
+  </button>
+  <button class="btn"
+          mat-stroked-button
+          (click)="signalToObservableWorking()">items to observable (working)
+  </button>
 
   <app-messages/>
   <mat-tab-group>

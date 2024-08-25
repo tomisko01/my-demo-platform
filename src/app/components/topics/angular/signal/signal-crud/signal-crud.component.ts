@@ -1,4 +1,4 @@
-import {afterNextRender, Component, computed, effect, inject, OnInit, signal} from '@angular/core';
+import {afterNextRender, Component, computed, effect, inject, Injector, OnInit, signal} from '@angular/core';
 import {elden} from "../../../../../typings";
 import {EldenItemHttpClientService} from "@angularTopic/signal/signal-crud/service/elden-item-http-client.service";
 import {EldenItemFetchService} from "@angularTopic/signal/signal-crud/service/elden-item-fetch.service";
@@ -11,6 +11,7 @@ import {LoadingComponent} from "@angularTopic/signal/signal-crud/loading/loading
 import {LoadingService} from "@angularTopic/signal/signal-crud/loading/loading.service";
 import {MessagesComponent} from "@angularTopic/signal/signal-crud/messages/messages.component";
 import {MessagesService} from "@angularTopic/signal/signal-crud/messages/messages.service";
+import {toObservable} from "@angular/core/rxjs-interop";
 
 @Component({
   selector: 'app-signal-crud',
@@ -29,32 +30,31 @@ import {MessagesService} from "@angularTopic/signal/signal-crud/messages/message
 })
 export class SignalCRUDComponent implements OnInit {
 
+  dialog = inject(MatDialog)
+  eldenItemService = inject(EldenItemHttpClientService)
+  eldenItemServiceWithFetch = inject(EldenItemFetchService)
+  loadingService = inject(LoadingService)
+  messageService = inject(MessagesService)
+  injector = inject(Injector)
   // # makes items private, not usable on view
   #items = signal<elden.Item[]>([])
-
   reusableItems = computed(() => {
     const items = this.#items()
 
     return items.filter(item => item.type === 'Reusable')
   })
-
   consumableItems = computed(() => {
     const items = this.#items()
 
     return items.filter(item => item.type === 'Consumable')
   })
-
-  dialog = inject(MatDialog)
-
-  eldenItemService = inject(EldenItemHttpClientService)
-
-  eldenItemServiceWithFetch = inject(EldenItemFetchService)
-
-  loadingService = inject(LoadingService)
-
-  messageService = inject(MessagesService)
+  items$ = toObservable(this.#items)
 
   constructor() {
+
+    this.items$.subscribe(
+      items => console.log(`items for observable`, items)
+    )
 
     effect(() => {
       console.log(`reusableItems: `, this.reusableItems())
@@ -96,8 +96,8 @@ export class SignalCRUDComponent implements OnInit {
       console.error(error)
     }
     //finally {
-      // this.loadingService.loadingOff()
-      // }
+    // this.loadingService.loadingOff()
+    // }
   }
 
   onItemUpdated(updatedItem: elden.Item) {
@@ -130,7 +130,7 @@ export class SignalCRUDComponent implements OnInit {
         title: `Create new Item`,
       })
 
-    if(!newItem){
+    if (!newItem) {
       return
     }
 
@@ -141,5 +141,18 @@ export class SignalCRUDComponent implements OnInit {
     ]
 
     this.#items.set(newItems)
+  }
+
+  signalToObservable() {
+    //will throw error
+    const tempItems = toObservable(this.#items)
+  }
+
+  signalToObservableWorking() {
+    const tempItems$ = toObservable(this.#items, {injector: this.injector})
+
+    tempItems$.subscribe(
+      items => console.log(`items as observable outside default injector: `, items)
+    )
   }
 }
