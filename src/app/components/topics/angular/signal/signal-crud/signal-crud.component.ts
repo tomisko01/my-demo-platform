@@ -155,4 +155,24 @@ export class SignalCRUDComponent implements OnInit {
       items => console.log(`items as observable outside default injector: `, items)
     )
   }
+
+  onToObservableExample(){
+    const numbers = signal(0)
+    numbers.set(1)
+    numbers.set(2)
+    numbers.set(3)
+
+    const numbers$ = toObservable(numbers, {
+      injector: this.injector,
+    })
+
+    numbers.set(4)
+
+    numbers$.subscribe(numbers => {
+      console.log(numbers)
+    })
+
+    // angular will wait and only last value will be passed to subscribe
+    numbers.set(5)
+  }
 }
