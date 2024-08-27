@@ -11,7 +11,8 @@ import {LoadingComponent} from "@angularTopic/signal/signal-crud/loading/loading
 import {LoadingService} from "@angularTopic/signal/signal-crud/loading/loading.service";
 import {MessagesComponent} from "@angularTopic/signal/signal-crud/messages/messages.component";
 import {MessagesService} from "@angularTopic/signal/signal-crud/messages/messages.service";
-import {toObservable} from "@angular/core/rxjs-interop";
+import {toObservable, toSignal} from "@angular/core/rxjs-interop";
+import {from} from "rxjs";
 
 @Component({
   selector: 'app-signal-crud',
@@ -36,6 +37,7 @@ export class SignalCRUDComponent implements OnInit {
   loadingService = inject(LoadingService)
   messageService = inject(MessagesService)
   injector = inject(Injector)
+  itemsExample$ = from(this.eldenItemService.loadAllItems())
   // # makes items private, not usable on view
   #items = signal<elden.Item[]>([])
   reusableItems = computed(() => {
@@ -156,7 +158,7 @@ export class SignalCRUDComponent implements OnInit {
     )
   }
 
-  onToObservableExample(){
+  onToObservableExample() {
     const numbers = signal(0)
     numbers.set(1)
     numbers.set(2)
@@ -174,5 +176,16 @@ export class SignalCRUDComponent implements OnInit {
 
     // angular will wait and only last value will be passed to subscribe
     numbers.set(5)
+  }
+
+  onToSignalExample() {
+    //we don't need injector when
+    const items = toSignal(this.itemsExample$, {injector: this.injector})
+
+    effect(() => {
+      console.log(`observable items to signal:`, items())
+    }, {
+      injector: this.injector
+    })
   }
 }
