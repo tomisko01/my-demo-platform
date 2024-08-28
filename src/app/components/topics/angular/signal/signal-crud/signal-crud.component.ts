@@ -12,7 +12,8 @@ import {LoadingService} from "@angularTopic/signal/signal-crud/loading/loading.s
 import {MessagesComponent} from "@angularTopic/signal/signal-crud/messages/messages.component";
 import {MessagesService} from "@angularTopic/signal/signal-crud/messages/messages.service";
 import {toObservable, toSignal} from "@angular/core/rxjs-interop";
-import {from} from "rxjs";
+import {from, interval, startWith} from "rxjs";
+import {startsWith} from "lodash-es";
 
 @Component({
   selector: 'app-signal-crud',
@@ -179,13 +180,30 @@ export class SignalCRUDComponent implements OnInit {
   }
 
   onToSignalExample() {
-    //we don't need injector when
+    //we don't need injector when initializing in constructor
     const items = toSignal(this.itemsExample$, {injector: this.injector})
-
     effect(() => {
       console.log(`observable items to signal:`, items())
     }, {
       injector: this.injector
     })
+
+    const numbers$ = interval(1000)
+      .pipe(
+        startWith(0)
+      );
+
+    const numbers = toSignal(numbers$,
+      {
+        injector: this.injector,
+        //initialValue: 0, // to not start with undefined
+        requireSync: true // to force initial value on observable, error in case initial value is not provided
+      })
+    effect(() => {
+      console.log(`numbers :`, numbers())
+    }, {
+      injector: this.injector
+    })
+
   }
 }
