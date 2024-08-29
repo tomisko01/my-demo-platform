@@ -12,7 +12,7 @@ import {LoadingService} from "@angularTopic/signal/signal-crud/loading/loading.s
 import {MessagesComponent} from "@angularTopic/signal/signal-crud/messages/messages.component";
 import {MessagesService} from "@angularTopic/signal/signal-crud/messages/messages.service";
 import {toObservable, toSignal} from "@angular/core/rxjs-interop";
-import {from, interval, startWith} from "rxjs";
+import {catchError, from, interval, startWith} from "rxjs";
 import {startsWith} from "lodash-es";
 
 @Component({
@@ -180,6 +180,12 @@ export class SignalCRUDComponent implements OnInit {
   }
 
   onToSignalExample() {
+    this.toSignalExampleWithBasicLogic()
+    this.toSignalExampleWithParameters()
+    this.toSignalExampleWithErrorHandle()
+  }
+
+  toSignalExampleWithBasicLogic() {
     //we don't need injector when initializing in constructor
     const items = toSignal(this.itemsExample$, {injector: this.injector})
     effect(() => {
@@ -188,6 +194,9 @@ export class SignalCRUDComponent implements OnInit {
       injector: this.injector
     })
 
+  }
+
+  toSignalExampleWithParameters() {
     const numbers$ = interval(1000)
       .pipe(
         startWith(0)
@@ -204,6 +213,32 @@ export class SignalCRUDComponent implements OnInit {
     }, {
       injector: this.injector
     })
+  }
 
+  toSignalExampleWithErrorHandle() {
+    //DISABLE SERVER TO ERROR HAPPEN
+    try {
+      const items$ = from(this.eldenItemService.loadAllItems())
+        .pipe(
+          catchError(err => {
+            console.log(`Error caught in catchError`, err) //by default this error will be thrown
+            throw err
+          })
+        )
+      const items = toSignal(items$,
+        {
+          injector: this.injector,
+          rejectErrors: true //todo check how it works
+        })
+
+      effect(() => {
+        console.log(`items: `, items())
+      }, {
+        injector: this.injector
+      });
+
+    } catch (err) {
+      console.error(`error in catch block: `, err)
+    }
   }
 }
