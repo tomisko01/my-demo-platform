@@ -395,7 +395,16 @@ export class TopicLinksConstants {
           usesConsole: true
         },
         ],
-      },
+      }, {
+        name: 'Reactive',
+        children: [{
+          name: 'Stateless observable service',
+          routerLink: '/angular/reactivate/statelessObservableService',
+          title: 'Stateless observable service',
+          githubLinkNeeded: true,
+          githubLink: this.angularTopicInRepo + 'reactivate/stateless-observable-service/stateless-observable-service.component.ts',
+        }]
+      }
     ]
   }
 

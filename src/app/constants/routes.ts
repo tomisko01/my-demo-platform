@@ -19,6 +19,9 @@ import {EldenItemComponent} from "@angularTopic/signal/signal-crud/component/eld
 import {itemResolver} from "@angularTopic/signal/signal-crud/resolver/item.resolver";
 import {itemLocationsResolver} from "@angularTopic/signal/signal-crud/resolver/item-locations.resolver";
 import {SignalMasterDetailComponent} from "@angularTopic/signal/signal-master-detail/signal-master-detail.component";
+import {
+  StatelessObservableServiceComponent
+} from "@angularTopic/reactive/stateless-observable-service/stateless-observable-service.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -90,6 +93,7 @@ export const routes: Routes = [
     }]
   },
   {path: 'angular/signal/signalMasterDetail', component: SignalMasterDetailComponent},
+  {path: 'angular/reactivate/statelessObservableService', component: StatelessObservableServiceComponent},
   {
     path: 'elden',
     component: EldenHomeComponent,
