@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {EldenItemObservableService} from "@angularTopic/reactive/service/elden-item-observable.service";
 
 @Component({
   selector: 'app-stateless-observable-service',
@@ -8,5 +9,12 @@ import { Component } from '@angular/core';
   styleUrl: './stateless-observable-service.component.css'
 })
 export class StatelessObservableServiceComponent {
+
+  eldenItemObservableService = inject(EldenItemObservableService)
+
+  constructor() {
+    this.eldenItemObservableService.loadAllItems()
+      .subscribe((items) => console.log(items))
+  }
 
 }
