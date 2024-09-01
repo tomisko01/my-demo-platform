@@ -1,1 +1,41 @@
-<p>stateless-observable-service works!</p>
+<div class="compact-tabs">
+<mat-tab-group>
+  <mat-tab label="reusable">
+    @for (reusable of (reusableItems$ | async); track reusable.id) {
+      <mat-card appearance="outlined"
+                class="item-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{ reusable.name }}
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="reusable.image" matCardImageLarge>
+        <mat-card-content>
+          <mat-card-content>
+            <p>{{ reusable.description }}</p>
+          </mat-card-content>
+        </mat-card-content>
+      </mat-card>
+    }
+  </mat-tab>
+
+  <mat-tab label="consumable">
+    @for (reusable of (consumableItems$ | async); track reusable.id) {
+      <mat-card appearance="outlined"
+                class="item-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{ reusable.name }}
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="reusable.image" matCardImageLarge>
+        <mat-card-content>
+          <mat-card-content>
+            <p>{{ reusable.description }}</p>
+          </mat-card-content>
+        </mat-card-content>
+      </mat-card>
+    }
+  </mat-tab>
+</mat-tab-group>
+</div>
