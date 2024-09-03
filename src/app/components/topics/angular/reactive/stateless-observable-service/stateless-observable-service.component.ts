@@ -5,7 +5,7 @@ import {map, Observable} from "rxjs";
 import {ItemListComponent} from "@angularTopic/signal/signal-crud/component/item-list/item-list.component";
 import {LoadingComponent} from "@angularTopic/signal/signal-crud/loading/loading.component";
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
-import {AsyncPipe} from "@angular/common";
+import {AsyncPipe, NgIf} from "@angular/common";
 import {
   MatCard,
   MatCardContent,
@@ -14,6 +14,9 @@ import {
   MatCardSmImage,
   MatCardTitle
 } from "@angular/material/card";
+import {
+  ItemCardListObservableComponent
+} from "@angularTopic/reactive/component/item-card-list-observable/item-card-list-observable.component";
 
 @Component({
   selector: 'app-stateless-observable-service',
@@ -31,7 +34,9 @@ import {
     MatCardContent,
     MatCardSmImage,
     MatCardMdImage,
-    MatCardLgImage
+    MatCardLgImage,
+    ItemCardListObservableComponent,
+    NgIf
   ],
   templateUrl: './stateless-observable-service.component.html',
   styleUrl: './stateless-observable-service.component.css'

@@ -1,41 +1,22 @@
 <div class="compact-tabs">
-<mat-tab-group>
-  <mat-tab label="reusable">
-    @for (reusable of (reusableItems$ | async); track reusable.id) {
-      <mat-card appearance="outlined"
-                class="item-card">
-        <mat-card-header>
-          <mat-card-title>
-            {{ reusable.name }}
-          </mat-card-title>
-        </mat-card-header>
-        <img mat-card-image [src]="reusable.image" matCardImageLarge>
-        <mat-card-content>
-          <mat-card-content>
-            <p>{{ reusable.description }}</p>
-          </mat-card-content>
-        </mat-card-content>
-      </mat-card>
-    }
-  </mat-tab>
+  <mat-tab-group>
+    <mat-tab label="reusable">
+      <div *ngIf="reusableItems$ | async as items">
+        <app-item-card-list-observable
+          [items]="items">
 
-  <mat-tab label="consumable">
-    @for (reusable of (consumableItems$ | async); track reusable.id) {
-      <mat-card appearance="outlined"
-                class="item-card">
-        <mat-card-header>
-          <mat-card-title>
-            {{ reusable.name }}
-          </mat-card-title>
-        </mat-card-header>
-        <img mat-card-image [src]="reusable.image" matCardImageLarge>
-        <mat-card-content>
-          <mat-card-content>
-            <p>{{ reusable.description }}</p>
-          </mat-card-content>
-        </mat-card-content>
-      </mat-card>
-    }
-  </mat-tab>
-</mat-tab-group>
+        </app-item-card-list-observable>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="consumable">
+      <div *ngIf="consumableItems$ | async as items">
+
+        <app-item-card-list-observable
+          [items]="items">
+
+        </app-item-card-list-observable>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
 </div>

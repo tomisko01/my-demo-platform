@@ -1,0 +1,14 @@
+@for (item of items; track item.id) {
+  <mat-card appearance="outlined"
+            class="item-card">
+    <mat-card-header>
+      <mat-card-title>
+        {{ item.name }}
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="item.image" matCardImageLarge>
+      <mat-card-content>
+        <p>{{ item.description }}</p>
+      </mat-card-content>
+  </mat-card>
+}
