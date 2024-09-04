@@ -5,7 +5,6 @@ import {EditItemDialogData} from "@angularTopic/signal/signal-crud/component/edi
 import {firstValueFrom} from "rxjs";
 import {elden} from "../../../../../../../typings";
 import {EldenItemHttpClientService} from "@angularTopic/signal/signal-crud/service/elden-item-http-client.service";
-import {update} from "lodash-es";
 import {
   ItemTypeComboboxComponent
 } from "@angularTopic/signal/signal-crud/component/item-type-combobox/item-type-combobox.component";

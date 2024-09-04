@@ -10,5 +10,18 @@
       <mat-card-content>
         <p>{{ item.description }}</p>
       </mat-card-content>
+
+    <mat-card-actions >
+
+      <button mat-button mat-raised-button color="primary" [routerLink]="['/courses', item.id]">
+        VIEW COURSE
+      </button>
+
+      <button mat-button mat-raised-button color="accent"
+              (click)="editItem(item)">
+        EDIT
+      </button>
+
+    </mat-card-actions>
   </mat-card>
 }
