@@ -13,6 +13,8 @@ import {MatFormField} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {MatOption, MatSelect} from "@angular/material/select";
 import {MatButton} from "@angular/material/button";
+import {EldenItemHttpClientService} from "@angularTopic/signal/signal-crud/service/elden-item-http-client.service";
+import {EldenItemObservableService} from "@angularTopic/reactive/service/elden-item-observable.service";
 
 @Component({
   selector: 'app-item-edit-dialog',
@@ -43,6 +45,8 @@ export class ItemEditDialogComponent {
     type: ['']
   })
 
+  eldenItemObservableService = inject(EldenItemObservableService)
+
   constructor() {
     this.form.patchValue({
       name: this.data?.item?.name,
@@ -52,10 +56,14 @@ export class ItemEditDialogComponent {
   }
 
   save() {
-    const changes = this.form.value;
+    const changes = this.form.value as Partial<elden.Item>
+    this.eldenItemObservableService.saveItem(this.data?.item!.id, changes)
+      .subscribe(res => {
+        this.dialogRef.close(res);
+      })
   }
 
   close() {
-    this.dialogRef.close();
+    this.dialogRef.close()
   }
 }

@@ -3,7 +3,8 @@
     <mat-tab label="reusable">
       <div *ngIf="reusableItems$ | async as items">
         <app-item-card-list-observable
-          [items]="items">
+          [items]="items"
+          (itemChanged)="onItemChanged()">
 
         </app-item-card-list-observable>
       </div>
@@ -13,7 +14,8 @@
       <div *ngIf="consumableItems$ | async as items">
 
         <app-item-card-list-observable
-          [items]="items">
+          [items]="items"
+          (itemChanged)="onItemChanged()">
 
         </app-item-card-list-observable>
       </div>

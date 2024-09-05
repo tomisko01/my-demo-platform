@@ -50,6 +50,14 @@ export class StatelessObservableServiceComponent {
 
 
   constructor() {
+    this.reloadItems()
+  }
+
+  onItemChanged() {
+    this.reloadItems()
+  }
+
+  reloadItems() {
     const items$ = this.eldenItemObservableService.loadAllItems()
       .pipe(
         map(items => items.sort((a, b) => a.name.localeCompare(b.name)))
@@ -64,5 +72,4 @@ export class StatelessObservableServiceComponent {
         map((items) => items.filter(item => item.type === 'Consumable'))
       )
   }
-
 }
