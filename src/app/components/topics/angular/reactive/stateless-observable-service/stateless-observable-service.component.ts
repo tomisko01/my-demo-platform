@@ -17,6 +17,8 @@ import {
 import {
   ItemCardListObservableComponent
 } from "@angularTopic/reactive/component/item-card-list-observable/item-card-list-observable.component";
+import {ReactiveLoadingComponent} from "@angularTopic/reactive/component/reactive-loading/reactive-loading.component";
+import {ReactiveLoadingService} from "@angularTopic/reactive/service/reactive-loading.service";
 
 @Component({
   selector: 'app-stateless-observable-service',
@@ -36,7 +38,8 @@ import {
     MatCardMdImage,
     MatCardLgImage,
     ItemCardListObservableComponent,
-    NgIf
+    NgIf,
+    ReactiveLoadingComponent
   ],
   templateUrl: './stateless-observable-service.component.html',
   styleUrl: './stateless-observable-service.component.css'
@@ -44,6 +47,7 @@ import {
 export class StatelessObservableServiceComponent {
 
   eldenItemObservableService = inject(EldenItemObservableService)
+  reactiveLoadingService = inject(ReactiveLoadingService)
 
   reusableItems$: Observable<elden.Item[]>
   consumableItems$: Observable<elden.Item[]>

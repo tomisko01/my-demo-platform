@@ -15,6 +15,7 @@ import {MatOption, MatSelect} from "@angular/material/select";
 import {MatButton} from "@angular/material/button";
 import {EldenItemHttpClientService} from "@angularTopic/signal/signal-crud/service/elden-item-http-client.service";
 import {EldenItemObservableService} from "@angularTopic/reactive/service/elden-item-observable.service";
+import {ReactiveLoadingService} from "@angularTopic/reactive/service/reactive-loading.service";
 
 @Component({
   selector: 'app-item-edit-dialog',
@@ -37,6 +38,8 @@ export class ItemEditDialogComponent {
 
   fb = inject(FormBuilder)
   dialogRef = inject(MatDialogRef<ItemEditDialogComponent>)
+  reactiveLoadingService = inject(ReactiveLoadingService)
+
   data: EditItemDialogData = inject(MAT_DIALOG_DATA)
 
   form = this.fb.group({
