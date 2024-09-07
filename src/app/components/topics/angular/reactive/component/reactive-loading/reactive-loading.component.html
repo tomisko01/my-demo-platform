@@ -1,3 +1,4 @@
-<div class="spinner-container">
+<div class="spinner-container"
+     *ngIf="reactiveLoadingService.loading$ | async">
   <mat-spinner></mat-spinner>
 </div>
