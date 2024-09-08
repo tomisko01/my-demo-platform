@@ -1,7 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {EldenItemObservableService} from "@angularTopic/reactive/service/elden-item-observable.service";
 import {elden} from "../../../../../typings";
-import {map, Observable} from "rxjs";
+import {finalize, map, Observable} from "rxjs";
 import {ItemListComponent} from "@angularTopic/signal/signal-crud/component/item-list/item-list.component";
 import {LoadingComponent} from "@angularTopic/signal/signal-crud/loading/loading.component";
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
@@ -62,9 +62,12 @@ export class StatelessObservableServiceComponent {
   }
 
   reloadItems() {
+
+    this.reactiveLoadingService.loadingOn()
     const items$ = this.eldenItemObservableService.loadAllItems()
       .pipe(
-        map(items => items.sort((a, b) => a.name.localeCompare(b.name)))
+        map(items => items.sort((a, b) => a.name.localeCompare(b.name))),
+        finalize(() => this.reactiveLoadingService.loadingOff())
       )
 
     this.reusableItems$ = items$
