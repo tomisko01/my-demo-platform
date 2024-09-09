@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable} from "rxjs";
+import {BehaviorSubject, concatMap, finalize, Observable, of, tap} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,11 @@ export class ReactiveLoadingService {
   }
 
   showLoaderUntilCompleted<T>(obs$: Observable<T>): Observable<T> {
-    return obs$
+    return of(null).pipe(
+      tap(() => this.loadingOn()),
+      concatMap(() => obs$),
+      finalize(() => this.loadingOff())
+    )
   }
 
   loadingOn() {

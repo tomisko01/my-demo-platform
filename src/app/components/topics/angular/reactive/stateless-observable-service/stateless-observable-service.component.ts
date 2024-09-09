@@ -63,18 +63,18 @@ export class StatelessObservableServiceComponent {
 
   reloadItems() {
 
-    this.reactiveLoadingService.loadingOn()
     const items$ = this.eldenItemObservableService.loadAllItems()
       .pipe(
         map(items => items.sort((a, b) => a.name.localeCompare(b.name))),
-        finalize(() => this.reactiveLoadingService.loadingOff())
       )
 
-    this.reusableItems$ = items$
+    const loadItems$ = this.reactiveLoadingService.showLoaderUntilCompleted(items$)
+
+    this.reusableItems$ = loadItems$
       .pipe(
         map((items) => items.filter(item => item.type === 'Reusable'))
       )
-    this.consumableItems$ = items$
+    this.consumableItems$ = loadItems$
       .pipe(
         map((items) => items.filter(item => item.type === 'Consumable'))
       )
