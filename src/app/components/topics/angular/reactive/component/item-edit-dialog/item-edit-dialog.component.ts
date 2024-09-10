@@ -16,6 +16,7 @@ import {MatButton} from "@angular/material/button";
 import {EldenItemHttpClientService} from "@angularTopic/signal/signal-crud/service/elden-item-http-client.service";
 import {EldenItemObservableService} from "@angularTopic/reactive/service/elden-item-observable.service";
 import {ReactiveLoadingService} from "@angularTopic/reactive/service/reactive-loading.service";
+import {ReactiveLoadingComponent} from "@angularTopic/reactive/component/reactive-loading/reactive-loading.component";
 
 @Component({
   selector: 'app-item-edit-dialog',
@@ -29,7 +30,8 @@ import {ReactiveLoadingService} from "@angularTopic/reactive/service/reactive-lo
     MatOption,
     MatDialogActions,
     MatButton,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ReactiveLoadingComponent
   ],
   templateUrl: './item-edit-dialog.component.html',
   styleUrl: './item-edit-dialog.component.css'
@@ -60,7 +62,9 @@ export class ItemEditDialogComponent {
 
   save() {
     const changes = this.form.value as Partial<elden.Item>
-    this.eldenItemObservableService.saveItem(this.data?.item!.id, changes)
+    const saveChanges$ = this.eldenItemObservableService.saveItem(this.data?.item!.id, changes)
+
+    this.reactiveLoadingService.showLoaderUntilCompleted(saveChanges$)
       .subscribe(res => {
         this.dialogRef.close(res);
       })
