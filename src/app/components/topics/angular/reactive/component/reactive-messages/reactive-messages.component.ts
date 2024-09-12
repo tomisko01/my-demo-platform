@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {NgForOf, NgIf} from "@angular/common";
+import {Component, inject, OnInit} from '@angular/core';
+import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
 import {MatIcon} from "@angular/material/icon";
+import {ReactiveMessagesService} from "@angularTopic/reactive/service/reactive-messages.service";
+import {Observable, tap} from "rxjs";
 
 @Component({
   selector: 'app-reactive-messages',
@@ -8,7 +10,8 @@ import {MatIcon} from "@angular/material/icon";
   imports: [
     NgForOf,
     MatIcon,
-    NgIf
+    NgIf,
+    AsyncPipe
   ],
   templateUrl: './reactive-messages.component.html',
   styleUrl: './reactive-messages.component.css'
@@ -16,6 +19,12 @@ import {MatIcon} from "@angular/material/icon";
 export class ReactiveMessagesComponent implements OnInit {
 
   showMessages = false
+
+  reactiveMessageService = inject(ReactiveMessagesService)
+
+  errors$: Observable<string[]> = this.reactiveMessageService.errors$.pipe(
+    tap(() => this.showMessages = true),
+  )
 
   ngOnInit(): void {
   }
