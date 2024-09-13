@@ -10,7 +10,9 @@ export class ReactiveMessagesService {
     filter(messages => messages && messages.length > 0),
   )
 
-  constructor() { }
+  constructor() {
+    console.log(`Created ReactiveMessagesService`)
+  }
 
   showErrors(...errors: string[]) {
     this.subject.next(errors)

@@ -17,6 +17,11 @@ import {EldenItemHttpClientService} from "@angularTopic/signal/signal-crud/servi
 import {EldenItemObservableService} from "@angularTopic/reactive/service/elden-item-observable.service";
 import {ReactiveLoadingService} from "@angularTopic/reactive/service/reactive-loading.service";
 import {ReactiveLoadingComponent} from "@angularTopic/reactive/component/reactive-loading/reactive-loading.component";
+import {
+  ReactiveMessagesComponent
+} from "@angularTopic/reactive/component/reactive-messages/reactive-messages.component";
+import {ReactiveMessagesService} from "@angularTopic/reactive/service/reactive-messages.service";
+import {catchError, throwError} from "rxjs";
 
 @Component({
   selector: 'app-item-edit-dialog',
@@ -31,7 +36,11 @@ import {ReactiveLoadingComponent} from "@angularTopic/reactive/component/reactiv
     MatDialogActions,
     MatButton,
     ReactiveFormsModule,
-    ReactiveLoadingComponent
+    ReactiveLoadingComponent,
+    ReactiveMessagesComponent
+  ],
+  providers: [
+    ReactiveMessagesService
   ],
   templateUrl: './item-edit-dialog.component.html',
   styleUrl: './item-edit-dialog.component.css'
@@ -41,6 +50,7 @@ export class ItemEditDialogComponent {
   fb = inject(FormBuilder)
   dialogRef = inject(MatDialogRef<ItemEditDialogComponent>)
   reactiveLoadingService = inject(ReactiveLoadingService)
+  reactiveMessagesService = inject(ReactiveMessagesService)
 
   data: EditItemDialogData = inject(MAT_DIALOG_DATA)
 
@@ -63,6 +73,14 @@ export class ItemEditDialogComponent {
   save() {
     const changes = this.form.value as Partial<elden.Item>
     const saveChanges$ = this.eldenItemObservableService.saveItem(this.data?.item!.id, changes)
+      .pipe(
+        catchError(err => {
+          const message = `Could not save item`
+          console.error(err)
+          this.reactiveMessagesService.showErrors(message)
+          return throwError(err)
+        })
+      )
 
     this.reactiveLoadingService.showLoaderUntilCompleted(saveChanges$)
       .subscribe(res => {
