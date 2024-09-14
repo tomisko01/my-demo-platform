@@ -23,6 +23,7 @@ import {
   ReactiveMessagesComponent
 } from "@angularTopic/reactive/component/reactive-messages/reactive-messages.component";
 import {ReactiveMessagesService} from "@angularTopic/reactive/service/reactive-messages.service";
+import {ReactiveItemStoreService} from "@angularTopic/reactive/service/reactive-item-store.service";
 
 @Component({
   selector: 'app-stateless-observable-service',
@@ -57,6 +58,7 @@ export class StatelessObservableServiceComponent {
   eldenItemObservableService = inject(EldenItemObservableService)
   reactiveLoadingService = inject(ReactiveLoadingService)
   reactiveMessagesService = inject(ReactiveMessagesService)
+  reactiveItemStoreService = inject(ReactiveItemStoreService)
 
   reusableItems$: Observable<elden.Item[]>
   consumableItems$: Observable<elden.Item[]>
@@ -85,13 +87,16 @@ export class StatelessObservableServiceComponent {
 
     const loadItems$ = this.reactiveLoadingService.showLoaderUntilCompleted(items$)
 
-    this.reusableItems$ = loadItems$
-      .pipe(
-        map((items) => items.filter(item => item.type === 'Reusable'))
-      )
-    this.consumableItems$ = loadItems$
-      .pipe(
-        map((items) => items.filter(item => item.type === 'Consumable'))
-      )
+    // this.reusableItems$ = loadItems$
+    //   .pipe(
+    //     map((items) => items.filter(item => item.type === 'Reusable'))
+    //   )
+
+    this.reusableItems$ = this.reactiveItemStoreService.filterByType('Reusable')
+    // this.consumableItems$ = loadItems$
+    //   .pipe(
+    //     map((items) => items.filter(item => item.type === 'Consumable'))
+    //   )
+    this.consumableItems$ = this.reactiveItemStoreService.filterByType('Consumable')
   }
 }
