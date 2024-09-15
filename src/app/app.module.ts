@@ -22,6 +22,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient} from '@angular/common/http';
 import {loadingInterceptor} from "@angularTopic/signal/signal-crud/loading/loading.interceptor";
+import {ReactiveMessagesService} from "@angularTopic/reactive/service/reactive-messages.service";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import {loadingInterceptor} from "@angularTopic/signal/signal-crud/loading/loadi
   ],
   providers: [
     HighlightService,
-    provideHttpClient(withInterceptors([loadingInterceptor]), withFetch())
+    provideHttpClient(withInterceptors([loadingInterceptor]), withFetch()),
+    ReactiveMessagesService
   ],
   exports: [],
   bootstrap: [AppComponent]

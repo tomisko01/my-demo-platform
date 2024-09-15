@@ -74,18 +74,9 @@ export class StatelessObservableServiceComponent {
 
   reloadItems() {
 
-    const items$ = this.eldenItemObservableService.loadAllItems()
-      .pipe(
-        map(items => items.sort((a, b) => a.name.localeCompare(b.name))),
-        catchError(err => {
-          const message = "Could not load items"
-          this.reactiveMessagesService.showErrors(message)
-          console.error(message, err)
-          return throwError(err)
-        })
-      )
-
-    const loadItems$ = this.reactiveLoadingService.showLoaderUntilCompleted(items$)
+    // logic moved to store
+    // const items$ = this.eldenItemObservableService.loadAllItems()
+    // const loadItems$ = this.reactiveLoadingService.showLoaderUntilCompleted(items$)
 
     // this.reusableItems$ = loadItems$
     //   .pipe(
