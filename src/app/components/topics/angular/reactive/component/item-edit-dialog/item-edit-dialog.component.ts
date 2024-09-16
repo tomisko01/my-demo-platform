@@ -22,6 +22,7 @@ import {
 } from "@angularTopic/reactive/component/reactive-messages/reactive-messages.component";
 import {ReactiveMessagesService} from "@angularTopic/reactive/service/reactive-messages.service";
 import {catchError, throwError} from "rxjs";
+import {ReactiveItemStoreService} from "@angularTopic/reactive/service/reactive-item-store.service";
 
 @Component({
   selector: 'app-item-edit-dialog',
@@ -51,6 +52,7 @@ export class ItemEditDialogComponent {
   dialogRef = inject(MatDialogRef<ItemEditDialogComponent>)
   reactiveLoadingService = inject(ReactiveLoadingService)
   reactiveMessagesService = inject(ReactiveMessagesService)
+  reactiveItemStore = inject(ReactiveItemStoreService)
 
   data: EditItemDialogData = inject(MAT_DIALOG_DATA)
 
@@ -72,20 +74,27 @@ export class ItemEditDialogComponent {
 
   save() {
     const changes = this.form.value as Partial<elden.Item>
-    const saveChanges$ = this.eldenItemObservableService.saveItem(this.data?.item!.id, changes)
-      .pipe(
-        catchError(err => {
-          const message = `Could not save item`
-          console.error(err)
-          this.reactiveMessagesService.showErrors(message)
-          return throwError(err)
-        })
-      )
+    // moved to store
+    // const saveChanges$ = this.eldenItemObservableService.saveItem(this.data?.item!.id, changes)
+    //   .pipe(
+    //     catchError(err => {
+    //       const message = `Could not save item`
+    //       console.error(err)
+    //       this.reactiveMessagesService.showErrors(message)
+    //       return throwError(err)
+    //     })
+    //   )
 
-    this.reactiveLoadingService.showLoaderUntilCompleted(saveChanges$)
-      .subscribe(res => {
-        this.dialogRef.close(res);
-      })
+    const saveChanges$ = this.reactiveItemStore.saveItem(this.data?.item!.id, changes)
+      .subscribe()
+
+    // moved to store
+    // this.reactiveLoadingService.showLoaderUntilCompleted(saveChanges$)
+    //   .subscribe(res => {
+    //     this.dialogRef.close(res);
+    //   })
+
+    this.close()
   }
 
   close() {

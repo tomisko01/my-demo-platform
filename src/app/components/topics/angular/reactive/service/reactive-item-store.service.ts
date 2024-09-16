@@ -1,5 +1,5 @@
 import {inject, Injectable} from '@angular/core';
-import {BehaviorSubject, catchError, map, Observable, tap, throwError} from "rxjs";
+import {BehaviorSubject, catchError, map, Observable, shareReplay, tap, throwError} from "rxjs";
 import {elden} from "../../../../../typings";
 import {HttpClient} from "@angular/common/http";
 import {ReactiveLoadingService} from "@angularTopic/reactive/service/reactive-loading.service";
@@ -23,6 +23,37 @@ export class ReactiveItemStoreService {
     this.loadAllItems()
   }
 
+  saveItem(itemId: string, changes: Partial<elden.Item>): Observable<any> {
+    const items = this.subject.getValue()
+    const index = items.findIndex(item => item.id === item.id)
+    const newItem: elden.Item = {
+      ...items[index],
+      ...changes
+    }
+    const newItems: elden.Item[] = items.slice(0)
+    newItems[index] = newItem
+
+    this.subject.next(newItems)
+
+    return this.eldenItemObservableService.saveItem(itemId, changes)
+      .pipe(
+        catchError(err => {
+          const message = `Could not save item`
+          console.error(err)
+          this.messages.showErrors(message)
+          return throwError(err)
+        }),
+        shareReplay()
+      )
+  }
+
+  filterByType(type: string): Observable<elden.Item[]> {
+    return this.items$
+      .pipe(
+        map((items: elden.Item[]) => items.filter(item => item.type === type))
+      )
+  }
+
   private loadAllItems() {
     const loadItems$ = this.eldenItemObservableService.loadAllItems()
       .pipe(
@@ -38,13 +69,6 @@ export class ReactiveItemStoreService {
 
     this.loading.showLoaderUntilCompleted(loadItems$)
       .subscribe()
-  }
-
-  filterByType(type: string): Observable<elden.Item[]> {
-    return this.items$
-      .pipe(
-        map((items: elden.Item[]) => items.filter(item => item.type === type))
-      )
   }
 
 
