@@ -22,6 +22,9 @@ import {SignalMasterDetailComponent} from "@angularTopic/signal/signal-master-de
 import {
   StatelessObservableServiceComponent
 } from "@angularTopic/reactive/stateless-observable-service/stateless-observable-service.component";
+import {
+  AuthenticateWithObservableComponent
+} from "@angularTopic/reactive/authenticate-with-observable/authenticate-with-observable.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -94,6 +97,7 @@ export const routes: Routes = [
   },
   {path: 'angular/signal/signalMasterDetail', component: SignalMasterDetailComponent},
   {path: 'angular/reactivate/statelessObservableService', component: StatelessObservableServiceComponent},
+  {path: 'angular/reactivate/authenticateObservable', component: AuthenticateWithObservableComponent},
   {
     path: 'elden',
     component: EldenHomeComponent,

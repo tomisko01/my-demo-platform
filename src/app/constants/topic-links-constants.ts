@@ -365,28 +365,28 @@ export class TopicLinksConstants {
           githubLinkNeeded: true,
           githubLink: this.angularTopicInRepo + 'signal/input-signal/input-signal.component.ts',
           usesConsole: true
-        },{
+        }, {
           name: 'CRUD with signals',
           routerLink: '/angular/signal/signalCRUD',
           title: 'Use signals for CRUD application',
           githubLinkNeeded: true,
           githubLink: this.angularTopicInRepo + 'signal/signal-crud/signal-crud.component.ts',
           usesConsole: true
-        },{
+        }, {
           name: 'Authenticate with signals',
           routerLink: '/angular/signal/signalAuth',
           title: 'Use signals for Login',
           githubLinkNeeded: true,
           githubLink: this.angularTopicInRepo + 'signal/signal-login/signal-login.component.ts',
           usesConsole: true
-        },{
+        }, {
           name: 'Guarded by Authenticate component',
           routerLink: '/angular/signal/signalGuardedByAuth',
           title: 'Guard component by login service',
           githubLinkNeeded: true,
           githubLink: this.angularTopicInRepo + 'signal/signal-login/guarded-by-login/guarded-by-login.component.ts',
           usesConsole: true
-        },{
+        }, {
           name: 'Master Detail UI',
           routerLink: '/angular/signal/signalMasterDetail',
           title: 'Master detail with signals',
@@ -403,6 +403,12 @@ export class TopicLinksConstants {
           title: 'Stateless observable service',
           githubLinkNeeded: true,
           githubLink: this.angularTopicInRepo + 'reactivate/stateless-observable-service/stateless-observable-service.component.ts',
+        }, {
+          name: 'Authenticate with observables',
+          routerLink: '/angular/reactivate/authenticateObservable',
+          title: 'Login with observables store',
+          githubLinkNeeded: true,
+          githubLink: this.angularTopicInRepo + 'reactivate/authenticate-with-observable/authenticate-with-observable.component.ts',
         }]
       }
     ]
