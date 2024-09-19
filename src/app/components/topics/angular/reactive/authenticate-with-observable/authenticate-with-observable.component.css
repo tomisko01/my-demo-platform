@@ -9,7 +9,7 @@
 
 .login {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 0 15rem;
   padding-top: 100px;
 }
 
@@ -55,4 +55,8 @@
 .form-actions button {
   text-transform: uppercase;
   margin-right: 10px;
+}
+
+.on-top-right {
+  margin-left: auto;
 }

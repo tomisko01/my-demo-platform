@@ -3,10 +3,12 @@ import {ReactiveAuthStoreService} from "@angularTopic/reactive/service/reactive-
 import {FormBuilder, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ReactiveMessagesService} from "@angularTopic/reactive/service/reactive-messages.service";
 import {RouterLink} from "@angular/router";
-import {AsyncPipe} from "@angular/common";
+import {AsyncPipe, NgIf} from "@angular/common";
 import {
   ReactiveMessagesComponent
 } from "@angularTopic/reactive/component/reactive-messages/reactive-messages.component";
+import {MatIcon} from "@angular/material/icon";
+import {MatIconButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-authenticate-with-observable',
@@ -16,7 +18,10 @@ import {
     ReactiveFormsModule,
     RouterLink,
     AsyncPipe,
-    ReactiveMessagesComponent
+    ReactiveMessagesComponent,
+    MatIcon,
+    MatIconButton,
+    NgIf
   ],
   templateUrl: './authenticate-with-observable.component.html',
   styleUrl: './authenticate-with-observable.component.css'
@@ -45,4 +50,7 @@ export class AuthenticateWithObservableComponent {
   }
 
 
+  onLogout() {
+    this.authStore.logout()
+  }
 }

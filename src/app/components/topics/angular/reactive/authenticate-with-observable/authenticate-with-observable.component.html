@@ -1,11 +1,20 @@
 <app-reactive-messages></app-reactive-messages>
 
-@if (authStore.isLoggedIn$ | async) {
-<div>
-  <p>Welcome back {{authStore.user$ | async}}</p>
-</div>
-} @else {
 
+<div class="on-top-right"
+     *ngIf="authStore.user$ | async as user; else notLogged">
+  Logout
+  <button
+    mat-icon-button (click)="onLogout()">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+
+  <div>
+    <p>Welcome back <b>{{ user.email }}!</b></p>
+  </div>
+</div>
+
+<ng-template #notLogged>
   <div class="login">
 
     <div class="login-form" [formGroup]="form">
@@ -39,4 +48,5 @@
     </div>
 
   </div>
-}
+
+</ng-template>
