@@ -409,6 +409,12 @@ export class TopicLinksConstants {
           title: 'Login with observables store',
           githubLinkNeeded: true,
           githubLink: this.angularTopicInRepo + 'reactivate/authenticate-with-observable/authenticate-with-observable.component.ts',
+        }, {
+          name: 'Master detail with observables',
+          routerLink: '/angular/reactivate/observableMasterDetail',
+          title: 'Implement master detail with observables',
+          githubLinkNeeded: true,
+          githubLink: this.angularTopicInRepo + 'reactivate/observable-master-detail/observable-master-detail.component.ts',
         }]
       }
     ]
