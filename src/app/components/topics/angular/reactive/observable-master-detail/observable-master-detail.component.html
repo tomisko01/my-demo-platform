@@ -8,27 +8,31 @@
 
   </mat-form-field>
 
-  <button class="search" mat-raised-button color="primary">
+  <button class="search"
+          mat-raised-button
+          color="primary"
+          (click)="onSearch(searchInput.value)">
     <mat-icon>search</mat-icon>
     Search
   </button>
 
-  <table class="locations-table mat-elevation-z7">
+  <ng-container *ngIf="(searchResult$ | async) as locations">
+    <table class="locations-table mat-elevation-z7">
 
-    <thead>
-    <th>Name</th>
-    <th>Region</th>
-    <th>Description</th>
-    </thead>
+      <thead>
+      <th>Name</th>
+      <th>Region</th>
+      <th>Description</th>
+      </thead>
 
-    <!-- tr class="location-row">
-      <td class="seqno-cell">{{location.seqNo}}</td>
-      <td class="description-cell">{{location.description}}</td>
-      <td class="duration-cell">{{location.duration}}</td>
-    </tr -->
+      <tr class="location-row" *ngFor="let location of locations">
+        <td class="seqno-cell">{{ location.name }}</td>
+        <td class="description-cell">{{ location.region }}</td>
+        <td class="duration-cell">{{ location.description }}</td>
+      </tr>
 
-  </table>
-
+    </table>
+  </ng-container>
 
 
 </div>

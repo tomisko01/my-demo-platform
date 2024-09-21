@@ -4,6 +4,7 @@ import {map, Observable, shareReplay} from "rxjs";
 import {elden} from "../../../../../typings";
 import {environment} from "../../../../../../environments/environment";
 import {GetItemsResponse} from "@angularTopic/signal/signal-crud/service/elden-item-http-client.service";
+import {GetLocationResponse} from "@angularTopic/signal/signal-crud/service/elden-location.service";
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,20 @@ export class EldenItemObservableService {
     return this.http.put<elden.Item>(`${this.env.apiRoot}/items/${itemId}`, changes)
       .pipe(
         shareReplay()
+      )
+  }
+
+  searchLocations(searchValue: string): Observable<elden.Location[]> {
+    return this.http.get<GetLocationResponse>(`${this.env.apiRoot}/search-locations`,
+      {
+        params:
+          {
+            query: searchValue
+          }
+      })
+      .pipe(
+        map(res => res.locations),
+        shareReplay(),
       )
   }
 }
