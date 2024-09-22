@@ -16,24 +16,41 @@
     Search
   </button>
 
-  <ng-container *ngIf="(searchResult$ | async) as locations">
-    <table class="locations-table mat-elevation-z7">
+  <ng-container *ngIf="!activeLocation; else detail">
+    <ng-container *ngIf="(searchResult$ | async) as locations">
+      <table class="locations-table mat-elevation-z7">
 
-      <thead>
-      <th>Name</th>
-      <th>Region</th>
-      <th>Description</th>
-      </thead>
+        <thead>
+        <th>Name</th>
+        <th>Region</th>
+        <th>Description</th>
+        </thead>
 
-      <tr class="location-row" *ngFor="let location of locations">
-        <td class="seqno-cell">{{ location.name }}</td>
-        <td class="description-cell">{{ location.region }}</td>
-        <td class="duration-cell">{{ location.description }}</td>
-      </tr>
+        <tr class="location-row"
+            *ngFor="let location of locations"
+            (click)="openLocation(location)">
+          <td class="seqno-cell">{{ location.name }}</td>
+          <td class="description-cell">{{ location.region }}</td>
+          <td class="duration-cell">{{ location.description }}</td>
+        </tr>
 
-    </table>
+      </table>
+    </ng-container>
   </ng-container>
 
+  <ng-template #detail>
+    <div>
+    <button mat-raised-button class="back-btn"
+            (click)="onBackToSearch()">
+      <mat-icon>arrow_back_ios</mat-icon>
+      Back to search
+    </button>
+
+    <app-observable-location-detail *ngIf="activeLocation"
+                                    [location]=activeLocation>
+    </app-observable-location-detail>
+    </div>
+  </ng-template>
 
 </div>
 
