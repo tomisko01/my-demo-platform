@@ -1,0 +1,26 @@
+<ng-container *ngIf="(item$ | async) as item">
+  <div class="item">
+
+    <h2>{{ item?.name }}</h2>
+
+    <img class="item-thumbnail" [src]="item?.image">
+
+    <table class="lessons-table mat-elevation-z7">
+
+      <thead>
+      <th>#</th>
+      <th>Description</th>
+      <th>Duration</th>
+      </thead>
+
+      <!--<tr class="location-row" *ngFor="let location of (locations$ | async)">
+        <h3> {{ location.name }}</h3>
+        <h5> {{ location.region }}</h5>
+        <img [src]="location.image">
+      </tr>-->
+    </table>
+
+  </div>
+
+
+</ng-container>

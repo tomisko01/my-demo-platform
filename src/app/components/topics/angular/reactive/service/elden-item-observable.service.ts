@@ -44,4 +44,11 @@ export class EldenItemObservableService {
         shareReplay(),
       )
   }
+
+  loadItemById(itemId: string): Observable<elden.Item> {
+    return this.http.get<elden.Item>(`${this.env.apiRoot}/items/${itemId}`)
+      .pipe(
+        shareReplay()
+      )
+  }
 }

@@ -28,6 +28,9 @@ import {
 import {
   ObservableMasterDetailComponent
 } from "@angularTopic/reactive/observable-master-detail/observable-master-detail.component";
+import {
+  ItemCardObservableComponent
+} from "@angularTopic/reactive/component/item-card-observable/item-card-observable.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -102,6 +105,14 @@ export const routes: Routes = [
   {path: 'angular/reactivate/statelessObservableService', component: StatelessObservableServiceComponent},
   {path: 'angular/reactivate/authenticateObservable', component: AuthenticateWithObservableComponent},
   {path: 'angular/reactivate/observableMasterDetail', component: ObservableMasterDetailComponent},
+  {
+    'path': 'angular/reactivate/statelessObservableService/item/:itemId',
+    component: ItemCardObservableComponent,
+/*    resolve: {
+      item: itemResolver,
+      locations: itemLocationsResolver
+    }*/
+  },
   {
     path: 'elden',
     component: EldenHomeComponent,

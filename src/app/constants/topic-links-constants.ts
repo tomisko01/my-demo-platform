@@ -454,6 +454,11 @@ export class TopicLinksConstants {
       name: 'Elden Item View',
       routerLink: '/angular/signal/signalCRUD/item/',
       title: 'View page for elden item'
+    },
+    {
+      name: 'Elden Item View as Observable',
+      routerLink: '/angular/reactivate/statelessObservableService/item/',
+      title: 'View page for elden item (as observable)'
     }
   ]
 
