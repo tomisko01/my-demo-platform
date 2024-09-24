@@ -29,6 +29,7 @@ export class ItemCardObservableComponent {
     const itemId: string | null = this.route.snapshot.paramMap.get("itemId")
     if (itemId) {
       this.item$ = this.itemService.loadItemById(itemId)
+      this.locations$ = this.itemService.loadLocationsByItemId(itemId)
     }
 
   }

@@ -8,16 +8,16 @@
     <table class="lessons-table mat-elevation-z7">
 
       <thead>
-      <th>#</th>
-      <th>Description</th>
-      <th>Duration</th>
+      <th>Name</th>
+      <th>Region</th>
+      <th>Image</th>
       </thead>
 
-      <!--<tr class="location-row" *ngFor="let location of (locations$ | async)">
-        <h3> {{ location.name }}</h3>
-        <h5> {{ location.region }}</h5>
-        <img [src]="location.image">
-      </tr>-->
+      <tr class="location-row" *ngFor="let location of (locations$ | async)">
+        <td><h3> {{ location.name }}</h3></td>
+        <td><h5> {{ location.region }}</h5></td>
+        <td><img [src]="location.image"></td>
+      </tr>
     </table>
 
   </div>

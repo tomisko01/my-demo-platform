@@ -51,4 +51,18 @@ export class EldenItemObservableService {
         shareReplay()
       )
   }
+
+  loadLocationsByItemId(itemId: string): Observable<elden.Location[]> {
+    return this.http.get<GetLocationResponse>(`${this.env.apiRoot}/search-locations`,
+      {
+        params:
+          {
+            itemId: itemId
+          }
+      })
+      .pipe(
+        map(res => res.locations),
+        shareReplay(),
+      )
+  }
 }
