@@ -31,6 +31,9 @@ import {
 import {
   ItemCardObservableComponent
 } from "@angularTopic/reactive/component/item-card-observable/item-card-observable.component";
+import {
+  ItemCardSingleDataObservableComponent
+} from "@angularTopic/reactive/component/item-card-single-data-observable/item-card-single-data-observable.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -108,10 +111,10 @@ export const routes: Routes = [
   {
     'path': 'angular/reactivate/statelessObservableService/item/:itemId',
     component: ItemCardObservableComponent,
-/*    resolve: {
-      item: itemResolver,
-      locations: itemLocationsResolver
-    }*/
+  },
+  {
+    'path': 'angular/reactivate/statelessObservableService/singleItemObservable/:itemId',
+    component: ItemCardSingleDataObservableComponent,
   },
   {
     path: 'elden',

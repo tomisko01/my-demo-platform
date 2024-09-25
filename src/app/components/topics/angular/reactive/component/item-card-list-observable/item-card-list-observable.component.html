@@ -14,7 +14,11 @@
     <mat-card-actions >
 
       <button mat-button mat-raised-button color="primary" [routerLink]="['item', item.id]">
-        VIEW COURSE
+        VIEW ITEM
+      </button>
+
+      <button mat-button mat-raised-button color="primary" [routerLink]="['singleItemObservable', item.id]">
+        VIEW ITEM (single data observable)
       </button>
 
       <button mat-button mat-raised-button color="accent"
