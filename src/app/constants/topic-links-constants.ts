@@ -459,6 +459,12 @@ export class TopicLinksConstants {
       name: 'Elden Item View as Observable',
       routerLink: '/angular/reactivate/statelessObservableService/item/',
       title: 'View page for elden item (as observable)'
+    },
+    {
+      name: 'Elden Item View as Observable',
+      routerLink: '/angular/reactivate/statelessObservableService/singleItemObservable/',
+      title: 'View page for elden item (as single data observable)',
+      usesConsole: true
     }
   ]
 
