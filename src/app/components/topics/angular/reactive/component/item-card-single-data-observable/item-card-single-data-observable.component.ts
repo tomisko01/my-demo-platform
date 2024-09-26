@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {combineLatest, map, Observable, tap} from "rxjs";
+import {combineLatest, map, Observable, startWith, tap} from "rxjs";
 import {elden} from "../../../../../../typings";
 import {ActivatedRoute} from "@angular/router";
 import {EldenItemObservableService} from "@angularTopic/reactive/service/elden-item-observable.service";
@@ -31,12 +31,18 @@ export class ItemCardSingleDataObservableComponent {
   itemService = inject(EldenItemObservableService)
 
   constructor() {
-    const itemId: string | null = this.route.snapshot.paramMap.get("itemId")
+    const itemId = this.route.snapshot.paramMap.get("itemId")
     if (itemId) {
       // this.item$ = this.itemService.loadItemById(itemId)
       // this.locations$ = this.itemService.loadLocationsByItemId(itemId)
       const item$ = this.itemService.loadItemById(itemId)
+        .pipe(
+          startWith(null)
+        )
       const locations$ = this.itemService.loadLocationsByItemId(itemId)
+        .pipe(
+          startWith([])
+        )
 
       this.data$ = combineLatest([item$, locations$])
         .pipe(

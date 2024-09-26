@@ -3,9 +3,12 @@
 
     <h2>{{ data.item.name }}</h2>
 
-    <img class="item-thumbnail" [src]="data.item.image">
+    <img class="item-thumbnail"
+         *ngIf="data.item"
+         [src]="data.item.image">
 
-    <table class="lessons-table mat-elevation-z7">
+    <table class="lessons-table mat-elevation-z7"
+           *ngIf="data.locations.length">
 
       <thead>
       <th>Name</th>
@@ -13,7 +16,8 @@
       <th>Image</th>
       </thead>
 
-      <tr class="location-row" *ngFor="let location of data.locations">
+      <tr class="location-row"
+          *ngFor="let location of data.locations">
         <td><h3> {{ location.name }}</h3></td>
         <td><h5> {{ location.region }}</h5></td>
         <td><img [src]="location.image"></td>
