@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {MatIcon} from "@angular/material/icon";
 import {MatButton} from "@angular/material/button";
 import {MatFormField} from "@angular/material/form-field";
@@ -25,7 +25,8 @@ import {
     ObservableLocationDetailComponent
   ],
   templateUrl: './observable-master-detail.component.html',
-  styleUrl: './observable-master-detail.component.css'
+  styleUrl: './observable-master-detail.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ObservableMasterDetailComponent {
 

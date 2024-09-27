@@ -1,4 +1,4 @@
-import {Component, EventEmitter, inject, Input, Output, output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, inject, Input, Output, output} from '@angular/core';
 import {elden} from "../../../../../../typings";
 import {
   MatCard, MatCardActions,
@@ -29,7 +29,8 @@ import {filter, tap} from "rxjs";
     RouterLink
   ],
   templateUrl: './item-card-list-observable.component.html',
-  styleUrl: './item-card-list-observable.component.css'
+  styleUrl: './item-card-list-observable.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemCardListObservableComponent {
 

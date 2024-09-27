@@ -1,7 +1,7 @@
-import {Component, inject} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {EldenItemObservableService} from "@angularTopic/reactive/service/elden-item-observable.service";
 import {elden} from "../../../../../typings";
-import {catchError, finalize, map, Observable, throwError} from "rxjs";
+import {Observable} from "rxjs";
 import {ItemListComponent} from "@angularTopic/signal/signal-crud/component/item-list/item-list.component";
 import {LoadingComponent} from "@angularTopic/signal/signal-crud/loading/loading.component";
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
@@ -10,7 +10,9 @@ import {
   MatCard,
   MatCardContent,
   MatCardHeader,
-  MatCardImage, MatCardLgImage, MatCardMdImage,
+  MatCardImage,
+  MatCardLgImage,
+  MatCardMdImage,
   MatCardSmImage,
   MatCardTitle
 } from "@angular/material/card";
@@ -51,7 +53,8 @@ import {ReactiveItemStoreService} from "@angularTopic/reactive/service/reactive-
     ReactiveMessagesService
   ],
   templateUrl: './stateless-observable-service.component.html',
-  styleUrl: './stateless-observable-service.component.css'
+  styleUrl: './stateless-observable-service.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StatelessObservableServiceComponent {
 
