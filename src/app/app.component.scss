@@ -9,7 +9,7 @@
 
 .mat-sidenav {
   background-color: #673AB7;
-  width: 160px;
+  width: 15rem;
 }
 
 .side-nav-items {
@@ -48,8 +48,17 @@
 }
 
 .topic-tree .nested-node > .mat-tree-node {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.mat-tree-node a {
+  justify-content: inherit !important;
+  font-weight: normal;
+}
+
+.mat-tree-node {
+  font-weight: bold;
 }
 
 .topic-tree-invisible {

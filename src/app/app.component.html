@@ -41,13 +41,14 @@
         <mat-nested-tree-node *matTreeNodeDef="let node; when: hasNestedChild">
 
           <div class="mat-tree-node">
-            <button mat-icon-button matTreeNodeToggle>
+            <button mat-icon-button matTreeNodeToggle class="small-button">
               <mat-icon>
                 {{ nestedTreeControl.isExpanded(node) ? "expand_more" : "chevron_right" }}
               </mat-icon>
             </button>
-            {{ node.name }}
+            {{ node.name }} test
           </div>
+          <mat-divider></mat-divider>
           <div
             class="nested-node"
             [class.topic-tree-invisible]="!nestedTreeControl.isExpanded(node)">
