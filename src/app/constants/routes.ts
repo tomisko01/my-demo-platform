@@ -34,6 +34,7 @@ import {
 import {
   ItemCardSingleDataObservableComponent
 } from "@angularTopic/reactive/component/item-card-single-data-observable/item-card-single-data-observable.component";
+import {SidenavComponent} from "../components/topics/angular-material/sidenav/sidenav.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -109,12 +110,16 @@ export const routes: Routes = [
   {path: 'angular/reactivate/authenticateObservable', component: AuthenticateWithObservableComponent},
   {path: 'angular/reactivate/observableMasterDetail', component: ObservableMasterDetailComponent},
   {
-    'path': 'angular/reactivate/statelessObservableService/item/:itemId',
+    path: 'angular/reactivate/statelessObservableService/item/:itemId',
     component: ItemCardObservableComponent,
   },
   {
-    'path': 'angular/reactivate/statelessObservableService/singleItemObservable/:itemId',
+    path: 'angular/reactivate/statelessObservableService/singleItemObservable/:itemId',
     component: ItemCardSingleDataObservableComponent,
+  },
+  {
+    path: 'angularMaterial/sidenav',
+    component: SidenavComponent,
   },
   {
     path: 'elden',

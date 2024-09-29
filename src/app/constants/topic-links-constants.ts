@@ -8,6 +8,7 @@ export class TopicLinksConstants {
 
   repoLink: string = 'https://github.com/tomisko01/my-demo-platform/blob/main/'
   angularTopicInRepo: string = this.repoLink + 'src/app/components/topics/angular/'
+  angularMaterialTopicInRepo: string = this.repoLink + 'src/app/components/topics/angular-material/'
   javascriptTopicInRepo: string = this.repoLink + 'src/app/components/topics/javascript/'
 
   ANGULAR_NODE: TopicNode = {
@@ -449,6 +450,20 @@ export class TopicLinksConstants {
     ]
   }
 
+  ANGULAR_MATERIAL: TopicNode = {
+    name: 'Angular Material',
+    children: [
+      {
+        name: 'Sidenav',
+        routerLink: '/angularMaterial/sidenav',
+        title: 'Usage of sidenav',
+        githubLinkNeeded: true,
+        githubLink: this.angularMaterialTopicInRepo + 'sidenav/sidenav.component.ts',
+      }
+    ]
+  }
+
+
   HIDDEN_FROM_LIST_NODES: TopicNode[] = [
     {
       name: 'Elden Item View',
@@ -468,6 +483,6 @@ export class TopicLinksConstants {
     }
   ]
 
-  public TREE_DATA = [this.ANGULAR_NODE, this.JAVASCRIPT_NODE, this.OTHER_NODE]
+  public TREE_DATA = [this.ANGULAR_NODE, this.ANGULAR_MATERIAL, this.JAVASCRIPT_NODE, this.OTHER_NODE]
   public allTopics: TopicNode[] = [...this.TREE_DATA, this.HOME_NODE, ...this.HIDDEN_FROM_LIST_NODES];
 }
