@@ -459,6 +459,12 @@ export class TopicLinksConstants {
         title: 'Usage of sidenav',
         githubLinkNeeded: true,
         githubLink: this.angularMaterialTopicInRepo + 'sidenav/sidenav.component.ts',
+      },{
+        name: 'Toolbar',
+        routerLink: '/angularMaterial/toolbar',
+        title: 'Usage of toolbar',
+        githubLinkNeeded: true,
+        githubLink: this.angularMaterialTopicInRepo + 'toolbar/toolbar.component.ts',
       }
     ]
   }

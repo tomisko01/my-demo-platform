@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {MatToolbar} from "@angular/material/toolbar";
 import {MatAnchor, MatIconButton} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
+import {MatMenu, MatMenuItem, MatMenuTrigger} from "@angular/material/menu";
 
 @Component({
   selector: 'app-toolbar',
@@ -10,7 +11,10 @@ import {MatIcon} from "@angular/material/icon";
     MatToolbar,
     MatIconButton,
     MatIcon,
-    MatAnchor
+    MatAnchor,
+    MatMenuTrigger,
+    MatMenu,
+    MatMenuItem
   ],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.css'

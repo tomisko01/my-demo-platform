@@ -35,6 +35,7 @@ import {
   ItemCardSingleDataObservableComponent
 } from "@angularTopic/reactive/component/item-card-single-data-observable/item-card-single-data-observable.component";
 import {SidenavComponent} from "../components/topics/angular-material/sidenav/sidenav.component";
+import {ToolbarComponent} from "../components/topics/angular-material/toolbar/toolbar.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -120,6 +121,10 @@ export const routes: Routes = [
   {
     path: 'angularMaterial/sidenav',
     component: SidenavComponent,
+  },
+  {
+    path: 'angularMaterial/toolbar',
+    component: ToolbarComponent,
   },
   {
     path: 'elden',
