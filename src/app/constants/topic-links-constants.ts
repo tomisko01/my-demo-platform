@@ -465,6 +465,12 @@ export class TopicLinksConstants {
         title: 'Usage of toolbar',
         githubLinkNeeded: true,
         githubLink: this.angularMaterialTopicInRepo + 'toolbar/toolbar.component.ts',
+      },{
+        name: 'TabGroups',
+        routerLink: '/angularMaterial/tabGroups',
+        title: 'Usage of tabGroups',
+        githubLinkNeeded: true,
+        githubLink: this.angularMaterialTopicInRepo + 'tab-groups/tab-groups.component.ts',
       }
     ]
   }
