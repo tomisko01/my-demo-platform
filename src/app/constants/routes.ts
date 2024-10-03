@@ -37,6 +37,9 @@ import {
 import {SidenavComponent} from "../components/topics/angular-material/sidenav/sidenav.component";
 import {ToolbarComponent} from "../components/topics/angular-material/toolbar/toolbar.component";
 import {TabGroupsComponent} from "../components/topics/angular-material/tab-groups/tab-groups.component";
+import {
+  EldenViewItemComponent
+} from "../components/topics/angular-material/components/elden-view-item/elden-view-item.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -129,6 +132,10 @@ export const routes: Routes = [
   }, {
     path: 'angularMaterial/tabGroups',
     component: TabGroupsComponent,
+  },
+  {
+    path: 'angularMaterial/tabGroups/item/:itemId',
+    component: EldenViewItemComponent,
   },
   {
     path: 'elden',

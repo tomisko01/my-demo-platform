@@ -3,13 +3,15 @@ import {elden} from "../../../../typings";
 import {toObservable} from "@angular/core/rxjs-interop";
 import {EldenItemHttpClientService} from "@angularTopic/signal/signal-crud/service/elden-item-http-client.service";
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
+import {EldenItemCardListComponent} from "../components/elden-item-card-list/elden-item-card-list.component";
 
 @Component({
   selector: 'app-tab-groups',
   standalone: true,
   imports: [
     MatTabGroup,
-    MatTab
+    MatTab,
+    EldenItemCardListComponent
   ],
   templateUrl: './tab-groups.component.html',
   styleUrl: './tab-groups.component.css'

@@ -1,9 +1,13 @@
 <mat-tab-group>
   <mat-tab label="Reusable">
+    <app-elden-item-card-list [items]="reusableItems()">
 
+    </app-elden-item-card-list>
   </mat-tab>
 
   <mat-tab label="Consumable">
+    <app-elden-item-card-list [items]="consumableItems()">
 
+    </app-elden-item-card-list>
   </mat-tab>
 </mat-tab-group>
