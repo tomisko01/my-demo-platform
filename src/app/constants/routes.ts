@@ -40,6 +40,7 @@ import {TabGroupsComponent} from "../components/topics/angular-material/tab-grou
 import {
   EldenViewItemComponent
 } from "../components/topics/angular-material/components/elden-view-item/elden-view-item.component";
+import {StepperComponent} from "../components/topics/angular-material/stepper/stepper.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -136,6 +137,10 @@ export const routes: Routes = [
   {
     path: 'angularMaterial/tabGroups/item/:itemId',
     component: EldenViewItemComponent,
+  },
+  {
+    path: 'angularMaterial/stepper',
+    component: StepperComponent,
   },
   {
     path: 'elden',

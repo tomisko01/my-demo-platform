@@ -1,0 +1,37 @@
+<mat-horizontal-stepper class="mat-elevation-z6"
+                        [linear]="true"
+                        labelPosition="bottom">
+  <mat-step errorMessage="Item details error">
+    <ng-template matStepLabel>
+      Item Details
+    </ng-template>
+    <app-create-item-step1>
+
+    </app-create-item-step1>
+
+    <div>
+      <button mat-raised-button color="primary" matStepperNext>
+        Add item locations
+      </button>
+    </div>
+  </mat-step>
+
+  <mat-step errorMessage="Item locations error">
+    <ng-template matStepLabel>
+      Item Locations
+    </ng-template>
+    <app-create-item-step2>
+
+    </app-create-item-step2>
+
+    <div>
+      <button mat-raised-button matStepperPrevious>
+        Back
+      </button>
+      <button mat-raised-button color="accent">
+        Create item
+      </button>
+    </div>
+  </mat-step>
+
+</mat-horizontal-stepper>

@@ -466,11 +466,17 @@ export class TopicLinksConstants {
         githubLinkNeeded: true,
         githubLink: this.angularMaterialTopicInRepo + 'toolbar/toolbar.component.ts',
       },{
-        name: 'TabGroups',
+        name: 'TabGroups with mat-card',
         routerLink: '/angularMaterial/tabGroups',
         title: 'Usage of tabGroups',
         githubLinkNeeded: true,
         githubLink: this.angularMaterialTopicInRepo + 'tab-groups/tab-groups.component.ts',
+      },{
+        name: 'Stepper',
+        routerLink: '/angularMaterial/stepper',
+        title: 'Usage of stepper',
+        githubLinkNeeded: true,
+        githubLink: this.angularMaterialTopicInRepo + 'stepper/stepper.component.ts',
       }
     ]
   }
