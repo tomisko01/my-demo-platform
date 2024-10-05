@@ -1,0 +1,7 @@
+.create-item-form{
+
+  mat-form-field {
+    margin: 1rem;
+
+  }
+}
