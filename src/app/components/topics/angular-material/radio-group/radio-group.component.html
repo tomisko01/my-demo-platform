@@ -1,0 +1,16 @@
+<div [formGroup]="form" class="create-item-form">
+  <mat-radio-group formControlName="type">
+    <mat-radio-button value="Reusable">
+      Reusable
+    </mat-radio-button>
+    <mat-radio-button value="Consumable">
+      Consumable
+    </mat-radio-button>
+    <mat-radio-button value="Other">
+      Other
+    </mat-radio-button>
+    <mat-radio-button [disabled]="true" value="Disabled value">
+      Disabled value
+    </mat-radio-button>
+  </mat-radio-group>
+</div>
