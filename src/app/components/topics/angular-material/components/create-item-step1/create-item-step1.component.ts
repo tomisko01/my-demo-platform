@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, ReactiveFormsModule, Validators} from "@angula
 import {MatError, MatFormField, MatHint, MatLabel, MatPrefix, MatSuffix} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {NgIf} from "@angular/common";
+import {MatRadioButton, MatRadioGroup} from "@angular/material/radio";
 
 @Component({
   selector: 'app-create-item-step1',
@@ -16,7 +17,9 @@ import {NgIf} from "@angular/common";
     MatSuffix,
     MatHint,
     NgIf,
-    MatError
+    MatError,
+    MatRadioGroup,
+    MatRadioButton
   ],
   templateUrl: './create-item-step1.component.html',
   styleUrl: './create-item-step1.component.css'
