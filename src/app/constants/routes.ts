@@ -41,6 +41,7 @@ import {
   EldenViewItemComponent
 } from "../components/topics/angular-material/components/elden-view-item/elden-view-item.component";
 import {StepperComponent} from "../components/topics/angular-material/stepper/stepper.component";
+import {InputComponent} from "../components/topics/angular-material/input/input.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -141,6 +142,9 @@ export const routes: Routes = [
   {
     path: 'angularMaterial/stepper',
     component: StepperComponent,
+  },  {
+    path: 'angularMaterial/formField/input',
+    component: InputComponent,
   },
   {
     path: 'elden',

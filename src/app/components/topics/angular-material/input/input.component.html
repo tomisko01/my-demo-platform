@@ -1,0 +1,62 @@
+<div [formGroup]="form" class="create-item-form">
+
+  <mat-form-field>
+    <mat-label>Without appearance</mat-label>
+    <input matInput
+           placeholder="Provide item name"
+           formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>appearance="fill"</mat-label>
+    <input matInput
+           placeholder="Provide item name"
+           formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>appearance="outline"</mat-label>
+    <input matInput
+           placeholder="Provide item name"
+           formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always">
+    <mat-label>floatLabel always</mat-label>
+    <input matInput
+           placeholder="Provide item name"
+           formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always">
+    <mat-label>prefix and suffix usage</mat-label>
+    <input matInput
+           placeholder="Provide item name"
+           formControlName="name">
+
+    <span matPrefix> pre</span>
+    <span matSuffix> suf</span>
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always">
+    <mat-label>with hint</mat-label>
+    <input matInput
+           placeholder="Provide item name"
+           formControlName="name"
+           #inputName>
+    <mat-hint align="end">
+      {{ inputName.value.length }}/60
+    </mat-hint>
+  </mat-form-field>
+
+  <mat-form-field floatLabel="always">
+    <mat-label>with error</mat-label>
+    <input matInput
+           placeholder="Provide item name"
+           formControlName="name"
+           #inputName>
+    @if (itemName.hasError('minlength')) {
+      <mat-error>Please enter a name at least 3 chars length</mat-error>
+    }
+  </mat-form-field>
+</div>
