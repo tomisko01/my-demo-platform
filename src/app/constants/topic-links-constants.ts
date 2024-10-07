@@ -492,6 +492,12 @@ export class TopicLinksConstants {
           title: 'Usage of radioGroup',
           githubLinkNeeded: true,
           githubLink: this.angularMaterialTopicInRepo + 'radio-group/radio-group.component.ts',
+        },{
+          name: 'Select',
+          routerLink: '/angularMaterial/formField/select',
+          title: 'Usage of select',
+          githubLinkNeeded: true,
+          githubLink: this.angularMaterialTopicInRepo + 'select/select.component.ts',
         }]
       }
     ]

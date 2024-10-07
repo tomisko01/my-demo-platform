@@ -43,6 +43,7 @@ import {
 import {StepperComponent} from "../components/topics/angular-material/stepper/stepper.component";
 import {InputComponent} from "../components/topics/angular-material/input/input.component";
 import {RadioGroupComponent} from "../components/topics/angular-material/radio-group/radio-group.component";
+import {SelectComponent} from "../components/topics/angular-material/select/select.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -149,6 +150,9 @@ export const routes: Routes = [
   }, {
     path: 'angularMaterial/formField/radioGroup',
     component: RadioGroupComponent,
+  }, {
+    path: 'angularMaterial/formField/select',
+    component: SelectComponent,
   },
   {
     path: 'elden',

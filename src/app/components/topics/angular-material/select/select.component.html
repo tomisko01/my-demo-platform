@@ -1,0 +1,32 @@
+<div [formGroup]="form" class="create-item-form">
+
+  <mat-form-field appearance="fill">
+    <mat-label>Select type</mat-label>
+    <mat-select formControlName="type" placeholder="Select type">
+      <mat-option>None</mat-option>
+      <mat-option value="Reusable">Reusable</mat-option>
+      <mat-option value="Consumable">Consumable</mat-option>
+      <mat-option value="Other">Other</mat-option>
+
+      <mat-optgroup label="subtype">
+        <mat-option value="weapon">Weapon</mat-option>
+        <mat-option value="armor">Armor</mat-option>
+
+      </mat-optgroup>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" >
+    <mat-label>Select multiple type(s)</mat-label>
+    <mat-select formControlName="type" multiple>
+      <mat-option>None</mat-option>
+      <mat-option value="Reusable">Reusable</mat-option>
+      <mat-option value="Consumable">Consumable</mat-option>
+      <mat-option value="Other">Other</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+
+</div>
+
