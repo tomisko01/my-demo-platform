@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {importProvidersFrom, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
@@ -23,6 +23,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient} from '@angular/common/http';
 import {loadingInterceptor} from "@angularTopic/signal/signal-crud/loading/loading.interceptor";
 import {ReactiveMessagesService} from "@angularTopic/reactive/service/reactive-messages.service";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import {ReactiveMessagesService} from "@angularTopic/reactive/service/reactive-m
   providers: [
     HighlightService,
     provideHttpClient(withInterceptors([loadingInterceptor]), withFetch()),
-    ReactiveMessagesService
+    ReactiveMessagesService,
+    importProvidersFrom(MatNativeDateModule),
   ],
   exports: [],
   bootstrap: [AppComponent]

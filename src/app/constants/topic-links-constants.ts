@@ -498,6 +498,12 @@ export class TopicLinksConstants {
           title: 'Usage of select',
           githubLinkNeeded: true,
           githubLink: this.angularMaterialTopicInRepo + 'select/select.component.ts',
+        },{
+          name: 'Date picker',
+          routerLink: '/angularMaterial/formField/datePicker',
+          title: 'Usage of date picker',
+          githubLinkNeeded: true,
+          githubLink: this.angularMaterialTopicInRepo + 'date-picker/date-picker.component.ts',
         }]
       }
     ]

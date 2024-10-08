@@ -1,0 +1,16 @@
+<div [formGroup]="form">
+  <mat-form-field appearance="outline">
+    <input matInput
+           formControlName="someDate"
+           placeholder="Some date to pick"
+           [matDatepicker]="someDatePicker">
+
+    <mat-datepicker-toggle matSuffix
+                           [for]="someDatePicker">
+    </mat-datepicker-toggle>
+
+    <mat-datepicker #someDatePicker>
+
+    </mat-datepicker>
+  </mat-form-field>
+</div>

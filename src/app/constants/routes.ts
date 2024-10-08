@@ -44,6 +44,7 @@ import {StepperComponent} from "../components/topics/angular-material/stepper/st
 import {InputComponent} from "../components/topics/angular-material/input/input.component";
 import {RadioGroupComponent} from "../components/topics/angular-material/radio-group/radio-group.component";
 import {SelectComponent} from "../components/topics/angular-material/select/select.component";
+import {DatePickerComponent} from "../components/topics/angular-material/date-picker/date-picker.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -153,6 +154,9 @@ export const routes: Routes = [
   }, {
     path: 'angularMaterial/formField/select',
     component: SelectComponent,
+  }, {
+    path: 'angularMaterial/formField/datePicker',
+    component: DatePickerComponent,
   },
   {
     path: 'elden',
