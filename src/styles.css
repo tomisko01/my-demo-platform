@@ -20,3 +20,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .topic-button{
   margin: 0.5rem;
 }
+
+.highlight-date {
+  background: #4ad700;
+}

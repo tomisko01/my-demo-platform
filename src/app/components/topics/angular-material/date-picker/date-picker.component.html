@@ -13,4 +13,22 @@
 
     </mat-datepicker>
   </mat-form-field>
+
+  <br>
+  <span>Highlight date: </span>
+  <mat-form-field appearance="outline">
+    <input matInput
+           formControlName="anotherDate"
+           placeholder="Another date to pick"
+           [matDatepicker]="anotherDatePicker">
+
+    <mat-datepicker-toggle matSuffix
+                           [for]="anotherDatePicker">
+    </mat-datepicker-toggle>
+
+    <mat-datepicker #anotherDatePicker
+                    [dateClass]="dateClass">
+
+    </mat-datepicker>
+  </mat-form-field>
 </div>
