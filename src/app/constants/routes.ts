@@ -45,6 +45,7 @@ import {InputComponent} from "../components/topics/angular-material/input/input.
 import {RadioGroupComponent} from "../components/topics/angular-material/radio-group/radio-group.component";
 import {SelectComponent} from "../components/topics/angular-material/select/select.component";
 import {DatePickerComponent} from "../components/topics/angular-material/date-picker/date-picker.component";
+import {CheckboxComponent} from "../components/topics/angular-material/checkbox/checkbox.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -157,6 +158,9 @@ export const routes: Routes = [
   }, {
     path: 'angularMaterial/formField/datePicker',
     component: DatePickerComponent,
+  }, {
+    path: 'angularMaterial/formField/checkbox',
+    component: CheckboxComponent,
   },
   {
     path: 'elden',

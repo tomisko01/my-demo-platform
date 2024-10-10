@@ -504,6 +504,12 @@ export class TopicLinksConstants {
           title: 'Usage of date picker',
           githubLinkNeeded: true,
           githubLink: this.angularMaterialTopicInRepo + 'date-picker/date-picker.component.ts',
+        },{
+          name: 'Checkbox',
+          routerLink: '/angularMaterial/formField/checkbox',
+          title: 'Usage of checkbox',
+          githubLinkNeeded: true,
+          githubLink: this.angularMaterialTopicInRepo + 'checkbox/checkbox.component.ts',
         }]
       }
     ]
