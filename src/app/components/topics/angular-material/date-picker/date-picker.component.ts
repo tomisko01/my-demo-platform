@@ -36,7 +36,11 @@ export class DatePickerComponent {
   dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) => {
     const date = cellDate.getDate()
     if (view === "month") {
-      return (date === 1) ? "highlight-date" : ""
+      if (date % 2 === 1) {
+        return "highlight-date"
+      } else {
+        return ""
+      }
     }
 
     return ""
