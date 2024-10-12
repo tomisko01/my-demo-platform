@@ -510,6 +510,12 @@ export class TopicLinksConstants {
           title: 'Usage of checkbox',
           githubLinkNeeded: true,
           githubLink: this.angularMaterialTopicInRepo + 'checkbox/checkbox.component.ts',
+        },{
+          name: 'Text Area',
+          routerLink: '/angularMaterial/formField/textArea',
+          title: 'Usage of textArea',
+          githubLinkNeeded: true,
+          githubLink: this.angularMaterialTopicInRepo + 'text-area/text-area.component.ts',
         }]
       }
     ]

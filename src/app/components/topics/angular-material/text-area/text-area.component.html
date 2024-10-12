@@ -1,0 +1,32 @@
+<div [formGroup]="form">
+
+  <mat-form-field appearance="outline" class="text-area">
+    <mat-label>Simple text area</mat-label>
+    <textarea matInput placeholder="Placeholder for text area" formControlName="someText">
+
+    </textarea>
+  </mat-form-field>
+  <mat-divider></mat-divider>
+  <mat-form-field appearance="outline" class="text-area">
+    <mat-label> With prefilled long text</mat-label>
+    <textarea matInput formControlName="longText">
+
+    </textarea>
+  </mat-form-field>
+  <mat-divider></mat-divider>
+  <mat-form-field appearance="outline" class="text-area">
+    <mat-label>With prefilled long text with autosize</mat-label>
+    <textarea matInput formControlName="longText"
+    cdkTextareaAutosize>
+
+    </textarea>
+  </mat-form-field>
+
+  <mat-divider></mat-divider>
+  <mat-form-field appearance="outline" class="text-area">
+    <mat-label>With prefilled long text and max size</mat-label>
+    <textarea matInput formControlName="longText"
+              [rows]="5">
+    </textarea>
+  </mat-form-field>
+</div>
