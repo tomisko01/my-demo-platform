@@ -1,0 +1,34 @@
+<div>
+  Hover over button:
+  <button mat-mini-fab matTooltip="tooltip for button" color="primary">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+<div>
+  Hover over button to see tooltip on left side:
+  <button mat-mini-fab matTooltip="tooltip for button" color="primary" matTooltipPosition="left">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+<div>
+  Hover over button to see tooltip after 1 second:
+  <button mat-mini-fab matTooltip="tooltip for button" color="primary" [matTooltipShowDelay]="1000">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+<div>
+  Hover over button to see tooltip for 1 second more:
+  <button mat-mini-fab matTooltip="tooltip for button" color="primary" [matTooltipHideDelay]="1000">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+<div>
+  Hover over button to not see tooltip (because is disabled):
+  <button mat-mini-fab matTooltip="tooltip for button" color="primary" [matTooltipDisabled]="true">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

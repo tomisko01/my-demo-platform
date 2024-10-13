@@ -477,6 +477,12 @@ export class TopicLinksConstants {
         title: 'Usage of stepper',
         githubLinkNeeded: true,
         githubLink: this.angularMaterialTopicInRepo + 'stepper/stepper.component.ts',
+      }, {
+        name: 'Tooltip',
+        routerLink: '/angularMaterial/tooltip',
+        title: 'Usage of tooltip',
+        githubLinkNeeded: true,
+        githubLink: this.angularMaterialTopicInRepo + 'tooltip/tooltip.component.ts',
       },
       {
         name: 'Form field',

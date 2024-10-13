@@ -47,6 +47,7 @@ import {SelectComponent} from "../components/topics/angular-material/select/sele
 import {DatePickerComponent} from "../components/topics/angular-material/date-picker/date-picker.component";
 import {CheckboxComponent} from "../components/topics/angular-material/checkbox/checkbox.component";
 import {TextAreaComponent} from "../components/topics/angular-material/text-area/text-area.component";
+import {TooltipComponent} from "../components/topics/angular-material/tooltip/tooltip.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -165,6 +166,9 @@ export const routes: Routes = [
   }, {
     path: 'angularMaterial/formField/textArea',
     component: TextAreaComponent,
+  },{
+    path: 'angularMaterial/tooltip',
+    component: TooltipComponent,
   },
   {
     path: 'elden',
