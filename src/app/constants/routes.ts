@@ -144,6 +144,10 @@ export const routes: Routes = [
   {
     path: 'angularMaterial/tabGroups/item/:itemId',
     component: EldenViewItemComponent,
+    resolve: {
+      item: itemResolver,
+      locations: itemLocationsResolver
+    }
   },
   {
     path: 'angularMaterial/stepper',
@@ -166,7 +170,7 @@ export const routes: Routes = [
   }, {
     path: 'angularMaterial/formField/textArea',
     component: TextAreaComponent,
-  },{
+  }, {
     path: 'angularMaterial/tooltip',
     component: TooltipComponent,
   },
