@@ -1,0 +1,14 @@
+.locations-table{
+  tr:hover {
+    background: antiquewhite;
+    cursor: pointer;
+  }
+}
+
+.mat-column-name {
+  border-right: 1px solid black;
+}
+
+.mat-column-region {
+  padding-left: 0.5rem;
+}
