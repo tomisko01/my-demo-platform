@@ -18,6 +18,7 @@ import {
   MatRow, MatRowDef,
   MatTable
 } from "@angular/material/table";
+import {EldenLocationService} from "@angularTopic/signal/signal-crud/service/elden-location.service";
 
 @Component({
   selector: 'app-elden-view-item',
@@ -48,16 +49,23 @@ export class EldenViewItemComponent {
   item = signal<elden.Item | null>(null)
 
   locations = signal<elden.Location[]>([])
+  locationsByPages = signal<elden.Location[]>([])
 
   route = inject(ActivatedRoute)
+  locationService = inject(EldenLocationService)
 
-  displayedColumns = ['name','region', 'description']
+  displayedColumns = ['name', 'region', 'description']
 
   constructor() {
     this.item.set(this.route.snapshot.data['item'])
     this.locations.set(this.route.snapshot.data['locations'])
+
+    this.loadLocationsPage()
   }
 
 
-
+  private async loadLocationsPage() {
+    const locations = await this.locationService.findLocations('asc', 0, 3)
+    this.locationsByPages.set(locations)
+  }
 }

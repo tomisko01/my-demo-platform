@@ -5,6 +5,7 @@ import {createItem} from "./create-item.route";
 import {loginUser} from "./login.route";
 import {searchLocations} from "./search-locations.route";
 import {saveLocation} from "./save-location.route";
+import {findLocations} from "./find-locations.route";
 
 const express = require('express')
 const cors = require('cors');
@@ -34,6 +35,8 @@ app.route('/api/items/:id').delete(deleteItem)
 app.route('/api/login').post(loginUser)
 
 app.route('/api/search-locations').get(searchLocations)
+
+app.route('/api/find-locations').get(findLocations)
 
 app.route('/api/locations/:id').put(saveLocation)
 
