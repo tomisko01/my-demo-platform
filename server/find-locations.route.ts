@@ -8,33 +8,29 @@ export function findLocations(req: Request, res: Response) {
   const defaultConf = {
     sortOrder: 'desc',
     pageNumber: 0,
-    pageSize: 0
+    pageSize: 10
   }
 
-  const sortOrder = req.query["sortOrder"] as string,
-    pageNumber = req.query["pageNumber"] as string,
-    pageSize = req.query["pageSize"] as string;
+  const sortOrder = req.query["sortOrder"] ? req.query["sortOrder"] as string : defaultConf.sortOrder,
+    pageNumber: number = req.query["pageNumber"] ? parseInt(req.query["pageNumber"] as string) : defaultConf.pageNumber,
+    pageSize: number = req.query["pageSize"] ? parseInt(req.query["pageSize"] as string) : defaultConf.pageSize;
 
 
   const allLocations: any[] = LOCATIONS
 
-
-
-  let filtered: any[] = allLocations
-  console.log(`Filtering total locations ${filtered?.length}`, allLocations)
-
-
-  if (query) {
-    console.log(`Filtering by query ${query}`)
-    filtered = allLocations.filter(
-      location => location?.name?.trim()?.toLowerCase()?.search(query?.toLowerCase()) >= 0)
-    console.log(`Filtered ${filtered?.length} results`)
+  if (sortOrder === 'desc') {
+    allLocations.reverse()
+  } else {
+    allLocations.sort()
   }
 
-  const locations = filtered.slice(0, 10)
+  const startIndex = pageSize * (pageNumber - 1);
+
+  const pagedLocations = allLocations.slice(startIndex, startIndex + pageSize);
+
 
   setTimeout(() => {
-    res.status(200).json({locations})
+    res.status(200).json({pagedLocations})
   }, 1000)
 
 }
