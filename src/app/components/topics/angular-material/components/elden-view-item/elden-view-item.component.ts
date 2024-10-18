@@ -19,6 +19,8 @@ import {
   MatTable
 } from "@angular/material/table";
 import {EldenLocationService} from "@angularTopic/signal/signal-crud/service/elden-location.service";
+import {MatProgressSpinner} from "@angular/material/progress-spinner";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-elden-view-item',
@@ -39,7 +41,9 @@ import {EldenLocationService} from "@angularTopic/signal/signal-crud/service/eld
     MatRow,
     MatRowDef,
     MatHeaderRow,
-    MatHeaderRowDef
+    MatHeaderRowDef,
+    MatProgressSpinner,
+    NgIf
   ],
   templateUrl: './elden-view-item.component.html',
   styleUrl: './elden-view-item.component.css'
@@ -50,6 +54,8 @@ export class EldenViewItemComponent {
 
   locations = signal<elden.Location[]>([])
   locationsByPages = signal<elden.Location[]>([])
+
+  loading = signal<Boolean>(false);
 
   route = inject(ActivatedRoute)
   locationService = inject(EldenLocationService)
@@ -63,9 +69,10 @@ export class EldenViewItemComponent {
     this.loadLocationsPage()
   }
 
-
   private async loadLocationsPage() {
+    this.loading.set(true)
     const locations = await this.locationService.findLocations('asc', 0, 3)
     this.locationsByPages.set(locations)
+    this.loading.set(false);
   }
 }
