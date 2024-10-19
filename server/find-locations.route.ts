@@ -16,6 +16,8 @@ export function findLocations(req: Request, res: Response) {
     pageSize: number = req.query["pageSize"] ? parseInt(req.query["pageSize"] as string) : defaultConf.pageSize;
 
 
+  console.log(`sort Order: `, sortOrder, ` pageNumber: `, pageNumber, ` page Size `, pageSize);
+
   const allLocations: any[] = LOCATIONS
 
   if (sortOrder === 'desc') {
@@ -24,13 +26,14 @@ export function findLocations(req: Request, res: Response) {
     allLocations.sort()
   }
 
-  const startIndex = pageSize * (pageNumber - 1);
+  const startIndex = pageSize * (pageNumber);
+  console.log(`start index `, startIndex);
 
   const pagedLocations = allLocations.slice(startIndex, startIndex + pageSize);
 
 
   setTimeout(() => {
-    res.status(200).json({pagedLocations})
+    res.status(200).json({locations: pagedLocations})
   }, 1000)
 
 }

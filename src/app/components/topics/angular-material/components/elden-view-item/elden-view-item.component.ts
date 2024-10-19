@@ -1,4 +1,4 @@
-import {Component, inject, signal} from '@angular/core';
+import {AfterViewInit, Component, inject, signal, ViewChild} from '@angular/core';
 import {elden} from "../../../../../typings";
 import {ActivatedRoute} from "@angular/router";
 import {
@@ -21,6 +21,9 @@ import {
 import {EldenLocationService} from "@angularTopic/signal/signal-crud/service/elden-location.service";
 import {MatProgressSpinner} from "@angular/material/progress-spinner";
 import {NgIf} from "@angular/common";
+import {MatDivider} from "@angular/material/divider";
+import {MatPaginator} from "@angular/material/paginator";
+import {tap} from "rxjs";
 
 @Component({
   selector: 'app-elden-view-item',
@@ -43,12 +46,17 @@ import {NgIf} from "@angular/common";
     MatHeaderRow,
     MatHeaderRowDef,
     MatProgressSpinner,
-    NgIf
+    NgIf,
+    MatDivider,
+    MatPaginator
   ],
   templateUrl: './elden-view-item.component.html',
   styleUrl: './elden-view-item.component.css'
 })
-export class EldenViewItemComponent {
+export class EldenViewItemComponent implements AfterViewInit {
+
+  @ViewChild(MatPaginator)
+  paginator: MatPaginator
 
   item = signal<elden.Item | null>(null)
 
@@ -69,9 +77,20 @@ export class EldenViewItemComponent {
     this.loadLocationsPage()
   }
 
+  ngAfterViewInit(): void {
+    this.paginator.page
+      .pipe(
+        tap(()=> this.loadLocationsPage())
+      )
+      .subscribe()
+  }
+
   private async loadLocationsPage() {
     this.loading.set(true)
-    const locations = await this.locationService.findLocations('asc', 0, 3)
+    const locations = await this.locationService.findLocations(
+      'asc',
+      this.paginator?.pageIndex ?? 0,
+      this.paginator?.pageSize ?? 3)
     this.locationsByPages.set(locations)
     this.loading.set(false);
   }
