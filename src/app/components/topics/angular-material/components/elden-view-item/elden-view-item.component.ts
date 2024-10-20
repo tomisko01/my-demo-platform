@@ -23,7 +23,8 @@ import {MatProgressSpinner} from "@angular/material/progress-spinner";
 import {NgIf} from "@angular/common";
 import {MatDivider} from "@angular/material/divider";
 import {MatPaginator} from "@angular/material/paginator";
-import {tap} from "rxjs";
+import {merge, tap} from "rxjs";
+import {MatSort, MatSortHeader} from "@angular/material/sort";
 
 @Component({
   selector: 'app-elden-view-item',
@@ -48,7 +49,9 @@ import {tap} from "rxjs";
     MatProgressSpinner,
     NgIf,
     MatDivider,
-    MatPaginator
+    MatPaginator,
+    MatSort,
+    MatSortHeader
   ],
   templateUrl: './elden-view-item.component.html',
   styleUrl: './elden-view-item.component.css'
@@ -57,6 +60,9 @@ export class EldenViewItemComponent implements AfterViewInit {
 
   @ViewChild(MatPaginator)
   paginator: MatPaginator
+
+  @ViewChild(MatSort)
+  sort: MatSort
 
   item = signal<elden.Item | null>(null)
 
@@ -78,19 +84,21 @@ export class EldenViewItemComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.paginator.page
-      .pipe(
-        tap(()=> this.loadLocationsPage())
-      )
-      .subscribe()
+    merge(
+      this.sort.sortChange,
+      this.paginator.page
+    ).pipe(
+      tap(() => this.loadLocationsPage())
+    ).subscribe()
   }
 
   private async loadLocationsPage() {
     this.loading.set(true)
     const locations = await this.locationService.findLocations(
-      'asc',
+      this.sort?.direction ?? 'asc',
       this.paginator?.pageIndex ?? 0,
-      this.paginator?.pageSize ?? 3)
+      this.paginator?.pageSize ?? 3,
+      this.sort?.active ?? "name")
     this.locationsByPages.set(locations)
     this.loading.set(false);
   }

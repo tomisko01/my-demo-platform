@@ -9,7 +9,7 @@ export type GetLocationResponse = {
   locations: elden.Location[]
 }
 
-export type sortOrder = 'asc' | 'desc'
+export type sortOrder = 'asc' | 'desc' | ''
 
 @Injectable({
   providedIn: 'root'
@@ -52,11 +52,12 @@ export class EldenLocationService {
     return firstValueFrom(saveLocation$)
   }
 
-  async findLocations(sortOrder: sortOrder, pageNumber: number, pageSize: number) {
+  async findLocations(sortOrder: sortOrder, pageNumber: number, pageSize: number, sortColumn: string) {
     let params = new HttpParams()
     params = params.set('sortOrder', sortOrder)
     params = params.set('pageNumber', pageNumber)
     params = params.set('pageSize', pageSize)
+    params = params.set('sortColumn', sortColumn)
 
     const locations$ = this.http.get<GetLocationResponse>(`${this.env.apiRoot}/find-locations`, {params})
     const response = await firstValueFrom(locations$)
