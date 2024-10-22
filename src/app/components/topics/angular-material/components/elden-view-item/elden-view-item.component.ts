@@ -65,11 +65,10 @@ export class EldenViewItemComponent implements AfterViewInit {
   sort: MatSort
 
   item = signal<elden.Item | null>(null)
-
   locations = signal<elden.Location[]>([])
   locationsByPages = signal<elden.Location[]>([])
-
-  loading = signal<Boolean>(false);
+  loading = signal<Boolean>(false)
+  expandedLocation = signal<elden.Item | null>(null)
 
   route = inject(ActivatedRoute)
   locationService = inject(EldenLocationService)
@@ -90,6 +89,14 @@ export class EldenViewItemComponent implements AfterViewInit {
     ).pipe(
       tap(() => this.loadLocationsPage())
     ).subscribe()
+  }
+
+  onToggleLocation(location: elden.Item) {
+    if (location.id === this.expandedLocation()?.id) {
+      this.expandedLocation.set(null)
+    } else {
+      this.expandedLocation.set(location)
+    }
   }
 
   private async loadLocationsPage() {

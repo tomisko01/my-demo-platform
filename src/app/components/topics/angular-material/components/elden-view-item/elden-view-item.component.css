@@ -25,3 +25,7 @@
   background: rgba(0, 0, 0, 0.32);
   z-index: 10000;
 }
+
+.collapsed-detail{
+  display: none;
+}
