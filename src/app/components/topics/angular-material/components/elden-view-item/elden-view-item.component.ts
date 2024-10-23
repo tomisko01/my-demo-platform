@@ -20,11 +20,13 @@ import {
 } from "@angular/material/table";
 import {EldenLocationService} from "@angularTopic/signal/signal-crud/service/elden-location.service";
 import {MatProgressSpinner} from "@angular/material/progress-spinner";
-import {NgIf} from "@angular/common";
+import {getLocaleFirstDayOfWeek, NgIf} from "@angular/common";
 import {MatDivider} from "@angular/material/divider";
 import {MatPaginator} from "@angular/material/paginator";
 import {merge, tap} from "rxjs";
 import {MatSort, MatSortHeader} from "@angular/material/sort";
+import {SelectionModel} from "@angular/cdk/collections";
+import {MatCheckbox} from "@angular/material/checkbox";
 
 @Component({
   selector: 'app-elden-view-item',
@@ -51,7 +53,8 @@ import {MatSort, MatSortHeader} from "@angular/material/sort";
     MatDivider,
     MatPaginator,
     MatSort,
-    MatSortHeader
+    MatSortHeader,
+    MatCheckbox
   ],
   templateUrl: './elden-view-item.component.html',
   styleUrl: './elden-view-item.component.css'
@@ -70,10 +73,12 @@ export class EldenViewItemComponent implements AfterViewInit {
   loading = signal<Boolean>(false)
   expandedLocation = signal<elden.Item | null>(null)
 
+  selection = new SelectionModel<elden.Location>(true, [])
   route = inject(ActivatedRoute)
   locationService = inject(EldenLocationService)
 
   displayedColumns = ['name', 'region', 'description']
+  displayedColumnsWithSelection = ['select',...this.displayedColumns]
 
   constructor() {
     this.item.set(this.route.snapshot.data['item'])
@@ -108,5 +113,10 @@ export class EldenViewItemComponent implements AfterViewInit {
       this.sort?.active ?? "name")
     this.locationsByPages.set(locations)
     this.loading.set(false);
+  }
+
+  onLocationToggled(location: elden.Location) {
+    this.selection.toggle(location)
+    console.log(this.selection.selected)
   }
 }
