@@ -201,16 +201,20 @@
     </ng-container>
 
     <ng-container matColumnDef="expandedDetail">
-      <td mat-cell *matCellDef="let location" colspan="3">
+      <td mat-cell *matCellDef="let location" colspan="4">
         <p>{{ location.name }}</p>
         <img [src]="location.image">
       </td>
     </ng-container>
 
     <ng-container matColumnDef="select">
-      <th mat-header-cell *matHeaderCellDef></th>
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox [checked]="selection.selected.length === locationsByPages().length"></mat-checkbox>
+      </th>
       <td *matCellDef="let location" (click)="$event.stopPropagation()">
-        <mat-checkbox (change)="onLocationToggled(location)"></mat-checkbox>
+        <mat-checkbox (change)="onLocationToggled(location)"
+                      [checked]="selection.isSelected(location)">
+        </mat-checkbox>
       </td>
     </ng-container>
 
