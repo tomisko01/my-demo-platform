@@ -209,7 +209,10 @@
 
     <ng-container matColumnDef="select">
       <th mat-header-cell *matHeaderCellDef>
-        <mat-checkbox [checked]="selection.selected.length === locationsByPages().length"></mat-checkbox>
+        <mat-checkbox [checked]="selection.hasValue() && isAllSelected()"
+                      (click)="toggleAllSelection()">
+
+        </mat-checkbox>
       </th>
       <td *matCellDef="let location" (click)="$event.stopPropagation()">
         <mat-checkbox (change)="onLocationToggled(location)"

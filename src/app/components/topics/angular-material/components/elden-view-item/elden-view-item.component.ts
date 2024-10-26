@@ -78,7 +78,7 @@ export class EldenViewItemComponent implements AfterViewInit {
   locationService = inject(EldenLocationService)
 
   displayedColumns = ['name', 'region', 'description']
-  displayedColumnsWithSelection = ['select',...this.displayedColumns]
+  displayedColumnsWithSelection = ['select', ...this.displayedColumns]
 
   constructor() {
     this.item.set(this.route.snapshot.data['item'])
@@ -118,5 +118,17 @@ export class EldenViewItemComponent implements AfterViewInit {
   onLocationToggled(location: elden.Location) {
     this.selection.toggle(location)
     console.log(this.selection.selected)
+  }
+
+  isAllSelected(): boolean {
+    return this.selection.selected.length === this.locationsByPages().length
+  }
+
+  toggleAllSelection() {
+    if(this.isAllSelected()){
+      this.selection.clear()
+    } else {
+      this.selection.select(...this.locationsByPages())
+    }
   }
 }
