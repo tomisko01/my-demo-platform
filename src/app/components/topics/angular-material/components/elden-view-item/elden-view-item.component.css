@@ -1,4 +1,4 @@
-.locations-table{
+.locations-table {
   tr:hover {
     background: antiquewhite;
     cursor: pointer;
@@ -26,6 +26,11 @@
   z-index: 10000;
 }
 
-.collapsed-detail{
+.collapsed-detail {
   display: none;
+}
+
+.scrolling-container {
+  overflow: auto;
+  max-height: 10rem;
 }
