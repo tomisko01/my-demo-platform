@@ -33,4 +33,5 @@
 .scrolling-container {
   overflow: auto;
   max-height: 10rem;
+  max-width: 15rem;
 }
