@@ -1,0 +1,37 @@
+.locations-table {
+  tr:hover {
+    background: antiquewhite;
+    cursor: pointer;
+  }
+}
+
+.mat-column-name {
+  border-right: 1px solid black;
+}
+
+.mat-column-region {
+  padding-left: 0.5rem;
+}
+
+.spinner-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.32);
+  z-index: 10000;
+}
+
+.collapsed-detail {
+  display: none;
+}
+
+.scrolling-container {
+  overflow: auto;
+  max-height: 10rem;
+  max-width: 15rem;
+}
