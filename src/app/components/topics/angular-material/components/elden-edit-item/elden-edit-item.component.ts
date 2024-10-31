@@ -1,6 +1,18 @@
-import {Component, inject} from '@angular/core';
-import {FormBuilder} from "@angular/forms";
-import {MatDialogActions, MatDialogContent, MatDialogTitle} from "@angular/material/dialog";
+import {Component, Inject, inject} from '@angular/core';
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
+import {
+  MAT_DIALOG_DATA,
+  MatDialog,
+  MatDialogActions,
+  MatDialogConfig,
+  MatDialogContent,
+  MatDialogTitle
+} from "@angular/material/dialog";
+import {MatFormField} from "@angular/material/form-field";
+import {MatInput} from "@angular/material/input";
+import {elden} from "../../../../../typings";
+import {MatRadioButton, MatRadioGroup} from "@angular/material/radio";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-elden-edit-item',
@@ -8,15 +20,48 @@ import {MatDialogActions, MatDialogContent, MatDialogTitle} from "@angular/mater
   imports: [
     MatDialogTitle,
     MatDialogContent,
-    MatDialogActions
+    MatDialogActions,
+    MatFormField,
+    MatInput,
+    ReactiveFormsModule,
+    MatRadioButton,
+    MatRadioGroup,
+    MatButton
   ],
   templateUrl: './elden-edit-item.component.html',
   styleUrl: './elden-edit-item.component.css'
 })
 export class EldenEditItemComponent {
 
-  title: string;
+  title: string
 
   fb = inject(FormBuilder)
+  form: FormGroup = this.fb.group({
+    name: [this.item.name, Validators.required],
+    type: [this.item.type, Validators.required],
+    description: [this.item.description, Validators.required]
+  })
 
+  constructor(@Inject(MAT_DIALOG_DATA) private item: elden.Item) {
+  }
+
+  close() {
+
+  }
+
+  save() {
+
+  }
+}
+
+
+export function openEditItemDialog(dialog: MatDialog, item: elden.Item) {
+  const config = new MatDialogConfig()
+
+  config.autoFocus = true
+  config.data = {...item}
+
+  const dialogRef = dialog.open(EldenEditItemComponent, config)
+
+  return dialogRef.afterClosed()
 }

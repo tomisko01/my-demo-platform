@@ -1,13 +1,38 @@
-<p>elden edit item</p>
+<div class="create-item-form">
+  <div mat-dialog-title>
+    <h2>{{ title }}</h2>
+  </div>
 
-<div mat-dialog-title>
-  <h2>{{title}}</h2>
+  <mat-dialog-content [formGroup]="form">
+    <mat-form-field>
+      <input matInput
+             placeholder="Item Name"
+             formControlName="name">
+    </mat-form-field>
+    <mat-radio-group formControlName="type">
+      <mat-radio-button value="Reusable">
+        Reusable
+      </mat-radio-button>
+      <mat-radio-button value="Consumable">
+        Consumable
+      </mat-radio-button>
+      <mat-radio-button value="Other">
+        Other
+      </mat-radio-button>
+    </mat-radio-group>
 
-  <mat-dialog-content>
+    <mat-form-field>
+    <textarea matInput formControlName="description">
+
+    </textarea>
+    </mat-form-field>
 
   </mat-dialog-content>
 
   <mat-dialog-actions>
-
+    <button mat-raised-button
+    (click)="close()">Close</button>
+    <button mat-raised-button color="primary"
+    (click)="save()">Save</button>
   </mat-dialog-actions>
 </div>
