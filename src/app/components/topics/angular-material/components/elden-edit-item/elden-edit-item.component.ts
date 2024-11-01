@@ -5,7 +5,7 @@ import {
   MatDialog,
   MatDialogActions,
   MatDialogConfig,
-  MatDialogContent,
+  MatDialogContent, MatDialogRef,
   MatDialogTitle
 } from "@angular/material/dialog";
 import {MatFormField} from "@angular/material/form-field";
@@ -36,21 +36,21 @@ export class EldenEditItemComponent {
   title: string
 
   fb = inject(FormBuilder)
+  dialogRef = inject(MatDialogRef<EldenEditItemComponent>)
+  item = inject(MAT_DIALOG_DATA)
+
   form: FormGroup = this.fb.group({
     name: [this.item.name, Validators.required],
     type: [this.item.type, Validators.required],
     description: [this.item.description, Validators.required]
   })
 
-  constructor(@Inject(MAT_DIALOG_DATA) private item: elden.Item) {
-  }
-
   close() {
-
+    this.dialogRef.close()
   }
 
   save() {
-
+    this.dialogRef.close(this.form.value)
   }
 }
 
