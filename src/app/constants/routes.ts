@@ -48,6 +48,7 @@ import {DatePickerComponent} from "../components/topics/angular-material/date-pi
 import {CheckboxComponent} from "../components/topics/angular-material/checkbox/checkbox.component";
 import {TextAreaComponent} from "../components/topics/angular-material/text-area/text-area.component";
 import {TooltipComponent} from "../components/topics/angular-material/tooltip/tooltip.component";
+import {DragAndDropComponent} from "../components/topics/angular-material/drag-and-drop/drag-and-drop.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -173,6 +174,9 @@ export const routes: Routes = [
   }, {
     path: 'angularMaterial/tooltip',
     component: TooltipComponent,
+  }, {
+    path: 'angularMaterial/dragAndDrop',
+    component: DragAndDropComponent,
   },
   {
     path: 'elden',

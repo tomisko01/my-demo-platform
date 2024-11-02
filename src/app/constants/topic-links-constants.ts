@@ -483,6 +483,12 @@ export class TopicLinksConstants {
         title: 'Usage of tooltip',
         githubLinkNeeded: true,
         githubLink: this.angularMaterialTopicInRepo + 'tooltip/tooltip.component.ts',
+      }, {
+        name: 'Drag and drop',
+        routerLink: '/angularMaterial/dragAndDrop',
+        title: 'Usage of drag and drop',
+        githubLinkNeeded: true,
+        githubLink: this.angularMaterialTopicInRepo + 'drag-and-drop/drag-and-drop.component.ts',
       },
       {
         name: 'Form field',

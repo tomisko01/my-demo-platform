@@ -33,11 +33,12 @@ import {MatButton} from "@angular/material/button";
 })
 export class EldenEditItemComponent {
 
-  title: string
 
   fb = inject(FormBuilder)
   dialogRef = inject(MatDialogRef<EldenEditItemComponent>)
   item = inject(MAT_DIALOG_DATA)
+  title = this.item.name
+
 
   form: FormGroup = this.fb.group({
     name: [this.item.name, Validators.required],
