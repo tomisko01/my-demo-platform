@@ -1,5 +1,11 @@
 <div class="drag-n-drop-container">
   <div class="pending">
-
+    @for (loc of locations(); track loc.id) {
+      <pre>
+        <code >
+        {{ loc | json }}
+       </code>
+       </pre>
+    }
   </div>
 </div>

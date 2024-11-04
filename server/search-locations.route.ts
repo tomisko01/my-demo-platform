@@ -11,7 +11,7 @@ export function searchLocations(req: Request, res: Response) {
   const allLocations: any[] = LOCATIONS
 
   if (!query && !itemId) {
-    res.status(200).json({locations: []})
+    res.status(200).json({locations: allLocations})
     return
   }
 
