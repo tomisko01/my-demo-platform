@@ -1,6 +1,10 @@
 .drag-n-drop-container {
-  /*display: flex;*/
+  display: flex;
   /*justify-content: center;*/
+}
+
+.pending{
+  max-width: 25rem;
 }
 
 .location-list {
