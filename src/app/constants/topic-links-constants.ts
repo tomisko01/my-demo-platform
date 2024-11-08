@@ -489,6 +489,12 @@ export class TopicLinksConstants {
         title: 'Usage of drag and drop',
         githubLinkNeeded: true,
         githubLink: this.angularMaterialTopicInRepo + 'drag-and-drop/drag-and-drop.component.ts',
+      }, {
+        name: 'Grid list ',
+        routerLink: '/angularMaterial/gridList',
+        title: 'Responsive site with grid list',
+        githubLinkNeeded: true,
+        githubLink: this.angularMaterialTopicInRepo + 'grid-list/grid-list.component.ts',
       },
       {
         name: 'Form field',

@@ -49,6 +49,7 @@ import {CheckboxComponent} from "../components/topics/angular-material/checkbox/
 import {TextAreaComponent} from "../components/topics/angular-material/text-area/text-area.component";
 import {TooltipComponent} from "../components/topics/angular-material/tooltip/tooltip.component";
 import {DragAndDropComponent} from "../components/topics/angular-material/drag-and-drop/drag-and-drop.component";
+import {GridListComponent} from "../components/topics/angular-material/grid-list/grid-list.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -177,6 +178,9 @@ export const routes: Routes = [
   }, {
     path: 'angularMaterial/dragAndDrop',
     component: DragAndDropComponent,
+  }, {
+    path: 'angularMaterial/gridList',
+    component: GridListComponent,
   },
   {
     path: 'elden',
