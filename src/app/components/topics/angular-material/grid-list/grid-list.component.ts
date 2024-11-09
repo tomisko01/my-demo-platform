@@ -3,15 +3,35 @@ import {EldenItemCardListComponent} from "../components/elden-item-card-list/eld
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
 import {elden} from "../../../../typings";
 import {EldenItemHttpClientService} from "@angularTopic/signal/signal-crud/service/elden-item-http-client.service";
+import {MatGridList, MatGridTile} from "@angular/material/grid-list";
+import {MatButton} from "@angular/material/button";
+import {
+  MatCard,
+  MatCardActions,
+  MatCardContent,
+  MatCardHeader,
+  MatCardImage,
+  MatCardMdImage, MatCardTitle
+} from "@angular/material/card";
 
 @Component({
   selector: 'app-grid-list',
   standalone: true,
-    imports: [
-        EldenItemCardListComponent,
-        MatTab,
-        MatTabGroup
-    ],
+  imports: [
+    EldenItemCardListComponent,
+    MatTab,
+    MatTabGroup,
+    MatGridList,
+    MatGridTile,
+    MatButton,
+    MatCard,
+    MatCardActions,
+    MatCardContent,
+    MatCardHeader,
+    MatCardImage,
+    MatCardMdImage,
+    MatCardTitle
+  ],
   templateUrl: './grid-list.component.html',
   styleUrl: './grid-list.component.css'
 })

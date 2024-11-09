@@ -1,4 +1,37 @@
 <mat-tab-group>
+  <mat-tab label="grid">
+    <mat-grid-list [cols]="3" [rowHeight]="'20rem'">
+      @for (item of reusableItems(); track item.id) {
+        <mat-grid-tile>
+          <mat-card class="item-card mat-elevation-z6">
+            <mat-card-header>
+              <mat-card-title>
+                {{ item.name }}
+              </mat-card-title>
+            </mat-card-header>
+
+            <img mat-card-image matCardImageMedium [src]="item.image">
+
+            <mat-card-content>
+              <p>{{ item.description }}</p>
+            </mat-card-content>
+
+           <!-- <mat-card-actions class="item-actions">
+              <button mat-raised-button color="primary"
+                      [routerLink]="['item', item.id]">
+                View Item
+              </button>
+              <button mat-raised-button color="accent"
+                      (click)="editItem(item)">
+                Edit Item
+              </button>
+            </mat-card-actions>-->
+          </mat-card>
+
+        </mat-grid-tile>
+      }
+    </mat-grid-list>
+  </mat-tab>
   <mat-tab label="Reusable">
     <app-elden-item-card-list [items]="reusableItems()">
 
