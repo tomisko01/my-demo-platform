@@ -13,6 +13,8 @@ import {
   MatCardImage,
   MatCardMdImage, MatCardTitle
 } from "@angular/material/card";
+import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
+import {single} from "rxjs";
 
 @Component({
   selector: 'app-grid-list',
@@ -38,6 +40,8 @@ import {
 export class GridListComponent {
 
   #items = signal<elden.Item[]>([])
+  cols = signal<number>(3)
+  rowHeight = signal<string>('20rem')
   reusableItems = computed(() => {
     const items = this.#items()
 
@@ -50,9 +54,34 @@ export class GridListComponent {
   })
 
   eldenItemService = inject(EldenItemHttpClientService)
+  responsive = inject(BreakpointObserver)
 
   constructor() {
     this.loadItems();
+    this.responsive.observe([
+      Breakpoints.TabletPortrait,
+      Breakpoints.TabletLandscape,
+      Breakpoints.HandsetPortrait,
+      Breakpoints.HandsetLandscape
+    ])
+      .subscribe((res) => {
+        const breakpoints = res.breakpoints
+        console.log(breakpoints)
+
+        if (breakpoints[Breakpoints.TabletPortrait]) {
+          this.cols.set(1)
+        } else if (breakpoints[Breakpoints.TabletLandscape]) {
+          this.cols.set(2)
+          this.rowHeight.set('25rem')
+        } else if (breakpoints[Breakpoints.HandsetPortrait]) {
+          this.cols.set(1)
+        } else if (breakpoints[Breakpoints.HandsetLandscape]) {
+          this.cols.set(2)
+        } else {
+          this.cols.set(3)
+          this.rowHeight.set('20rem')
+        }
+      })
   }
 
   private async loadItems() {

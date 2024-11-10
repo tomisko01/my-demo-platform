@@ -1,6 +1,6 @@
 <mat-tab-group>
   <mat-tab label="grid">
-    <mat-grid-list [cols]="3" [rowHeight]="'20rem'">
+    <mat-grid-list [cols]="cols()" [rowHeight]="rowHeight()">
       @for (item of reusableItems(); track item.id) {
         <mat-grid-tile>
           <mat-card class="item-card mat-elevation-z6">
