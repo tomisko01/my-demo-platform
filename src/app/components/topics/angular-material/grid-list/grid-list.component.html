@@ -1,6 +1,7 @@
 <mat-tab-group>
   <mat-tab label="grid">
-    <mat-grid-list [cols]="cols()" [rowHeight]="rowHeight()">
+    <mat-grid-list [cols]="cols()" [rowHeight]="rowHeight()"
+                   [ngClass]="{'handset-portrait': handsetPortrait()}">
       @for (item of reusableItems(); track item.id) {
         <mat-grid-tile>
           <mat-card class="item-card mat-elevation-z6">
@@ -16,16 +17,16 @@
               <p>{{ item.description }}</p>
             </mat-card-content>
 
-           <!-- <mat-card-actions class="item-actions">
-              <button mat-raised-button color="primary"
-                      [routerLink]="['item', item.id]">
-                View Item
-              </button>
-              <button mat-raised-button color="accent"
-                      (click)="editItem(item)">
-                Edit Item
-              </button>
-            </mat-card-actions>-->
+            <!-- <mat-card-actions class="item-actions">
+               <button mat-raised-button color="primary"
+                       [routerLink]="['item', item.id]">
+                 View Item
+               </button>
+               <button mat-raised-button color="accent"
+                       (click)="editItem(item)">
+                 Edit Item
+               </button>
+             </mat-card-actions>-->
           </mat-card>
 
         </mat-grid-tile>
