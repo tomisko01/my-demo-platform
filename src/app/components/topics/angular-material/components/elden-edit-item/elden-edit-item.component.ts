@@ -33,7 +33,6 @@ import {MatButton} from "@angular/material/button";
 })
 export class EldenEditItemComponent {
 
-
   fb = inject(FormBuilder)
   dialogRef = inject(MatDialogRef<EldenEditItemComponent>)
   item = inject(MAT_DIALOG_DATA)
@@ -56,11 +55,14 @@ export class EldenEditItemComponent {
 }
 
 
-export function openEditItemDialog(dialog: MatDialog, item: elden.Item) {
+export function openEditItemDialog(dialog: MatDialog, item: elden.Item, panelClass?: string) {
   const config = new MatDialogConfig()
 
   config.autoFocus = true
   config.data = {...item}
+  if (panelClass) {
+    config.panelClass = panelClass
+  }
 
   const dialogRef = dialog.open(EldenEditItemComponent, config)
 

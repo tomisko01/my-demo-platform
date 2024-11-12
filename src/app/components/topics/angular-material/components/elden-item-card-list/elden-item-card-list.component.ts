@@ -38,7 +38,6 @@ export class EldenItemCardListComponent {
 
   dialog = inject(MatDialog)
 
-
   editItem(item: elden.Item) {
     openEditItemDialog(this.dialog, item)
       .pipe(

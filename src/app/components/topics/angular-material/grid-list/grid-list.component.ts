@@ -14,8 +14,11 @@ import {
   MatCardMdImage, MatCardTitle
 } from "@angular/material/card";
 import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
-import {single} from "rxjs";
+import {filter, single} from "rxjs";
 import {NgClass} from "@angular/common";
+import {RouterLink} from "@angular/router";
+import {openEditItemDialog} from "../components/elden-edit-item/elden-edit-item.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-grid-list',
@@ -34,7 +37,8 @@ import {NgClass} from "@angular/common";
     MatCardImage,
     MatCardMdImage,
     MatCardTitle,
-    NgClass
+    NgClass,
+    RouterLink
   ],
   templateUrl: './grid-list.component.html',
   styleUrl: './grid-list.component.css'
@@ -59,6 +63,7 @@ export class GridListComponent {
 
   eldenItemService = inject(EldenItemHttpClientService)
   responsive = inject(BreakpointObserver)
+  dialog = inject(MatDialog)
 
   constructor() {
     this.loadItems();
@@ -96,5 +101,14 @@ export class GridListComponent {
     } catch (error) {
       console.error(error)
     }
+  }
+
+  editItem(item: elden.Item) {
+    openEditItemDialog(this.dialog, item, 'modal-panel')
+      .pipe(
+        filter(val => !!val))
+      .subscribe(
+        value => console.log(`new item value: `, value)
+      )
   }
 }
