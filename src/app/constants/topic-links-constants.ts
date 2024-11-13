@@ -490,11 +490,17 @@ export class TopicLinksConstants {
         githubLinkNeeded: true,
         githubLink: this.angularMaterialTopicInRepo + 'drag-and-drop/drag-and-drop.component.ts',
       }, {
-        name: 'Grid list ',
+        name: 'Grid list',
         routerLink: '/angularMaterial/gridList',
         title: 'Responsive site with grid list',
         githubLinkNeeded: true,
         githubLink: this.angularMaterialTopicInRepo + 'grid-list/grid-list.component.ts',
+      },{
+        name: 'Tree',
+        routerLink: '/angularMaterial/tree',
+        title: 'Usage of mat tree',
+        githubLinkNeeded: true,
+        githubLink: this.angularMaterialTopicInRepo + 'tree/tree.component.ts',
       },
       {
         name: 'Form field',

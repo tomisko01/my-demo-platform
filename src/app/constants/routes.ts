@@ -50,6 +50,7 @@ import {TextAreaComponent} from "../components/topics/angular-material/text-area
 import {TooltipComponent} from "../components/topics/angular-material/tooltip/tooltip.component";
 import {DragAndDropComponent} from "../components/topics/angular-material/drag-and-drop/drag-and-drop.component";
 import {GridListComponent} from "../components/topics/angular-material/grid-list/grid-list.component";
+import {TreeComponent} from "../components/topics/angular-material/tree/tree.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -181,6 +182,9 @@ export const routes: Routes = [
   }, {
     path: 'angularMaterial/gridList',
     component: GridListComponent,
+  }, {
+    path: 'angularMaterial/tree',
+    component: TreeComponent,
   },
   {
     path: 'elden',
