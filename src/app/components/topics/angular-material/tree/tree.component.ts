@@ -5,7 +5,7 @@ import {
   MatTree,
   MatTreeNestedDataSource,
   MatTreeNode,
-  MatTreeNodeDef,
+  MatTreeNodeDef, MatTreeNodeOutlet,
   MatTreeNodeToggle
 } from "@angular/material/tree";
 import {TopicNode} from "../../../../typings";
@@ -23,7 +23,8 @@ import {MatIcon} from "@angular/material/icon";
     MatTreeNodeDef,
     MatNestedTreeNode,
     MatIconButton,
-    MatIcon
+    MatIcon,
+    MatTreeNodeOutlet
   ],
   templateUrl: './tree.component.html',
   styleUrl: './tree.component.css'
