@@ -9,6 +9,7 @@ import {
   MatTreeNode,
   MatTreeNodeDef,
   MatTreeNodeOutlet,
+  MatTreeNodePadding,
   MatTreeNodeToggle
 } from "@angular/material/tree";
 import {TopicNode} from "../../../../typings";
@@ -33,7 +34,8 @@ interface ExampleFlatNode {
     MatNestedTreeNode,
     MatIconButton,
     MatIcon,
-    MatTreeNodeOutlet
+    MatTreeNodeOutlet,
+    MatTreeNodePadding
   ],
   templateUrl: './tree.component.html',
   styleUrl: './tree.component.css'
@@ -58,19 +60,25 @@ export class TreeComponent {
     node => node.children
   )
 
-  flatDataSource = new MatTreeFlatDataSource()
   flatTreeCtrl = new FlatTreeControl<ExampleFlatNode>(
     node => node.level,
     node => node.expandable
   )
+  flatDataSource = new MatTreeFlatDataSource(this.flatTreeCtrl, this.treeFlattener)
 
   constructor() {
     this.nestedDataSource.data = this.constants.TREE_DATA
+    this.flatDataSource.data = this.constants.TREE_DATA
   }
 
   //todo add typings
   hasNestedChild(index: number, nodeData: any): boolean {
     return nodeData?.children?.length > 0
   };
+
+  //todo fix icon for flat expanded node
+  hasFlatChild(index: number, node: ExampleFlatNode): boolean {
+    return node.expandable
+  }
 
 }
