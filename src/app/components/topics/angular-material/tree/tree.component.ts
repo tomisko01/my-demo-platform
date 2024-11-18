@@ -71,12 +71,10 @@ export class TreeComponent {
     this.flatDataSource.data = this.constants.TREE_DATA
   }
 
-  //todo add typings
-  hasNestedChild(index: number, nodeData: any): boolean {
-    return nodeData?.children?.length > 0
+  hasNestedChild(index: number, nodeData: TopicNode): boolean {
+    return !!nodeData.children && nodeData?.children?.length > 0
   };
 
-  //todo fix icon for flat expanded node
   hasFlatChild(index: number, node: ExampleFlatNode): boolean {
     return node.expandable
   }
