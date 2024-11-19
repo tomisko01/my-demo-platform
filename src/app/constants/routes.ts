@@ -51,6 +51,9 @@ import {TooltipComponent} from "../components/topics/angular-material/tooltip/to
 import {DragAndDropComponent} from "../components/topics/angular-material/drag-and-drop/drag-and-drop.component";
 import {GridListComponent} from "../components/topics/angular-material/grid-list/grid-list.component";
 import {TreeComponent} from "../components/topics/angular-material/tree/tree.component";
+import {
+  VirtualScrollingComponent
+} from "../components/topics/angular-material/virtual-scrolling/virtual-scrolling.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -185,6 +188,9 @@ export const routes: Routes = [
   }, {
     path: 'angularMaterial/tree',
     component: TreeComponent,
+  }, {
+    path: 'angularMaterial/virtualScrolling',
+    component: VirtualScrollingComponent,
   },
   {
     path: 'elden',

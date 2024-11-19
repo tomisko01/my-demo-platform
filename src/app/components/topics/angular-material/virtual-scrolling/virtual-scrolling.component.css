@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+}
+
+.scrolling-container {
+  display: block;
+  width: 200px;
+  height: 200px;
+  overflow-y: scroll;
+}

@@ -501,6 +501,12 @@ export class TopicLinksConstants {
         title: 'Usage of mat tree',
         githubLinkNeeded: true,
         githubLink: this.angularMaterialTopicInRepo + 'tree/tree.component.ts',
+      },{
+        name: 'Virtual scrolling',
+        routerLink: '/angularMaterial/virtualScrolling',
+        title: 'Usage of mat tree',
+        githubLinkNeeded: true,
+        githubLink: this.angularMaterialTopicInRepo + 'virtual-scrolling/virtual-scrolling.component.ts',
       },
       {
         name: 'Form field',
