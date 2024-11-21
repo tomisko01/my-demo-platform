@@ -504,9 +504,15 @@ export class TopicLinksConstants {
       },{
         name: 'Virtual scrolling',
         routerLink: '/angularMaterial/virtualScrolling',
-        title: 'Usage of mat tree',
+        title: 'Usage of virtual scroll for large amount of data',
         githubLinkNeeded: true,
         githubLink: this.angularMaterialTopicInRepo + 'virtual-scrolling/virtual-scrolling.component.ts',
+      },{
+        name: 'Custom theme',
+        routerLink: '/angularMaterial/customTheme',
+        title: 'Create own theme',
+        githubLinkNeeded: true,
+        githubLink: this.angularMaterialTopicInRepo + 'custom-theme/custom-theme.component.ts',
       },
       {
         name: 'Form field',

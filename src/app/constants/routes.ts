@@ -54,6 +54,7 @@ import {TreeComponent} from "../components/topics/angular-material/tree/tree.com
 import {
   VirtualScrollingComponent
 } from "../components/topics/angular-material/virtual-scrolling/virtual-scrolling.component";
+import {CustomThemeComponent} from "../components/topics/angular-material/custom-theme/custom-theme.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -191,6 +192,9 @@ export const routes: Routes = [
   }, {
     path: 'angularMaterial/virtualScrolling',
     component: VirtualScrollingComponent,
+  }, {
+    path: 'angularMaterial/customTheme',
+    component: CustomThemeComponent,
   },
   {
     path: 'elden',
