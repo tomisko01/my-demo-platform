@@ -55,6 +55,9 @@ import {
   VirtualScrollingComponent
 } from "../components/topics/angular-material/virtual-scrolling/virtual-scrolling.component";
 import {CustomThemeComponent} from "../components/topics/angular-material/custom-theme/custom-theme.component";
+import {
+  TemplateDrivenFormComponent
+} from "../components/topics/angular-material/form/template-driven-form/template-driven-form.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -195,6 +198,9 @@ export const routes: Routes = [
   }, {
     path: 'angularMaterial/customTheme',
     component: CustomThemeComponent,
+  }, {
+    path: 'angularMaterial/form/templateDrivenForm',
+    component: TemplateDrivenFormComponent,
   },
   {
     path: 'elden',
