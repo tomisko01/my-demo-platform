@@ -1,0 +1,13 @@
+.login-page {
+  max-width: 350px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.test-input {
+  border-bottom: 1px solid grey;
+  margin-bottom: 10px;
+}
