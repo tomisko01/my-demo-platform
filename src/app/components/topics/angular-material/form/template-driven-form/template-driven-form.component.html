@@ -6,14 +6,25 @@
 
       <mat-form-field>
 
-        <input matInput type="email" name="email"
-               placeholder="Email">
+        <input #email="ngModel"
+               matInput
+               type="email"
+               name="email"
+               ngModel
+               placeholder="Email"
+               required>
 
       </mat-form-field>
 
       <mat-form-field>
 
-        <input matInput type="password" placeholder="Password">
+        <input #password="ngModel"
+               matInput
+               type="password"
+               placeholder="Password"
+               name="password"
+               ngModel
+               required>
 
       </mat-form-field>
 
