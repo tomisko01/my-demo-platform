@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
-import {MatFormField} from "@angular/material/form-field";
+import {MatError, MatFormField} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
 import {FormsModule, NgForm} from "@angular/forms";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-template-driven-form',
@@ -15,7 +16,9 @@ import {FormsModule, NgForm} from "@angular/forms";
     MatFormField,
     MatInput,
     MatButton,
-    FormsModule
+    FormsModule,
+    MatError,
+    NgIf
   ],
   templateUrl: './template-driven-form.component.html',
   styleUrl: './template-driven-form.component.css'

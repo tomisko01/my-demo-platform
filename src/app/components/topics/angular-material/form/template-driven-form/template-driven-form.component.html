@@ -13,6 +13,9 @@
                ngModel
                placeholder="Email"
                required>
+        <mat-error *ngIf="email.errors?.['required']">
+          The email is mandatory.
+        </mat-error>
 
       </mat-form-field>
 
