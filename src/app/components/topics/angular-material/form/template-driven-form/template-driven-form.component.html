@@ -12,9 +12,19 @@
                name="email"
                ngModel
                placeholder="Email"
-               required>
+               required
+               minlength="3"
+               maxlength="20"
+               email
+        pattern="[a-z]+">
         <mat-error *ngIf="email.errors?.['required']">
           The email is mandatory.
+        </mat-error>
+        <mat-error *ngIf="email.errors?.['minlength']">
+          Email is to short
+        </mat-error>
+        <mat-error *ngIf="email.errors?.['email']">
+          This is not a valid email
         </mat-error>
 
       </mat-form-field>
@@ -37,6 +47,9 @@
       </button>
 
     </form>
+    <div>
+      {{ email.errors | json }}
+    </div>
 
   </mat-card-content>
 </mat-card>
