@@ -26,7 +26,7 @@ import {JsonPipe, NgIf} from "@angular/common";
 })
 export class TemplateDrivenFormComponent {
 
-  onLogin(loginForm: NgForm) {
-    console.log(loginForm.value, loginForm.valid)
+  onLogin(loginForm: NgForm, $event: any) {
+    console.log(loginForm.value, loginForm.valid, $event)
   }
 }
