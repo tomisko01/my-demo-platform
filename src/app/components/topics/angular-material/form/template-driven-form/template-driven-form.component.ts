@@ -29,4 +29,8 @@ export class TemplateDrivenFormComponent {
   onLogin(loginForm: NgForm, $event: any) {
     console.log(loginForm.value, loginForm.valid, $event)
   }
+
+  onEmailModelChange($event: any) {
+    console.log($event)
+  }
 }
