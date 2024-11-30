@@ -20,6 +20,8 @@
                email
                (ngModelChange)="onEmailModelChange($event)"
                [ngModelOptions]="{updateOn: 'blur'}">
+        <!--        [ngModelOptions]="{name: 'EmailXX'}"-->
+        <!--        [ngModelOptions]="{standalone: 'true'}"-->
         <!--        [ngModelOptions]="{updateOn: 'submit'}"-->
         <!--        pattern="[a-z]+"-->
         <mat-error *ngIf="email.errors?.['required']">
@@ -55,7 +57,7 @@
 
     </form>
     <div>
-      {{ email.errors | json }}
+      {{ loginForm.value | json }}
     </div>
 
   </mat-card-content>
