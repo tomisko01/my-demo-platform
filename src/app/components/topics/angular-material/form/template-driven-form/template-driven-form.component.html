@@ -44,7 +44,16 @@
                placeholder="Password"
                name="password"
                ngModel
-               required>
+               required
+               passwordStrength>
+
+        <mat-error *ngIf="password.errors?.['required']">
+          Password is mandatory
+        </mat-error>
+
+        <mat-error *ngIf="password.errors?.['passwordStrength']">
+          Password must contain at least one lower case, upper case character and one number
+        </mat-error>
 
       </mat-form-field>
 
