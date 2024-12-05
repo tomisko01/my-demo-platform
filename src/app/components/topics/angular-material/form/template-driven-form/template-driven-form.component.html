@@ -51,22 +51,17 @@
         <mat-error *ngIf="password.errors?.['required']">
           Password is mandatory.
         </mat-error>
-
-
-        <ng-container *ngIf="password.errors | onlyOneError:['minlength', 'passwordStrength'] as error">
-          <mat-error *ngIf="error['minlength']">
-            Password should have at least {{ error.minlength.requiredLength }} characters.
-          </mat-error>
-
-          <mat-error *ngIf="error['passwordStrength']">
-            Password must contain at least one lower case, upper case character and one number.
-          </mat-error>
-
-        </ng-container>
-
-
       </mat-form-field>
+      <ng-container *ngIf="password.errors | onlyOneError:['minlength', 'passwordStrength'] as error">
+        <div class="field-message" *ngIf="error['minlength']">
+          Password should have at least {{ error.minlength.requiredLength }} characters.
+        </div>
 
+        <div class="field-message" *ngIf="error['passwordStrength']">
+          Password must contain at least one lower case, upper case character and one number.
+        </div>
+
+      </ng-container>
       <button mat-raised-button
               color="primary"
               type="submit"

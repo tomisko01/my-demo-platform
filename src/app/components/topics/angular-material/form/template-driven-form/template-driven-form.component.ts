@@ -6,6 +6,7 @@ import {MatButton} from "@angular/material/button";
 import {FormsModule, NgForm} from "@angular/forms";
 import {JsonPipe, NgIf} from "@angular/common";
 import {PasswordStrengthDirective} from "../../components/password-strength/password-strength.directive";
+import {OnlyOneErrorPipe} from "../../components/only-one-error/only-one-error.pipe";
 
 @Component({
   selector: 'app-template-driven-form',
@@ -21,7 +22,8 @@ import {PasswordStrengthDirective} from "../../components/password-strength/pass
     MatError,
     NgIf,
     JsonPipe,
-    PasswordStrengthDirective
+    PasswordStrengthDirective,
+    OnlyOneErrorPipe
   ],
   templateUrl: './template-driven-form.component.html',
   styleUrl: './template-driven-form.component.css'
