@@ -58,6 +58,7 @@ import {CustomThemeComponent} from "../components/topics/angular-material/custom
 import {
   TemplateDrivenFormComponent
 } from "../components/topics/angular-material/form/template-driven-form/template-driven-form.component";
+import {ReactiveFormComponent} from "../components/topics/angular-material/form/reactive-form/reactive-form.component";
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -201,6 +202,9 @@ export const routes: Routes = [
   }, {
     path: 'angularMaterial/form/templateDrivenForm',
     component: TemplateDrivenFormComponent,
+  }, {
+    path: 'angularMaterial/form/reactiveForm',
+    component: ReactiveFormComponent,
   },
   {
     path: 'elden',

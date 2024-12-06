@@ -564,6 +564,13 @@ export class TopicLinksConstants {
             title: 'Usage of template driven form',
             githubLinkNeeded: true,
             githubLink: this.angularMaterialTopicInRepo + 'template-driven-form/template-driven-form.component.ts',
+          },
+          {
+            name: 'Reactive form',
+            routerLink: '/angularMaterial/form/reactiveForm',
+            title: 'Usage of reactive form',
+            githubLinkNeeded: true,
+            githubLink: this.angularMaterialTopicInRepo + 'reactive-form/reactive-form.component.ts',
           }
         ]
       }
