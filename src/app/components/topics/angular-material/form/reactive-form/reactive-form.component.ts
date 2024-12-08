@@ -5,6 +5,7 @@ import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {JsonPipe} from "@angular/common";
+import {createPasswordStrengthValidator} from "../../components/password-strength/password-strength.validator";
 
 @Component({
   selector: 'app-reactive-form',
@@ -24,12 +25,19 @@ import {JsonPipe} from "@angular/common";
 })
 export class ReactiveFormComponent {
 
+  email = new FormControl('', {
+    validators: [Validators.required, Validators.email],
+    updateOn: 'blur'
+  })
+
   form = new FormGroup({
-    email: new FormControl('', {
-      validators: [Validators.required, Validators.email]
-    }),
+    email: this.email,
     password: new FormControl('', {
-      validators: [Validators.required, Validators.minLength(8)]
+      validators: [
+        Validators.required,
+        Validators.minLength(8),
+        createPasswordStrengthValidator()
+      ]
     }),
   })
 
