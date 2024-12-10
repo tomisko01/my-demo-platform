@@ -1,11 +1,12 @@
 import {Component, inject} from '@angular/core';
 import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
-import {MatFormField} from "@angular/material/form-field";
+import {MatError, MatFormField} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {JsonPipe} from "@angular/common";
+import {JsonPipe, NgIf} from "@angular/common";
 import {createPasswordStrengthValidator} from "../../components/password-strength/password-strength.validator";
+import {OnlyOneErrorPipe} from "../../components/only-one-error/only-one-error.pipe";
 
 @Component({
   selector: 'app-reactive-form',
@@ -18,7 +19,10 @@ import {createPasswordStrengthValidator} from "../../components/password-strengt
     MatInput,
     MatButton,
     ReactiveFormsModule,
-    JsonPipe
+    JsonPipe,
+    MatError,
+    NgIf,
+    OnlyOneErrorPipe
   ],
   templateUrl: './reactive-form.component.html',
   styleUrl: './reactive-form.component.css'
@@ -53,5 +57,13 @@ export class ReactiveFormComponent {
       createPasswordStrengthValidator()
     ]]
   })
+
+  get email() {
+    return this.form.controls['email']
+  }
+
+  get password(){
+    return this.form.controls['password']
+  }
 
 }
