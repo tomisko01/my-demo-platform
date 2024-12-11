@@ -47,10 +47,10 @@ export class ReactiveFormComponent {
     }),
   })*/
   form = this.formBuilder.group({
-    email: ['', {
+    email: this.formBuilder.nonNullable.control('', {
       validators: [Validators.required, Validators.email],
       updateOn: 'blur'
-    }],
+    }),
     password: ['', [
       Validators.required,
       Validators.minLength(8),
@@ -66,4 +66,7 @@ export class ReactiveFormComponent {
     return this.form.controls['password']
   }
 
+  resetForm() {
+    this.form.reset()
+  }
 }
