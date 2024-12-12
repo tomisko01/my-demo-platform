@@ -571,6 +571,13 @@ export class TopicLinksConstants {
             title: 'Usage of reactive form',
             githubLinkNeeded: true,
             githubLink: this.angularMaterialTopicInRepo + 'reactive-form/reactive-form.component.ts',
+          },
+          {
+            name: 'Advanced form',
+            routerLink: '/angularMaterial/form/advancedForm',
+            title: 'Some advanced form example',
+            githubLinkNeeded: true,
+            githubLink: this.angularMaterialTopicInRepo + 'advanced-form/advanced-form.component.ts',
           }
         ]
       }
