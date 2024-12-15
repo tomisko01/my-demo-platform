@@ -4,6 +4,7 @@ import {MatError, MatFormField, MatHint} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {itemNameValidator} from "../../../../components/item-name-validator/item-name.validator";
 import {NgIf} from "@angular/common";
+import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
 
 @Component({
   selector: 'app-advanced-form-step1',
@@ -14,7 +15,10 @@ import {NgIf} from "@angular/common";
     MatInput,
     MatHint,
     MatError,
-    NgIf
+    NgIf,
+    MatDatepickerToggle,
+    MatDatepicker,
+    MatDatepickerInput
   ],
   templateUrl: './advanced-form-step1.component.html',
   styleUrl: './advanced-form-step1.component.css'
@@ -31,7 +35,8 @@ export class AdvancedFormStep1Component {
         Validators.maxLength(60)],
       asyncValidators: [itemNameValidator()],
       updateOn: 'blur'
-    }]
+    }],
+    someDate: [new Date(), Validators.required]
   })
 
   get itemName() {

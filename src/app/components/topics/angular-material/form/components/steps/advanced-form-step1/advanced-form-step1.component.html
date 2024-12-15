@@ -8,4 +8,13 @@
     <mat-error *ngIf="itemName.errors?.['titleExists']">
       This name is already used</mat-error>
   </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Some date"
+           [matDatepicker]="datePicker"
+           formControlName="someDate">
+    <mat-datepicker-toggle matSuffix
+                           [for]="datePicker"></mat-datepicker-toggle>
+    <mat-datepicker #datePicker></mat-datepicker>
+  </mat-form-field>
 </div>
