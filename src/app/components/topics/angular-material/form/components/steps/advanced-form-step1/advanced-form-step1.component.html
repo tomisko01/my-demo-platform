@@ -10,11 +10,17 @@
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Some date"
-           [matDatepicker]="datePicker"
+    <mat-label>Choose a date</mat-label>
+    <input matInput
+           [matDatepicker]="someDatePicker"
            formControlName="someDate">
-    <mat-datepicker-toggle matSuffix
-                           [for]="datePicker"></mat-datepicker-toggle>
-    <mat-datepicker #datePicker></mat-datepicker>
+    <mat-datepicker-toggle matIconSuffix
+                           [for]="someDatePicker"></mat-datepicker-toggle>
+    <mat-datepicker #someDatePicker></mat-datepicker>
   </mat-form-field>
+
+  <mat-checkbox color="primary"
+                formControlName="someFlag"> Some flag
+
+  </mat-checkbox>
 </div>

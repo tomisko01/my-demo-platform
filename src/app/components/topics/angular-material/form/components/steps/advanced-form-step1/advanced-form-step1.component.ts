@@ -1,10 +1,11 @@
 import {Component, inject} from '@angular/core';
 import {FormBuilder, ReactiveFormsModule, Validators} from "@angular/forms";
-import {MatError, MatFormField, MatHint} from "@angular/material/form-field";
+import {MatError, MatFormField, MatHint, MatLabel, MatSuffix} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {itemNameValidator} from "../../../../components/item-name-validator/item-name.validator";
 import {NgIf} from "@angular/common";
 import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
+import {MatCheckbox} from "@angular/material/checkbox";
 
 @Component({
   selector: 'app-advanced-form-step1',
@@ -18,7 +19,10 @@ import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/m
     NgIf,
     MatDatepickerToggle,
     MatDatepicker,
-    MatDatepickerInput
+    MatDatepickerInput,
+    MatCheckbox,
+    MatLabel,
+    MatSuffix
   ],
   templateUrl: './advanced-form-step1.component.html',
   styleUrl: './advanced-form-step1.component.css'
@@ -36,7 +40,8 @@ export class AdvancedFormStep1Component {
       asyncValidators: [itemNameValidator()],
       updateOn: 'blur'
     }],
-    someDate: [new Date(), Validators.required]
+    someDate: [new Date(), Validators.required],
+    someFlag: [false, Validators.requiredTrue]
   })
 
   get itemName() {
