@@ -1,18 +1,39 @@
 <div class="create-item-panel data-form">
   <h3 class="title">Create new item</h3>
   <div>
-    <mat-horizontal-stepper class="mat-elevation-z7">
-      <mat-step>
+    <mat-horizontal-stepper class="mat-elevation-z7"
+                            linear="true">
+      <mat-step [stepControl]="step1.form">
         <ng-template matStepLabel>
           Item landing page
         </ng-template>
 
-        <app-advanced-form-step1></app-advanced-form-step1>
+        <app-advanced-form-step1 #step1></app-advanced-form-step1>
 
         <div class="stepper-buttons">
           <button mat-raised-button color="primary" matStepperNext>
             Continue to step 2
           </button>
+        </div>
+      </mat-step>
+
+      <mat-step #step2>
+        <app-advanced-form-step2>
+        </app-advanced-form-step2>
+
+        <ng-template matStepLabel>
+          Item details
+        </ng-template>
+
+        <div class="stepper-buttons">
+          <button mat-raised-button color="secondary" matStepperPrevious>
+            Back
+          </button>
+
+          <button mat-raised-button color="primary" matStepperNext>
+            Next
+          </button>
+
         </div>
       </mat-step>
     </mat-horizontal-stepper>

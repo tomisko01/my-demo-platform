@@ -41,7 +41,8 @@ export class AdvancedFormStep1Component {
       updateOn: 'blur'
     }],
     someDate: [new Date(), Validators.required],
-    someFlag: [false, Validators.requiredTrue]
+    someFlag: [false, Validators.requiredTrue],
+    description: ['', [Validators.required]]
   })
 
   get itemName() {
