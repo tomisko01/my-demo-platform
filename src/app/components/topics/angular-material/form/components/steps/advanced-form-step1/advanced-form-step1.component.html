@@ -10,6 +10,17 @@
   </mat-form-field>
 
   <mat-form-field>
+    <mat-select formControlName="type">
+      <ng-container *ngFor="let type of (itemTypes$ | async)">
+        <mat-option [value]="type.id">
+          {{ type.name }}
+        </mat-option>
+      </ng-container>
+
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
     <mat-label>Choose a date</mat-label>
     <input matInput
            [matDatepicker]="someDatePicker"

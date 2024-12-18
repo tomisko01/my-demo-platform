@@ -35,4 +35,9 @@ declare namespace elden {
     itemId?: string;
   }
 
+  export interface ItemType {
+    id: string;
+    name: string;
+  }
+
 }
