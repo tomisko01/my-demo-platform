@@ -2,8 +2,8 @@
   <h3 class="title">Create new item</h3>
   <div>
     <mat-horizontal-stepper class="mat-elevation-z7"
-                            linear="true">
-      <mat-step [stepControl]="step1.form">
+                            linear="false">
+      <mat-step [stepControl]="step1.form" errorMessage="Landing page contains errors">
         <ng-template matStepLabel>
           Item landing page
         </ng-template>
