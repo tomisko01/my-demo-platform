@@ -1,4 +1,4 @@
-<div [formGroup]="form">
+<div [formGroup]="form" class="main-form">
   <mat-radio-group formControlName="gameType">
     <mat-radio-button value="OFFLINE">
       Offline
@@ -13,6 +13,10 @@
     matInput
     formControlName="quantity">
   </mat-form-field>
+
+  <app-file-upload requiredFileType="image/png">
+
+  </app-file-upload>
 
   <mat-form-field>
     <mat-label>Event period</mat-label>

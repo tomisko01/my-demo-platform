@@ -6,6 +6,7 @@ import {loginUser} from "./login.route";
 import {searchLocations} from "./search-locations.route";
 import {saveLocation} from "./save-location.route";
 import {findLocations} from "./find-locations.route";
+import {onThumbnailUpload} from "./thumbnail-upload.route";
 
 const express = require('express')
 const cors = require('cors');
@@ -15,7 +16,6 @@ const app = express()
 const port = 9000
 
 app.use(cors({origin: true}))
-
 app.use(bodyParser.json())
 
 app.get('/', (req: any, res: { send: (arg0: string) => void }) => {
@@ -39,6 +39,8 @@ app.route('/api/search-locations').get(searchLocations)
 app.route('/api/find-locations').get(findLocations)
 
 app.route('/api/locations/:id').put(saveLocation)
+
+app.route('/api/thumbnail-upload').post(onThumbnailUpload)
 
 const httpServer = app.listen(port, () => {
   console.log("HTTP REST API Server running at http://localhost:" + httpServer.address()["port"]);

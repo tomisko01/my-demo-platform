@@ -11,6 +11,7 @@ import {
 } from "@angular/material/datepicker";
 import {eventDateRangeValidator} from "../../../../components/date-range-validator/date-range.validator";
 import {NgIf} from "@angular/common";
+import {FileUploadComponent} from "../../../../components/file-upload/file-upload.component";
 
 @Component({
   selector: 'app-advanced-form-step2',
@@ -28,7 +29,8 @@ import {NgIf} from "@angular/common";
     MatDatepickerModule,
     MatSuffix,
     NgIf,
-    MatError
+    MatError,
+    FileUploadComponent
   ],
   templateUrl: './advanced-form-step2.component.html',
   styleUrl: './advanced-form-step2.component.css'
