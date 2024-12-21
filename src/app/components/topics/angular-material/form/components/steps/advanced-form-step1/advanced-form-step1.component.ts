@@ -7,7 +7,7 @@ import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
 import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
 import {MatCheckbox} from "@angular/material/checkbox";
 import {elden} from "../../../../../../../typings";
-import {map, Observable} from "rxjs";
+import {filter, map, Observable} from "rxjs";
 import {EldenItemObservableService} from "@angularTopic/reactive/service/elden-item-observable.service";
 import {MatOption, MatSelect} from "@angular/material/select";
 import * as _ from "lodash";
@@ -36,7 +36,7 @@ import * as _ from "lodash";
   templateUrl: './advanced-form-step1.component.html',
   styleUrl: './advanced-form-step1.component.css'
 })
-export class AdvancedFormStep1Component implements OnInit {
+export class AdvancedFormStep1Component {
 
   fb = inject(FormBuilder)
   eldenService = inject(EldenItemObservableService)
@@ -58,11 +58,25 @@ export class AdvancedFormStep1Component implements OnInit {
 
   itemTypes$: Observable<elden.ItemType[]>
 
-  ngOnInit(): void {
+  static readonly STORAGE: string = "ADV_FORM_STEP_1"
+
+  constructor() {
     this.itemTypes$ = this.eldenService.loadAllItems().pipe(
       map((items: elden.Item[]) =>
         _.uniqBy(items.map(item => ({id: item.type.toUpperCase(), name: item.type})), 'id')
       ))
+
+    const draft = localStorage.getItem(AdvancedFormStep1Component.STORAGE)
+
+    if(draft){
+      this.form.setValue(JSON.parse(draft))
+    }
+
+    this.form.valueChanges.pipe(
+      filter(() => this.form.valid)
+    ).subscribe(
+      val => localStorage.setItem(AdvancedFormStep1Component.STORAGE, JSON.stringify(val))
+    )
   }
 
   get itemName() {
