@@ -26,6 +26,7 @@
              placeholder="end"
              formControlName="eventEnd">
     </mat-date-range-input>
+    <mat-error *ngIf="form.getError('eventPeriod')">The start date must be before end date</mat-error>
 
     <mat-datepicker-toggle matSuffix
                            [for]="eventPicker">

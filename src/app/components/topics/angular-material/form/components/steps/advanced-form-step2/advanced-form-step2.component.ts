@@ -1,7 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {FormBuilder, ReactiveFormsModule, Validators} from "@angular/forms";
 import {MatRadioButton, MatRadioGroup} from "@angular/material/radio";
-import {MatFormField, MatLabel, MatSuffix} from "@angular/material/form-field";
+import {MatError, MatFormField, MatLabel, MatSuffix} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {
   MatDatepickerModule,
@@ -9,6 +9,8 @@ import {
   MatDateRangeInput,
   MatDateRangePicker
 } from "@angular/material/datepicker";
+import {eventDateRangeValidator} from "../../../../components/date-range-validator/date-range.validator";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-advanced-form-step2',
@@ -24,7 +26,9 @@ import {
     MatDateRangePicker,
     MatDatepickerToggle,
     MatDatepickerModule,
-    MatSuffix
+    MatSuffix,
+    NgIf,
+    MatError
   ],
   templateUrl: './advanced-form-step2.component.html',
   styleUrl: './advanced-form-step2.component.css'
@@ -42,7 +46,10 @@ export class AdvancedFormStep2Component {
       Validators.pattern("[0-9]+")
     ]],
     eventStart: [null],
-    eventEnd: [null]
+    eventEnd: [null],
+  }, {
+    validators: [eventDateRangeValidator()],
+    updateOn: 'blur'
   })
 
   constructor() {
