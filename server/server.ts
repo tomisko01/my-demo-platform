@@ -11,12 +11,14 @@ import {onThumbnailUpload} from "./thumbnail-upload.route";
 const express = require('express')
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const fileUpload = require('express-fileupload')
 
 const app = express()
 const port = 9000
 
 app.use(cors({origin: true}))
 app.use(bodyParser.json())
+app.use(fileUpload())
 
 app.get('/', (req: any, res: { send: (arg0: string) => void }) => {
   res.send('Hello World!')
