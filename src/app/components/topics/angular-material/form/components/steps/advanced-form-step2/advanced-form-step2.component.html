@@ -13,4 +13,27 @@
     matInput
     formControlName="quantity">
   </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Event period</mat-label>
+
+    <mat-date-range-input [rangePicker]="eventPicker">
+      <input matStartDate
+             placeholder="start"
+             formControlName="eventStart">
+
+      <input matEndDate
+             placeholder="end"
+             formControlName="eventEnd">
+    </mat-date-range-input>
+
+    <mat-datepicker-toggle matSuffix
+                           [for]="eventPicker">
+
+    </mat-datepicker-toggle>
+
+    <mat-date-range-picker #eventPicker>
+
+    </mat-date-range-picker>
+  </mat-form-field>
 </div>
