@@ -13,5 +13,11 @@
   </button>
 </div>
 
+<mat-progress-bar class="progress-bar"
+                  *ngIf="uploadProgress"
+                  mode="determinate"
+                  [value]="uploadProgress">
+</mat-progress-bar>
+
 <input type="file" class="file-input" #fileUpload
        (change)="onFileSelected($event)">
