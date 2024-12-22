@@ -8,6 +8,7 @@ import {environment} from "../../../../../../environments/environment";
 import {catchError, finalize, of} from "rxjs";
 import {MatProgressBar} from "@angular/material/progress-bar";
 import {NgIf} from "@angular/common";
+import {ControlValueAccessor} from "@angular/forms";
 
 @Component({
   selector: 'app-file-upload',
@@ -23,7 +24,7 @@ import {NgIf} from "@angular/common";
   templateUrl: './file-upload.component.html',
   styleUrl: './file-upload.component.css'
 })
-export class FileUploadComponent {
+export class FileUploadComponent implements ControlValueAccessor {
 
   readonly requiredFileType = input.required<string>()
 
@@ -31,7 +32,26 @@ export class FileUploadComponent {
 
   fileName = signal<string>('')
   fileUploadError = signal<boolean>(false)
-  uploadProgress: number | null = null;
+  uploadProgress: number | null = null
+  disabled: boolean = false
+  onChange = (fileName: string) => {}
+  onTouched = () => {}
+
+  writeValue(value: any): void {
+    this.fileName.set(value)
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn
+  }
+
+  setDisabledState?(isDisabled: boolean): void {
+    this.disabled = isDisabled
+  }
 
   onFileSelected(event: Event) {
     const target = event.target as HTMLInputElement
@@ -41,26 +61,37 @@ export class FileUploadComponent {
         this.fileName.set(file.name)
         this.fileUploadError.set(false)
         this.uploadProgress = 0.1
-        const formData = new FormData()
-        formData.append("thumbnail", file)
-
-        this.httpClient.post(`${environment.apiRoot}/thumbnail-upload`, formData, {
-          reportProgress: true,
-          observe: 'events'
-        }).pipe(
-          catchError(err => {
-            this.fileUploadError.set(true)
-            return of(err)
-          }),
-          finalize(() => this.uploadProgress = null)
-        ).subscribe(event => {
-          if (event.type == HttpEventType.UploadProgress) {
-            this.uploadProgress = Math.round(100 * (event.loaded / event.total))
-          }
-        })
+        this.uploadFile(file)
       } else {
         this.fileName.set('')
       }
     }
+  }
+
+  private uploadFile(file: File) {
+    const formData = new FormData()
+    formData.append("thumbnail", file)
+
+    this.httpClient.post(`${environment.apiRoot}/thumbnail-upload`, formData, {
+      reportProgress: true,
+      observe: 'events'
+    }).pipe(
+      catchError(err => {
+        this.fileUploadError.set(true)
+        return of(err)
+      }),
+      finalize(() => this.uploadProgress = null)
+    ).subscribe(event => {
+      if (event.type == HttpEventType.UploadProgress) {
+        this.uploadProgress = Math.round(100 * (event.loaded / event.total))
+      } else if (event.type == HttpEventType.Response) {
+        this.onChange(this.fileName())
+      }
+    })
+  }
+
+  onClick(fileUpload: HTMLInputElement) {
+    this.onTouched()
+    fileUpload.click()
   }
 }
