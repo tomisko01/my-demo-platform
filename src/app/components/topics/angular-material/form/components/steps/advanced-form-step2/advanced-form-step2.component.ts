@@ -10,7 +10,7 @@ import {
   MatDateRangePicker
 } from "@angular/material/datepicker";
 import {eventDateRangeValidator} from "../../../../components/date-range-validator/date-range.validator";
-import {NgIf} from "@angular/common";
+import {JsonPipe, NgIf} from "@angular/common";
 import {FileUploadComponent} from "../../../../components/file-upload/file-upload.component";
 
 @Component({
@@ -30,7 +30,8 @@ import {FileUploadComponent} from "../../../../components/file-upload/file-uploa
     MatSuffix,
     NgIf,
     MatError,
-    FileUploadComponent
+    FileUploadComponent,
+    JsonPipe
   ],
   templateUrl: './advanced-form-step2.component.html',
   styleUrl: './advanced-form-step2.component.css'
@@ -49,9 +50,10 @@ export class AdvancedFormStep2Component {
     ]],
     eventStart: [null],
     eventEnd: [null],
+    thumbnail: [null]
   }, {
     validators: [eventDateRangeValidator()],
-    updateOn: 'blur'
+    // updateOn: 'blur'
   })
 
   constructor() {

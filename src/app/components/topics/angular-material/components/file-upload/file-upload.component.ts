@@ -8,7 +8,7 @@ import {environment} from "../../../../../../environments/environment";
 import {catchError, finalize, of} from "rxjs";
 import {MatProgressBar} from "@angular/material/progress-bar";
 import {NgIf} from "@angular/common";
-import {ControlValueAccessor} from "@angular/forms";
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
   selector: 'app-file-upload',
@@ -21,6 +21,11 @@ import {ControlValueAccessor} from "@angular/forms";
     MatProgressBar,
     NgIf
   ],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    multi: true,
+    useExisting: FileUploadComponent
+  }],
   templateUrl: './file-upload.component.html',
   styleUrl: './file-upload.component.css'
 })
