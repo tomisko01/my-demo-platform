@@ -21,4 +21,5 @@
 </mat-progress-bar>
 
 <input type="file" class="file-input" #fileUpload
-       (change)="onFileSelected($event)">
+       (change)="onFileSelected($event)"
+       [accept]="requiredFileType()">
