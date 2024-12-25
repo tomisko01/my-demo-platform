@@ -11,6 +11,7 @@ import {filter, map, Observable} from "rxjs";
 import {EldenItemObservableService} from "@angularTopic/reactive/service/elden-item-observable.service";
 import {MatOption, MatSelect} from "@angular/material/select";
 import * as _ from "lodash";
+import {AddressFormComponent} from "../../../../components/address-form/address-form.component";
 
 @Component({
   selector: 'app-advanced-form-step1',
@@ -31,7 +32,8 @@ import * as _ from "lodash";
     MatSelect,
     NgForOf,
     AsyncPipe,
-    MatOption
+    MatOption,
+    AddressFormComponent
   ],
   templateUrl: './advanced-form-step1.component.html',
   styleUrl: './advanced-form-step1.component.css'
