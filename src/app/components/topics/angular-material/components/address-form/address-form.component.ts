@@ -1,5 +1,12 @@
 import {Component, inject, Input, OnDestroy} from '@angular/core';
-import {ControlValueAccessor, FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
+import {
+  ControlValueAccessor,
+  FormBuilder,
+  FormGroup,
+  NG_VALUE_ACCESSOR,
+  ReactiveFormsModule,
+  Validators
+} from "@angular/forms";
 import {MatFormField} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {Subscription} from "rxjs";
@@ -14,6 +21,11 @@ import {JsonPipe} from "@angular/common";
     MatInput,
     JsonPipe
   ],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    multi: true,
+    useExisting: AddressFormComponent
+  }],
   templateUrl: './address-form.component.html',
   styleUrl: './address-form.component.css'
 })
@@ -40,7 +52,8 @@ export class AddressFormComponent implements ControlValueAccessor, OnDestroy {
   writeValue(value: any): void {
     if (value) {
       this.form.setValue(value);
-    }  }
+    }
+  }
 
   registerOnChange(onChange: any): void {
     this.onChangeSub = this.form.valueChanges.subscribe(onChange);

@@ -3,7 +3,7 @@ import {FormBuilder, ReactiveFormsModule, Validators} from "@angular/forms";
 import {MatError, MatFormField, MatHint, MatLabel, MatSuffix} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {itemNameValidator} from "../../../../components/item-name-validator/item-name.validator";
-import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
+import {AsyncPipe, JsonPipe, NgForOf, NgIf} from "@angular/common";
 import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
 import {MatCheckbox} from "@angular/material/checkbox";
 import {elden} from "../../../../../../../typings";
@@ -33,7 +33,8 @@ import {AddressFormComponent} from "../../../../components/address-form/address-
     NgForOf,
     AsyncPipe,
     MatOption,
-    AddressFormComponent
+    AddressFormComponent,
+    JsonPipe
   ],
   templateUrl: './advanced-form-step1.component.html',
   styleUrl: './advanced-form-step1.component.css'
@@ -55,7 +56,8 @@ export class AdvancedFormStep1Component {
     someDate: [new Date(), Validators.required],
     someFlag: [false, Validators.requiredTrue],
     description: ['', [Validators.required]],
-    type: ['MISC', Validators.required]
+    type: ['MISC', Validators.required],
+    address: [null, Validators.required]
   })
 
   itemTypes$: Observable<elden.ItemType[]>
