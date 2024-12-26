@@ -4,6 +4,7 @@ import {AdvancedFormStep1Component} from "../components/steps/advanced-form-step
 import {MatButton} from "@angular/material/button";
 import {AdvancedFormStep2Component} from "../components/steps/advanced-form-step2/advanced-form-step2.component";
 import {STEPPER_GLOBAL_OPTIONS} from "@angular/cdk/stepper";
+import {AdvancedFormStep3Component} from "../components/steps/advanced-form-step3/advanced-form-step3.component";
 
 @Component({
   selector: 'app-advanced-form',
@@ -16,7 +17,8 @@ import {STEPPER_GLOBAL_OPTIONS} from "@angular/cdk/stepper";
     MatStepperNext,
     MatStep,
     AdvancedFormStep2Component,
-    MatStepperPrevious
+    MatStepperPrevious,
+    AdvancedFormStep3Component
   ],
   templateUrl: './advanced-form.component.html',
   styleUrl: './advanced-form.component.css',

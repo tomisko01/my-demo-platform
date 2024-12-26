@@ -17,8 +17,8 @@
         </div>
       </mat-step>
 
-      <mat-step #step2>
-        <app-advanced-form-step2>
+      <mat-step [stepControl]="step2.form" errorMessage="Details page contains errors">
+        <app-advanced-form-step2 #step2>
         </app-advanced-form-step2>
 
         <ng-template matStepLabel>
@@ -34,6 +34,25 @@
             Next
           </button>
 
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="step3.form" errorMessage="Locations page contains errors">
+        <app-advanced-form-step3 #step3 >
+        </app-advanced-form-step3>
+
+        <ng-template matStepLabel>
+          Item locations
+        </ng-template>
+
+        <div class="stepper-buttons">
+          <button mat-raised-button color="secondary" matStepperPrevious>
+            Back
+          </button>
+          <button mat-raised-button color="primary"
+          [disabled]="!step3.form.valid || !step2.form.valid || !step1.form.valid">
+            Save item
+          </button>
         </div>
       </mat-step>
     </mat-horizontal-stepper>
