@@ -1,1 +1,28 @@
-<p>advanced-form-step3 works!</p>
+<h3>Add Item Locations:</h3>
+
+<div class="add-locations-form"
+     [formGroup]="form">
+
+  <div class="location-form-row">
+    <mat-form-field appearance="fill">
+      <mat-label>Location name</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Required dlc</mat-label>
+      <mat-select>
+        <mat-option value="BASE_GAME">Base game</mat-option>
+        <mat-option value="DLC_ERDTREE">Shadow of the erdtree</mat-option>
+        <mat-option value="DLC_FUTURE">Unannounced dlc</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-icon>delete_forever</mat-icon>
+  </div>
+
+  <button mat-mini-fab color="primary">
+    <mat-icon>add</mat-icon>
+  </button>
+
+</div>

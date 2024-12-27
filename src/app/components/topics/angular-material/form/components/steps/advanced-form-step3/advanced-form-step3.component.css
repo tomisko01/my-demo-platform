@@ -1,0 +1,21 @@
+.add-locations-form {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.location-form-row {
+  display: flex;
+  align-items:baseline;
+
+  mat-form-field {
+    margin-right: 10px;
+  }
+}
+
+.delete-btn {
+  cursor:pointer;
+
+}
