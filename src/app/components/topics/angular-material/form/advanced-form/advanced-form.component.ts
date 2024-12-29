@@ -5,6 +5,7 @@ import {MatButton} from "@angular/material/button";
 import {AdvancedFormStep2Component} from "../components/steps/advanced-form-step2/advanced-form-step2.component";
 import {STEPPER_GLOBAL_OPTIONS} from "@angular/cdk/stepper";
 import {AdvancedFormStep3Component} from "../components/steps/advanced-form-step3/advanced-form-step3.component";
+import {FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-advanced-form',
@@ -28,4 +29,7 @@ import {AdvancedFormStep3Component} from "../components/steps/advanced-form-step
 })
 export class AdvancedFormComponent {
 
+  submit(step1: any, step2: any, step3: any) {
+    console.log(step1, step2, step3)
+  }
 }

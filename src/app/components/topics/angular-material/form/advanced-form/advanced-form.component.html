@@ -2,7 +2,7 @@
   <h3 class="title">Create new item</h3>
   <div>
     <mat-horizontal-stepper class="mat-elevation-z7"
-                            linear="false">
+                            linear="true">
       <mat-step [stepControl]="step1.form" errorMessage="Landing page contains errors">
         <ng-template matStepLabel>
           Item landing page
@@ -50,7 +50,8 @@
             Back
           </button>
           <button mat-raised-button color="primary"
-          [disabled]="!step3.form.valid || !step2.form.valid || !step1.form.valid">
+                  [disabled]="!step3.form.valid || step3.locations.length==0"
+                  (click)="submit(step1.form.value, step2.form.value, step3.form.value)">
             Save item
           </button>
         </div>
